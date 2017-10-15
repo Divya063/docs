@@ -505,6 +505,19 @@ After that, you can just:
 
 (Note: ``origin`` is the local label for your GitHub fork.)
 
+.. note::
+ 
+  If you happen to rename any document file(:file:`*.rst`), then be sure that you add the redirect in your PR.
+ 
+  To add the redirect go to :file:`s3_website.yml` and uncomment the **redirects:** line. Add all the mapppings from old file name to new file name below the **redirects:** line one by one.
+ 
+  For example you rename a file to :file:`newcheck.rst` from :file:`oldcheck.rst`, then to add the redirect:
+ 
+  .. code-block:: yaml
+ 
+    redirects:
+     /oldcheck: /newcheck
+
 .. _pr-the-docs:
 
 Issue a Pull Request
@@ -1047,13 +1060,13 @@ The `csv-table` directive is used to create a table from CSV (comma-separated va
 .. code-block:: rst
 
   .. csv-table:: Example Table
-   :header: "Treat", "Quantity", "Description"
-   :widths: 15, 10, 30
+     :header: "Treat", "Quantity", "Description"
+     :widths: 15, 10, 30
 
-   "Albatross", 2.99, "On a stick!"
-   "Crunchy Frog", 1.49, "If we took the bones out, it wouldn't be
-   crunchy, now would it?"
-   "Gannet Ripple", 1.99, "On a stick!"
+     "Albatross", 2.99, "On a stick!"
+     "Crunchy Frog", 1.49, "If we took the bones out, it wouldn't be
+     crunchy, now would it?"
+     "Gannet Ripple", 1.99, "On a stick!"
 
 
 .. csv-table:: Example Table
@@ -1079,12 +1092,12 @@ Some of the options recognized are:
 .. code-block:: rst
 
   .. csv-table:: Table using # as delimiter
-   :header: "Name", "Grade"
-   :widths: auto
-   :delim: #
+     :header: "Name", "Grade"
+     :widths: auto
+     :delim: #
 
-   "Peter"#"A"
-   "Paul"#"B"
+     "Peter"#"A"
+     "Paul"#"B"
 
 .. csv-table:: Table using # as delimiter
    :header: "Name", "Grade"
@@ -1099,18 +1112,18 @@ Some of the options recognized are:
 .. code-block:: rst
 
   .. csv-table:: Table aligned to right
-   :header: "Name", "Grade"
-   :align: right
+     :header: "Name", "Grade"
+     :align: right
 
-   "Peter", "A"
-   "Paul", "B"
+     "Peter", "A"
+     "Paul", "B"
 
 .. csv-table:: Table aligned to right
    :header: "Name", "Grade"
    :align: right
 
    "Peter", "A"
-   "Paul", "B"
+   "Paul",  "B"
 
 - **:file:** contains the local filesystem path to a CSV data file.
 - **:url:** contains an Internet URL reference to a CSV data file.
@@ -1119,19 +1132,19 @@ Some of the options recognized are:
 
   - There is no support for checking that the number of columns in each row is the same. However, this directive supports CSV generators that do not insert "empty" entries at the end of short rows, by automatically adding empty entries.
 
-    .. code-block:: rst
+  .. code-block:: rst
 
-      .. csv-table:: Table with different number of columns in each row
-         :header: "Name", "Grade"
+    .. csv-table:: Table with different number of columns in each row
+        :header: "Name", "Grade"
    
-         "Peter"
-         "Paul", "B"
+        "Peter"
+        "Paul", "B"
 
-   .. csv-table:: Table with different number of columns in each row
-      :header: "Name", "Grade"
+    .. csv-table:: Table with different number of columns in each row
+       :header: "Name", "Grade"
    
-      "Peter"
-      "Paul", "B"
+       "Peter"
+       "Paul", "B"
 
   - Whitespace delimiters are supported only for external CSV files.
 
