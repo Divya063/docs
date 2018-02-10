@@ -1,0 +1,10 @@
+[main]
+host = https://www.transifex.com
+
+[docs-4.aggregate-app-engine-po]
+file_filter = translations/<lang>
+minimum_perc = 0
+source_file = locales/ja/LC_MESSAGES/aggregate-app-engine.po
+source_lang = en
+type = PO
+
