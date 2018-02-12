@@ -1,0 +1,874 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a
+# Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../src/docs-style-guide.rst:16
+msgid "Style Guide"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:21
+msgid "Spelling and grammar"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:26
+msgid "American spelling and grammar"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:28
+msgid ""
+"Whenever U.S. English and British (or other) English spelling or usage "
+"disagree, standard U.S. spelling and usage is preferred."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:31 ../../src/docs-style-guide.rst:58
+#: ../../src/docs-style-guide.rst:70 ../../src/docs-style-guide.rst:97
+#: ../../src/docs-style-guide.rst:152 ../../src/docs-style-guide.rst:170
+#: ../../src/docs-style-guide.rst:208 ../../src/docs-style-guide.rst:253
+#: ../../src/docs-style-guide.rst:265 ../../src/docs-style-guide.rst:348
+#: ../../src/docs-style-guide.rst:387 ../../src/docs-style-guide.rst:427
+#: ../../src/docs-style-guide.rst:521 ../../src/docs-style-guide.rst:663
+#: ../../src/docs-style-guide.rst:713
+msgid "Wrong"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:37 ../../src/docs-style-guide.rst:64
+#: ../../src/docs-style-guide.rst:76 ../../src/docs-style-guide.rst:103
+#: ../../src/docs-style-guide.rst:160 ../../src/docs-style-guide.rst:178
+#: ../../src/docs-style-guide.rst:214 ../../src/docs-style-guide.rst:259
+#: ../../src/docs-style-guide.rst:271 ../../src/docs-style-guide.rst:354
+#: ../../src/docs-style-guide.rst:393 ../../src/docs-style-guide.rst:399
+#: ../../src/docs-style-guide.rst:434 ../../src/docs-style-guide.rst:673
+#: ../../src/docs-style-guide.rst:725
+msgid "Right"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:45
+msgid "Quote marks"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:47
+msgid "Quote marks should generally be avoided if possible."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:48
+msgid ""
+"*Smart* quotes (also known as *curly quotes* or *directional quotes*) are"
+" not permitted in source files."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:53
+msgid "Avoid quote marks"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:55
+msgid ""
+"Quote marks are used in prose writing to indicate verbatim text. This is "
+"rarely useful in technical writing, as verbatim text usually requires a "
+"more specific semantic markup."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:85
+msgid "Straight quotes"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:87
+msgid ""
+"Any time that you *do* need to use quotation marks, use straight (or "
+"*plain*) quotes. Sphinx and Docutils will output the typographically "
+"correct quote style."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:92
+msgid "Serial comma"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:94
+msgid ""
+"In a comma-delineated list of items, the penultimate item should be "
+"followed by a comma."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:108
+msgid "A bulleted list is often more clear than an inline list."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:111 ../../src/docs-style-guide.rst:305
+#: ../../src/docs-style-guide.rst:365
+msgid "Correct"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:117
+msgid "Possibly Better"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:126
+msgid ""
+"There's no hard rule about which to use in any situation. Use your "
+"judgement: try it both ways and see which is more clear."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:131
+msgid "Direct Address"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:133
+msgid ""
+"Direct address --- speaking directly to the reader using the second "
+"person \"you\" --- is prefered over passive voice (\"it can be done\"), "
+"first-person plural (\"we can do it\"), or other constructions."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:140
+msgid ""
+"First person plural (\"we\") should only be used when speaking of the ODK"
+" project team (\"We recommend...\")."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:147
+msgid "Ordered and unordered lists"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:149
+msgid ""
+"An ordered list is numbered. It should be used when the order of the list"
+" is essential. For example, when enumerating a series of steps in a "
+"procedure."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:167
+msgid ""
+"An unordered list is bulleted. It should be used for a collection of "
+"items in which order is not essential."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:188
+msgid "Avoid Latin"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:190
+msgid "Several Latin abbreviations are common in written English:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:203
+msgid ""
+"At best, these present a minor barrier to understanding. This is often "
+"made worse by unintentional misuse."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:205
+msgid "Avoid Latin abbreviations."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:224
+msgid "Etc."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:226
+msgid "*Et cetera* (or *etc.*) deserves a special mention."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:228
+msgid ""
+"*Et cetera* means \"and all the rest,\" and is often used to indicate "
+"that there is more that could or should be said, but which is being "
+"omitted."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:230
+msgid ""
+"Writers often use *etc.* to gloss over details of the subject which they "
+"are not fully aware of. If you find yourself tempted use *etc.*, ask "
+"yourself if you really understand the thing you are writing about."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:236
+msgid "Avoid unneeded words"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:241
+msgid "Adverbs"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:243
+msgid "Adverbs often contribute nothing. Common offenders include:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:245
+msgid "simply"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:246
+msgid "easily"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:247
+msgid "just"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:248
+msgid "very"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:249
+msgid "really"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:250
+msgid "basically"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:279
+msgid "Filler words and phrases"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:281
+msgid ""
+"Many words and phrases provide no direct meaning. They are often inserted"
+" to make a sentence seem more formal, or to simulate a perceived style of"
+" business communication. These should be removed."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:283
+msgid "Common filler phrases and words include:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:285
+msgid "to the extent that"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:286
+msgid "for all intents and purposes"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:287
+msgid "when all is said and done"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:288
+msgid "from the perspective of"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:289
+msgid "point in time"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:291
+msgid ""
+"This list is not exhaustive. These \"canned phrases\" are pervasive in "
+"technical writing. Remove them whenever they occur."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:298
+msgid "Semicolons"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:300
+msgid ""
+"Semicolons are used to separate two independent clauses which could stand"
+" as individual sentences but which the writer feels would benefit by "
+"close proximity."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:302
+msgid ""
+"Semicolons can almost always be replaced with periods (full stops). This "
+"rarely diminishes correctness and often improves readability."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:311 ../../src/docs-style-guide.rst:371
+msgid "Better"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:319
+msgid "Pronouns"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:324
+msgid "Third-person personal pronouns"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:328
+msgid "Third-person personal pronouns are:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:330
+msgid "he/him/his"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:331
+msgid "she/her/her(s)"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:332
+msgid "they/them/their(s)"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:336
+msgid ""
+"While some people consider *they/them/their* to be non-standard (or "
+"\"incorrect\") as third-person singular, it has gained wide use as a "
+"gender-neutral or gender-ambiguous alternative to *he* or *she*."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:338
+msgid "There are two issues with personal pronouns:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:340
+msgid "gender bias"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:341
+msgid "clarity"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:343
+msgid ""
+"To avoid gender bias, the third person gender-neutral "
+"*they/then/their(s)* is preferred over *he* or *she* pronouns when "
+"writing about abstract individuals."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:360
+msgid ""
+"Unfortunately, *they/them/their* is not a perfect solution. Since it is "
+"conventionally used as a plural pronoun, it can cause confusion."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:362
+msgid ""
+"Therefore, avoid the use of personal pronouns whenever possible. They are"
+" often out of place in technical writing anyway. Rewriting passages to "
+"avoid personal pronouns often makes the writing more clear."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:382
+msgid "\"Same\""
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:384
+msgid ""
+"*Same*, when used as an impersonal pronoun, is non-standard in Modern "
+"American English. It should be avoided."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:408
+msgid "Titles"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:413
+msgid "Title case and sentence case"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:415
+msgid ""
+"Document titles should be in ``Title Case`` -- that is, all meaningful "
+"words are to be capitalized."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:417
+msgid ""
+"Section titles should use ``Sentence case`` -- that is, only the first "
+"word should be capitalized, along with any proper nouns or other words "
+"usually capitalized in a sentence."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:422
+msgid "Verb forms"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:424
+msgid ""
+"If a document or section describes a procedure that someone might do, use"
+" a verb ending in *-ing*. (That is, a `gerund "
+"<https://en.wikipedia.org/wiki/Gerund>`_.) Do not use the \"How to...\" "
+"construction."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:440
+msgid ""
+"If section title is a directive to do something (for example, as a step "
+"in a procedure), use an imperative."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:456
+msgid "Section labels"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:458
+msgid "Section titles should almost always be preceded by labels."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:460
+msgid ""
+"The only exception is very short subsections that repeat --- like the "
+"**Right** and **Wrong** titles in this document or the **XLSForm Rows** "
+"and **XForm XML** sections in the :doc:`form-widgets` document."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:462
+msgid "In these cases, you may want to use the :rst:dir:`rubric` directive."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:467
+msgid "Other titling considerations"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:469
+msgid "Do not put step numbers in section titles."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:470
+msgid "Readers skim. Section titles should be clear and provide information."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:476
+msgid "Writing code and writing about code"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:478
+msgid ""
+"ODK Documentation includes code samples in a number of languages. Make "
+"sure to follow generally accepted coding style for each language."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:483
+msgid "Indenting"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:485
+msgid "In code samples:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:487
+msgid "Use spaces, not tabs."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:488
+msgid "Two spaces for logical indents in most languages."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:490
+msgid ""
+"Python samples must use `four spaces per indent level "
+"<https://www.python.org/dev/peps/pep-0008/#indentation>`_."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:492
+msgid ""
+"Strive for clarity. Sometimes nonstandard indentation, especially when "
+"combined with non-syntactic line breaks, makes things easier to read."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:494
+msgid ""
+"Make sure that line breaks and indentation stay within the valid syntax "
+"of the language."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:496
+msgid ""
+"Using two spaces keeps code sample lines shorter, which makes them easier"
+" to view."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:500
+msgid "Example of indenting for clarity"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:516
+msgid "Meaningful names"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:518
+msgid "When writing sample code, avoid meaningless names."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:534
+msgid "XML and HTML"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:536
+msgid ""
+"Some of the terms often used to describe XML and HTML code structures are"
+" imprecise or confusing. For clarity, we restrict certain terms and uses."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:538
+msgid ""
+"Likewise, coding practices and styles for XML and HTML vary widely. For "
+"the sake of clarity and consistency, samples should follow the guidelines"
+" set forth here."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:543
+msgid "Element"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:545
+msgid "The following piece of code represents an **element**:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:555
+msgid "An element is **not** a *block* or a *tag*."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:557
+msgid "*Tag* is defined below."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:558
+msgid ""
+"*Block* has a specific meaning in HTML and XML templates, and should "
+"generally be avoided outside those contexts."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:563
+msgid "Tag"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:565
+msgid "A **tag** is the token that begins or ends an element."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:573
+msgid ""
+"The word *tag* has often been used to refer to the entire element. For "
+"clarity, we will avoid that here."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:579
+msgid "Node"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:581
+msgid "The word *node* is often used interchangeably with *element*."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:583
+msgid "For clarity, we make the following distinction:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:585
+msgid "An HTML or XML document has *elements*, not *nodes*."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:586
+msgid "A *node* is part of a \"live\" DOM tree or other dynamic representation."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:588
+msgid "An XML or HTML element becomes an *element node* in a DOM tree."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:589
+msgid "There are also other types of nodes in a DOM tree."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:594
+msgid "Attributes and values"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:596
+msgid ""
+"An element may have attributes. Attributes have values. Values are "
+"wrapped in straight double-quotes."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:604
+msgid ""
+"Other names for attributes, such as *variables* or *properties*, should "
+"be avoided."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:609
+msgid "Element content"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:611
+msgid ""
+"The code between the opening and closing tags of an element is the "
+"content. Content can include other elements, which are called *child "
+"elements*."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:622
+msgid "When an element is empty, it can be called a *null element*."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:628
+msgid "In XML, null element tags always self-close. This is not the case in HTML."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:630
+msgid ""
+"HTML elements that are always null (for example, `<img>`) do not need to "
+"be self-closed."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:631
+msgid ""
+"Empty HTML elements that normally accept content have a separate closing "
+"tag."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:642
+msgid "Capitalization"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:644
+msgid ""
+"For all HTML samples, tag names and attribute names should be ``all "
+"lowercase``."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:646
+msgid "Newly-written XML examples should also be ``all lowercase``."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:648
+msgid ""
+"XML examples that show actual code generated by tools in the ODK "
+"ecosystem should replicate that code exactly, regardless of its "
+"capitalization practice."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:653
+msgid "ODK jargon"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:658
+msgid "ODK and ODK Docs"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:664
+msgid "Odk"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:665
+msgid "odk"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:666
+msgid "Open data kit"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:667
+msgid "OpenDataKit"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:668
+msgid "the Open Data Kit"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:669
+msgid "ODK docs"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:670
+msgid "ODK documentation"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:674
+msgid "ODK"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:675
+msgid "Open Data Kit"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:676 ../../src/docs-style-guide.rst:702
+msgid "ODK Docs"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:677
+msgid "ODK Documentation"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:680
+msgid "Probably want to avoid..."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:681
+msgid "Open Data Kit Documentation"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:686
+msgid "ODK app and project names"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:688
+msgid "ODK includes a number of components, including:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:690
+msgid "Collect"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:691
+msgid "Aggregate"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:692
+msgid "Briefcase"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:694
+msgid "These should always be capitalized."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:696
+msgid ""
+"The **ODK** prefix (as in, *ODK Collect*) should be used the first time a"
+" document mentions the app or project, or any other time it would be "
+"unclear."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:698
+msgid "A few projects should *always* use the **ODK** prefix:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:700
+msgid "ODK XForm"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:701
+msgid "ODK Javarosa"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:707
+msgid "XForms and XLSForm"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:709
+msgid "*XForms* refers to XML-encoded forms."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:710
+msgid "*XLSForm* refers to a spreadsheet format used to define forms."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:714
+msgid "Xforms"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:715
+msgid "X-Forms"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:716
+msgid "xforms"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:717
+msgid "XFORMS"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:718
+msgid "XForm (no *s*, when referring to the specification)"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:720
+msgid "xlsform"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:721
+msgid "XLSform"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:722
+msgid "Xlsform"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:726
+msgid "XForms"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:727
+msgid "an Xform (when referring to a single form)"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:728 ../../src/docs-style-guide.rst:751
+msgid "XLSForm"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:733
+msgid "XForms Spec, XForms Tools, XForms"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:735
+msgid "*XForms* can refer to:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:737
+msgid "The `XML-based form format <https://en.wikipedia.org/wiki/XForms>`_"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:738
+msgid ""
+"The `official XForms specification from the W3C "
+"<https://www.w3.org/TR/2009/REC-xforms-20091020/>`_"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:739
+msgid ""
+"The `ODK XForms Specification <https://opendatakit.github.io/xforms-"
+"spec/>`_, which is a subset of the full W3C recommendation."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:740
+msgid "The general idea of an XML-based form."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:742
+msgid "*XForm* (without an *s*) refers to:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:744
+msgid "A specific XML document that encodes a form."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:746 ../../src/docs-style-guide.rst:759
+msgid ""
+"When writing about any of these things, make sure you are clear --- in "
+"your mind as well as in your writing --- which one you are talking about."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:753
+msgid "*XLSForm* can refer to:"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:755
+msgid ""
+"The `XLSForm format for describing form in an Excel spreadsheet "
+"<http://xlsform.org/>`_"
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:756
+msgid "A spreadsheet file that describes a form using the format."
+msgstr ""
+
+#: ../../src/docs-style-guide.rst:757
+msgid ""
+"An `online tool <http://opendatakit.org/use/xlsform/>`_ and an `offline "
+"tool <https://gumroad.com/l/xlsform-offline>`_ for converting "
+":file:`*.xls(x)` files to XForm documents."
+msgstr ""
+

@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/openrosa.rst:15
+msgid "OpenRosa"
+msgstr ""
+
+#: ../../src/openrosa.rst:17
+msgid ""
+"OpenRosa is a set of communication standards for moving blank forms and "
+"completed form instances between server applications (like ODK Aggregate) "
+"and clients (like :doc:`ODK Collect  <collect-intro>`)."
+msgstr ""
+
+#: ../../src/openrosa.rst:19
+msgid ""
+"They were originally worked on by the OpenRosa WorkGroup, and they were an "
+"outgrowth of the JavaRosa project. The working group is no longer active. "
+"However, many apps within the ODK ecosystem (including Collect and "
+"Aggregate) continue to implement the API."
+msgstr ""
+
+#: ../../src/openrosa.rst:21
+msgid ""
+"This set of docs is intended to provide information about the OpenRosa "
+"standards, for use by developers working on applications that communicate "
+"with other applications within the ODK ecosystem."
+msgstr ""
+
+#: ../../src/openrosa.rst:26
+msgid "OpenRosa 1.0 APIs"
+msgstr ""
+
+#: ../../src/openrosa.rst:28
+msgid ""
+"OpenRosa 1.0 APIs were formally approved by the OpenRosa Working Group in "
+"December of 2011. To be considered \"OpenRosa 1.0 Compliant,\" a system must"
+" implement all 5 of the OpenRosa 1.0 APIs."
+msgstr ""

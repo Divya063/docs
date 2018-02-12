@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/aggregate-limitations.rst:15
+msgid "Aggregate Limitations"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:17
+msgid ""
+"This is a listing of known limitations and potential \"gotchas\" users of "
+"Aggregate may encounter."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:20
+msgid "Pushing Data to Aggregate on Google App Engine"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:22
+msgid ""
+"If Aggregate is :doc:`installed on Google App Engine <aggregate-app-"
+"engine>`, using the default datastore as described in our documentation, a "
+"combination of request time limits and datastore implementation create the "
+"following issues."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:25
+msgid "Simultaneous push requests will block each other and may time out"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:27
+msgid ""
+"Within ODK Aggregate, there is a global mutex (*TaskLock* across all server "
+"instances, mediated by the datastore layer) in the server when inserting "
+"submissions. Having multiple push requests occurring simultaneously will "
+"cause them to block on the mutex, chewing up their 60-second request limit, "
+"as they get processed in single file no matter how many server instances are"
+" spun up."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:29
+msgid "The solution to this is: **Serialize your push requests.**"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:32
+msgid "Time limit may be exceeded on low-bandwitch connections"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:34
+msgid ""
+"The 60-second request limit can be very commonly exceeded over low-bandwidth"
+" connections, and even text-only submissions can be impacted on satellite "
+"connections. That is why ODK Collect splits submissions into multiple 10MB "
+"submission requests. The timer starts upon receipt of the first byte, so a "
+"slow connection can account for a sizeable portion of those 60 seconds. The "
+"same applies for sending a response. The processing on the server is "
+"generally negligible in relation to the transmission times."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:38
+msgid ""
+"The above two limitations, the global mutex and the in-memory copies/full-"
+"packet-assembly, are a result of implementing on top of AppEngine and its "
+"Datastore."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:39
+msgid ""
+"A server that used database transactions and that used streaming servlet 3.0"
+" functionality would have less trouble with concurrent requests."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:42
+msgid "Media held in memory"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:44
+msgid ""
+"When a form submission is uploaded, and when blank forms are downloaded, all"
+" the associated media files are held in memory at the same time, twice. For "
+"forms with a lot of media files, this can consume a lot of memory."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:46
+msgid ""
+"The previous section already suggested serializing form submission uploads. "
+"This is not absolutely critical for form downlaods, but you should probably "
+"manage how many form download requests are being handled concurrently, in "
+"order to avoid memory problems."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:51
+msgid "Uploading blank forms with media exceeding 10MB"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:53
+msgid ""
+"Adding blank forms through the ODK Aggregate website is limited to an "
+"overall form&plus;media size of 10MB. Beyond that, you have to perform "
+"multiple uploads of the form definition file with different subsets of the "
+"media files in order to fully upload the blank form and its media "
+"attachments."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:55
+msgid "An easier solution is use:doc:`Form Uploader <form-uploader>`."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:58
+msgid "Issues with older version of Aggregate"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:61
+msgid "Aggregate < 1.4.8 used deprecated technology"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:63
+msgid ""
+"Aggregate 1.4.7 and earlier use a deprecated backend technology. Google may "
+"terminate support for that at any time with little warning. You should "
+"consider upgrading."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:66
+msgid "Aggregate 1.4.15 changed sync protocol"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:68
+msgid ""
+"Aggregate 1.4.15 fixed the ODK 2.0 rev 210 sync protocol. Prior to this, "
+"user permissions were incorrectly being computed and filtered. This "
+"prevented resetting the server with new content from the device (but syncing"
+" with existing content worked fine). The rev 210 sync protocol is "
+"incompatible with anything prior to rev 210."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:71
+msgid "Basic Auth broken prior to Aggregate 1.4.14"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:73
+msgid ""
+":doc:`openrosa` servers are :doc:`required to implement at least one "
+"authentication protocol <openrosa-authentication>` as outlined in `RFC2617 "
+"<the capability of Basic Auth>`_."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:75
+msgid ""
+"a subset of `RFC2617 Digest Authentication "
+"<https://tools.ietf.org/html/rfc2617#section-3>`_"
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:76
+msgid ""
+"`Basic Authentication <https://tools.ietf.org/html/rfc2617#section-2>`_."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:78
+msgid ""
+"Aggregate v1.4.14 added an SHA-1 library so that Basic Auth is possible. "
+"Prior to this, Basic Auth was not possible."
+msgstr ""
+
+#: ../../src/aggregate-limitations.rst:82
+msgid ""
+"Basic Auth is not exposed in the setup wizard. Additionally, it requires "
+"that default passwords be changed."
+msgstr ""

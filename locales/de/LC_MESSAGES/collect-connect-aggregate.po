@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a
+# Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../src/collect-connect-aggregate.rst:15
+msgid "Connecting to your own ODK Aggregate Server"
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:17
+msgid "Before you get started..."
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:19
+msgid ""
+"You need to :doc:`install ODK Aggregate <aggregate-install>` before you "
+"can connect to it."
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:21
+msgid ""
+"When connecting to an ODK Aggregate server from Collect, you will need a "
+"username and password from your Aggregate server. This can be the "
+"superuser created when you install Aggregate, or another user account "
+"created by you."
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:23
+msgid "See :doc:`aggregate-install` to setup your ODK Aggregate server."
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:24
+msgid ""
+"See :doc:`Aggregate Site Admin <aggregate-admin>` for details on setting "
+"up new users."
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:27
+msgid ""
+"From the Action Button (:guilabel:`⋮`), select :menuselection:`General "
+"Settings`"
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:36
+msgid "Select :guilabel:`Server`"
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:41
+msgid "Select :guilabel:`Type`, and set it to :menuselection:`ODK Aggregate`"
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:50
+msgid "Edit :guilabel:`ODK Aggregate settings`"
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:66
+msgid "Connecting to another OpenRosa server app"
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:68
+msgid ""
+"Any server application that implements the `OpenRosa API "
+"<https://bitbucket.org/javarosa/javarosa/wiki/OpenRosaAPI>`_ can be "
+"connected to, using :doc:`the instructions laid out above <collect-"
+"connect-aggregate>`. You would still choose :menuselection:`ODK "
+"Aggregate` as the server type."
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:70
+msgid ""
+"In :menuselection:`Server Settings`, there is currently a "
+":guilabel:`Type` option of :menuselection:`Other`. It is unlikely you "
+"will need this option, since any server application will need to "
+"implement the same API as ODK Aggregate."
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:72
+msgid ""
+"If you think you might need to connect to a non-Aggregate server "
+"application, and are having trouble, we encourage you to visit our "
+"`Support Forum <https://forum.opendatakit.org/c/support>`_."
+msgstr ""
+
+#: ../../src/collect-connect-aggregate.rst:74
+msgid ""
+"The :menuselection:`Other` option will likely be deprecated in the "
+"future, and its use is not recommended."
+msgstr ""
+

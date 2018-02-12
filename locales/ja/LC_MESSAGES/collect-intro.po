@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/collect-intro.rst:15
+msgid "ODK Collect"
+msgstr ""
+
+#: ../../src/collect-intro.rst:19
+msgid ""
+":dfn:`ODK Collect` is an open source Android app that replaces paper forms "
+"used in survey-based data gathering. It supports a wide range of question "
+"and answer types, and is designed to work well without network connectivity."
+msgstr ""
+
+#: ../../src/collect-intro.rst:21
+msgid ""
+"ODK Collect renders forms into a sequence of input prompts that apply form "
+"logic, entry constraints, and repeating sub-structures. Users work through "
+"the prompts and can save the submission at any point. Finalized submissions "
+"can be sent to (and new forms downloaded from) a server."
+msgstr ""
+
+#: ../../src/collect-intro.rst:23
+msgid ""
+"Collect supports geolocation, audio, images, video, barcodes, signatures, "
+"mulitple-choice, free text, and numeric answers. It can even accept answers "
+"from other apps on your device. :doc:`See a complete list of supported "
+"question types here. <form-widgets>`"
+msgstr ""
+
+#: ../../src/collect-intro.rst:35
+msgid "Learn more about ODK Collect"
+msgstr ""
+
+#: ../../src/collect-intro.rst:37
+msgid ":doc:`collect-setup`"
+msgstr ""
+
+#: ../../src/collect-intro.rst:38
+msgid ":doc:`collect-using`"
+msgstr ""
+
+#: ../../src/collect-intro.rst:39
+msgid ":doc:`getting-started`"
+msgstr ""

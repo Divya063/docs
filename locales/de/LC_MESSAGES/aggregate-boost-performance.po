@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a
+# Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../src/aggregate-boost-performance.rst:15
+msgid "Reducing Data Corruption and Boosting Performance on App Engine"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:17
+msgid ""
+"If you have many form definitions on your server, you may get better "
+"performance and reduce the likelihood of data corruption if you increase "
+"the size of your server."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:22
+msgid "What is causing data corruption?"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:24
+msgid ""
+"Data corruption is generally caused by the premature termination of an "
+"action (for example, saving of a submission) because it took longer than "
+"the allotted time."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:26
+msgid ""
+"The likelihood of data corruption is correlated with the following "
+"factors:"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:28
+msgid "quantity of form definitions on the server"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:29
+msgid "the size of the individual submissions"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:30
+msgid "the number of devices simultaneously submitting data"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:31
+msgid "the speed of the network."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:34
+msgid ""
+"Increasing the web server size enables it to handle larger workloads "
+"faster, which can reduce the likelihood of hitting this time limit, "
+"thereby avoiding data corruption."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:39
+msgid "Increasing web server size"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:41
+msgid ""
+"To change Google App Engine configuration, you must edit the "
+"configuration files produced by the installer and re-run the uploader "
+"script to push the changes to Google's servers."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:43
+msgid "There are two server settings that can be changed:"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:48
+msgid "Web Server Size"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:50
+msgid ""
+"The web server handles all browser interactions and all data-submission "
+"and form-download requests from ODK Collect and ODK Briefcase. Increasing"
+" the size of the web server should reduce the likelihood of data "
+"corruption if it is not caused by slow network speeds."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:52
+msgid "To change the Google App Engine web server size:"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:54
+#: ../../src/aggregate-boost-performance.rst:90
+msgid "Go to the folder you specified when you ran  the installer."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:55
+msgid ""
+"Within that folder, navigate to :file:`ODKAggregate/default/WEB-INF"
+"/appengine-web.xml` and open that file."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:56
+#: ../../src/aggregate-boost-performance.rst:92
+msgid "The file looks like this:"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:68
+msgid ""
+"To change the size of the web server, replace **F2** with a different "
+"instance class size."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:70
+msgid ""
+"There are several different instance classes available. Select from among"
+" the instance classes beginning with the letter **F**. See `instance "
+"classes <https://cloud.google.com/appengine/docs/about-the-standard-"
+"environment#instance_classes>`_  for their descriptions or search for "
+"`Google AppEngine instance classes standard environment` on the web."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:72
+#: ../../src/aggregate-boost-performance.rst:108
+msgid "Re-run the upload tool within the ODKAggregate folder."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:74
+#: ../../src/aggregate-boost-performance.rst:110
+msgid "Windows: double-click :file:`ODKAggregateAppEngineUpdater.jar`"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:75
+#: ../../src/aggregate-boost-performance.rst:111
+msgid "Mac: double-click :file:`uploadAggregateToAppEngine.app`"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:76
+#: ../../src/aggregate-boost-performance.rst:112
+msgid "Linux: double-click :file:`uploadAggregateToAppEngine.sh`"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:78
+#: ../../src/aggregate-boost-performance.rst:114
+msgid ""
+"Once you have uploaded these changes to App Engine, your server will be "
+"running on the instance size that you have specified."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:83
+msgid "Background Server Size"
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:85
+msgid ""
+"App Engine deployments use a \"background\" copy of the website to "
+"process long-running actions like generating CSV and KML files for export"
+" and for publishing all accumulated data to an external server."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:87
+msgid ""
+"If you experience difficulty exporting to CSV or KML, the size of that "
+"server will also need to be updated."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:91
+msgid ""
+"Within that folder, navigate to :file:`ODKAggregate/background/WEB-INF` "
+"and open that file."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:104
+msgid ""
+"To change the size of the server, replace **B2** with a different "
+"instance class size."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:106
+msgid ""
+"There are several different instance classes available. Select from among"
+" the instance classes beginning with the letter **B**. See instance "
+"classes for their descriptions or search for `Google AppEngine instance "
+"classes standard environment` on the web as described in Web Server Size."
+msgstr ""
+
+#: ../../src/aggregate-boost-performance.rst:120
+msgid ""
+"For data corruption caused by slow network speeds, you might also be able"
+" to change more aspects of the App Engine configuration (specified in "
+"these files) to make your web server always-available and to replace it "
+"with a Bx instance that does not have an automatic request time limit "
+"(the documentation provided by Google is currently unclear on whether "
+"this is still possible with the new services constructions)."
+msgstr ""
+

@@ -1,0 +1,413 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a
+# Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../src/openrosa-authentication.rst:15
+msgid "Authentication API"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:17
+msgid ""
+"This standard specifies the Request and Response format through which "
+"OpenRosa compliant servers authorize HTTP transactions."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:20
+msgid "Overview"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:22
+msgid ""
+"This API provides a standardized means with which OpenRosa clients are "
+"authenticated with compliant servers."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:24
+msgid "OpenRosa compliant devices MUST support both:"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:26
+#: ../../src/openrosa-authentication.rst:31
+msgid ""
+"the subset of `RFC2617 Digest Authentication "
+"<https://tools.ietf.org/html/rfc2617#section-3>`_ defined below"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:27
+#: ../../src/openrosa-authentication.rst:32
+msgid ""
+"the `Basic Authentication mechanism also outlined in RFC2617 "
+"<https://tools.ietf.org/html/rfc2617#section-2>`_."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:29
+msgid "OpenRosa compliant servers MUST support at least one of either:"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:34
+msgid ""
+"We are following RFC2617 with additional OpenRosa compliance requirements"
+" defined in the implementation section below to ensure that the Digest "
+"Authentication implementations across devices do not compromise security "
+"and that they all implement a well-defined common subset of the RFC2617 "
+"Digest Authentication mechanism."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:37
+msgid "Data Security Considerations"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:39
+msgid ""
+"Any communication over HTTP (vs. HTTPS) can be observed by others and is "
+"susceptible to man-in-the-middle attacks (where a malicious intermediary "
+"inserts itself between the client and the server the client intended to "
+"contact). As a consequence, if communication is over HTTP, clients may be"
+" submitting their form data to a malicious intermediary. That "
+"intermediary will see the full contents of the form submission. "
+"Additionally, the intermediary may never forward the submission to the "
+"intended server --- the client can never be certain that the submitted "
+"data has been recorded on the intended server."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:41
+msgid ""
+"HTTPS requires that the server be configured with an SSL certificate "
+"issued by a signing authority. Man-in-the-middle attacks are possible "
+"over HTTPS if clients do not authenticate the server's SSL certificate "
+"(or, less commonly, if the client device or signing authority has been "
+"compromised)."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:43
+msgid ""
+"OpenRosa compliant client devices MUST authenticate server certificates "
+"when establishing HTTPS channels to those servers."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:45
+msgid ""
+"Because client communications are often through unsecured hotspots, it is"
+" recommended that HTTPS (with the authentication of server certificates) "
+"be used for all communications."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:48
+msgid "Typical Interaction"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:50
+msgid "A typical transaction consists of the following steps."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:52
+msgid ""
+"The client asks for a resource that requires authentication but does not "
+"provide a user name and password. Typically this is because the user "
+"simply entered the address or followed a link to the page."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:54
+msgid ""
+"The server responds with the 401 response code, either requesting Digest "
+"Authentication and providing the authentication realm and a randomly-"
+"generated, single-use value called a nonce, or requesting Basic "
+"Authentication (in which case the server should also redirect and "
+"negotiate TLS channel security (https) if the client is not already "
+"communicating over https)."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:56
+msgid ""
+"At this point, the client will present the authentication realm "
+"(typically a description of the computer or system being accessed) to the"
+" user and prompt for a user name and password. The user may decide to "
+"cancel at this point."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:58
+msgid ""
+"Once a user name and password have been supplied, the client re-sends the"
+" same request but adds an authentication header that includes the "
+"response code."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:60
+msgid ""
+"Assuming the username and password are valid,  the server accepts the "
+"authentication and the page is returned. If the user name is invalid "
+"and/or the password is incorrect, the server might return the `401` "
+"response code and the client would prompt the user again."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:63
+msgid ""
+"A client may already have the required user name and password without "
+"needing to prompt the user; for example, if they have previously been "
+"stored by a client."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:65
+msgid ""
+"For Basic Authentication, the \"response\" value is simply a base-64 "
+"compression of the user name concatenated with \":\" and the plain-text "
+"password, as specified in RFC2617."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:69
+msgid ""
+"Anyone with a network sniffer could read this value, decompress it, and "
+"obtain the user name and password. Hence, it is critical that this "
+"information only be transmitted over HTTPS or some other secure "
+"transport."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:71
+msgid "Even with HTTPS, sending this is not a highly secure practice."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:73
+msgid ""
+"For Digest Authentication, the \"response\" value is calculated in three "
+"steps, as follows. Where values are combined, they are delimited by colon"
+" symbols."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:75
+msgid ""
+"The MD5 hash of the combined user name, authentication realm and password"
+" is calculated. The result is referred to as HA1."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:76
+msgid ""
+"The MD5 hash of the combined method and digest URI is calculated, e.g. of"
+" \"GET\" and \"/dir/index.html\". The result is referred to as HA2."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:77
+msgid ""
+"The MD5 hash of the combined HA1 result, server nonce (nonce), request "
+"counter (nc), client nonce (cnonce), quality of protection code (qop) and"
+" HA2 result is calculated. The result, the user name and the cnonce are "
+"the \"response\" value provided by the client."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:79
+msgid ""
+"The Digest Authentication response value is thus sent in such a way that "
+"an adversary can extract the user name from the response, but cannot "
+"extract the password from the response. It can therefore be sent over an "
+"unsecured channel (for example, HTTP )."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:83
+msgid "Even with the more secure Digest Authentication, HTTPS is recommended."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:86
+msgid "Implementation"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:88
+msgid ""
+"Servers which implement the Authorization API should follow the "
+"specifications provided below in order to be compliant with OpenRosa "
+"standards."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:90
+msgid "All HTTP interactions MUST be HTTP 1.1"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:91
+msgid ""
+"Servers MUST conform to RFC2617 for returning one or more authentication "
+"schemes in their ``401`` challenge. These define the authentication "
+"interactions that the server is willing to accept from the client (for "
+"example: Basic, Digest)"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:92
+msgid "Any server interactions MAY be unauthenticated."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:93
+msgid ""
+"Non-device (for example, browser) interactions for which the server "
+"requires authentication are NOT required to support Basic or the OpenRosa"
+" Restricted Digest authentication scheme. That is, they are allowed to "
+"only support Form-based or some other authentication scheme."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:94
+msgid ""
+"Device-and-server interactions for which the server requires "
+"authentication MUST implement either Basic authentication or the OpenRosa"
+" Restricted Digest authentication scheme as detailed below. The server or"
+" device MAY additionally implement other authentication schemes."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:95
+msgid ""
+"The device MUST make every effort to proactively supply an "
+"``Authentication`` header line if the requested URI falls within the list"
+" of domain URIs covered by a previous authentication interaction. This is"
+" to minimize the number of authentication challenges."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:98
+msgid "Authentication"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:100
+msgid ""
+"Clients MUST NOT include authentication credentials in the URL to the "
+"server. That is, this syntax is strictly forbidden:"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:107
+msgid "Basic Authentication"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:109
+msgid ""
+"Basic Authentication MUST NOT be performed over a non-secure (HTTP) "
+"connection."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:111
+msgid ""
+"Once the client is aware that basic authentication is required, it SHOULD"
+" proactively supply the basic authentication credentials on every secure "
+"request to the server, rather than wait for the server to reject the "
+"request with a ``401`` response."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:116
+msgid "OpenRosa Restricted Digest Authentication"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:118
+msgid ""
+"This is the `Digest Access Authentication Scheme (RFC 2617 Section 3) "
+"<https://tools.ietf.org/html/rfc2617#section-3>`_ with the following "
+"restrictions:"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:120
+msgid "algorithm --- server MUST omit or specify \"MD5\""
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:121
+msgid ""
+"domain --- server MUST specify to help device with proactive inclusion of"
+" Authenticate: header records."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:122
+msgid ""
+"qop --- device MUST support: omitted and \"auth\"; server MAY request any"
+" of these."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:123
+msgid ""
+"opaque --- device MUST return if supplied; server MAY supply this or omit"
+" it"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:124
+msgid ""
+"stale --- device MUST make every effort to not prompt the user for "
+"username and password if this is TRUE but instead recompute the key with "
+"previously cached values for the username and password."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:125
+msgid ""
+"cnonce --- device SHOULD use a string representation of at least a 48-bit"
+" random value (a random UUID has 126-bit randomness) for the cnonce."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:128
+msgid "Digest Authentication Security Considerations"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:130
+msgid ""
+"Digest Authentication is based upon the MD5 hash algorithm which is now "
+"considered too weak for mainstream cryptographic uses. Digest "
+"Authentication remains viable only when the cnonce and nonce values are "
+"random and reasonably long. The use of longer random strings (e.g., "
+"random UUIDs have 126 bits of randomness) is critical for the continued "
+"use of this authentication mechanism."
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:133
+msgid "Digest Authentication Calculations"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:135
+msgid "RFC2069"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:145
+msgid "RFC 2617 (HTTP Authentication: Basic and Digest Access Authentication)"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:167
+msgid ""
+"(the above shows that when qop is not specified, the simpler RFC2069 "
+"standard is followed)"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:170
+msgid "Digest Authentication Example Interaction"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:173
+msgid "No authentication"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:175
+msgid "Request:"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:181
+msgid "Response:"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:209
+msgid "Request with username and password"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:211
+msgid "Request (username \"Mufasa\", password \"Circle Of Life\")"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:228
+msgid "Response"
+msgstr ""
+
+#: ../../src/openrosa-authentication.rst:239
+msgid "Example calculation of response using MD5"
+msgstr ""
+

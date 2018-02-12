@@ -1,0 +1,330 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a
+# Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../src/aggregate-backup.rst:15
+msgid "Backing Up Aggregate"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:20
+msgid "Recovering from Briefcase"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:22
+msgid ""
+"Use :doc:`ODK Briefcase <briefcase-guide>` to back up all forms and "
+"submissions on Aggregate. You can :ref:`pull forms from your Aggregate "
+"server <pull-from-aggregate>` into your local machine using Briefcase. In"
+" particular, Briefcase's :ref:`command line interface <cli-use>` makes "
+"this easier."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:27
+msgid "Recovering database from MySQL dump"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:29
+msgid "Stop running Tomcat."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:30
+msgid ":doc:`Upgrade to the latest version of Aggregate <aggregate-upgrade>`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:31
+msgid ""
+"Finally, restore it from MySQL dump. An SQL dump of a database is a "
+"common method to safely store away a snapshot of the database for "
+"archival purposes or to migrate data between database instances, e.g. "
+"between two major system releases. The content of a SQL dump is a large "
+"collection of SQL commands in ASCII. Running the script will recreate the"
+" database in the same state as it was when the dump was created. The "
+"primary tool to consider for making an ASCII dump is `mysqldump "
+"<https://dev.mysql.com/doc/mysql-backup-excerpt/5.7/en/using-"
+"mysqldump.html>`_, which includes a wide variety of options."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:37
+msgid "Some of the useful options are:"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:39
+msgid ""
+":option:`-h hostname` or :option:`--host=hostname` specifies host to "
+"connect to."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:40
+msgid ""
+":option:`-p portnr` or :option:`--port=portnr` specifies port to connect "
+"to."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:41
+msgid ":option:`-u user` or :option:`--user=user` specifies user id."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:42
+msgid ""
+":option:`-d database` or :option:`--database=database` specifies database"
+" to connect to."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:44
+msgid "To take a backup of database:"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:50
+msgid "To restore a database:"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:56
+msgid "To copy a database from one server to another"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:62
+msgid "**remote_host** indicates a remote server where you want to take backup."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:66
+msgid ""
+"Creation of the dump respects your credentials, which means you only can "
+"dump the tables you have access to."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:71
+msgid "Backup and recovery on Google App Engine"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:76
+msgid "Create backup"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:78
+msgid ""
+"Open a browser to  `Google Cloud Platform <https://cloud.google.com/>`_ "
+"and click on :guilabel:`Console` in the top right corner."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:83
+msgid "Sign in with a Gmail account which you used for Aggregate installation."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:88
+msgid ""
+"Choose the project id for your ODK Aggregate server by clicking on the "
+"project dropdown in the top left corner."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:96
+msgid ""
+"Click on the menu icon (three horizontal bars) to the left of "
+":guilabel:`Google Cloud Platform` in the upper left side of the screen "
+"and then select :guilabel:`Datastore` from the menu. Click on "
+":menuselection:`Admin` in the dropdown."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:101
+msgid ""
+"Enable Cloud Datastore Admin access by clicking on :guilabel:`Enable "
+"Datastore Admin`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:106
+msgid "Then, click on :guilabel:`Open Datastore Admin`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:113
+msgid ""
+"It is recommended to disable writes during creation of backup. To disable"
+" writes, click on :guilabel:`Disable writes` on the Admin page."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:120
+msgid ""
+"Your Aggregate server may become unstable when you disable writes. It "
+"will be fine when you enable writes again."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:122
+msgid ""
+"Select the entity kinds that you wish to back up and then click on "
+":guilabel:`Backup Entities`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:127
+msgid "A backup form will be displayed."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:134
+msgid ""
+"A backup name is supplied and it includes a datestamp. You must change "
+"this value if you make more than one backup per day because a backup is "
+"not made if a backup of the same name already exists."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:135
+msgid ""
+"The default queue is used for the backup job; you can use this in most "
+"cases. If you use a non-default queue for backup/restore, you can only "
+"specify the target **ah-builtin-python-bundle** in **queue.yaml**. You "
+"cannot use any other targets. To know more about queues, see `this "
+"<https://cloud.google.com/appengine/docs/standard/java/taskqueue/>`_."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:136
+msgid "Select Google Cloud Storage as the backup storage location."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:138
+msgid ""
+"In the bucket name box, enter *your-project-id.appspot.com*. You can "
+"alternatively preface the bucket name with **/gs/**, for example, "
+"/gs/[BUCKET_NAME]."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:142
+msgid ""
+"Buckets are containers where your backup will be stored. You can also "
+"`create buckets <https://cloud.google.com/storage/docs/creating-"
+"buckets>`_ for your project."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:144
+msgid "Now click on :guilabel:`Backup Entities` to start the backup jobs."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:146
+msgid ""
+"A job status page is displayed. Click on :guilabel:`Back to Datastore "
+"Admin` to see the backup status."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:151
+msgid ""
+"You can abort a backup by selecting a backup from the list of pending "
+"backups and clicking on :guilabel:`Abort`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:158
+msgid ""
+"When you abort a backup job, App Engine attempts to delete backup data "
+"that has been saved up to that point. However, in some cases, some files "
+"can remain after the abort. You can locate these files in the location "
+"you chose for your backups in Google Cloud Storage and safely delete them"
+" after the abort completes. The names of such files start with the "
+"following pattern: **datastore_backup_[BUCKET_NAME]**."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:160
+msgid ""
+"Click on :guilabel:`Info` to get more information about the backup. On "
+"the info page, click :guilabel:`Back to Datastore Admin` to return to the"
+" main Cloud Datastore Admin screen."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:167
+msgid ""
+"After the backup is complete, if you disabled Cloud Datastore writes, re-"
+"enable them by going to Admin page and clicking on :guilabel:`Enable "
+"writes`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:175
+msgid "Restoring data from Backup"
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:177
+msgid ""
+"Go to the Admin page as described in the :ref:`creation of backup "
+"<create-backup>`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:184
+msgid ""
+"Disable Cloud Datastore writes for your application. It's normally a good"
+" idea to do this to avoid conflicts between the restore and any new data "
+"written to Cloud Datastore. To disable writes, click on "
+":guilabel:`Disable writes` on the Admin page."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:189
+msgid "Click on :guilabel:`Open Datastore Admin`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:194
+msgid ""
+"In the list of available backups, select the backup that you want to "
+"restore from and click on :guilabel:`Restore`. You can click on "
+":guilabel:`Info` to get more information about the backup. To delete a "
+"backup, select the backup and click on :guilabel:`Delete`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:199
+msgid ""
+"In the advisory page that is displayed, notice the list of entities with "
+"checkboxes. By default, all of the entities will be restored. Uncheck the"
+" checkbox next to each entity that you don't want to restore. Click on "
+":guilabel:`Restore` at the bottom of the page to start the restoration."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:206
+msgid ""
+"In the advisory page, notice that the default queue, with its pre-"
+"configured performance settings, is used for the restore job. Change this"
+" to another queue that you have configured differently if you need "
+"different queue performance characteristics, making sure the queue chosen"
+" does not have any target specified in **queue.yaml** other than **ah-"
+"builtin-python-bundle**. To know more about queues, see `this "
+"<https://cloud.google.com/appengine/docs/standard/java/taskqueue/>`_."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:208
+msgid ""
+"A job status page is displayed. Click on :guilabel:`Back to Datastore "
+"Admin` to see the status of the restore."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:218
+msgid ""
+"After the restore is complete, if you disabled Cloud Datastore writes, "
+"re-enable them by going to Admin page and clicking on :guilabel:`Enable "
+"writes`."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:225
+msgid ""
+"If you back up your data using Google Cloud Storage, you can restore "
+"backups to applications other than the application used to create the "
+"backup. To restore backup data from a source application to a target "
+"application, see this `guide "
+"<https://cloud.google.com/appengine/docs/standard/python/console"
+"/datastore-backing-up-restoring>`_."
+msgstr ""
+
+#: ../../src/aggregate-backup.rst:226
+msgid ""
+"Google has new beta service for `exporting and importing "
+"<https://cloud.google.com/datastore/docs/export-import-entities>`_. Only "
+"Cloud Platform projects with `billable accounts "
+"<https://cloud.google.com/support/billing/>`_ can use the export and "
+"import functionality."
+msgstr ""
+

@@ -1,0 +1,547 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a
+# Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../src/aggregate-aws.rst:15
+msgid "Installing on AWS (Cloud)"
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:17
+msgid ""
+"This document provides instructions on setting up ODK Aggregate using "
+"`Apache Tomcat <http://tomcat.apache.org/>`_ and `MySQL "
+"<https://www.mysql.com/>`_ on a Linux micro-instance on the `Amazon Web "
+"Services <https://aws.amazon.com/>`_  `EC2 infrastructure "
+"<https://aws.amazon.com/ec2/>`_."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:19
+msgid "Additional Resources"
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:21
+msgid ""
+"For more on the general set-up of Tomcat on AWS, see `Cat in the cloud "
+"Apache Tomcat Series <http://www.excelsior-usa.com/articles/tomcat-"
+"amazon-ec2-basic.html>`_."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:22
+msgid ""
+"For an introduction to hosting on AWS, see `Amazon’s getting-started "
+"guides <https://aws.amazon.com/documentation/gettingstarted/>`_."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:23
+msgid ""
+"For details on setting up ODK Aggregate on Tomcat, but not in an AWS "
+"environment, see :doc:`aggregate-tomcat`."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:25
+msgid "Before you get started..."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:27
+msgid "Get an Amazon Web Services account at `<http://aws.amazon.com/ec2/>`_."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:31
+msgid "You will need to confirm a working phone number."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:32
+msgid ""
+"If you want to use a U.S. number but are presently overseas, you can use "
+"a Google Voice number routed to Google Chat."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:34
+msgid ""
+"Go to the AWS/EC2 management console and note your region (shown in the "
+"upper-left)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:36
+msgid ""
+"Launch a new instance with the :guilabel:`Launch Instance` button "
+"prominently displayed on the EC2 console home screen."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:38
+msgid "Accept the default behavior and use the quick-launch wizard."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:40
+msgid ""
+"For the launch configuration, choose the :guilabel:`Amazon Linux AMI: "
+"EBS-Backed (64-bit)` option."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:42
+msgid ""
+"This is one of the instance types that you can run on a micro-instance as"
+" part of their `free tier <http://aws.amazon.com/free/>`_."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:44
+msgid ""
+"Leave everything else with the default settings, including the instance "
+"type. The instance type will default to ``t2.micro`` which is a small, "
+"limited instance that can be run for free. For a price, you can upgrade "
+"the instance type later if you need better performance."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:48
+msgid "The exact AMI name and ID will depend on your region."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:50
+msgid ""
+"Create a new key pair, download the private key, and keep the private key"
+" safe."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:52
+msgid ""
+"This will be your only method of communicating with your new instance and"
+" **you will not be allowed to download it again**."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:54
+msgid ""
+"After creating the instance, add security rules for allowing both HTTP "
+"and HTTPS."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:56
+msgid ""
+"Choose the :guilabel:`Security Groups` tab and click on the auto-created "
+"security group associated with your new instance. This might have been "
+"called ``launch-wizard-1``. If you’re not sure, you can go to the "
+":guilabel:`Instances` tab to see which :guilabel:`Security Group` is "
+"listed for the new instance."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:58
+msgid ""
+"In the properties pane at the bottom, click on the :guilabel:`Inbound "
+"tab`, select ``HTTP`` from the :guilabel:`create a new rule` drop-down, "
+"then click :guilabel:`Add Rule`. Do the same for ``HTTPS``. Then click "
+":guilabel:`Apply Rule Changes`."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:62
+msgid ""
+"To avoid potential problems with MTU settings and packet loss, also add a"
+" rule to allow *All ICMP*. Add a rule for both IPv4 and IPv6. After you "
+"create the new rule, click :guilabel:`Apply Rule Changes`."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:66
+msgid ""
+"Tomcat defaults to listening on nonstandard ports ``8080`` and ``8443``. "
+"In this guide we provide instructions to use the standard HTTP and HTTPS "
+"ports instead."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:68
+msgid ""
+"However, if you want to leave Aggregate on the non-standard ports, you "
+"can certainly do so. In that case, simply add two additional security "
+"rules to allow access via ``8080`` and ``8443``."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:70
+msgid ""
+"Switch to the :guilabel:`Instances` tab, click on your instance, and note"
+" its Public DNS Address in the properties pane below."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:72
+msgid "This is the default address that you will use to access your instance."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:74
+msgid "Allocate an *elastic IP* and domain name."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:76
+msgid ""
+"This step is not required, but it allows you to access your Aggregate "
+"instance using a human readable URL set by you. So we recommend it."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:78
+msgid ""
+"Navigate to Elastic IPs and click :guilabel:`Allocate New Address`. "
+"Associate it with your new instance.  Note your new IP. Also, if "
+"possible, configure DNS to route one or more names to this address. You "
+"can then use this IP and/or name to access your instance (and can forget "
+"the Public DNS Address assigned by AWS)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:82
+msgid ""
+"The IP is free so long as you keep it associated with a running instance."
+" If you stop your instance and do not release the IP address for others "
+"to use (in essence, wasting it), then Amazon will begin charging you for "
+"holding the unused address."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:86
+msgid ""
+"When you set up Aggregate below, you will need to configure it with the "
+"domain name you will use to access it. Thus, it is best if you configure "
+"the domain name first."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:88
+msgid "Connect to your instance."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:90
+msgid ""
+"Go to the :guilabel:`Instances` tab and select :menuselection:`Connect` "
+"from the Instance Actions drop-down (alternatively, you can right-click "
+"on the instance and choose Connect). From here AWS presents you with "
+"several options."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:92
+msgid ""
+"The easiest is to connect using their Java SSH client. If you choose that"
+" option, you just have to specify the location of your private key file "
+"(created above) and AWS launches an in-browser SSH client to connect to "
+"your instance."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:93
+msgid ""
+"You can also select to connect with a stand-alone SSH client. If you "
+"choose this option, AWS will provide extremely helpful instructions, "
+"including an SSH command that you can cut and paste into your local "
+"command window. It will also inform you that you may need to update the "
+"permissions on your local private key file in order for the ssh client to"
+" run properly, and it will even give you the command to run (for example,"
+" :command:`chmod 400 xxx.pem`)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:94
+msgid ""
+"Once you connect, you will probably be told that there are new security "
+"updates to install. You can run :command:`sudo yum update` to install "
+"these updates, as it advises."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:96
+msgid "Transfer files to your instance."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:98
+msgid ""
+"When you login using ``ssh``, you will be in the (empty) ``ec2-user`` "
+"home directory. You will want to be able to transfer files between here "
+"and your local directory. You have several options."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:100
+msgid ""
+"If you’re using the command-line ssh, you can also use the command-line "
+"scp to copy files. The syntax is similar to ssh, but of course you also "
+"need to specify the source and destination file paths."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:101
+msgid ""
+"An easier option is to use an `FTP client "
+"<https://en.wikipedia.org/wiki/File_Transfer_Protocol>`_ like `FileZilla "
+"<https://filezilla-project.org/>`_. (You can use any FTP client, as long "
+"as it supports SFTP)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:103
+msgid ""
+"To configure FileZilla to connect to your instance, go into "
+":menuselection:`Edit-->Settings/Preferences-->Connection-->SFTP` and add "
+"your private key to FileZilla’s keystore (it will offer to convert the "
+"key format, which you should accept). Then, go into Site Manager and "
+"create a new site. The host should be the IP, name, or Public DNS for "
+"your instance, the port can be blank, the protocol should be **SFTP – SSH"
+" File Transfer Protocol**, the login type should be Normal, and the user "
+"should be **ec2-user**. Everything else should be left at the defaults, "
+"including the password (which will be blank). When you connect, the "
+"default directory will be the ec2-user’s home directory, but you can also"
+" navigate to other directories."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:105
+msgid "Install Tomcat 6."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:107 ../../src/aggregate-aws.rst:117
+msgid "While logged into your ec2 instance:"
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:113
+msgid ""
+"This installs configuration files into :file:`/etc/tomcat6` and other "
+"files into :file:`/usr/share/tomcat6`. Log files go into "
+":file:`/var/log/tomcat6`."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:115
+msgid "Install MySQL."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:123
+msgid "Open :file:`/etc/my.cnf`. In the ``[mysqld]`` section, add:"
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:133
+msgid ""
+"Whatever your preferred editor, when updating files on the server, the "
+"easiest tool is probably `vim "
+"<https://en.wikipedia.org/wiki/Vim_(text_editor)>`_. This will open the "
+"file directly in your terminal."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:139
+msgid ""
+"Vim can be a little tricky to use at first. There are many tutorials "
+"online. You may find `this interactive Vim introduction "
+"<http://www.openvim.com/>`_ helpful."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:142
+msgid "Run MySQL."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:148
+msgid "Install and transfer ODK Aggregate files."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:150
+msgid ""
+"First, install ODK Aggregate on your local computer (not on your AWS "
+"instance)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:154
+msgid ""
+"During set-up, it’s important to specify that this will be a MySQL "
+"installation, and it is also very important that you specify the correct "
+"domain name or IP address that will be used to access your Aggregate "
+"server. Ideally, this will be a specific domain name that you have "
+"already mapped to an elastic IP (and can re-map later if you change the "
+"IP)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:156
+msgid ""
+"The installation will create a file named :file:`create_db_and_user.sql`."
+" Upload this to your ec2-user home directory."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:157
+msgid ""
+"The installation will also create a file named :file:`ODKAggregate.war`. "
+"Rename this to :file:`ROOT.war` and upload it to the "
+":file:`/usr/share/tomcat6/webapps` folder. If you receive a *Permission "
+"Denied* error, you might need to execute :command:`chmod -R 755` or "
+"something similar for the webapps folder."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:158
+msgid ""
+"After :file:`ROOT.war` has been copied to the server, you need to make "
+"sure Tomcat has permission to use it. Run :command:`sudo chown tomcat "
+"ROOT.war` and :command:`sudo chgrp tomcat ROOT.war` in the webapps "
+"directory to ensure this is the case."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:160
+msgid "Configure MySQL."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:162
+msgid ""
+"On your AWS instance, run :file:`/usr/bin/mysql_secure_installation` to "
+"set a root password and secure your MySQL installation."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:163
+msgid ""
+"Run :command:`mysql –u root -p` to log in to MySQL (specifying the "
+"password you just set), and type :command:`source "
+"~/create_db_and_user.sql`. This will create the ODK user and database. "
+"Type :command:`quit` on the mysql prompt to quit from MySQL."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:164
+msgid ""
+"Run :command:`sudo /sbin/chkconfig --levels 235 mysqld on` to auto-start "
+"MySQL whenever your instance boots up."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:166
+msgid "Configure Tomcat."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:168
+msgid ""
+"Download the MySQL Connector/J from the `MySQL download page "
+"<http://dev.mysql.com/downloads/connector/j/)>`_. Unzip it and transfer "
+"the :file:`mysql‐connector‐java‐x.x.x‐bin.jar` file up to your instance’s"
+" :file:`/usr/share/tomcat6/lib` directory."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:169
+msgid "Edit :file:`/etc/tomcat6/server.xml` in order to customize settings."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:170
+msgid ""
+"Assuming that you want to run Aggregate on the standard HTTP port (80) "
+"and HTTPS port (443):"
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:172
+msgid ""
+"Change ``<Connector port=\"8080\" protocol=\"HTTP/1.1\"`` to ``<Connector"
+" port=\"8080\" proxyPort=\"80\" protocol=\"HTTP/1.1\"`` (that is, add the"
+" ``proxyPort`` attribute)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:173
+msgid ""
+"If you are using SSL, also change ``<Connector port=\"8443\" "
+"protocol=\"HTTP/1.1\" SSLEnabled=\"true\"`` to ``<Connector port=\"8443\""
+" proxyPort=\"443\" protocol=\"HTTP/1.1\" SSLEnabled=\"true\"``."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:174
+msgid ""
+"Execute the following commands to have Linux forward to the ports on "
+"which Tomcat listens:"
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:182
+msgid "If you have an SSL certificate for HTTPS support:"
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:184
+msgid ""
+"Make sure that the ``<Connector port=\"8443\"`` part of the configuration"
+" file is not commented out. If it is, un-comment it."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:185
+msgid "Upload your SSL keystore file and the certificate(s) to the server."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:186
+msgid ""
+"Install it as instructed. (If you buy from RapidSSL, for example, they "
+"provide you with Tomcat installation instructions. For example, you may "
+"need to download a special P7S certificate file, then install it on the "
+"server with :command:`keytool -import -alias YOURALIAS trustcacerts file "
+"xxxxx.p7s -keystore xxxxx.keystore`.)"
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:187
+msgid ""
+"In the ``<Connector port=\"8443\"`` part of the configuration file, "
+"specify the location of your keystore file and password (for example: "
+"``keystoreFile=\"/…/xxxxx.keystore\" keystorePass=\"changeit\"``)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:189
+msgid "Start Tomcat with :command:`sudo service tomcat6 start`."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:190
+msgid ""
+"Configure Tomcat to auto-start when the instance boots with "
+":command:`sudo chkconfig --level 345 tomcat6 on`."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:192
+msgid "Login and test."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:194
+msgid ""
+"At this point, you should be able to login to your AWS-hosted Aggregate "
+"instance by going to its domain name or IP address in your web browser "
+"(with or without HTTPS, depending on your set-up)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:198
+msgid ""
+"For your first login, you will need to login with the Google account you "
+"specified during the Aggregate installation process. Then you can add "
+"additional users from the :guilabel:`Site Admin` tab."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:200
+msgid ""
+"Once you have confirmed that your Aggregate instance is working, you can "
+"back it up by creating an image of the instance (an `AMI "
+"<https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html>`_)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:202
+msgid ""
+"To do this, go to the :guilabel:`Instances` tab in the AWS-EC2 console, "
+"then select the :guilabel:`Create Image (EBS AMI)` Instance Action for "
+"your instance."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:204
+msgid "Further set-up for production servers."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:206
+msgid ""
+"You will want to create a system to monitor and manage the log files in "
+":file:`/var/log/tomcat6`."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:207
+msgid ""
+"You will also want to create a system for regular back-ups and a plan for"
+" how to restore them when needed. This will be needed to safely back up "
+"the MySQL database, which may be in-use at any given time."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:213
+msgid ""
+"The micro instance is only free for 12 months from AWS sign-up, and that "
+"you may exceed the free quotas on disk space or network bandwidth before "
+"that point (`see <http://aws.amazon.com/free/>`_)."
+msgstr ""
+
+#: ../../src/aggregate-aws.rst:214
+msgid ""
+"You may at some point need to upgrade your instance to a standard "
+"instance if the micro instance is not providing enough performance."
+msgstr ""
+

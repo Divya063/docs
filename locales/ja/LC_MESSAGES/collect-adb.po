@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/collect-adb.rst:16
+msgid "Using Android Debug Bridge with Collect"
+msgstr ""
+
+#: ../../src/collect-adb.rst:18
+msgid ""
+"`Android Debug Bridge <https://developer.android.com/studio/command-"
+"line/adb.html>`_ is a command which acts as a bridge between the Android "
+"device and the terminal. It can control device over USB from a computer, "
+"copy files back and forth, install and uninstall apps, run shell commands "
+"etc. For the developers and users of ODK Collect, the most common uses are:"
+msgstr ""
+
+#: ../../src/collect-adb.rst:20
+msgid "loading blank forms to SD Card"
+msgstr ""
+
+#: ../../src/collect-adb.rst:21
+msgid "fetching completed forms"
+msgstr ""
+
+#: ../../src/collect-adb.rst:22
+msgid "deleting forms"
+msgstr ""
+
+#: ../../src/collect-adb.rst:23
+msgid "copying the form database"
+msgstr ""
+
+#: ../../src/collect-adb.rst:24
+msgid "installing the **.apk** file from the source code"
+msgstr ""
+
+#: ../../src/collect-adb.rst:29
+msgid "Installing adb"
+msgstr ""
+
+#: ../../src/collect-adb.rst:31
+msgid ""
+"If you plan to work on ODK Collect or run the app using an emulator, "
+"download the `Android Studio "
+"<https://developer.android.com/studio/index.html>`_. It already comes with "
+"the adb tool. To use it, `enable USB Debugging "
+"<https://www.howtogeek.com/125769/how-to-install-and-use-abd-the-android-"
+"debug-bridge-utility/>`_."
+msgstr ""
+
+#: ../../src/collect-adb.rst:33
+msgid ""
+"To install :command:`adb` as a standalone tool, please follow the "
+"instructions given `here <https://android.gadgethacks.com/how-to/android-"
+"basics-install-adb-fastboot-mac-linux-windows-0164225/>`_."
+msgstr ""
+
+#: ../../src/collect-adb.rst:35
+msgid ""
+"Forms can be manipulated from the command line itself. The following "
+"sections describe how :command:`adb` can be used to work with the app."
+msgstr ""
+
+#: ../../src/collect-adb.rst:40
+msgid "Loading blank forms"
+msgstr ""
+
+#: ../../src/collect-adb.rst:42
+msgid ""
+"The forms are stored in :file:`sdcard/odk/forms/` folder on the device. They"
+" can be loaded via a USB device using:"
+msgstr ""
+
+#: ../../src/collect-adb.rst:50
+msgid ""
+"Path on the phone must include the file name and not just the folder name"
+msgstr ""
+
+#: ../../src/collect-adb.rst:55
+msgid "Deleting forms"
+msgstr ""
+
+#: ../../src/collect-adb.rst:57
+msgid "Forms can be deleted from :file:`sdcard/odk/forms` by running:"
+msgstr ""
+
+#: ../../src/collect-adb.rst:66
+msgid "Downloading forms to your computer"
+msgstr ""
+
+#: ../../src/collect-adb.rst:68
+msgid "To download a completed form or form instance from the computer, run:"
+msgstr ""
+
+#: ../../src/collect-adb.rst:77
+msgid "Downloading database"
+msgstr ""
+
+#: ../../src/collect-adb.rst:79
+msgid ""
+"Developers might also need to check the entries in the database from the "
+"computer. In such case pull the database file from the SD card and use any "
+"**SQLite visualizer** to view it. To pull the database into the computer, "
+"run:"
+msgstr ""
+
+#: ../../src/collect-adb.rst:88
+msgid "Saving screenshot"
+msgstr ""
+
+#: ../../src/collect-adb.rst:90
+msgid "For taking a screenshot, run:"
+msgstr ""
+
+#: ../../src/collect-adb.rst:96
+msgid ""
+"Here, the image will be stored as ``screen.png`` which can be downloaded to "
+"the computer by running:"
+msgstr ""
+
+#: ../../src/collect-adb.rst:104
+msgid ""
+"You can also use ODK docs program to get a screenshot by referring to the "
+"instructions given in the :ref:`Contribution Guide <screenshots>`."
+msgstr ""
+
+#: ../../src/collect-adb.rst:109
+msgid "Recording a video"
+msgstr ""
+
+#: ../../src/collect-adb.rst:111
+msgid ""
+":command:`adb` can be used to record video on device's screen. This can be "
+"done by running:"
+msgstr ""
+
+#: ../../src/collect-adb.rst:117
+msgid ""
+"As you hit :guilabel:`Enter`, this command will start recording your "
+"device’s screen using the default settings and save the resulting video to a"
+" file at :guilabel:`/sdcard/example.mp4` file on your device."
+msgstr ""
+
+#: ../../src/collect-adb.rst:119
+msgid "To stop the recording, press :guilabel:`ctrl` + :guilabel:`C`"
+msgstr ""

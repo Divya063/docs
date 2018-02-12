@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/verify-downloads.rst:15
+msgid "Verifying Downloads"
+msgstr ""
+
+#: ../../src/verify-downloads.rst:17
+msgid ""
+"The `downloads page <https://opendatakit.org/downloads/>`_ now has a `link "
+"<https://opendatakit.org/wp-content/uploads/sha256_signatures.txt>`_ to a "
+"file listing the SHA256 hashes for all download files."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:19
+msgid ""
+"The long hash strings in that file can be used to confirm that the file you "
+"download is not truncated, incomplete or altered."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:25
+msgid "Verifying on Linux and Mac"
+msgstr ""
+
+#: ../../src/verify-downloads.rst:27
+msgid "Open a terminal window."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:28
+msgid ""
+"Navigate to the folder containing the file you downloaded. ( cd "
+"\"path/to/file\" )"
+msgstr ""
+
+#: ../../src/verify-downloads.rst:29
+msgid "Then type :command:`sha256sum \"filename\"` on the terminal."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:41
+msgid "Verifying on Windows"
+msgstr ""
+
+#: ../../src/verify-downloads.rst:43
+msgid "Open a cmd window."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:44
+msgid ""
+"Navigate to the folder containing the file you downloaded ( cd "
+"\"path/to/file\" )."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:45
+msgid ""
+"Then type :command:`certUtil -hashfile \"filename\" SHA256` on your command "
+"prompt."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:55
+msgid ""
+"If the downloaded file is not corrupted, the long hash string printed by "
+"these tools will match the one listed for that file in the `link "
+"<https://opendatakit.org/wp-content/uploads/sha256_signatures.txt>`_ at the "
+"top of our `downloads page <https://opendatakit.org/downloads/>`_."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:57
+msgid "To check this :-"
+msgstr ""
+
+#: ../../src/verify-downloads.rst:59
+msgid "Copy the SHA256 hash displayed on your terminal or cmd."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:64
+msgid ""
+"Then open the `link <https://opendatakit.org/wp-"
+"content/uploads/sha256_signatures.txt>`_ which contains the list of all "
+"SHA256 hashes for the downloaded files."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:66
+msgid ""
+"Press Ctrl+F in the window and paste the copied signature in the box which "
+"opens on the top right corner. You will get a single result highlighted if "
+"the signature is found."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:71
+msgid "Match for hash found"
+msgstr ""
+
+#: ../../src/verify-downloads.rst:76
+msgid "No match found for the hash"
+msgstr ""
+
+#: ../../src/verify-downloads.rst:80
+msgid ""
+"In Linux terminal, the name of the downloaded file is also printed along "
+"with the hash. Be careful not to copy it."
+msgstr ""
+
+#: ../../src/verify-downloads.rst:81
+msgid ""
+"When you get a match, also check that the name of the file in the list aside"
+" the hash is the same as that of your downloaded file."
+msgstr ""

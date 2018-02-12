@@ -1,0 +1,439 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/aggregate-app-engine.rst:15
+msgid "Installing on App Engine"
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:19
+msgid ""
+"Google App Engine is the recommended deployment platform for Aggregate."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:21
+msgid ""
+"There is no charge to set up an Aggregate server on App Engine, and lightly "
+"used instances will usually incur no charges."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:24
+msgid "Before you begin..."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:26
+msgid ""
+"Make sure `Java 8 <https://java.com/en/download/>`_ or higher is `installed "
+"on your system "
+"<https://www.java.com/en/download/help/download_options.xml>`_."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:28
+msgid ""
+"You will need a Gmail account to use App Engine; this Gmail account will be "
+"the owner of the Google Cloud Platform project under which your App Engine "
+"will execute."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:30
+msgid ""
+"Read the `Google Cloud Platform term of service "
+"<https://cloud.google.com/terms/>`_."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:34
+msgid ""
+"Download `ODK Aggregate <https://opendatakit.org/downloads/>`_. Select the "
+"latest release for your operating system."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:36
+msgid ""
+"You can :doc:`verify the download <verify-downloads>` using *SHA256 "
+"signatures*."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:37
+msgid ""
+"If you are running OSX, you must unzip the downloaded file before running "
+"the installer within it."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:38
+msgid ""
+"If you are on MacOSX Mountain Lion or onward, you will need to fiddle with "
+"`GateKeeper settings <http://osxdaily.com/2012/07/27/app-cant-be-opened-"
+"because-it-is-from-an-unidentified-developer/>`_ in order to run the "
+"installer."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:39
+msgid ""
+"If you are on Windows 10, you will need to approve running an unsigned "
+"installer."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:40
+msgid ""
+"If you are on Linux, you will need to change the downloaded file's "
+"permissions to enable running it as a program. Right click on the file and "
+"click on :guilabel:`Properties`. Click on :guilabel:`Permissions` tab. Now "
+"check the box labeled as :guilabel:`Allow executing file as program`."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:45
+msgid ""
+"Go to `Google Cloud Platform <https://cloud.google.com/>`_ and click on "
+":guilabel:`Console` in the top right corner."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:50
+msgid "Sign in with a Gmail account which you wish to use."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:55
+msgid ""
+"If you have never configured a Google Cloud Platform project, click on "
+":guilabel:`Create an Empty Project`."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:60
+msgid ""
+"If you have configured a Google Cloud Platform project before, this link "
+"will open onto either a page with a :guilabel:`Create Project` button and a "
+"table listing all of your projects, or it will open into one of your "
+"existing projects. In the later case, click on that project name at the top "
+"of the window. In the below image, the older project is `Project-edu`."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:65
+msgid ""
+"Upon clicking on the project name, a window appears with a :guilabel:`+` "
+"symbol. Click on it to create a new project."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:70
+msgid "Name your project."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:72
+msgid ""
+"On the project-creation popup dialog, type in a project name that makes "
+"sense to you. You can enter a project name and click on :guilabel:`Create` "
+"if you don't want to edit the project ID. You can choose :guilabel:`Edit` if"
+" you want to edit the project ID. The project ID will be the first part of "
+"the URL to your ODK Aggregate server."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:77
+msgid ""
+"If you click on :guilabel:`Edit`, a window will appear where you can enter a"
+" project id. After changing the project id click on :guilabel:`Create` to "
+"create your project."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:84
+msgid ""
+"You may want to use a project id that combines your organization name and "
+"the name of your data collection group or project."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:88
+msgid "You may need to accept Google's terms and conditions."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:90
+msgid ""
+"After few seconds, you will see a notification in the top right corner of "
+"the window. Click on the notification icon and select the notification "
+"message **Create Project:your project name**."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:98
+msgid ""
+"You will be directed to an empty project screen showing the details of your "
+"project. If you want to change any settings, click on :guilabel:`Go to "
+"project settings` otherwise click on the menu icon (:guilabel:`☰`) to the "
+"left of :guilabel:`Google Cloud Platform` in the upper left side of the "
+"screen, and select :guilabel:`App Engine` from the dropdown menu."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:106
+msgid ""
+"Click on the :guilabel:`Select a language` menu and select :guilabel:`Java`."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:114
+msgid "Select your preferred datacenter location and click :guilabel:`Next`."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:119
+msgid "Google will then begin configuring the server."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:124
+msgid ""
+"When this completes, you will be directed to begin a tutorial to install a "
+"sample application. Choose :guilabel:`Cancel Tutorial` and confirm that you "
+"want to not perform that tutorial."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:129
+msgid ""
+"Launch the ODK Aggregate installer on you computer. (:ref:`See download info"
+" here. <download-aggregate-installer>`)"
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:131
+msgid ""
+"The installer will guide you through configuring ODK Aggregate for App "
+"Engine. Click on the :guilabel:`Forward` button each time you complete a "
+"step to move ahead."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:136
+msgid "Accept the license agreement."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:141
+msgid ""
+"Select a parent directory under which an :file:`ODK Aggregate` directory "
+"will be created to contain the configured software. Click on the "
+":guilabel:`folder` icon to choose a directory."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:146
+msgid ""
+"Select :guilabel:`Google App Engine` as the platform for the Aggregate "
+"server."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:151
+msgid "Enter a name for your ODK Aggregate instance."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:158
+msgid ""
+"The ODK Aggregate instance name will be displayed to your users when they "
+"log into ODK Aggregate using their username and password."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:162
+msgid ""
+"Including the name of your organization in the instance name can help users "
+"confirm that they have contacted the correct website."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:164
+msgid "Enter a superuser name in the next window."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:171
+msgid ""
+"The user with the superuser account will have full permissions on the "
+"system."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:172
+msgid "The password for this user will be set to **aggregate** initially."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:173
+msgid ""
+"Only this user will be allowed to log onto the system when ODK Aggregate is "
+"run for the first time."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:174
+msgid ""
+"Upon first logging in, the superuser should change the password and complete"
+" the configuration of ODK Aggregate by specifying additional users and what "
+"permissions they will have on the system."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:176
+msgid ""
+"Enter the project ID of the project you created on the Google Cloud "
+"platform."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:181
+msgid "The installer will configure Aggregate and launch a upload tool."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:185
+msgid ""
+"Beginning with Java 7 Update 51, there are security level settings that may "
+"prevent the upload tool from running. A reported workaround is to add the "
+"*file: path* (e.g., :file:```file:///```) to the Exception Site list."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:187
+msgid ""
+"Enter the Gmail account that you specified when setting up the App Engine "
+"project. This will enable the :guilabel:`Get Token` button."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:192
+msgid "Click the :guilabel:`Get Token` button."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:194
+msgid ""
+"Your default browser will open to a Google site (``accounts.google.com``) "
+"where you are asked to choose a Gmail account. Select the account you "
+"specified earlier when setting up App Engine, and then allow *Google App "
+"Engine appcfg* to view and manage your AppEngine instances and datastores. "
+"Click :guilabel:`Allow`. This will take you to a screen with instructions to"
+" copy a code."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:199
+msgid ""
+"At the same time, a popup dialog should be displayed by the install wizard."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:203
+msgid ""
+"If the pop-up dialog does not show, you will need to relaunch the upload "
+"tool. Close the upload tool and open a file browser or Finder window in the "
+"directory you specified earlier. Navigate to the ODK Aggregate directory."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:205
+msgid ""
+"If on Windows, double-click the :file:`ODKAggregateAppEngineUpdater.jar` "
+"file."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:206
+msgid ""
+"If on Mac OSX, double-click the :file:`uploadAggregateToAppEngine.app` file."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:207
+msgid ""
+"If on Linux, open a bash shell and run "
+":file:`uploadAggregateToAppEngine.sh`."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:209
+msgid ""
+"Re-enter the e-mail address, and once again click :guilabel:`Get Token`. The"
+" pop-up dialog should now appear."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:211
+msgid ""
+"Copy the code from the browser into the installer's popup dialog and click "
+":guilabel:`OK`."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:218
+msgid ""
+"The text box on Google's site is not as wide as the code; be sure to copy "
+"the entire code."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:220
+msgid ""
+"If everything went well, you should see a status message letting you know "
+"the ``Action Succeeded``."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:227
+msgid ""
+"If the output does not look like that, you may have delayed too long between"
+" getting the code and pasting it into the tool. Click :guilabel:`Delete "
+"Token` and try again."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:228
+msgid ""
+"If you see a failure message in the output window, then it is likely that "
+"you have several different Gmail accounts and Google has gotten confused "
+"during the token-issuing process. In this case, when the browser window "
+"opens, before selecting an account, copy the URL, open a Private Browsing or"
+" Incognito Window in your browser, and paste the URL into that. Then proceed"
+" to get the token, etc. This should fix this issue."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:230
+msgid "Click :guilabel:`Upload ODK Aggregate`."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:235
+msgid ""
+"Clicking on :guilabel:`Upload ODK Aggregate` will generate a very long list "
+"of progress messages into the Output window. The `listBackends :` and "
+"`deleteBackendBackground :` sections may report \"500 Internal Server "
+"Error\" and Severe errors, and Warnings about the use of Backends, a "
+"deprecated feature. You will see a number of warnings and errors; this is "
+"expected."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:237
+msgid "For reference, here is a list of few of those errors:"
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:259
+msgid "Finally, you should see the message ``status : Action Succeeded!``."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:261
+msgid ""
+"To get a more clear view, you can see an `example log "
+"<https://opendatakit.org/wp-"
+"content/uploads/Apr2016-GoogleCloud/exampleUploadScriptOutput.txt>`_."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:264
+msgid ""
+"Once the installer has run and uploaded the ODK Aggregate configuration to "
+"App Engine, return to the Google Cloud Platform console."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:266
+msgid ""
+"With the console displaying your project, click on the menu icon (☰) to the "
+"right of *Google Cloud Platform* in the upper left side of the screen and "
+"select :guilabel:`App Engine` from the menu."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:268
+msgid ""
+"Click on the project's URI in the top right corner of the window. This will "
+"open your Aggregate server page."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:273
+msgid ""
+":guilabel:`Log In` with the superuser username that you specified in the "
+"installer (the initial password for this username will be ``aggregate``), "
+"and access the site administration screens for your server."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:278
+msgid "You should immediately change your superuser password."
+msgstr ""
+
+#: ../../src/aggregate-app-engine.rst:280
+msgid ""
+"Go to :menuselection:`Site Admin -> Permissions` to change your password. "
+"You can also add additional users."
+msgstr ""
