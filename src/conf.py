@@ -316,3 +316,9 @@ html_context = {'prob_in_doc' : prob_in_doc ,
                 'contri_guide' : contri_guide , 
                 'forum_here' : forum_here}
 
+locale_dirs = ['locale/']
+
+# create 1 po file per rst file instead of one po file per module
+gettext_compact = False
+
+
