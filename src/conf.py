@@ -76,7 +76,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [ 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'default'
@@ -316,7 +316,7 @@ html_context = {'prob_in_doc' : prob_in_doc ,
                 'contri_guide' : contri_guide , 
                 'forum_here' : forum_here}
 
-locale_dirs = ['locale/']
+locale_dirs = ['locales/']
 
 # create 1 po file per rst file instead of one po file per module
 gettext_compact = False
