@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing on Tomcat (Local or Cloud) &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Installing Aggregate" href="aggregate-install.html"/>
+        <link rel="next" title="Installing on AWS (Cloud)" href="aggregate-aws.html"/>
+        <link rel="prev" title="Installing on App Engine" href="aggregate-app-engine.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-deployment-planning.html">Planning Your Aggregate Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="aggregate-install.html">Installing Aggregate</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="aggregate-app-engine.html">Installing on App Engine</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Installing on Tomcat (Local or Cloud)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#considerations-before-you-begin">Considerations before you begin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-procedure">Installation procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate-aws.html">Installing on AWS (Cloud)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate-vm.html">ODK Aggregate Virtual Machine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-upgrade.html">Upgrading Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-backup.html">Backing Up Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-setup.html">Setting Up ODK Aggregate</a> &raquo;</li>
+        
+          <li><a href="aggregate-install.html">Installing Aggregate</a> &raquo;</li>
+        
+      <li>Installing on Tomcat (Local or Cloud)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-tomcat.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-on-tomcat-local-or-cloud">
+<h1>Installing on Tomcat (Local or Cloud)<a class="headerlink" href="#installing-on-tomcat-local-or-cloud" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference external" href="http://tomcat.apache.org/">Apache Tomcat</a> is an open source Java web server that can be used to serve ODK Aggregate.</p>
+<p>This document guides you through the installation and initial setup of a self-hosted instance of ODK Aggregate, running on Apache Tomcat with a <a class="reference external" href="https://www.mysql.com/">MySQL</a> or <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a>. 「Self-hosted」 could mean on your own hardware or on a cloud-based server such as Amazon Web Services. (Though, for AWS in particular, we have <a class="reference internal" href="aggregate-aws.html"><span class="doc">additional instructions</span></a>.)</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Self-hosting, whether local or cloud-based, requires expertise in server maintenance, security, systems administration, and networking. If your organization does not have this expertise, we recommend using <a class="reference internal" href="aggregate-app-engine.html"><span class="doc">Google App Engine</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>Local hosting implies that you are taking ownership of the off-site back up and restoration of your data and are documenting the steps necessary to return your systems to operation in circumstances that might include a full hardware failure or the destruction of your facility. You must also plan for the security of your data and systems.</li>
+<li>Local hosting requires that you <a class="reference external" href="https://opendatakit.org/use/aggregate/tomcat-install/#Configure_for_Network_Access">configure your network routers</a>. It is recommended to seek assistance from your local computer technical support community before proceeding. The set-up of the ODK Aggregate web server and database are very easy in comparison.</li>
+</ul>
+</div>
+<div class="section" id="considerations-before-you-begin">
+<h2>Considerations before you begin<a class="headerlink" href="#considerations-before-you-begin" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="availability">
+<h3>Availability<a class="headerlink" href="#availability" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Decide the availability of your server depending on how frequently you want to update and upload forms. If you do need a high-availability server, you need to talk to your Internet Service Provider (ISP) as to their availability guarantees.</p>
+</div>
+<div class="section" id="data-loss">
+<h3>Data Loss<a class="headerlink" href="#data-loss" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Your tolerance to data loss will impact your backup schedule and your server hardware.  Invest in a storage system based on your tolerance to data loss. Seek technical assistance for these requirements. If you cannot tolerate any data loss, or less than 24 hours of data loss, you should invest in a RAID storage array with battery-backed controller cards. If you can tolerate a day or longer interval of data loss, be sure you have a periodic tape or other means of backup for your system that matches or is shorter than the data loss interval.</p>
+</div>
+<div class="section" id="dataset-size">
+<h3>Dataset Size<a class="headerlink" href="#dataset-size" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The quantity of data you intend to collect will affect the size of the machine required to host the ODK Aggregate instance and of your database server. For most use cases, the default size should be fine. If you are collecting more than 6000 submissions, you may need to increase the JVM size. Note that the maximum size of the JVM is limited by the size of the physical memory on your machine.</p>
+</div>
+<div class="section" id="secure-and-protected-data">
+<h3>Secure and Protected Data<a class="headerlink" href="#secure-and-protected-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you need to prevent eavesdroppers from seeing your data as it is transmitted to your ODK Aggregate instance, you need to do one of the following:</p>
+<ul class="simple">
+<li>only connect to ODK Aggregate from within your organization’s network (when the ODK Collect devices are on your premises)</li>
+<li>obtain an SSL certificate and install it on your Tomcat server (a certificate is required to secure transmissions over <cite>https</cite>)</li>
+<li>use <a class="reference internal" href="encrypted-forms.html"><span class="doc">Encrypted Forms</span></a></li>
+</ul>
+<p>Encrypted forms can be used in conjuction with either of the first two suggestions.</p>
+<p>If you are not using encrypted forms and are handling sensitive data, a computer security specialist should review your system and your security procedures.</p>
+</div>
+<div class="section" id="database-systems">
+<h3>Database Systems<a class="headerlink" href="#database-systems" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ODK Aggregate works with any of these database servers:</p>
+<ul class="simple">
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>Microsoft SQL Server</li>
+<li>Azure SQL Server</li>
+</ul>
+<p>Most deployments will use either MySQL or PostgreSQL, as they are the two most prevalent open source relational database servers.</p>
+<p>MySQL is the most popular, so you will likely find more qualified professionals to install, administer, and debug it. However, you should consider PostgreSQL if you plan to:</p>
+<ul class="simple">
+<li>collect geographic data</li>
+<li>use forms with a very high number of questions (over 200)</li>
+</ul>
+<p>PostgreSQL has better built-in support for geographic data, and MySQL’s tables have a row size limit that will affect performance for very large forms.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Use of an SSL and <cite>https</cite> is recommended for any deployment accessed from the internet.</p>
+</div>
+</div>
+</div>
+<div class="section" id="installation-procedure">
+<h2>Installation procedure<a class="headerlink" href="#installation-procedure" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Install Tomcat on your server.</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p class="first">Install <a class="reference external" href="https://java.com/en/download/">Java 8</a> or higher on your system.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">You generally need to launch installers with <em>Run as administrator</em> privileges (available under the right-click menu). Accept all the defaults.</p>
+</div>
+</li>
+<li><p class="first">Add the installed Java bin directory to the <a class="reference external" href="https://docs.oracle.com/javase/tutorial/essential/environment/paths.html">PATH variable</a>.</p>
+</li>
+<li><p class="first">Download and install <a class="reference external" href="https://tomcat.apache.org/download-80.cgi">Tomcat 8</a></p>
+<ul>
+<li><p class="first">If using the Windows installer, change to use port 80 for the HTTP/1.1 port. If you are going to set up an SSL certificate, change the HTTPS/1.1 port to 443. Use all other defaults.</p>
+</li>
+<li><p class="first">Verify that Tomcat 8 is running by opening a browser on this server to <code class="docutils literal"><span class="pre">http://localhost/</span></code>. You should see the Apache Tomcat administration page. If you didn’t request port 80 during the install, you will need to specify the port you chose (<code class="docutils literal"><span class="pre">http://localhost:port/</span></code>). If you didn’t configure a port, the default port is 8080 (and 8443 for HTTPS).</p>
+</li>
+<li><p class="first"><strong>Linux Installs</strong></p>
+<blockquote>
+<div><ul>
+<li><p class="first">To ensure that the proper Java settings are found by the web server, you may need to specify the <a class="reference external" href="https://docs.python.org/2/using/cmdline.html#cmdoption-e" title="(in Python v2.7)"><code class="xref std std-option docutils literal"><span class="pre">-E</span></code></a> flag when restarting the webserver.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install tasksel
+<span class="gp">$</span> sudo tasksell install tomcat
+<span class="gp">$</span> sudo apt-get install java8-jdk
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now open <code class="file docutils literal"><span class="pre">/.bashrc</span></code> with your editor and add <code class="docutils literal"><span class="pre">export</span> <span class="pre">JAVA_HOME</span> <span class="pre">=</span> <span class="pre">/usr/lib/jvm/java-8-openjdk-amd64</span></code> at the bottom of that file. Change this to whatever path is appropriate for your Java installation.</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo -E /etc/init.d/tomcat8 restart
+</pre></div>
+</div>
+<p>The <strong>E</strong> flag on the last command is critical. It forces Ubuntu to reload the environment settings for the service, causing it to pick up the new <em>JAVA_HOME</em> setting.</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p class="first">Apply or change the administrator password for Tomcat; the administration functions should be secured.</p>
+</li>
+<li><p class="first">ODK Aggregate v1.4.13 and higher are supported on Tomcat 8.0; these newer releases should also work, without modification on other webservers.</p>
+</li>
+<li><p class="first">Prior to ODK Aggregate v1.4.13, we only supported Tomcat 6. Tomcat 7, Tomcat 8, Glassfish and Jetty require additional configuration steps to run ODK Aggregate v1.4.12 and earlier. All of these webservers require configuration settings to enable cookies under HTTPS.</p>
+<ul>
+<li><p class="first"><strong>For Tomcat 7</strong>: Edit <code class="file docutils literal"><span class="pre">context.xml</span></code> (under Tomcat 7’s conf directory) to have the attribute 『useHttpOnly』 set to false.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;Context</span> <span class="na">useHttpOnly=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>For Tomcat 8</strong>: My ODK Aggregate file is installed as <code class="file docutils literal"><span class="pre">/var/lib/tomcat8/webapps/ODKAggregate.war</span></code>. The following content needed to be placed in the file <code class="file docutils literal"><span class="pre">webapps/ODKAggregate/META-INF/context.xml</span></code> (this is within the expanded content of the war file, once the Tomcat 8 server has exploded it).</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;Context</span> <span class="na">path=</span><span class="s">&quot;&quot;</span> <span class="na">useHttpOnly=</span><span class="s">&quot;false&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>For Glassfish 4</strong>: Add <code class="file docutils literal"><span class="pre">glassfish-web.xml</span></code> under ODK Aggregate’s WEB-INF directory with the content:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+  <span class="nt">&lt;glassfish-web-app&gt;</span>
+    <span class="nt">&lt;session-config&gt;</span>
+      <span class="nt">&lt;cookie-properties&gt;</span>
+       <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;cookieHttpOnly&quot;</span> <span class="na">value=</span><span class="s">&quot;false&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/cookie-properties&gt;</span>
+    <span class="nt">&lt;/session-config&gt;</span>
+  <span class="nt">&lt;/glassfish-web-app&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>For Jetty</strong>: Add <code class="file docutils literal"><span class="pre">jetty-web.xml</span></code> under ODK Aggregate’s WEB-INF directory with the content:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;  encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE Configure PUBLIC &quot;-//Jetty//Configure//EN&quot; &quot;http://www.eclipse.org/jetty/configure.dtd&quot;&gt;</span>
+
+<span class="nt">&lt;Configure</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.jetty.webapp.WebAppContext&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Get</span> <span class="na">name=</span><span class="s">&quot;sessionHandler&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Get</span> <span class="na">name=</span><span class="s">&quot;sessionManager&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;secureCookies&quot;</span> <span class="na">type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/Set&gt;</span>
+    <span class="nt">&lt;/Get&gt;</span>
+  <span class="nt">&lt;/Get&gt;</span>
+<span class="nt">&lt;/Configure&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first"><a class="reference external" href="https://opendatakit.org/use/aggregate/tomcat-install/#Configure_for_Network_Access">Configure your server and network devices</a> so that laptops or Android devices connecting to the internet from an external access point can access your server.</p>
+<p>If your organization has a network or systems administrator, contact them for assistance. The steps for this are:</p>
+<ul class="simple">
+<li>configure your server firewall to allow access</li>
+<li>make your server visible on the internet (optional)</li>
+<li>establish a DNS name for the server</li>
+</ul>
+</li>
+<li><p class="first"><a class="reference external" href="https://gist.github.com/yanokwa/399a7fcbc3d9ad8a0bd3">Obtain and Install an SSL certificate</a> if you need secure <code class="docutils literal"><span class="pre">https</span></code> access.</p>
+</li>
+<li><p class="first">Select and Install your database server.</p>
+<p>ODK Aggregate works with any of these database servers:</p>
+<ul class="simple">
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>Microsoft SQL Server</li>
+<li>Azure SQL Server (requires Java 8)</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p class="first">For MySQL, download and install MySQL Community Server 5.7 or higher from <a class="reference external" href="https://dev.mysql.com/downloads/">MySQL download site</a>. Be sure to set a root password for the database. Stop the MySQL database server, then configure the database (via the <code class="file docutils literal"><span class="pre">my.cnf</span></code> or the <code class="file docutils literal"><span class="pre">my.ini</span></code> file) with these lines added to the [mysqld] section:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>character_set_server=utf8
+collation_server=utf8_unicode_ci
+max_allowed_packet=1073741824
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><p>and restart the MySQL databaseserver. Then, download the <cite>MySQL Connector/J</cite>, unzip it, and copy the <code class="file docutils literal"><span class="pre">mysql-connector-java-x.x.x-bin.jar</span></code> file into the Tomcat server’s libs directory. After copying it into that directory, you should stop and restart the Tomcat server. The <cite>max_allowed_packet</cite> setting defines the maximum size of the communications buffer to the server. The value used in the snippet above is 1GB, the maximum value supported. For ODK Aggregate 1.4.11 through 1.4.7, and 1.2.x, the maximum media (e.g., image or video) attachment is limited to the value you set for max_allowed_packet minus some unknown overhead – e.g., a storage size of something less than 1GB. For ODK Aggregate 1.4.6 and earlier (excluding 1.2.x), the maximum media attachment is unlimited and the setting for max_allowed_packet does not need to be specified. For ODK Aggregate 1.4.12 and later, the max_allowed_packet value should be set to a value greater than 16842752 (this is the minimum value that should be used: 16MB plus 64kB); with that setting, media attachments of unlimited size are once again supported. If you are upgrading to a newer ODK Aggregate, you must continue to use the setting you already have, or 16842752, whichever is greater. If you experience problems uploading large attachments, change this setting to its maximum value, 1073741824. Finally, if you are using MySQL 5.7 or later, some of releases <a class="reference external" href="https://dev.mysql.com/doc/refman/5.7/en/password-management.html">expire all database passwords</a> after 360 days. Please verify the behavior of your version of MySQL and either change the password expiration policy or create a calendar reminder to change the password before it expires. For ODK Aggregate, you will need to re-run the installer to specify the new password.</p>
+</div></blockquote>
+<ul class="simple">
+<li>For PostgreSQL, download and install the appropriate binary package from <a class="reference external" href="https://www.postgresql.org/download/">PostgreSQL download site</a>. Be sure to set the password for the postgres (root) user and set the default character set and collation sequence.</li>
+<li>For either database, you should ensure that the default character set is configured to be UTF-8 and that the collation sequence (dictionary order) is set appropriately for your circumstances. If it isn’t, any non-Latin characters may display as question marks. Refer to the character set and collation sections of your database’s documentation for how to do this.</li>
+<li>For Microsoft SQL Server or Azure SQL Server, you should configure these with UTF-8 character sets and to use Windows authentication. When using Windows authentication, the user under which the webserver executes must be granted permissions to access the SQL Server instance. The install wizard for ODK Aggregate will produce a <code class="file docutils literal"><span class="pre">Readme.html</span></code> file that contains additional information on how to complete the configuration of the database and webserver service.</li>
+</ul>
+</li>
+<li><p class="first">Download and install <a class="reference external" href="https://opendatakit.org/downloads/">ODK Aggregate</a>. Select the latest Featured release for your operating system.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The installer will guide you through configuring ODK Aggregate for Tomcat and MySQL/PostgreSQL/SQLServer. The installer will produce a WAR file (web archive) containing the configured ODK Aggregate server, a <code class="file docutils literal"><span class="pre">create_db_and_user.sql</span></code> script for creating the database and user that ODK Aggregate will use to access this database, and a <code class="file docutils literal"><span class="pre">Readme.html</span></code> file with instructions on how to complete the installation.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>When asked for the fully qualified hostname of the ODK Aggregate server, you should enter the DNS name you established above. The install also asks for a database name, user and password. The user should not be root (MySQL) or postgres (PostgreSQL). ODK Aggregate will use this user when accessing this database (and it will only access this database). By specifying different databases and users, you can set up multiple ODK Aggregate servers that share the same database server, store their data in different databases, and operate without interfering with each other.</li>
+<li>If you are upgrading to a newer version of ODK Aggregate, as long as you specify the same database name, user and password, you do not need to re-run the <code class="file docutils literal"><span class="pre">create_db_and_user.sql</span></code> script (it only needs to be executed once).</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-aws.html" class="btn btn-neutral float-right" title="Installing on AWS (Cloud)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-app-engine.html" class="btn btn-neutral" title="Installing on App Engine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

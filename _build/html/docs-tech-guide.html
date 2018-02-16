@@ -1,0 +1,969 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docs Technical Guide &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Contributing to ODK Docs" href="contributing.html"/>
+        <link rel="next" title="Docs Markup and Syntax Guide" href="docs-syntax-guide.html"/>
+        <link rel="prev" title="Contributing to ODK Docs" href="contributing.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Docs Technical Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docs-as-code">Docs as Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview-of-workflow">Overview of Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-your-environment">Setting up your Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#terminal-command-line">Terminal (Command Line)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#github-and-git">Github and git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#android-tools">Android Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-ready-to-work">Getting ready to work</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fork-the-docs">Fork the docs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clone-to-local">Clone to local</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-the-upstream-remote">Set the upstream remote</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-dependencies">Install Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow-details">Workflow details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pull-in-changes-from-upstream">Pull in changes from upstream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-a-new-branch">Make a New Branch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#work-on-the-docs">Work on the Docs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-view-and-debug">Build, View, and Debug</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#push-your-branch">Push Your Branch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#issue-a-pull-request">Issue a Pull Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#keep-going">Keep Going</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs-syntax-guide.html">Docs Markup and Syntax Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-style-guide.html">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-developer-guide.html">Docs Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing-tips.html">Tips for Making Good Contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cygwin.html">Working with Docs in Windows using Cygwin</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="contributing.html">Contributing to ODK Docs</a> &raquo;</li>
+        
+      <li>Docs Technical Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/docs-tech-guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docs-technical-guide">
+<h1>Docs Technical Guide<a class="headerlink" href="#docs-technical-guide" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This document explains the tools and workflows used
+when contributing to ODK Documentation.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Developer and authoring tools
+have lots of options and alternatives.
+Local tools and workflows presented in this guide
+are what the authors feel would be easiest
+for a non-coding contributor to set up and use.</p>
+<p class="last">You should feel free
+to use your preferred tools.</p>
+</div>
+<div class="section" id="docs-as-code">
+<span id="id1"></span><h2>Docs as Code<a class="headerlink" href="#docs-as-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ODK Documentation follows
+(as much as possible)
+the <a class="reference external" href="http://www.writethedocs.org/guide/docs-as-code/">Docs as Code</a> philosophy.</p>
+<p>This means:</p>
+<ul class="simple">
+<li>Documentation source files are written in a plain text format.
+(We use <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>.)</li>
+<li>Documentation source files are kept under version control.
+(We use git and <a class="reference external" href="http://github.com">Github</a>.)</li>
+<li>Documentation is built from source
+to a published output using a
+static site generator.
+(We use <a class="reference external" href="http://sphinx-doc.org">Sphinx</a>.)</li>
+<li>Documentation builds are
+run, tested, and deployed automatically
+using continuous integration tools.
+(We use <a class="reference external" href="https://circleci.com">CircleCI</a>.)</li>
+</ul>
+<p>The 『Docs as Code』 approach has many advantages,
+but we are aware that this approach can feel difficult
+for writers who aren’t used to dealing with the command line.
+It can also be difficult for coders who are used to this approach,
+but who typically use simpler authoring tools
+like <a class="reference external" href="http://jekyllrb.com">Jekyll</a> and <a class="reference external" href="https://guides.github.com/features/mastering-markdown/">Markdown</a>.</p>
+<p>This section of the Contributor Guide
+walks through our authoring and publishing workflow and toolchain,
+to make it as easy as possible for you to contribute.</p>
+</div>
+<div class="section" id="overview-of-workflow">
+<span id="docs-workflow-overview"></span><h2>Overview of Workflow<a class="headerlink" href="#overview-of-workflow" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>When you first get started you’ll need to:</p>
+<ol class="arabic simple">
+<li>Fork the <a class="reference external" href="https://github.com/opendatakit/docs">ODK Docs repo</a> your own Github Account</li>
+<li>Clone it down to your local machine</li>
+<li>Install dependencies</li>
+</ol>
+<p>And then each time you work you will:</p>
+<ol class="arabic simple">
+<li>Make a branch for a specific task</li>
+<li>Make commits as you go</li>
+<li>Build and view the docs locally,
+running the style guide tests.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Correct any errors
+and commit those changes</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Push your branch to your Github fork</li>
+<li>Issue a pull request
+against the current working branch
+of the main repo (usually <code class="docutils literal"><span class="pre">master</span></code>)</li>
+<li>Pull the latest changes to <code class="docutils literal"><span class="pre">master</span></code>
+back to your local machine from the main repo.</li>
+<li>Repeat</li>
+</ol>
+</div>
+<div class="section" id="setting-up-your-environment">
+<span id="docs-dev-setup"></span><h2>Setting up your Environment<a class="headerlink" href="#setting-up-your-environment" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="terminal-command-line">
+<span id="docs-terminal"></span><h3>Terminal (Command Line)<a class="headerlink" href="#terminal-command-line" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>This contributor guide is written
+from a Linux/Unix (bash terminal) perspective,
+which is relevant to all flavors of Linux and macOS.
+We consider the Bash terminal commands to be
+the canonical way to build and work with the docs.</p>
+<p>We have also provided explanations for
+how to adapt these commands to the Windows Command Prompt.
+(This is different than Windows Powershell,
+and not all the commands will work in Powershell.
+For more details on the Windows Command Prompt,
+<a class="reference external" href="https://www.lifewire.com/how-to-open-command-prompt-2618089">see this article</a>.</p>
+<p>If you are on a Windows machine,
+you may prefer to use the adapted Windows instructions here.
+Alternatively, you can follow the Bash commands:</p>
+<ul class="simple">
+<li>use the <a class="reference external" href="https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/">Linux subsystem</a> (Windows 10)</li>
+<li>use a bash terminal emulator, such as<ul>
+<li><a class="reference internal" href="cygwin.html"><span class="doc">Cygwin</span></a></li>
+<li><a class="reference external" href="https://git-for-windows.github.io/">gitbash</a></li>
+</ul>
+</li>
+</ul>
+<p class="last">The lead maintainers of this docs repo
+are not Windows users,
+so we rely on our contributor community
+to keep Windows-specific information complete and accurate.
+Contributions to this guide
+with explanations and help for Windows users
+are greatly appreciated.</p>
+</div>
+<p>Contributing to the docs requires interacting with
+git, GitHub, Python, and Sphinx,
+which requires the use of the Terminal.
+This is common among Linux users.
+Mac users unfamiliar with the Terminal
+can learn more from <a class="reference external" href="https://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855">this tutorial</a>.</p>
+</div>
+<div class="section" id="python">
+<span id="docs-python"></span><h3>Python<a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="python-3">
+<span id="docs-python3"></span><h4>Python 3<a class="headerlink" href="#python-3" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>If you don’t know,
+check to see if you have Python 3 installed:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> python3
+</pre></div>
+</div>
+<p>On windows:</p>
+<div class="highlight-doscon"><div class="highlight"><pre><span></span><span class="go">&gt; python</span>
+</pre></div>
+</div>
+<p>If you get an error,
+you probably don’t have it and will need to
+<cite>install Python 3</cite>.</p>
+<p>On Windows
+make sure to select the option
+「Add python to the Path」
+while installing,
+otherwise you’ll need to <a class="reference external" href="https://youtu.be/UTUlp6L2zkw">add it manually</a>.</p>
+<p>See <a class="reference external" href="https://www.youtube.com/watch?v=oHOiqFs_x8Y">this video</a> for more details.</p>
+<p>If the Python command-line interpreter starts up,
+type <code class="xref py py-func docutils literal"><span class="pre">quit()</span></code> to exit.</p>
+</div>
+<div class="section" id="virtual-environment">
+<span id="docs-venv"></span><h4>Virtual Environment<a class="headerlink" href="#virtual-environment" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>A virtual environment is a Python tool for sandboxing dependencies.
+It lets you install whatever you need for a particular project,
+without messing up any other Python environments you might need.</p>
+<p>Check to see if you have virtualenv installed:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> virtualenv
+</pre></div>
+</div>
+<p>If you get a help message with information about commands,
+you have it.
+If you don’t have it,
+you’ll get a <code class="docutils literal"><span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> message.</p>
+<p>If you don’t have it,
+install it using <code class="docutils literal"><span class="pre">pip</span></code> by running:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install virtualenv
+</pre></div>
+</div>
+<p>Then, create a directory called <code class="file docutils literal"><span class="pre">odk</span></code>.
+This will contain your virtualenv and the docs repo as subdirectories.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir odk
+<span class="gp">$</span> <span class="nb">cd</span> odk
+</pre></div>
+</div>
+<p>Now, inside that  directory, create a python3 virtualenv.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> virtualenv -p python3 odkenv
+</pre></div>
+</div>
+<p>On Windows use:</p>
+<div class="highlight-doscon"><div class="highlight"><pre><span></span><span class="go">&gt; path\to\python\python -m venv odkenv</span>
+</pre></div>
+</div>
+<p>The last part, <code class="docutils literal"><span class="pre">odkenv</span></code>, is the name of virtual environment.
+It can be whatever name you’d like to call it,
+but we’ll use <code class="docutils literal"><span class="pre">odkenv</span></code> throughout these docs.</p>
+<p>Activate your virtual environment with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">source</span> odkenv/bin/activate
+</pre></div>
+</div>
+<p>On Windows use:</p>
+<div class="highlight-doscon"><div class="highlight"><pre><span></span><span class="go">&gt; odkenv\Scripts\activate</span>
+</pre></div>
+</div>
+<p>When you are done working, deactivate it with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> deactivate
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="github-and-git">
+<span id="docs-gh-git"></span><h3>Github and git<a class="headerlink" href="#github-and-git" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference external" href="https://git-scm.com/">Git</a> is a distributed version control system.
+It makes it possible to track changes in files over time,
+merge changes made by different contributors,
+compare different versions of the same file,
+and revert a file to an earlier point.</p>
+<p>Git is complicated,
+but you do not need to understand its advanced features or inner workings
+to use it.</p>
+<p><a class="reference external" href="http://github.com">GitHub</a> is an online service
+for hosting git repositories.
+It also provides additional collaboration tools
+like issue trackers and project boards.
+Open Data Kit uses GitHub
+for its public code and documentation projects.</p>
+<p>You will need to:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://git-scm.com/downloads">Install git</a></li>
+<li>Make sure that git is installed properly by typing (git) in the terminal or command prompt<ul>
+<li>On Windows: If you get any errors,
+check if your environment variables are set up correctly.
+(See <a class="reference external" href="https://stackoverflow.com/questions/26620312/installing-git-in-path-with-github-client-for-windows#answer-34767523">this StackOverflow answer</a> for details.)</li>
+</ul>
+</li>
+<li>Get a <a class="reference external" href="http://github.com">GitHub</a> account.</li>
+</ol>
+<div class="section" id="glfs">
+<span id="id8"></span><h4>GLFS<a class="headerlink" href="#glfs" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>We use <a class="reference external" href="https://git-lfs.github.com">Git Large File Storage (GLFS)</a>
+to handle large binary files
+like images and videos.
+Once installed,
+you normally won’t need to do anything else.
+GLFS is largely transparent when using git.</p>
+<ol class="arabic simple">
+<li>Install <a class="reference external" href="https://git-lfs.github.com">GLFS</a>.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p><strong>On Windows</strong></p>
+<p class="last">Make sure <code class="file docutils literal"><span class="pre">git-lfs.exe</span></code> and  <code class="file docutils literal"><span class="pre">git.exe</span></code> are under the same main  directory on Windows. (See <a class="reference external" href="https://github.com/git-lfs/git-lfs/issues/919">this page</a> for reference.</p>
+</div>
+<p>GLFS tracks binary files as defined in the <code class="file docutils literal"><span class="pre">.gitattributes</span></code> file <a class="reference external" href="https://github.com/opendatakit/docs/blob/master/.gitattributes">in the repo</a>. Most common binary file formats are already listed, but there might be others we haven’t thought of yet.</p>
+<div class="section" id="adding-new-file-formats-to-glfs-tracking">
+<span id="adding-new-glfs-formats"></span><h5>Adding new file formats to GLFS tracking<a class="headerlink" href="#adding-new-file-formats-to-glfs-tracking" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<p>If you are adding binary files to the repo,
+and they are in formats not already tracked,
+<strong>it is your responsibility to make sure they are tracked by GLFS.</strong></p>
+<p>To make sure they are properly tracked,
+add them to the <code class="file docutils literal"><span class="pre">.gitattributes</span></code> file.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span># file type section heading
+*.{extension-to-track} filter=lfs diff=lfs merge=lfs -text
+</pre></div>
+</div>
+<p>You can also use the command line.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> glfs track *.<span class="o">{</span>file-extension<span class="o">}</span>
+</pre></div>
+</div>
+<p>This will add a line to <code class="file docutils literal"><span class="pre">.gitattributes</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Please keep <code class="file docutils literal"><span class="pre">.gitattributes</span></code> organized
+by placing the new file format declaration
+in the appropriate section,
+or creating a new section as needed.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>Updates to <code class="file docutils literal"><span class="pre">.gitattributes</span></code> must be done
+in a commit before the commit
+that adds the new binary files.</p>
+<p class="last">We will not accept Pull Requests
+that include binary files untracked by GLFS.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="android-tools">
+<span id="id11"></span><h3>Android Tools<a class="headerlink" href="#android-tools" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Some testing and documentation tasks
+(including <a class="reference internal" href="docs-syntax-guide.html#screenshots"><span class="std std-ref">making screenshots from ODK Collect</span></a>)
+require the <a class="reference internal" href="collect-adb.html"><span class="doc">Android Debug Bridge</span></a> command line tool.
+You can either install Android Studio
+or install ADB as standalone SDK tool.</p>
+<div class="section" id="android-studio">
+<span id="id12"></span><h4>Android Studio<a class="headerlink" href="#android-studio" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><abbr title="Android Debug Bridge">ADB</abbr> is part of <a class="reference external" href="https://developer.android.com/studio/index.html">Android Studio</a>,
+and is typically installed by default when you install Android Studio.</p>
+<p>This is the best way to get <strong class="command">adb</strong>
+if you plan to do any other Android development.
+To use it from the command line,
+add the SDK Platform tools to your path.</p>
+<p>On Mac, add the following to your <code class="file docutils literal"><span class="pre">.bash_profile</span></code></p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/Library/Android/sdk/tools/
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>On Windows,
+you have to run Android Studio once
+to complete the installation of ADB.
+The tool can be found in
+<code class="file docutils literal"><span class="pre">C:/Users/user-name/AppData/Local/Android/sdk/platform-tools</span></code>.
+To add it to the environment variable path,
+use the following command:</p>
+<div class="last highlight-none"><div class="highlight"><pre><span></span>set PATH=%PATH%;C:\Users\your user name\AppData\Local\Android\sdk\platform-tools
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">The path specified above
+assumes a default installation of Android Studio.
+You may have put Android Studio in a different location.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-ready-to-work">
+<span id="docs-workflow-setup"></span><h2>Getting ready to work<a class="headerlink" href="#getting-ready-to-work" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="fork-the-docs">
+<span id="id14"></span><h3>Fork the docs<a class="headerlink" href="#fork-the-docs" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Go to the <a class="reference external" href="https://github.com/opendatakit/docs">ODK Doc repo on GitHub</a>
+and use the <span class="guilabel">Fork</span> button (top right)
+to create your own copy.
+After the process completes,
+you’ll be looking at your own fork on GitHub.</p>
+</div>
+<div class="section" id="clone-to-local">
+<span id="clone-the-docs"></span><h3>Clone to local<a class="headerlink" href="#clone-to-local" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>From your own fork of the repo on GitHub,
+select the <span class="guilabel">Clone or download</span> button.
+Copy the URI from the text box that opens up.
+It will be something like:
+<code class="docutils literal"><span class="pre">https://github.com/your-gh-username/docs.git</span></code></p>
+<p>Open your terminal,
+and <cite>cd</cite> to your preferred directory.
+Then <cite>git clone</cite> the repo:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://github.com/your-github-username/docs.git
+<span class="go">.</span>
+<span class="go">.</span>
+<span class="go">.</span>
+<span class="gp">$</span> <span class="nb">cd</span> docs
+</pre></div>
+</div>
+<p>The rest of the documentation assumes
+you are in the directory for the repo
+(the directory containing <code class="docutils literal"><span class="pre">conf.py</span></code> and <code class="docutils literal"><span class="pre">index.rst</span></code>).</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">clone</span></code> command creates a new directory inside the current one.
+So you do not need to create a new <cite>odk-docs</cite> directory first.</li>
+<li>As noted above,
+we recommend a master <code class="file docutils literal"><span class="pre">odk</span></code> directory
+that holds your virtualenv directory and your git repo
+in two separate subdirectories.
+So you would be in that master <code class="file docutils literal"><span class="pre">odk</span></code> directory
+when you clone down the repo.</li>
+<li>Double check that the right folders are in the right places</li>
+</ul>
+<div class="last highlight-none"><div class="highlight"><pre><span></span>- odk/
+  - odkenv/
+  - docs/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="set-the-upstream-remote">
+<span id="upstream-the-docs"></span><h3>Set the upstream remote<a class="headerlink" href="#set-the-upstream-remote" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>When you clone down a repo,
+the local copy calls your GitHub copy <code class="docutils literal"><span class="pre">origin</span></code>.
+You should also set <code class="docutils literal"><span class="pre">upstream</span></code>
+as the name of the  main ODK Docs GitHub repo.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git remote add upstream https://github.com/opendatakit/docs.git
+</pre></div>
+</div>
+<p>Or in Windows:</p>
+<div class="highlight-doscon"><div class="highlight"><pre><span></span><span class="go">&gt; git remote add upstream https://github.com/opendatakit/docs.git</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> to check the status, you should see something like this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> origin https://github.com/your-github-username/docs.git <span class="o">(</span>fetch<span class="o">)</span>
+<span class="gp">$</span> origin https://github.com/your-github-username/docs.git <span class="o">(</span>push<span class="o">)</span>
+<span class="gp">$</span> upstream https://github.com/opendatakit/docs.git <span class="o">(</span>fetch<span class="o">)</span>
+<span class="gp">$</span> upstream https://github.com/opendatakit/docs.git <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-dependencies">
+<span id="install-doc-dependencies"></span><h3>Install Dependencies<a class="headerlink" href="#install-dependencies" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The first time you clone down the repo,
+you need to install the dependencies.
+Make sure you have your Python 3 virtual environment
+set up and activated, then:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -r requirements.txt
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">If you are working on
+the design, testing, or deployment of the docs,
+you might find the need to install an additional PyPi package.
+If you do,
+please update the <code class="file docutils literal"><span class="pre">requirements.txt</span></code> file with
+<strong class="command">pip freeze &gt; requirements.txt</strong>.
+Pull Requests which change <code class="file docutils literal"><span class="pre">requirements.txt</span></code>
+should include a note about why the new packages are needed.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">If you have problems when running the Sphinx commands (see below),
+you may have a dependency issue.
+Try running <strong class="command">pip install -r requirements.txt</strong> again.</p>
+</div>
+</div>
+</div>
+<div class="section" id="workflow-details">
+<span id="docs-workflow-details"></span><h2>Workflow details<a class="headerlink" href="#workflow-details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="pull-in-changes-from-upstream">
+<span id="git-pull-the-docs"></span><h3>Pull in changes from upstream<a class="headerlink" href="#pull-in-changes-from-upstream" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>As other people make changes to the docs,
+you need to keep your local copy up to date.</p>
+<p>You probably won’t need to do this the first time,
+but you should always pull in any changes from the main repository
+before working.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git pull upstream
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>If you get this message:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>You asked to pull from the remote &#39;upstream&#39;, but did not specify a branch.
+Because this is not the default configured remote for your current branch,
+you must specify a branch on the command line.
+</pre></div>
+</div>
+<p class="last">Try running <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span></code> instead.</p>
+</div>
+</div>
+<div class="section" id="make-a-new-branch">
+<span id="git-branch-the-docs"></span><h3>Make a New Branch<a class="headerlink" href="#make-a-new-branch" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Choose a specific, deliverable task to work on.
+This should be an <a class="reference external" href="https://github.com/opendatakit/docs/issues">active issue from our issue tracker on GitHub</a>.</p>
+<p>Create a new branch in which you will work on this specific issue.
+The branch name should briefly describe what you are doing.
+For example,
+the original author of this contributor guide
+worked in a branch called <code class="docutils literal"><span class="pre">contributing</span></code>.</p>
+<p>Also,
+make sure that all the branches are derived from <code class="docutils literal"><span class="pre">master</span></code>,
+to avoid mixing up work from different issues commits.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git checkout -b branch-name
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>Branch names should be short, lowercase, and use hyphens for separators.</p>
+<p>Good branch names:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">getting-started-guide</span></code></li>
+<li><code class="docutils literal"><span class="pre">contributing</span></code></li>
+<li><code class="docutils literal"><span class="pre">fix-issue-13</span></code></li>
+</ul>
+<p>Bad branch names:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">getting</span> <span class="pre">started</span> <span class="pre">guide</span></code></li>
+<li><code class="docutils literal"><span class="pre">Getting</span> <span class="pre">started</span> <span class="pre">guide</span></code></li>
+<li><code class="docutils literal"><span class="pre">Getting_started_guide</span></code></li>
+<li><code class="docutils literal"><span class="pre">writing-the-getting-started-guide-adammichaelwood-july-2017-draft</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="work-on-the-docs">
+<span id="write-the-docs"></span><h3>Work on the Docs<a class="headerlink" href="#work-on-the-docs" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Write and edit files in your favorite editor.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>To work on ODK Docs,
+you need to work in a code editor.</p>
+<p>If you’ve never used a code editor before,
+you should know that they are a little different
+than other writing environments
+like MS Word or your email editor.</p>
+<p>People have strong opinions about code editors,
+and nearly everyone who uses them regularly has a favorite.</p>
+<p class="last">If you’re new to using an editor,
+you might want to try <a class="reference external" href="https://atom.io/">Atom</a> or <a class="reference external" href="https://www.sublimetext.com/">Sublime</a>,
+which are both popular and easy to use,
+and they both have decent support for reStructuredText syntax.</p>
+</div>
+</div>
+<div class="section" id="build-view-and-debug">
+<span id="build-the-docs"></span><h3>Build, View, and Debug<a class="headerlink" href="#build-view-and-debug" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>To build the documentation into a viewable website:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sphinx-build -b dirhtml src build
+</pre></div>
+</div>
+<p>This calls the sphinx-build utility.
+The <a class="reference external" href="https://docs.python.org/2/using/cmdline.html#cmdoption-b" title="(in Python v2.7)"><code class="xref std std-option docutils literal"><span class="pre">-b</span></code></a> switch specifies the builder,
+which in this case is <code class="docutils literal"><span class="pre">html</span></code>.
+<code class="docutils literal"><span class="pre">src</span></code> refers to the src directory which contains all <code class="file docutils literal"><span class="pre">.rst</span></code> files (the build source)
+and <code class="docutils literal"><span class="pre">build</span></code> refers to the target of the build
+(the built files will be put into a directory labeled <code class="file docutils literal"><span class="pre">build</span></code>).</p>
+<p>When you run the build,
+you may see error or warning messages.
+These indicate potential problems with the documentation, like:</p>
+<ul class="simple">
+<li>syntax errors</li>
+<li>broken links</li>
+<li>terms not included in the glossary</li>
+</ul>
+<p>Error and warning messages
+include a file name and line number for tracking them down.
+Try to resolve all your errors and warnings
+before issuing a pull request.
+If this is not possible,
+please add a note in your pull request
+so that we can help you debug the problem.</p>
+<p><strong>We will not merge Pull Requests that have warnings or errors in them.</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Because of <a class="reference external" href="https://github.com/sphinx-doc/sphinx/issues/2617">a bug in Sphinx</a>
+the line numbers in error and warning messages
+will be off by the length of <cite>rst_prolog</cite> in <code class="file docutils literal"><span class="pre">conf.py</span></code>.</p>
+</div>
+<p>To view the documentation in your web browser,
+you can use Python’s built-in web server.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> build
+<span class="gp">$</span> python -m http.server <span class="m">8000</span>
+</pre></div>
+</div>
+<p>Then open your browser and go to <a class="reference external" href="http://localhost:8000">http://localhost:8000</a></p>
+<p>Read through your doc edits in the browser
+and correct any issues in your source files.
+You’ll need to shut down the web server (<code class="kbd docutils literal"><span class="pre">CTRL</span> <span class="pre">C</span></code>)
+before rebuilding,
+then return to the main directory of the repo ( <strong class="command">cd ..</strong> ).</p>
+<p>It’s a good idea to delete the <code class="docutils literal"><span class="pre">build</span></code> directory before each rebuild.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> rm -rf build
+<span class="gp">$</span> sphinx-build -b dirhtml . build
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">The script <code class="file docutils literal"><span class="pre">b.sh</span></code> automatically runs all the build commands.
+It saves typing.
+In the future,
+it will also become the canonical build script for ODK Docs,
+including additional tests and other build tasks.</p>
+</div>
+</div>
+<div class="section" id="push-your-branch">
+<span id="push-the-docs"></span><h3>Push Your Branch<a class="headerlink" href="#push-your-branch" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Once your work on the issue is completed,
+add the files you’ve changed or created,
+and write a relevant commit message describing the changes.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git add my_changed_files
+<span class="gp">$</span> git commit -m <span class="s2">&quot;A small but relevant commit message&quot;</span>
+</pre></div>
+</div>
+<p>Then, push the changes.
+The first time you do this on any branch,
+you’ll need to specify the branch name:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git push origin branch-name
+</pre></div>
+</div>
+<p>After that, you only need to use the <strong class="command">push</strong> command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git push
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><code class="docutils literal"><span class="pre">origin</span></code> is the local label for your GitHub fork.</p>
+</div>
+</div>
+<div class="section" id="issue-a-pull-request">
+<span id="pr-the-docs"></span><h3>Issue a Pull Request<a class="headerlink" href="#issue-a-pull-request" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>A <em class="dfn">pull request</em> (or PR)
+is a request from you to the ODK Docs maintainers,
+for us to pull in your changes to the main repo.</p>
+<p>Go the <a class="reference external" href="https://github.com/opendatakit/docs&gt;">main docs repo on GitHub</a>.
+You’ll see a message there referencing your recently pushed branches. Select <span class="guilabel">Compare &amp; pull request</span> to start a pull request.</p>
+<p>Follow GitHub’s instructions.
+The <span class="guilabel">Base fork</span> should be the main repo,
+and <span class="guilabel">base</span> should be <code class="docutils literal"><span class="pre">master</span></code>.
+Your repo and working fork should be listed beside them.
+(This should all populate by default,
+but be sure to double check.)
+If there is a green <strong>Able to be merged</strong> message,
+you can proceed.</p>
+<p>You must include a PR comment. Things to include:</p>
+<ul class="simple">
+<li>A summary of what you did.</li>
+<li>A note about anything that probably should have been done,
+but you didn’t do.</li>
+<li>A note about any new work this PR will create.</li>
+<li>The issue number you are working on.
+If the PR completes the issue,
+include the text <code class="docutils literal"><span class="pre">Closes</span> <span class="pre">#</span></code> and the issue number.</li>
+<li>A note about any errors or warnings,
+and why you did not or could not resolve them.</li>
+<li>A note justifying any changes to <code class="file docutils literal"><span class="pre">requirements.txt</span></code>.</li>
+<li>A note about any difficulties, questions, or concerns
+that came up while working on this issue.</li>
+</ul>
+<p>Complete the pull request.
+The maintainers will review it as quickly as possible.
+If there are any problems the maintainers can’t deal with,
+they will reach out to you.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>If you happen to rename any document file (<code class="file docutils literal"><span class="pre">*.rst</span></code>),
+then be sure that you add the redirect in your PR.</p>
+<p>To add the redirect go to <code class="file docutils literal"><span class="pre">s3_website.yml</span></code>,
+and add a mapping from the old file name to the new file name
+below the <strong>redirects:</strong> line, one mapping per line.</p>
+<p>If you have renamed <code class="file docutils literal"><span class="pre">old-name.rst</span></code> to <code class="file docutils literal"><span class="pre">new-name.rst</span></code>:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">redirects</span><span class="p p-Indicator">:</span>
+ <span class="l l-Scalar l-Scalar-Plain">old-name/index.html</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">new-name</span>
+</pre></div>
+</div>
+<p class="last">Notice the inclusion of <code class="docutils literal"><span class="pre">/index.html</span></code> on the left side.</p>
+</div>
+</div>
+<div class="section" id="keep-going">
+<span id="keep-working-the-docs"></span><h3>Keep Going<a class="headerlink" href="#keep-going" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Once the PR is merged,
+you’ll need to pull in the changes from the main repo ( <code class="docutils literal"><span class="pre">upstream</span></code> )
+into your local copy.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git checkout master
+<span class="gp">$</span> git pull upstream master
+</pre></div>
+</div>
+<p>Then you should push those change to your copy on GitHub ( <code class="docutils literal"><span class="pre">origin</span></code> ).</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git push
+</pre></div>
+</div>
+<p>If you want to delete your branch from before, you can do that:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git branch -d branch-name
+</pre></div>
+</div>
+<p>Now you can find a new issue to work on,
+create a new branch,
+and get to work again.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docs-syntax-guide.html" class="btn btn-neutral float-right" title="Docs Markup and Syntax Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contributing.html" class="btn btn-neutral" title="Contributing to ODK Docs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

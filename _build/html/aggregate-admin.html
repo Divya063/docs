@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Administering Aggregate &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Using ODK Aggregate" href="aggregate-use.html"/>
+        <link rel="next" title="Getting Data Out of Aggregate" href="aggregate-data-access.html"/>
+        <link rel="prev" title="Working with Submitted Data in Aggregate" href="aggregate-data.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-forms.html">Managing Forms in Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-data.html">Working with Submitted Data in Aggregate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Administering Aggregate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#permissions">Permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preferences">Preferences</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-data-access.html">Getting Data Out of Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-visualize.html">Visualizing Geographic Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-help.html">Getting Help in Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-use.html">Using ODK Aggregate</a> &raquo;</li>
+        
+      <li>Administering Aggregate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-admin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="administering-aggregate">
+<h1>Administering Aggregate<a class="headerlink" href="#administering-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Click the <span class="guilabel">Log In</span> link in the upper right corner of the screen to be presented with the Log onto Aggregate screen. Choose the <span class="guilabel">Sign in with Aggregate password</span> button and enter the super-user username you specified within the installer. The initial password for this account is <cite>aggregate</cite>. When you log in, <span class="guilabel">Site Admin</span> will be visible to you.</p>
+<img alt="Image showing sign in option." src="_images/sign-in.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>When signing in with this method, if you do not enter the password correctly, you may need to close all your browser windows and quit your browser before you can try again.</li>
+<li>If the instance name of the server changes (the installer asks for this name), then the passwords for all ODK Aggregate usernames will be cleared (preventing their use) and the super-user username’s password will be reset to aggregate and the above message will also be displayed. In this case, you should log in, change the super-user’s password, and change the passwords for all of your ODK Aggregate usernames.</li>
+<li>In April 2015, the use of Google e-mail accounts for accessing the site (via Sign in with Google) stopped working (Google turned off that functionality).  If you have an existing site running an old version of ODK Aggregate that does not have ODK Aggregate usernames configured for website access (and offers a Sign in with Google sign-in choice), you will need to upgrade to regain access to it.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Beginning with ODK Aggregate 1.3.2, upon the initial installation of the server, it is configured to allow unauthenticated (<cite>anonymousUser</cite>) submissions from ODK Collect and unauthenticated browser access to the submissions and forms management functionality of ODK Aggregate.</p>
+</div>
+<div class="section" id="permissions">
+<span id="permission-tab"></span><h2>Permissions<a class="headerlink" href="#permissions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If you have not yet changed your super-user password to something other than <cite>aggregate</cite>, the server will display <strong>This server and its data are not secure! Please change the super-user’s password!</strong> at the top of the web page.</p>
+<img alt="Image showing server not secure warning." src="_images/warning.png" />
+<p>Please visit the <span class="guilabel">Permissions</span> sub-tab under the <span class="guilabel">Site Admin</span> tab to change this user’s password.</p>
+<img alt="Image showing permissions sub-tab." src="_images/permissions.png" />
+<p>You can specify additional usernames with browser access to the server under the <span class="guilabel">Permissions</span> sub-tab. Privileges are as follows:</p>
+<ul class="simple">
+<li><strong>Data Collector</strong>: able to download forms to ODK Collect and submit data from ODK Collect to ODK Aggregate.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>Only ODK accounts and the anonymousUser can be granted Data Collector rights.</li>
+<li>The anonymousUser must be granted Data Collector rights to accept submissions from unidentified sources (e.g., from ODK Collect 1.1.5 and earlier, or from ODK Collect 1.1.7 and later if not authenticating).</li>
+</ul>
+</div>
+<ul class="simple">
+<li><strong>Data Viewer</strong>: able to log onto the ODK Aggregate website, filter and view submissions, and generate csv or kml files for download.</li>
+<li><strong>Form Manager</strong>: all the capabilities of a Data Viewer plus the abilities to upload a form definition, delete a form and its data, and upload submissions manually through the ODK Aggregate website.</li>
+<li><strong>Site Administrator</strong>: all the capabilities of a Form Manager plus the ability to add users, set passwords, and grant these capabilities to other users.</li>
+</ul>
+<img alt="Image showing privileges." src="_images/privileges.png" />
+<p>Remember to click <span class="guilabel">Save Changes</span> to make these changes take effect. You can also edit the privileges for current users.</p>
+<p>You can upload a <code class="file docutils literal"><span class="pre">.csv</span></code> file of users and their capabilities as well as download the current file.</p>
+</div>
+<div class="section" id="preferences">
+<span id="preference-tab"></span><h2>Preferences<a class="headerlink" href="#preferences" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>In the <span class="guilabel">Preferences</span> sub-tab under <span class="guilabel">Site Admin</span> tab, you can manage:</p>
+<ul class="simple">
+<li>Google API credentials: These credentials are used when publishing into Google services. For details on this, see <a class="reference internal" href="oauth2-service.html"><span class="doc">Aggregate OAuth2 info</span></a>.</li>
+</ul>
+<img alt="Image showing google api option." src="_images/google-api-option.png" />
+<ul>
+<li><p class="first"><strong>Enketo credentials</strong>: These credentials are used for Enketo webforms integration. To link Enketo with Aggregate, see <a class="reference external" href="https://accounts.enketo.org/support/aggregate/">this</a>.</p>
+</li>
+<li><p class="first"><strong>ODK 2.0 App name</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><em>ODK Tables Synchronization Functionality</em> - check this to enable ODK Tables functionality i.e.  able to download, upload and alter data records within ODK Tables as restricted by table-access privileges granted to the user.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Aggregate features</strong>: These settings affect the operations of the server.</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>Disable faster background actions</em> - check this to reduce AppEngine quota usage.</li>
+<li><em>Skip malformed submissions</em> - check this to ignore corrupted submissions.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<img alt="Image showing other options." src="_images/preferences-options.png" />
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-data-access.html" class="btn btn-neutral float-right" title="Getting Data Out of Aggregate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-data.html" class="btn btn-neutral" title="Working with Submitted Data in Aggregate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HTTP Requests and Responses &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="OpenRosa" href="openrosa.html"/>
+        <link rel="next" title="Authentication API" href="openrosa-authentication.html"/>
+        <link rel="prev" title="Metadata Scheme" href="openrosa-metadata.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="openrosa.html">OpenRosa</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="openrosa.html#openrosa-1-0-apis">OpenRosa 1.0 APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="openrosa-metadata.html">Metadata Scheme</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">HTTP Requests and Responses</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#http-requests">HTTP Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#http-responses">HTTP Responses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-authentication.html">Authentication API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-form-submission.html">Form Submission API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-form-list.html">Form List API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="openrosa.html">OpenRosa</a> &raquo;</li>
+        
+      <li>HTTP Requests and Responses</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/openrosa-http.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="http-requests-and-responses">
+<h1>HTTP Requests and Responses<a class="headerlink" href="#http-requests-and-responses" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Much of OpenRosa communication comes in the form of HTTP requests and responses. In order to properly maintain appropriate formatting and compatibility over time, it is ideal for some information to be consistently provided on both sides of these interactions.</p>
+<div class="section" id="http-requests">
+<span id="openrosa-requests"></span><h2>HTTP Requests<a class="headerlink" href="#http-requests" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>HTTP requests (<code class="docutils literal"><span class="pre">GET</span></code>, <code class="docutils literal"><span class="pre">POST</span></code>) should contain the following headers:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Values</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Accept-Language</td>
+<td>The key for what language a response is expected in.</td>
+<td>No. Response acceptable in any locale</td>
+</tr>
+<tr class="row-odd"><td>X-OpenRosa-Version</td>
+<td>1.0</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>Date</td>
+<td>The date on the device in format: <cite>Mon, 14 Feb 2011 16:48:15 GMT</cite></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>HTTP Requests may additionally specify whether the item count is to be included in the response envelope. This is done with a query parameter added to the URI.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Arg</th>
+<th class="head">Values</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>items</td>
+<td>true|false</td>
+<td>No. Defaults to false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="http-responses">
+<span id="openrosa-responses"></span><h2>HTTP Responses<a class="headerlink" href="#http-responses" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Servers should include the following headers in all responses.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Values</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Content-Language</td>
+<td><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">Two-letter language code (ISO 639-1)</a></td>
+<td>No. Recommended for internationalization.</td>
+</tr>
+<tr class="row-odd"><td>X-OpenRosa-Version</td>
+<td>1.0</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>Date</td>
+<td>The date on the server in the format: <cite>Mon, 14 Feb 2011 16:48:15 GMT</cite></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>When a response is issued from an OpenRosa server, the format of the response payload will often be defined by the specific API (Form List, for instance). However, APIs which are fundamentally transactional (user registration, form submission, etc) all contain similar semantics. As such, they will utilize a shared XML Envelope of the format:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&lt;OpenRosaResponse xmlns=&quot;http://openrosa.org/http/response&quot; items=&quot;&quot;&gt; &lt;!-- items: Optional number of how many payloads are included in this envelope --&gt;
+         &lt;message nature=&quot;&quot;/&gt;                                              &lt;!-- 0 or 1: message payload to be displayed to the user. Nature is an optional tag to group messages by type --&gt;
+         &lt;!-- PAYLOADS HERE--&gt;                                                              &lt;!-- 0 or many: additional payloads to be parsed per platform--&gt;
+     &lt;/OpenRosaResponse&gt;
+</pre></div>
+</div>
+<p>For Example:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;OpenRosaResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/http/response&quot;</span> <span class="na">items=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;message</span> <span class="na">nature=</span><span class="s">&quot;submit_success&quot;</span><span class="nt">&gt;</span>Some message to be displayed to the user<span class="nt">&lt;/message&gt;</span>
+    <span class="nt">&lt;Registration</span> <span class="na">xmlns=</span><span class="s">&quot;http://example.org/user/registration&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- optional --&gt;</span>
+    <span class="c">&lt;!--... Some platform specific response ...--&gt;</span>
+<span class="nt">&lt;/OpenRosaResponse&gt;</span>
+</pre></div>
+</div>
+<p>APIs using this response can then include their namespaced payload inside of the response. This response should be handled by the client the same way, regardless of the specific submission. That is, any time an OpenRosa response envelope is received, any of its payloads should be parsed properly.</p>
+<p>Any responses included in the envelope that are unrecognized by the client should be ignored without error.</p>
+<p>Since the server cannot receive confirmation that a response was successfully retrieved, any responses included in the envelope should be considered idempotent.</p>
+<p>The message component of a response envelope should be returned (if possible) in the language specified by the <code class="docutils literal"><span class="pre">Accept-Language</span></code> header. The <code class="docutils literal"><span class="pre">nature</span></code> attribute of a message is an optional ID which can be used to categorize the type of a response. If the <code class="docutils literal"><span class="pre">nature</span></code> of two messages is identical in a bulk operation, for instance, the assumption is that only one of them need be presented to a user (presumably the newest).</p>
+<p>As an example, if a server submits 4 xforms, and receives the responses</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>  <span class="nt">&lt;OpenRosaResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/http/response&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;message</span> <span class="na">nature=</span><span class="s">&quot;submit_success&quot;</span><span class="nt">&gt;</span>Thanks, you&#39;ve submitted 4 forms today <span class="nt">&lt;/message&gt;</span>
+...
+  <span class="nt">&lt;/OpenRosaResponse&gt;</span>
+...
+  <span class="nt">&lt;OpenRosaResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/http/response&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;message</span> <span class="na">nature=</span><span class="s">&quot;submit_success&quot;</span><span class="nt">&gt;</span>Thanks, you&#39;ve submitted 5 forms today <span class="nt">&lt;/message&gt;</span>
+...
+  <span class="nt">&lt;/OpenRosaResponse&gt;</span>
+...
+  <span class="nt">&lt;OpenRosaResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/http/response&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;message</span> <span class="na">nature=</span><span class="s">&quot;submit_user_registered&quot;</span><span class="nt">&gt;</span>User &#39;paul&#39; created succesfully!<span class="nt">&lt;/message&gt;</span>
+...
+  <span class="nt">&lt;/OpenRosaResponse&gt;</span>
+...
+  <span class="nt">&lt;OpenRosaResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/http/response&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;message</span> <span class="na">nature=</span><span class="s">&quot;submit_success&quot;</span><span class="nt">&gt;</span>Thanks, you&#39;ve submitted 6 forms today<span class="nt">&lt;/message&gt;</span>
+...
+  <span class="nt">&lt;/OpenRosaResponse&gt;</span>
+</pre></div>
+</div>
+<p>A client could present a message like:</p>
+<blockquote>
+<div><p><strong>Bulk Submit Completed</strong></p>
+<ul class="simple">
+<li>Thanks, you’ve submitted 6 forms today</li>
+<li>User 『paul』 created successfully!</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="openrosa-authentication.html" class="btn btn-neutral float-right" title="Authentication API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openrosa-metadata.html" class="btn btn-neutral" title="Metadata Scheme" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

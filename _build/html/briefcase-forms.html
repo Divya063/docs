@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Briefcase Usage &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="next" title="Briefcase vs Aggregate" href="briefcase-vs-aggregate.html"/>
+        <link rel="prev" title="Briefcase Installation and Setup" href="briefcase-install.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Briefcase Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pulling-forms-from-odk-aggregate">Pulling forms from ODK Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pushing-forms-to-odk-aggregate">Pushing forms to ODK Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pulling-forms-from-collect">Pulling forms from Collect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pulling-from-android-2-x-and-earlier-device">Pulling from Android 2.x and earlier device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pulling-from-android-4-x-and-later-device">Pulling from Android 4.x and later device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#export-forms-to-csv">Export forms to CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-command-line">Working with command line</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pulling-form-data-from-aggregate-server">Pulling form data from Aggregate Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pulling-form-data-from-odk-collect">Pulling form data from ODK Collect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#export-form-data">Export form data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Briefcase Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/briefcase-forms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="briefcase-usage">
+<h1>Briefcase Usage<a class="headerlink" href="#briefcase-usage" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference internal" href="briefcase-install.html"><span class="doc">Install Briefcase</span></a> before going through this section.</p>
+<div class="section" id="pulling-forms-from-odk-aggregate">
+<span id="pull-from-aggregate"></span><h2>Pulling forms from ODK Aggregate<a class="headerlink" href="#pulling-forms-from-odk-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Open <em>ODK Briefcase</em>.</li>
+<li>In the window which opens up select <span class="guilabel">pull</span> tab.</li>
+<li>Select Aggregate 0.9.x or Aggregate 1.0 in the <span class="guilabel">pull data from</span> the drop-down.</li>
+<li>Enter the URL of your ODK Aggregate server in <span class="guilabel">url</span> option. For instance <cite>https://proj1.appspot.com</cite> and click on connect.</li>
+<li>You can either leave the username blank if the anonymousUser is granted Data Viewer permissions or specify an ODK Aggregate user (Account Type 『ODK』) that has been granted Data Viewer permissions.</li>
+<li>A list of forms will be displayed. Select the ones you want to pull and click on <span class="guilabel">pull</span> button at the bottom of the window. The forms will be pulled to ODK Briefcase Storage on your local system.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">ODK Briefcase will abort a pull attempt if the local copy of the form definition file differs in any way from the copy being pulled from the server or ODK Collect device.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">If the form definition has changed but the changes only affect the question text and do not alter the structure of the collected data (or change the formId or version), you can create a new ODK Briefcase Storage area, pull data into that, then manually copy the instances from there into your original storage area.</p>
+</div>
+</div>
+<div class="section" id="pushing-forms-to-odk-aggregate">
+<span id="push-to-aggregate"></span><h2>Pushing forms to ODK Aggregate<a class="headerlink" href="#pushing-forms-to-odk-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Open <em>ODK Briefcase</em>.</li>
+<li>In the window which opens up select <span class="guilabel">push</span> tab.</li>
+<li>Select Aggregate 1.0 in the <span class="guilabel">push data to</span> drop-down.</li>
+<li>Enter the URL of your ODK Aggregate server in <span class="guilabel">url</span> option. For instance <cite>https://proj1.appspot.com</cite> and click on connect.</li>
+<li>You can either leave the username blank if the anonymousUser is granted Data Viewer permissions or specify an ODK Aggregate user (Account Type 『ODK』) that has been granted Data Viewer permissions.</li>
+<li>A list of forms will be displayed. Select the ones you want to push and click on <span class="guilabel">push</span> button at the bottom of the window. The forms will be pushed to ODK Aggregate Server.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<ul class="last simple">
+<li>ODK Briefcase will abort a push attempt if the form definition already on the ODK Aggregate server differs in any way from the form definition in the ODK Briefcase Storage area.</li>
+<li>ODK Briefcase does not work with Google accounts (Account Type <em>Google</em>).</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>If the form definition has changed but the changes do not affect the data model, you can make a copy of the storage area, replace the copy’s form definition file with that from the server, and then push the data up from this storage area copy.</li>
+<li>By pulling data into the local ODK Briefcase Storage location and then pushing data up to an ODK Aggregate instance, ODK Briefcase provides a mechanism to transfer data across incompatible upgrades of ODK Aggregate.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="pulling-forms-from-collect">
+<span id="pull-from-collect"></span><h2>Pulling forms from Collect<a class="headerlink" href="#pulling-forms-from-collect" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="pulling-from-android-2-x-and-earlier-device">
+<span id="pull-from-android2-x"></span><h3>Pulling from Android 2.x and earlier device<a class="headerlink" href="#pulling-from-android-2-x-and-earlier-device" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Ensure all filled-in forms are finalized. Either delete the forms which are not finalized or delete them after making a backup copy of <code class="file docutils literal"><span class="pre">/sdcard/odk</span></code> directory on your device and restore that later.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">ODK Briefcase does not discriminate between incomplete and finalized forms on the device. It will pull all data off of the device. This can cause problems during later pushes, and, especially, if you are encrypting your finalized forms. To keep your data set clean, you must ensure that all forms are complete before being pulled off of the device.</p>
+</div>
+<ul class="simple">
+<li>Connect your Android device to your computer using a USB cable and choose to mount the drive.</li>
+<li>Open <em>ODK Briefcase</em>.</li>
+<li>In the window which opens up select <span class="guilabel">pull</span> tab.</li>
+<li>Select <cite>Mounted Android SD Card</cite> in the <span class="guilabel">pull data from</span> drop-down.</li>
+<li>Click <span class="guilabel">Choose</span> and select the appropriate mounted SD card.</li>
+<li>A list of forms will be displayed. Select the ones you want to pull and click on <span class="guilabel">pull</span> button at the bottom of the window. The forms will be pulled to ODK Briefcase Storage on your local system.</li>
+<li>On the Android device, open ODK Collect and delete the filled-in forms.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">ODK Briefcase cannot discriminate between duplicates of the same filled-in form. After you pull the data into ODK Briefcase, it is important that you delete it from ODK Collect. Otherwise, the next time you follow this process, you will end up with two copies of the filled-in forms from the first pull, etc.</p>
+</div>
+</div>
+<div class="section" id="pulling-from-android-4-x-and-later-device">
+<span id="pull-from-android4-x"></span><h3>Pulling from Android 4.x and later device<a class="headerlink" href="#pulling-from-android-4-x-and-later-device" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Ensure all filled-in forms are finalized. Either delete the forms which are not finalized or delete them after making a backup copy of <code class="file docutils literal"><span class="pre">/sdcard/odk</span></code> directory on your device and restore that later.</li>
+<li>Create a zip of the entire <code class="file docutils literal"><span class="pre">odk</span></code> directory using an application like <a class="reference external" href="https://play.google.com/store/apps/details?id=org.openintents.filemanager">OI File Manager</a>.</li>
+<li>Connect your Android device to your computer using a USB cable and choose to mount it as a Media device.</li>
+<li>Copy that zip file from the mounted MTP/Android device to a local hard drive.</li>
+<li>Once it is copied onto your local hard drive, unzip the file of the 『odk』 directory.</li>
+<li>Open <em>ODK Briefcase</em>.</li>
+<li>In the window which opens up select <span class="guilabel">pull</span> tab.</li>
+<li>Select <em>Custom Path to ODK Directory</em> in the <span class="guilabel">pull data from</span> drop-down.</li>
+<li>Select the unzipped <code class="file docutils literal"><span class="pre">odk</span></code> folder that you copied onto your local hard drive.</li>
+<li>Click on <span class="guilabel">pull</span> button at the bottom of the window and the filled-in submissions that were copied off of the device will be loaded into ODK Briefcase’s storage location.</li>
+<li>On the Android device, open ODK Collect and delete the filled-in forms.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>You can use the <em>Custom path to ODK Directory</em> any time you want to pull forms from custom location.</li>
+<li>You can confirm that the forms have been successfully pulled into ODK Briefcase by confirming a successful pull status or by verifying the data appearing in a CSV export file.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<ul class="last simple">
+<li>ODK Briefcase does not work with the USB-mounted Media device (MTP) protocol, which replaced the USB-mounted drive protocol on Android 4.x devices.</li>
+<li>ODK Briefcase does not support pushing blank forms to ODK Collect. You can manually install the forms on your ODK Collect device.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="export-forms-to-csv">
+<span id="export-forms"></span><h2>Export forms to CSV<a class="headerlink" href="#export-forms-to-csv" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Open <em>ODK Briefcase</em>.</li>
+<li>In the window which opens up select <span class="guilabel">export</span> tab.</li>
+<li>Select the form you wish to export from the <span class="guilabel">form</span> dropdown. It displays a list of all forms on your ODK Briefcase Storage.</li>
+<li>Specify the location where you wish to export form as CSV on your system in the <span class="guilabel">Export Directory</span> option.</li>
+<li>Click on <span class="guilabel">Export</span> at the bottom of the window.</li>
+</ul>
+</div>
+<div class="section" id="working-with-command-line">
+<span id="cli-use"></span><h2>Working with command line<a class="headerlink" href="#working-with-command-line" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>In Briefcase v1.4.4 and later, there is a scriptable command line interface.</p>
+<div class="section" id="pulling-form-data-from-aggregate-server">
+<h3>Pulling form data from Aggregate Server<a class="headerlink" href="#pulling-form-data-from-aggregate-server" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> java -jar <span class="s2">&quot;ODK Briefcase v1.4.4 Production.jar&quot;</span> --form_id market_prices --storage_directory ~/Desktop --aggregate_url https://my_server.appspot.com --odk_username my_username --odk_password my_password
+</pre></div>
+</div>
+<p>This command pulls form data with id market_prices from Aggregate server at <cite>https://my_server.appspot.com</cite> and stores data in Briefcase’s storage directory on the <code class="file docutils literal"><span class="pre">~/Desktop</span></code></p>
+</div>
+<div class="section" id="pulling-form-data-from-odk-collect">
+<h3>Pulling form data from ODK Collect<a class="headerlink" href="#pulling-form-data-from-odk-collect" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> java -jar <span class="s2">&quot;ODK Briefcase v1.4.4 Production.jar&quot;</span> --form_id market_prices --storage_directory ~/Desktop --odk_directory ~/Desktop/odk
+</pre></div>
+</div>
+<p>This command pulls form data with id market_prices from Collect’s odk folder at <code class="file docutils literal"><span class="pre">~/Desktop/odk</span></code> and store data in Briefcase’s storage directory on the <code class="file docutils literal"><span class="pre">~/Desktop</span></code></p>
+</div>
+<div class="section" id="export-form-data">
+<h3>Export form data<a class="headerlink" href="#export-form-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> java -jar <span class="s2">&quot;ODK Briefcase v1.4.4 Production.jar&quot;</span> --form_id market_prices --storage_directory ~/Desktop --export_directory ~/Desktop --export_filename market_prices.csv
+</pre></div>
+</div>
+<p>This command exports form data with id market_prices from Briefcase’s storage directory on the <code class="file docutils literal"><span class="pre">~/Desktop</span></code> and write CSV file to <code class="file docutils literal"><span class="pre">~/Desktop/market_prices.csv</span></code></p>
+<p>To get help about the command line operation type <strong class="command">java -jar path_to_jar -help</strong>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> java -jar <span class="s2">&quot;/home/pc123/Desktop/ODK Briefcase v1.8.0 Production.jar&quot;</span> -help
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="briefcase-vs-aggregate.html" class="btn btn-neutral float-right" title="Briefcase vs Aggregate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="briefcase-install.html" class="btn btn-neutral" title="Briefcase Installation and Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

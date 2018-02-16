@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Metadata Scheme &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="OpenRosa" href="openrosa.html"/>
+        <link rel="next" title="HTTP Requests and Responses" href="openrosa-http.html"/>
+        <link rel="prev" title="OpenRosa" href="openrosa.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="openrosa.html">OpenRosa</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="openrosa.html#openrosa-1-0-apis">OpenRosa 1.0 APIs</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Metadata Scheme</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#blank-form-metadata">Blank Form Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#completed-form-metadata">Completed Form Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#defining-expected-submission-metadata-in-the-blank-form">Defining expected submission metadata in the blank form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-http.html">HTTP Requests and Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-authentication.html">Authentication API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-form-submission.html">Form Submission API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-form-list.html">Form List API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="openrosa.html">OpenRosa</a> &raquo;</li>
+        
+      <li>Metadata Scheme</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/openrosa-metadata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="metadata-scheme">
+<h1>Metadata Scheme<a class="headerlink" href="#metadata-scheme" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This document details the metadata scheme for OpenRosa-compliant XForms. This metadata is used to ensure that critical or extremely useful data pertaining to the XForms and submissions made by client devices is captured and stored.</p>
+<p>There are two types of metadata in a form submission.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Form metadata — Data about the identity and version of the XForm used to create the data being submitted.</li>
+<li>Submission metadata — Data about the submission itself.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="blank-form-metadata">
+<span id="id1"></span><h2>Blank Form Metadata<a class="headerlink" href="#blank-form-metadata" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>A blank form must have two pieces of identifying metadata. These are provided as attributes in the top-level element inside <code class="docutils literal"><span class="pre">model/instance</span></code>.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&lt;model&gt;
+.
+.
+.
+  &lt;instance&gt;
+    &lt;form-name id=&quot;opendatakit.org:all-widgets&quot; version=&quot;2.1.30&quot;
+    .
+    .
+    .
+    &lt;/form-name&gt;
+  &lt;/instance&gt;
+&lt;/model&gt;
+</pre></div>
+</div>
+<p>Two attributes are required. One provides the unique identity of the form, the other provides the current version number.</p>
+<div class="section" id="form-identity">
+<span id="id2"></span><h3>Form Identity<a class="headerlink" href="#form-identity" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>One of:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">id</span></code></li>
+<li><code class="docutils literal"><span class="pre">xmlns</span></code></li>
+</ul>
+<p>These values should be in the form of <code class="docutils literal"><span class="pre">scheme:value</span></code>.</p>
+<p>If specified, the id value takes precedence over any explicit <code class="docutils literal"><span class="pre">xmlns</span></code> declaration.</p>
+<p>For <code class="docutils literal"><span class="pre">id</span></code>, the implementor’s registered domain name should be used as part of the scheme (for example:<code class="docutils literal"><span class="pre">opendatakit.org:widgetForm</span></code>).</p>
+<p>Compliant systems MUST support <code class="docutils literal"><span class="pre">id</span></code> or <code class="docutils literal"><span class="pre">xmlns</span></code> lengths up to 249 chars; ideally, servers SHOULD be able to support arbitrary lengths.</p>
+</div>
+<div class="section" id="version">
+<span id="form-version"></span><h3>Version<a class="headerlink" href="#version" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>A string value indicating the version number of the form.</p>
+<ul class="simple">
+<li>MUST support a string value (not a number), to indicate an increment.</li>
+<li>SHOULD support any string schema.</li>
+<li>MUST support arbitrary strings up to 249 characters</li>
+<li>SHOULD support arbitrary-length strings</li>
+</ul>
+<p>The value of <code class="docutils literal"><span class="pre">version</span></code> MUST be incremented when any part of the form changes.</p>
+<p>If <code class="docutils literal"><span class="pre">version</span></code> is not present, it is handled as NULL.</p>
+</div>
+</div>
+<div class="section" id="completed-form-metadata">
+<span id="id3"></span><h2>Completed Form Metadata<a class="headerlink" href="#completed-form-metadata" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>In a completed form, metadata is provided in a <code class="docutils literal"><span class="pre">&lt;meta&gt;</span></code> element inside the <code class="docutils literal"><span class="pre">&lt;model&gt;</span></code> element.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;model&gt;</span>
+.
+.
+.
+  <span class="nt">&lt;meta&gt;</span>
+    <span class="nt">&lt;instanceID&gt;</span>
+      uuid:ca90905c-a2db-11e7-abc4-cec278b6b50a
+    <span class="nt">&lt;/instanceID&gt;</span>
+    <span class="nt">&lt;userID&gt;</span>
+      openid:http://www.google.com/profiles/adam.michael.wood
+    <span class="nt">&lt;/userID&gt;</span>
+  <span class="nt">&lt;/meta&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="fields">
+<span id="metadata-fields"></span><h3>Fields<a class="headerlink" href="#fields" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The only <strong>required</strong> element in the form submission metadata is <code class="docutils literal"><span class="pre">&lt;instanceID&gt;</span></code>, which must be a universally unique string identifying this specific submission.</p>
+<p>Optional fields:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;timeStart&gt;</span></code> —  An <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 timestamp</a> of when form entry started.</li>
+<li><code class="docutils literal"><span class="pre">&lt;timeEnd&gt;</span></code> — An <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 timestamp</a> of when form entry ended.</li>
+<li><code class="docutils literal"><span class="pre">&lt;userID&gt;</span></code> — A unique identifier of the submitting user.</li>
+<li><code class="docutils literal"><span class="pre">&lt;deviceID&gt;</span></code> — A unique identifier of device used to generate the submission.</li>
+<li><code class="docutils literal"><span class="pre">&lt;deprecatedID&gt;</span></code> — the <code class="docutils literal"><span class="pre">&lt;instanceID&gt;</span></code> of the submission for which this is a revision. Server software can use this field to unify multiple revisions to a submission into a consolidated submission record.</li>
+</ul>
+<div class="section" id="id-field-formatting">
+<span id="id5"></span><h4>ID field formatting<a class="headerlink" href="#id-field-formatting" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>ID fields (<code class="docutils literal"><span class="pre">&lt;instanceID&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;userID&gt;</span></code>, etc.) must follow the format <code class="docutils literal"><span class="pre">scheme:id</span></code>.</p>
+<div class="section" id="recommended-id-schemes">
+<span id="id6"></span><h5>Recommended ID schemes<a class="headerlink" href="#recommended-id-schemes" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">instanceID</span></code>, <code class="docutils literal"><span class="pre">deprecatedID</span></code></dt>
+<dd>uuid</dd>
+<dt><code class="docutils literal"><span class="pre">userID</span></code></dt>
+<dd><p class="first">mailto</p>
+<p class="last">openid</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">deviceID</span></code></dt>
+<dd><p class="first">mac</p>
+<p class="last">uuid</p>
+</dd>
+</dl>
+<p>If you implement a custom ID scheme, it should be prefixed with your domain name, to ensure uniqueness.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;instanceID&gt;</span>opendatakit.org:123456789<span class="nt">&lt;/instanceID&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id-constraints">
+<span id="id-field-constraints"></span><h4>ID Field Constraints<a class="headerlink" href="#id-constraints" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li>The combined scheme:value keypair MUST be no longer than 249 characters (ie, so that varchar(249) can be used).<ul>
+<li>A <a class="reference external" href="https://en.wikipedia.org/wiki/Robustness_principle">robust</a> Server SHOULD be able to support an arbitrary length ID, however.</li>
+</ul>
+</li>
+<li>Only ONE of each type of ID element can be included in a form submitted to the server. That is, only one <code class="docutils literal"><span class="pre">deviceID</span></code>, one <code class="docutils literal"><span class="pre">userID</span></code>, one <code class="docutils literal"><span class="pre">instanceID</span></code>, and one <code class="docutils literal"><span class="pre">deprecatedID</span></code>.<ul>
+<li>Each ID element MUST have one and only one scheme:value pair.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="defining-expected-submission-metadata-in-the-blank-form">
+<span id="defining-expected-metadata"></span><h2>Defining expected submission metadata in the blank form<a class="headerlink" href="#defining-expected-submission-metadata-in-the-blank-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The blank form <strong>MUST</strong> specify which of the metadata fields are expected when the completed form is submitted. This is done within a <code class="docutils literal"><span class="pre">&lt;meta&gt;</span></code> element having the namespace <code class="docutils literal"><span class="pre">http://openrosa.org/xforms</span></code>. The <code class="docutils literal"><span class="pre">&lt;meta&gt;</span></code> appears inside the child node of the Primary Instance (the first instance element inside <code class="docutils literal"><span class="pre">&lt;model&gt;</span></code>).</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;model&gt;</span>
+  <span class="nt">&lt;instance&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">xmlns:jr=</span><span class="s">&quot;http://openrosa.org/xforms&quot;</span>
+          <span class="na">id=</span><span class="s">&quot;example.org:myFormId&quot;</span>
+          <span class="na">version=</span><span class="s">&quot;1&quot;</span> <span class="nt">&gt;</span>
+      <span class="nt">&lt;jr:meta&gt;</span>
+        <span class="nt">&lt;jr:timeStart/&gt;</span>
+        <span class="nt">&lt;jr:timeEnd/&gt;</span>
+        <span class="nt">&lt;jr:instanceID/&gt;</span>
+        <span class="nt">&lt;/jr:meta&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="examples">
+<span id="metadata-examples"></span><h2>Examples<a class="headerlink" href="#examples" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="blank-form-metadata-example">
+<span id="id7"></span><h3>Blank form metadata<a class="headerlink" href="#blank-form-metadata-example" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;h:head&gt;</span>
+  <span class="nt">&lt;h:title&gt;</span>Metablock example<span class="nt">&lt;/h:title&gt;</span>
+  <span class="nt">&lt;model&gt;</span>
+    <span class="nt">&lt;instance&gt;</span>
+      <span class="nt">&lt;data</span> <span class="na">xmlns:jr=</span><span class="s">&quot;http://openrosa.org/xforms&quot;</span>
+            <span class="na">xmlns=</span><span class="s">&quot;http://example.org/meta&quot;</span>
+            <span class="na">version=</span><span class="s">&quot;1&quot;</span> <span class="nt">&gt;</span>
+        <span class="nt">&lt;jr:meta&gt;</span>
+          <span class="nt">&lt;jr:deviceID/&gt;</span>
+          <span class="nt">&lt;jr:timeStart/&gt;</span>
+          <span class="nt">&lt;jr:timeEnd/&gt;</span>
+          <span class="nt">&lt;jr:instanceID/&gt;</span>
+        <span class="nt">&lt;/jr:meta&gt;</span>
+        .
+        .
+        .
+      <span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/instance&gt;</span>
+    .
+    .
+    .
+  <span class="nt">&lt;/model&gt;</span>
+<span class="nt">&lt;/h:head&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="form-submission-metadata">
+<span id="form-submission-metadata-example"></span><h3>Form submission metadata<a class="headerlink" href="#form-submission-metadata" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39;?&gt;</span>
+  <span class="nt">&lt;data</span> <span class="na">version=</span><span class="s">&quot;1&quot;</span>
+        <span class="na">xmlns:jr=</span><span class="s">&quot;http://openrosa.org/xforms&quot;</span>
+        <span class="na">xmlns=</span><span class="s">&quot;http://example.org/meta&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;jr:meta&gt;</span>
+      <span class="nt">&lt;jr:deviceID&gt;</span>uuid:38DN0236SAKWJOJNQB3XJI9RW<span class="nt">&lt;/jr:deviceID&gt;</span>
+      <span class="nt">&lt;jr:timeStart&gt;</span>2010-08-12T04:08:29.765-5:00<span class="nt">&lt;/jr:timeStart&gt;</span>
+      <span class="nt">&lt;jr:timeEnd&gt;</span>2010-08-12T04:10:23.062-5:00<span class="nt">&lt;/jr:timeEnd&gt;</span>
+      <span class="nt">&lt;jr:instanceID&gt;</span>uuid.dimagi.org:GEPSJLOGH13TY8L77066GEJJW<span class="nt">&lt;/jr:instanceID&gt;</span>
+      <span class="nt">&lt;jr:userID&gt;</span>chwid.dimagi.org:Akende<span class="nt">&lt;/jr:userID&gt;</span>
+    <span class="nt">&lt;/jr:meta&gt;</span>
+    .
+    .
+    .
+  <span class="nt">&lt;/data&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="openrosa-http.html" class="btn btn-neutral float-right" title="HTTP Requests and Responses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openrosa.html" class="btn btn-neutral" title="OpenRosa" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Working with Submitted Data in Aggregate &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Using ODK Aggregate" href="aggregate-use.html"/>
+        <link rel="next" title="Administering Aggregate" href="aggregate-admin.html"/>
+        <link rel="prev" title="Managing Forms in Aggregate" href="aggregate-forms.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-forms.html">Managing Forms in Aggregate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Working with Submitted Data in Aggregate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-submissions">Filtering Submissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualizing-submissions">Visualizing Submissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-submissions">Exporting Submissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#publishing-submissions">Publishing Submissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-exported-submissions">Viewing Exported Submissions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-admin.html">Administering Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-data-access.html">Getting Data Out of Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-visualize.html">Visualizing Geographic Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-help.html">Getting Help in Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-use.html">Using ODK Aggregate</a> &raquo;</li>
+        
+      <li>Working with Submitted Data in Aggregate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="working-with-submitted-data-in-aggregate">
+<h1>Working with Submitted Data in Aggregate<a class="headerlink" href="#working-with-submitted-data-in-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>You can view the data submitted from ODK Collect here. You can filter the submissions, visualize them using pie chart, bar graph or map, export the submissions into useful formats and publish the submitted data into another service. You can also view all the exported submissions. ODK Aggregate provides all these options under the <span class="guilabel">Submissions</span> tab.</p>
+<div class="section" id="filtering-submissions">
+<span id="filter-submission"></span><h2>Filtering Submissions<a class="headerlink" href="#filtering-submissions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Submissions from ODK collect can be filtered to view or hide a specific subset of data by creation of filters. Filters give you the ability to see a subset of your data. You can have a single filter as well as multiple filters. If you have multiple filters applied at once, then you have a filter group. You can create and apply filters by using the options under the <span class="guilabel">Filter Submissions</span> tab.</p>
+<p>You can create a single or multiple filters depending on the subset of data you want to view or hide. Creating a filter like <cite>Display Rows where column Gender EQUAL male</cite> specifies that you want to get a list of all rows where gender column has value as male i.e you want to obtain information about all male people in your data. Unless the filter is saved, it is temporary. You can save a filter to make it permanent. Any filter can be deleted if it is no longer needed.</p>
+<p>Various options under this tab can be used as follows:</p>
+<ul class="simple">
+<li>Click on <span class="guilabel">Add Filter</span> to add filter to the data. In the <span class="guilabel">Create filter to</span> dropdown, <span class="menuselection">Display</span> or <span class="menuselection">Hide</span> will specify whether you will be selecting data to show or hide and  <span class="menuselection">Rows</span> or <span class="menuselection">Columns</span> will specify whether you will be working with the rows or columns of the table.</li>
+</ul>
+<img alt="Image showing add filter option." src="_images/add-filter.png" />
+<p>If you select <span class="menuselection">Rows</span> specify a condition you want to apply in the <span class="guilabel">where</span> box.</p>
+<img alt="Image showing row selection." src="_images/row-filter.png" />
+<p>If you selected <span class="menuselection">Columns</span> specify the columns you wish to display or hide in the <span class="guilabel">titled</span> box.</p>
+<img alt="Image showing column selection." src="_images/column-filter.png" />
+<ul class="simple">
+<li>Click on <span class="guilabel">Save</span> to save the filter or filter group for future use. Clicking on <span class="guilabel">Save As</span> allows you to give a name to the filter or filter group.</li>
+<li>Click on <span class="guilabel">Delete</span> to delete a filter or filter group.</li>
+<li>You can check the <span class="guilabel">Display Metadata</span> checkbox to display or hide metadata.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Metadata provides information about the submissions. There will be information such as date submitted, if the data is complete, version numbers, and id numbers.</p>
+</div>
+<img alt="Image showing save, save as, delete and display metadata options." src="_images/filter-options.png" />
+</div>
+<div class="section" id="visualizing-submissions">
+<span id="visualize-submissions"></span><h2>Visualizing Submissions<a class="headerlink" href="#visualizing-submissions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ODK Aggregate provides a quick means for basic data visualization. This Visualize functionality is meant to provide a quick means to view early data results in meaningful ways but is not meant to provide complex data analysis functionality. You can view your data in bar graph, pie chart or on a map.</p>
+<p>In both Pie chart and bar graph visualization you can either count the number of times a unique answer occurs in a specified column or calculate sum of values in one column grouped by a value in another column. You can choose a column that you want to map in map visualization.</p>
+<img alt="Image showing visualize option." src="_images/visualize.png" />
+<p>Click on <span class="guilabel">Visualize</span> to visualize the submitted data. Select bar graph, pie chart or map in the <span class="guilabel">Type</span> dropdown. Further options are described as follows:</p>
+<ul>
+<li><p class="first">If you choose Pie Chart, choose whether you would like to count or sum data:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If you select <span class="guilabel">Count</span> option, then select the column in which you want to apply this.</li>
+<li>If you select <span class="guilabel">Sum</span> option, then select the column of values that you want to add and another column that you want to use to group the numbers.</li>
+<li>Then click on <span class="guilabel">Pie It</span> to get the Pie Chart.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<img alt="Image showing pie chart option." src="_images/pie-chart.png" />
+<ul class="simple">
+<li>If you choose Bar Graph, you have the same options as that in case of Pie Chart. Choose the option you want to use and then click on <span class="guilabel">Bar It</span> to get the Bar Graph.</li>
+</ul>
+<img alt="Image showing bar graph option." src="_images/bar-graph.png" />
+<ul class="simple">
+<li>If you choose Map, select a column that you want to map in the <span class="guilabel">GeoPoint to Map</span> dropdown. Click on <span class="guilabel">Map It</span> to get the map. You can click on a point to view a balloon with the other information supplied in the table.</li>
+</ul>
+<img alt="Image showing map option." src="_images/map.png" />
+</div>
+<div class="section" id="exporting-submissions">
+<span id="export-submissions"></span><h2>Exporting Submissions<a class="headerlink" href="#exporting-submissions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="Image showing export option." src="_images/export-submission.png" />
+<img alt="Image showing export window." src="_images/export-options.png" />
+<p>Click on <span class="guilabel">Export</span> option to export submitted data into useful formats and choose the format in which you want to export data. You can also choose a filter which you have saved earlier to export only a certain subset of data. Details on <a class="reference internal" href="aggregate-data-access.html#export-data"><span class="std std-ref">exporting data</span></a> are given in the <a class="reference internal" href="aggregate-data-access.html"><span class="doc">data transfer</span></a> section.</p>
+</div>
+<div class="section" id="publishing-submissions">
+<span id="publish-submissions"></span><h2>Publishing Submissions<a class="headerlink" href="#publishing-submissions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="Image showing publish option." src="_images/publish-submission.png" />
+<img alt="Image showing publish window." src="_images/publish-options.png" />
+<p>Click on <span class="guilabel">Publish</span> option to publish the submitted data into another service. You can choose where you want to publish data and which data you want to publish. Details on <a class="reference internal" href="aggregate-data-access.html#publish-data"><span class="std std-ref">publishing data</span></a> are given in the <a class="reference internal" href="aggregate-data-access.html"><span class="doc">data transfer</span></a> section.</p>
+</div>
+<div class="section" id="viewing-exported-submissions">
+<span id="view-export-data"></span><h2>Viewing Exported Submissions<a class="headerlink" href="#viewing-exported-submissions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can to view the list of exported files under the <span class="guilabel">Exported Submissions</span> tab.</p>
+<img alt="Image showing exported submissions." src="_images/exported-submission.png" />
+<ul class="simple">
+<li><span class="guilabel">File Type</span> specifies whether file is <code class="file docutils literal"><span class="pre">.csv</span></code> or <code class="file docutils literal"><span class="pre">.kml</span></code> or <code class="file docutils literal"><span class="pre">.json</span></code> file.</li>
+<li><span class="guilabel">Status</span> will state whether the file being made is in progress, or is now available for viewing.</li>
+<li><span class="guilabel">Time Completed</span> shows the time when the <cite>Export</cite> task is complete and the file is ready.</li>
+<li>Click on the link in <span class="guilabel">Download File</span> to see your exported file.</li>
+<li>Select delete box in the <span class="guilabel">Delete</span> column if you want to delete your exported file.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-admin.html" class="btn btn-neutral float-right" title="Administering Aggregate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-forms.html" class="btn btn-neutral" title="Managing Forms in Aggregate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Filling out Forms with Collect &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Using ODK Collect" href="collect-using.html"/>
+        <link rel="next" title="Collect Menus, Settings, and Security" href="collect-settings.html"/>
+        <link rel="prev" title="Managing Forms in Collect" href="collect-forms.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collect-using.html">Using ODK Collect</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="collect-forms.html">Managing Forms in Collect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Filling out Forms with Collect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#answering-questions">Answering questions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#free-response">Free response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-response">Select response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#capture-answer-from-device">Capture answer from device</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-answers">Removing answers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigating-the-form">Navigating the form</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#swipe">Swipe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#left-and-right-buttons">Left and Right Buttons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jumping-to-questions">Jumping to questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#autoadvance-questions">Autoadvance Questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#required-questions">Required Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#changing-language-of-a-form">Changing language of a form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-a-partially-filled-form">Saving a partially filled form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#completing-a-form">Completing a Form</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#name-the-form">Name the form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mark-the-form-as-finalized">Mark the form as <em>Finalized</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collect-settings.html">Collect Menus, Settings, and Security</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collect-using.html">Using ODK Collect</a> &raquo;</li>
+        
+      <li>Filling out Forms with Collect</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/collect-filling-forms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="filling-out-forms-with-collect">
+<h1>Filling out Forms with Collect<a class="headerlink" href="#filling-out-forms-with-collect" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ODK Collect is used by <a class="reference internal" href="glossary.html#term-enumerator"><span class="xref std std-term">enumerators</span></a> to complete survey <a class="reference internal" href="form-design-intro.html"><span class="doc">forms</span></a> with <a class="reference internal" href="glossary.html#term-participant"><span class="xref std std-term">participants</span></a>.</p>
+<div class="admonition-before-you-get-started admonition">
+<p class="first admonition-title">Before you get started…</p>
+<p class="last">Before you can fill out a form, you need to <a class="reference internal" href="collect-forms.html#loading-forms-into-collect"><span class="std std-ref">load at least one form into Collect</span></a>.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Select <span class="guilabel">Fill Blank Form</span> from the Main Menu</p>
+<img alt="The Main Menu of the Collect app. The first menu option, *Fill Blank Form*, is circled in red." src="_images/main-menu-fill-blank-form.png" />
+</li>
+<li><p class="first">Select a form to fill out from the form list</p>
+<img alt="The Fill Blank Form menu in the Collect app. Several form titles are listed: *All widgets*, *Demo Survey*, *Form Design Tips by Nafundi*, *Hypertension Screening*, *Sample XLSForm*." src="_images/fill-blank-forms.png" />
+</li>
+<li><p class="first">Once you have <a class="reference internal" href="#completing-form"><span class="std std-ref">completed the form</span></a>, prepare it for upload by <a class="reference internal" href="#finalize-form"><span class="std std-ref">finalizing it</span></a>.</p>
+</li>
+</ol>
+<div class="section" id="answering-questions">
+<h2>Answering questions<a class="headerlink" href="#answering-questions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="free-response">
+<h3>Free response<a class="headerlink" href="#free-response" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Free-entry text and number answers are entered using the device keyboard. The appropriate keyboard (letters or numbers) opens when the question appears.</p>
+<video controls="controls" muted="muted" src="../_videos/keyboard-popup.mp4" style="max-width:100%">
+Video showing text keyboard popup when a string input is required and number keyboard popup when a number input is required.</video></div>
+<div class="section" id="select-response">
+<h3>Select response<a class="headerlink" href="#select-response" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Questions with response choices can be answered by touching the selected items. These include radio buttons (single-select), dropdowns (single-select), check boxes (multi-select), and image choices (single and multi-select).</p>
+<div class="figure" id="id2">
+<img alt="A question screen with radio buttons (single-select)." src="_images/single-select.png" />
+<p class="caption"><span class="caption-text">Radio buttons accept one selection.</span></p>
+</div>
+<div class="figure" id="id3">
+<img alt="A question screen with check boxes (multi-select)." src="_images/multi-select.gif" />
+<p class="caption"><span class="caption-text">Check boxes accept multiple answers.</span></p>
+</div>
+<div class="figure" id="id4">
+<img alt="A question screen with image choices." src="_images/select-image.png" />
+<p class="caption"><span class="caption-text">Select images by touching them.</span></p>
+</div>
+</div>
+<div class="section" id="capture-answer-from-device">
+<h3>Capture answer from device<a class="headerlink" href="#capture-answer-from-device" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Many question formats launch additional features, form widgets, or apps to collect an answer. This includes audio and video recording, signature collection, photo capture, date and time widgets, geolocation widgets, and barcodes.</p>
+<p>In all cases, buttons below the question text will guide you through providing the response.</p>
+<img alt="" src="_images/image-widget.png" />
+<img alt="" src="_images/signature-widget.png" />
+<img alt="" src="_images/video-widget.png" />
+<img alt="" src="_images/geopoint-widget.png" />
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last">For a (mostly) complete guide to form question appearance, see <a class="reference internal" href="form-widgets.html"><span class="doc">Form Widgets</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="removing-answers">
+<h2>Removing answers<a class="headerlink" href="#removing-answers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To remove a response, <span class="gesture">Long Press</span> on the <a class="reference internal" href="glossary.html#term-question-label"><span class="xref std std-term">question label</span></a>.</p>
+<img alt="To remove an answer to a question, long press the question label and follow the on-screen prompts." class="details" src="_images/long-press-to-remove.gif" />
+</div>
+<div class="section" id="navigating-the-form">
+<h2>Navigating the form<a class="headerlink" href="#navigating-the-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="swipe">
+<h3>Swipe<a class="headerlink" href="#swipe" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>To move between questions, <span class="gesture">Swipe Left or Right</span>.</p>
+<img alt="A question screen in the Collect App. Overlaid on the screen is an icon of a hand with extended finger and arrows pointing left and right, representing a swiping gesture." class="block" src="_images/swiping.png" />
+<video controls="controls" muted="muted" src="../_videos/swipe-example.mp4" style="max-width:100%">
+Video showing swiping between three questions.</video></div>
+<div class="section" id="left-and-right-buttons">
+<h3>Left and Right Buttons<a class="headerlink" href="#left-and-right-buttons" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you prefer Forward and Back buttons for navigation, you can switch to that in <span class="menuselection">⋮ -&gt; General Settings -&gt; User Interface</span>.</p>
+<ol class="arabic">
+<li><p class="first">Open the <em>Action Menu</em> (<span class="menuselection">⋮</span>)</p>
+<img alt="A question screen in the Collect app. The Action Menu (&quot;kebab&quot;) in the top-right corner is circled in red." src="_images/question-screen-highlight-kebab.png" />
+</li>
+<li><p class="first">Select <span class="menuselection">General Settings</span>.</p>
+<img alt="A question screen in the Collect app. The Action Menu is expanded and the option *General Settings* is circled in red." src="_images/question-screen-highlight-general-settings.png" />
+</li>
+<li><p class="first">Select <span class="menuselection">User Interface</span></p>
+<img alt="The General Settings menu of the Collect app. The *User Interface* item is circled in red." src="_images/general-settings-highlight-user-interface.png" />
+</li>
+<li><p class="first">Select <span class="menuselection">Navigation</span></p>
+<img alt="The User Interface menu of the Collect app. The *Navigation* item is circled in red." src="_images/user-interface-highlight-navigation.png" />
+</li>
+<li><p class="first">Update your form navigation preference</p>
+<img alt="The User Interface menu of the Collect app, as displayed in the previous image. There is now a modal titled *Navigation*, with radio buttons (single select) for: *Use horizontal swipes*, *Use forward/back buttons*, and *Use swipes and buttons*. The option for *Use forward/back buttons* is selected and circled in red." src="_images/ui-navigation-buttons.png" />
+</li>
+</ol>
+<img alt="A question screen in the Collect App. There are now two buttons below the question text, with left (backwards) and right (forwards) buttons." src="_images/question-screen-with-buttons.png" />
+</div>
+<div class="section" id="jumping-to-questions">
+<h3>Jumping to questions<a class="headerlink" href="#jumping-to-questions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The arrow icon (<img alt="Opens the jump menu." src="_images/jumpicon.png" />) in the top right corner opens the jump menu. From the jump menu, you can go to any question or go to the beginning/ending of the form.</p>
+<img alt="Screen with the arrow icon displayed in ODK Collect on an Android phone." class="device-screen-vertical" src="_images/jumpscreen.png" />
+<img alt="Jump menu displayed in ODK Collect on an Android phone." class="device-screen-vertical" src="_images/jumpmenu.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">If a form contains questions in a looped group, those questions will only appear in the Jump menu once an actual record is created.</p>
+</div>
+</div>
+<div class="section" id="autoadvance-questions">
+<h3>Autoadvance Questions<a class="headerlink" href="#autoadvance-questions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Some questions will <a class="reference internal" href="form-widgets.html#autoadvance-widget"><span class="std std-ref">auto-advance</span></a> after being answered.</p>
+<video controls="controls" muted="muted" src="../_videos/auto-advance.mp4" style="max-width:100%">
+Video showing auto-advance after the questions are answered.</video></div>
+<div class="section" id="required-questions">
+<h3>Required Questions<a class="headerlink" href="#required-questions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference external" href="http://xlsform.org/#required">Required questions</a> will not allow you to advance unless answered.</p>
+<img alt="A question screen in the Collect app. An error text reads, &quot;Sorry, this response is required.&quot;" src="_images/trigger-sorry.png" />
+</div>
+</div>
+<div class="section" id="changing-language-of-a-form">
+<span id="change-form-language"></span><h2>Changing language of a form<a class="headerlink" href="#changing-language-of-a-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If a form is available in multiple languages, you can choose a language in which you want the questions to appear.</p>
+<ol class="arabic">
+<li><p class="first">Open the <em>Action Menu</em> (<span class="menuselection">⋮</span>)</p>
+<img alt="A question screen in the Collect app. The Action Menu (&quot;kebab&quot;) in the top-right corner is circled in red." src="_images/question-screen-highlight-kebab.png" />
+</li>
+<li><p class="first">Select <span class="menuselection">Change Language</span>.</p>
+<img alt="A question screen in the Collect app. The Action Menu is expanded and the option *Change Language* is circled in red." src="_images/question-screen-highlight-change-language.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><span class="menuselection">Change Language</span> option is only visible if a form is available in more than one language.</p>
+</div>
+</li>
+<li><p class="first">Select the language you want the form questions to appear in.</p>
+<img alt="A modal titled *Change Language*, with radio buttons (single select) for languages: *English* and *French* and a CANCEL button. The option for *English* is selected." src="_images/choose-language.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="saving-a-partially-filled-form">
+<span id="save-partial-filled-form"></span><h2>Saving a partially filled form<a class="headerlink" href="#saving-a-partially-filled-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If you wish to save a partially filled form, you can click on the save icon (<img alt="Saves a form." src="_images/saveicon.png" />) beside the form name.</p>
+<img alt="Screen with the save icon displayed in ODK Collect on an Android phone." class="device-screen-vertical" src="_images/save-partial-filled-form.png" />
+<p>To <a class="reference internal" href="collect-forms.html#editing-saved-forms"><span class="std std-ref">edit the saved form</span></a>, select <span class="menuselection">Edit Saved Form</span> in the Main Menu and select the form you wish to edit.</p>
+</div>
+<div class="section" id="completing-a-form">
+<span id="completing-form"></span><h2>Completing a Form<a class="headerlink" href="#completing-a-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Once you have reached the end of a form, you will have the opportunity to <em>Save</em> and <em>Exit</em> the form.</p>
+<img alt="The end of a survey in the Collect app. The headline is *You are at the end of Demo Survey.* Below that is a text field labeled *Name this form*, with the value 'Demo Survey'. Then an unchecked checkbox labeled *Mark form as finalized*. Below all that is a button labeled *Save Form and Exit*." src="_images/save-and-exit.png" />
+<p>At this point, you may also:</p>
+<div class="section" id="name-the-form">
+<span id="name-form-instance"></span><h3>Name the form<a class="headerlink" href="#name-the-form" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The last form screen provides a default name for the form (defined by the form designer). You can rename it. This name only applies to that particular instance of a completed form (not to the blank form).</p>
+<img alt="To rename the form instance, touch the form name in the last screen of the survey." src="_images/rename-form.gif" />
+<p>The Form Name identifies the form in lists throughout the app. For this reason, a meaningful name may be important to you. After you’ve saved the name, the form automatically moves to the <span class="guilabel">Send Finalized Form</span> section, from where you can send it.</p>
+</div>
+<div class="section" id="mark-the-form-as-finalized">
+<span id="finalize-form"></span><h3>Mark the form as <em>Finalized</em><a class="headerlink" href="#mark-the-form-as-finalized" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<img alt="" src="_images/mark-form-as-finalized.png" />
+<p>Only <span class="formstate">Finalized</span> forms can be <a class="reference internal" href="collect-forms.html#uploading-forms"><span class="std std-ref">uploaded to a server</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collect-settings.html" class="btn btn-neutral float-right" title="Collect Menus, Settings, and Security" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect-forms.html" class="btn btn-neutral" title="Managing Forms in Collect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

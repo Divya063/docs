@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/aggregate-visualize.rst:16
+msgid "Visualizing Geographic Data"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:18
+msgid "This guide helps the users to visualize the collected geodata uploaded on ODK Aggregate server. There are various options you can choose from, like `Google Fusion Tables <https://support.google.com/fusiontables/answer/2571232?hl=en>`_ and `Google Earth <https://www.google.com/intl/en_in/earth/>`_."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:22
+msgid "If you're looking to do some quick visualizations of a small dataset and aren't too worried about the inherent risks of experimental tools, then you should use :ref:`Google Fusion Tables <use-google-fusion>`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:23
+msgid "If you're serious about the long-term use of geodata and have large dataset use :ref:`Google Earth <use-google-earth>`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:26
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:27
+msgid "Make sure you have set up your :doc:`ODK Aggregate server <aggregate-install>`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:28
+msgid "You should know how :doc:`ODK Collect  <collect-intro>` works."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:29
+msgid "You should be familiar with form designers like :doc:`ODK Build <odk-build>`,  :doc:`XLSForm <xlsform>` to create your location based forms and upload it to ODK Aggregate server."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:34
+msgid "Google Fusion Tables"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:36
+msgid ":dfn:`Google Fusion Tables` is an experimental data visualization web application provided by Google for data management. Fusion tables can be used for visualizing dataset on a map."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:38
+msgid "Follow these steps to view your data using fusion tables:"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:40
+#: ../../src/aggregate-visualize.rst:134
+msgid "Login to your ODK Aggregate server."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:41
+msgid "In the :guilabel:`Submissions` tab, under :guilabel:`Filter Submissions`, select the form you want to use."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:47
+msgid "If you are using Google Cloud Platform make sure you have enabled relevant APIs like **Google Drive API**, **Fusion Tables API**, **and Google Maps Javascript API** otherwise you may get *RequestFailureException error*."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:53
+msgid "To enable the APIs go to `Google Cloud Platform <https://cloud.google.com/>`_ and click on :guilabel:`Console` in the top right corner. Click on the three horizontal bars in the top left corner, now select :guilabel:`APIs & services` from the menu and then select :guilabel:`Library` option."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:59
+msgid "You will be able to see the API Library page."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:65
+msgid "Search the APIs in the search bar."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:71
+msgid "Click on :guilabel:`Enable`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:77
+msgid "Now return to ODK Aggregate server and click on the :guilabel:`Publish` button."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:82
+msgid "In :guilabel:`Publish to` field, choose the platform from the drop-down menu to which you want to publish your data, choose Google Fusion Tables. In the :guilabel:`Data to Publish` field, Select the option from the drop-down menu to define what you want to upload:"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:84
+msgid ":guilabel:`Upload Existing Submission Data Only` will only upload the existing data you already have submitted to your ODK Aggregate server."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:85
+msgid ":guilabel:`Stream New Submission Data Only` can be used if you want new submissions to be automatically entered into Google Fusion Tables."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:86
+msgid ":guilabel:`BOTH Upload Existing and Stream New Submission Data` will upload your existing submissions into Fusion Tables and continue automatically adding new submissions to your table."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:88
+msgid "Choose :guilabel:`BOTH Upload Existing and Stream New Submission Data` and click on :guilabel:`Publish`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:92
+msgid "If you choose :guilabel:`BOTH Upload Existing and Stream New Submission Data` option, you would be able to create a link between your data in Google Earth and Google Fusion Tables, for more information, refer this `link <https://support.google.com/fusiontables/answer/171215?hl=en>`_."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:98
+msgid "You will need to enter an email address and that email address will be granted access to the documents."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:103
+msgid "Check the inbox of the email address that you entered and there would be an email from **odk-oauth2-publishing**, click on :guilabel:`Open`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:108
+msgid "After clicking on :guilabel:`Open` you would be redirected to Google Fusion tables `website <https://fusiontables.google.com/>`_. Here you would be able to see your submissions."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:113
+msgid "Select :guilabel:`Map of location` and you should see your data points displayed on a Google Map."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:120
+msgid "If the points aren't displaying where you expect them to display, visit `Help <https://support.google.com/fusiontables/?hl=en#topic=27020&rd=1>`_ . You can also customize pop-up balloons in Google Fusion Tables using :guilabel:`Change info window` button under the :menuselection:`Feature map` option."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:128
+msgid "Google Earth"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:130
+msgid ":dfn:`Google Earth` is a virtual globe that accesses satellite and aerial imagery, and other geographic data over the internet to represent the Earth as a three-dimensional globe"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:132
+msgid "Follow these steps to view your data using Google Earth:"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:135
+msgid "In the :guilabel:`Submissions` tab, under :guilabel:`Filter Submissions`, select the form you want to use and click on :guilabel:`Export`"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:140
+msgid "Choose the type as :file:`KML file` and click on :guilabel:`Export`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:145
+msgid "You don't need to change the default options, but you can select the :menuselection:`title` according to your choice. Click on :guilabel:`Export`"
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:147
+msgid "You will be redirected to :guilabel:`Export Submissions` page where you can download your kml file."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:152
+msgid "After downloading go to `Google Earth website <https://earth.google.com/web/>`_ or you can download it from `here <https://www.google.com/earth/download/gep/agree.html>`_. Wait for a while as Google Earth takes time to load."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:157
+msgid "Click on |places| and to enable KML import click on :guilabel:`Settings`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:166
+msgid "In the Settings window, enable KML file import and click on :guilabel:`SAVE`."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:172
+msgid "Click on :guilabel:`IMPORT KML FILE` and import the downloaded kml file."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:178
+msgid "Now you will be able to see your data in an organized manner on Google Earth."
+msgstr ""
+
+#: ../../src/aggregate-visualize.rst:186
+msgid "On Google Earth, you can choose your map style, add additional points, lines and polygons to add more information for the enhancement of map. You can also try out `this <https://www.google.com/earth/outreach/learn/annotating-google-earth/>`_ tutorial on how to annotate Google Earth."
+msgstr ""
+

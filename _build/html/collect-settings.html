@@ -1,0 +1,609 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Collect Menus, Settings, and Security &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Using ODK Collect" href="collect-using.html"/>
+        <link rel="next" title="Importing and Exporting Settings" href="collect-import-export.html"/>
+        <link rel="prev" title="Filling out Forms with Collect" href="collect-filling-forms.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collect-using.html">Using ODK Collect</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="collect-forms.html">Managing Forms in Collect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-filling-forms.html">Filling out Forms with Collect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Collect Menus, Settings, and Security</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main-menu">Main Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-settings">General Settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#server-settings">Server Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-interface-settings">User Interface Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#form-management-settings">Form Management Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-and-device-identity-settings">User and Device Identity Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#admin-settings">Admin Settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="collect-import-export.html">Importing and Exporting Settings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collect-using.html">Using ODK Collect</a> &raquo;</li>
+        
+      <li>Collect Menus, Settings, and Security</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/collect-settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="collect-menus-settings-and-security">
+<h1>Collect Menus, Settings, and Security<a class="headerlink" href="#collect-menus-settings-and-security" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="main-menu">
+<span id="id1"></span><h2>Main Menu<a class="headerlink" href="#main-menu" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<img alt="Main menu of ODK Collect" class="device-screen-vertical" src="_images/main-menu.jpeg" />
+<dl class="docutils">
+<dt><span class="menuselection">Fill Blank Form</span></dt>
+<dd>Lists available blank forms and
+lets you select a form to begin filling out.</dd>
+<dt><span class="menuselection">Edit Saved Form</span></dt>
+<dd>Lists completed and saved forms and
+lets you select a form to edit.</dd>
+<dt><span class="menuselection">Send Finalized Form</span></dt>
+<dd>Lists finalized but unsent forms and
+lets you select forms to send to the server.</dd>
+<dt><span class="menuselection">View Sent Form</span></dt>
+<dd>Lists forms that have been sent, even if they were deleted.</dd>
+<dt><span class="menuselection">Get Blank form</span></dt>
+<dd>Lists blank forms available on the server and
+lets you download them.</dd>
+<dt><span class="menuselection">Delete Saved Form</span></dt>
+<dd>Lists all the Saved and Blank Forms and
+lets you delete them.</dd>
+</dl>
+</div>
+<div class="section" id="general-settings">
+<span id="id2"></span><h2>General Settings<a class="headerlink" href="#general-settings" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="docutils">
+<dt>To access General Settings:</dt>
+<dd><span class="menuselection">⋮ ‣ General Settings</span></dd>
+</dl>
+<img alt="General settings" class="device-screen-vertical" src="_images/general-settings.jpeg" />
+<div class="section" id="server-settings">
+<span id="id3"></span><h3>Server Settings<a class="headerlink" href="#server-settings" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Server settings <a class="reference internal" href="collect-connect.html"><span class="doc">control the connection to</span></a>
+an <a class="reference internal" href="aggregate-intro.html"><span class="doc">Aggregate</span></a> or <a class="reference internal" href="openrosa.html"><span class="doc">OpenRosa</span></a> server
+or a <a class="reference internal" href="collect-connect-google.html"><span class="doc">Google Drive account</span></a>.</p>
+<dl class="docutils">
+<dt>To access Server Settings:</dt>
+<dd><span class="menuselection">⋮ ‣ General Settings ‣ Server</span></dd>
+</dl>
+<img alt="Server settings" class="device-screen-vertical" src="_images/server-settings.jpeg" />
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference internal" href="collect-connect.html"><span class="doc">Connecting to a Server</span></a></p>
+</div>
+</div>
+<div class="section" id="user-interface-settings">
+<span id="interface-settings"></span><h3>User Interface Settings<a class="headerlink" href="#user-interface-settings" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>User Interface settings control Collect’s appearance and behavior.</p>
+<dl class="docutils">
+<dt>To access User Interface settings:</dt>
+<dd><span class="menuselection">⋮ ‣ General Settings ‣ User Interface</span></dd>
+</dl>
+<img alt="User Interface settings" class="device-screen-vertical" src="_images/ui-settings.jpeg" />
+<dl class="docutils">
+<dt><span class="guilabel">Language</span></dt>
+<dd>Sets the display language.</dd>
+<dt><span class="guilabel">Text font size</span></dt>
+<dd>Sets the display font size.</dd>
+<dt><span class="guilabel">Navigation</span></dt>
+<dd><p class="first">Sets form navigation style for moving between questions.</p>
+<p>Options:</p>
+<ul class="last simple">
+<li>Horizontal swiping</li>
+<li>Forward and back buttons</li>
+<li>Both</li>
+</ul>
+</dd>
+<dt><span class="guilabel">Splash Screen</span></dt>
+<dd>Sets an image to display while Collect loads.</dd>
+</dl>
+<p class="rubric" id="mapping-settings">Mapping</p>
+<dl class="docutils">
+<dt><span class="guilabel">Mapping SDK</span></dt>
+<dd><p class="first">Sets the app that will be used for
+form question types that require map integration.</p>
+<p>Options:</p>
+<ul class="simple">
+<li>Google Maps (default)</li>
+<li>OpenStreetMap</li>
+</ul>
+<div class="last admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference internal" href="form-widgets.html#geopoint"><span class="std std-ref">Geopoint</span></a>, <a class="reference internal" href="form-widgets.html#geoshape"><span class="std std-ref">GeoShape</span></a>, <a class="reference internal" href="form-widgets.html#geotrace"><span class="std std-ref">GeoTrace</span></a></p>
+</div>
+</dd>
+<dt><span class="guilabel">Basemap</span></dt>
+<dd>Sets the map to be displayed
+when a widget with a mapping component is opened.</dd>
+</dl>
+</div>
+<div class="section" id="form-management-settings">
+<span id="id4"></span><h3>Form Management Settings<a class="headerlink" href="#form-management-settings" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Form Management settings control default behavior
+when editing, finalizing, and importing forms.</p>
+<dl class="docutils">
+<dt>To access Form Management settings:</dt>
+<dd><span class="menuselection">⋮ ‣ General Settings ‣ Form Management</span></dd>
+</dl>
+<img alt="Form Management settings" class="device-screen-vertical" src="_images/form-management.png" />
+<img alt="Form Management settings" class="device-screen-vertical" src="_images/form-management2.png" />
+<p class="rubric">Form submission</p>
+<dl class="docutils">
+<dt><span class="guilabel">Auto send</span></dt>
+<dd>When enabled, forms are sent immediately when they are finalized,
+if the device can connect to the internet.
+You can specify whether to send over WiFi, cellular data, or both.</dd>
+<dt><span class="guilabel">Delete after send</span></dt>
+<dd>When enabled, form instances are deleted once they are sent.</dd>
+</dl>
+<p class="rubric">Form filling</p>
+<dl class="docutils">
+<dt><span class="guilabel">Default to finalized</span></dt>
+<dd>When enabled, forms are automatically finalized
+upon reaching the end of the form.
+You can opt out of this on any specific form during form completion.</dd>
+<dt><span class="guilabel">Constraint processing</span></dt>
+<dd><p class="first">Sets when form responses are validated against <a class="reference external" href="http://xlsform.org/#constraints">constraints</a>.</p>
+<p>Options:</p>
+<ul class="last simple">
+<li>Upon forward swipe. (That is, right after the question is answered.)</li>
+<li>At finalization.</li>
+</ul>
+</dd>
+<dt><span class="guilabel">High res video</span></dt>
+<dd>When enabled,
+<a class="reference internal" href="form-widgets.html#video"><span class="std std-ref">Video</span></a> widgets will record high resolution video
+if possible.</dd>
+<dt><span class="guilabel">Image size</span></dt>
+<dd><div class="first versionadded">
+<p><span class="versionmodified">バージョン 1.11.0 で追加.</span></p>
+</div>
+<p>Sets the default maximum size for images added to forms,
+as measured by the number of pixels on the longest edge.
+Images larger than the maximum
+are scaled down immediately after being added.</p>
+<p>Options:</p>
+<dl class="last docutils">
+<dt><span class="guilabel">Original size from camera (default)</span></dt>
+<dd>Images are unchanged when added to a form.
+Recommended for use only when images must contain a lot of detail
+and when the internet connection used to send submissions is fast.</dd>
+<dt><span class="guilabel">Very small (640px)</span></dt>
+<dd>Recommended when images don’t need to be detailed
+or the internet connection used to send submissions is slow.</dd>
+<dt><span class="guilabel">Small (1024px)</span></dt>
+<dd>Sufficiently detailed for most on-screen viewing
+but too small for printing.</dd>
+<dt><span class="guilabel">Medium (2048px)</span></dt>
+<dd>Sufficiently detailed for most uses, including printing.</dd>
+<dt><span class="guilabel">Large (3072px)</span></dt>
+<dd>Recommended when a lot of detail is needed,
+but you want to reduce the size of image files
+as much as possible.</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Form import</p>
+<dl class="docutils">
+<dt><span class="guilabel">Import saved forms as finalized</span></dt>
+<dd>When enabled, forms added directly to the <code class="file docutils literal"><span class="pre">instances/</span></code> directory
+are automatically set to <span class="formstate">Finalized</span>.</dd>
+</dl>
+</div>
+<div class="section" id="user-and-device-identity-settings">
+<span id="id-settings"></span><h3>User and Device Identity Settings<a class="headerlink" href="#user-and-device-identity-settings" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>User and device identity settings control how
+personally identifiable information and device ID
+are used.</p>
+<dl class="docutils">
+<dt>To access User and device identity settings:</dt>
+<dd><span class="menuselection">⋮ ‣ General Settings ‣ User and device identity</span></dd>
+</dl>
+<img alt="User and Device Identity Settings" class="device-screen-vertical" src="_images/und-settings.jpeg" />
+<div class="section" id="form-metadata-settings">
+<span id="id5"></span><h4>Form metadata settings<a class="headerlink" href="#form-metadata-settings" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Form metadata settings control how identifying information
+is added to the metadata of forms completed on the device.</p>
+<dl class="docutils">
+<dt>To access form metadata settings:</dt>
+<dd><span class="menuselection">⋮ ‣ General Settings ‣ User and Device Identity ‣ Form Metadata</span></dd>
+</dl>
+<img alt="Form Metadata Settings" class="device-screen-vertical" src="_images/form-metadata.png" />
+<p class="rubric">User-defined</p>
+<p>You can edit the following:</p>
+<ul class="simple">
+<li>Username</li>
+<li>Phone number</li>
+<li>Email address</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>If no username is set here,
+the username from <a class="reference internal" href="#server-settings"><span class="std std-ref">Server settings</span></a>
+is used instead.</li>
+<li>You can restrict editing of the username in
+<a class="reference internal" href="#admin-settings"><span class="std std-ref">admin settings</span></a>.</li>
+</ul>
+</div>
+<p class="rubric">Device-defined</p>
+<p>You cannot edit these:</p>
+<ul class="simple">
+<li>Device ID</li>
+<li>Subscriber ID</li>
+<li>SIM serial number</li>
+</ul>
+<p class="rubric" id="usage-data-setting">Usage data</p>
+<p>When enabled, ODK Collect sends anonymous usage and error data
+back to the ODK development team,
+which helps us improve the application.</p>
+</div>
+</div>
+</div>
+<div class="section" id="admin-settings">
+<span id="id6"></span><h2>Admin Settings<a class="headerlink" href="#admin-settings" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Admin settings manage other settings and features,
+letting you <a class="reference internal" href="collect-import-export.html"><span class="doc">import or export settings</span></a>,
+<a class="reference internal" href="#reset-application"><span class="std std-ref">reset settings and delete cached data</span></a>,
+and <a class="reference internal" href="#user-access-control-settings"><span class="std std-ref">restrict which features are available to users of the app</span></a>.</p>
+<p>Admin settings are useful when
+you are managing devices that will be used by many enumerators,
+and you would like to limit the options available to those enumerators.</p>
+<p>You can <a class="reference external" href="_admin-password">password protect</a> the Admin setting screen,
+so enumerators cannot adjust settings or access restricted features.</p>
+<dl class="docutils">
+<dt>To access Admin settings:</dt>
+<dd><span class="menuselection">⋮ ‣ Admin Settings</span></dd>
+</dl>
+<img alt="Admin settings menu" class="device-screen-vertical" src="_images/admin-settings.jpeg" />
+<dl class="docutils">
+<dt><span class="guilabel">General Settings</span></dt>
+<dd>Provides access to <a class="reference internal" href="#general-settings"><span class="std std-ref">General Settings</span></a>,
+with all items unrestricted.</dd>
+</dl>
+<dl class="docutils" id="admin-password">
+<dt><span class="guilabel">Admin Password</span></dt>
+<dd>Lets you password protect this screen.</dd>
+</dl>
+<dl class="docutils" id="reset-application">
+<dt><span class="guilabel">Reset application</span></dt>
+<dd>Lets you reset to default settings,
+delete forms, and empty caches.</dd>
+<dt><span class="guilabel">Import/Export settings</span></dt>
+<dd><p class="first">See:</p>
+<div class="toctree-wrapper last compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-import-export.html">Importing and Exporting Settings</a></li>
+</ul>
+</div>
+</dd>
+</dl>
+<p class="rubric" id="user-access-control-settings">User Access Control Settings</p>
+<dl class="docutils">
+<dt><span class="guilabel">Main Menu Settings</span></dt>
+<dd>Displays a list of <a class="reference internal" href="#main-menu"><span class="std std-ref">Main Menu</span></a> features.
+To hide features, uncheck them.</dd>
+<dt><span class="guilabel">User Settings</span></dt>
+<dd>Displays a list of user settings and other features
+accessible in the <a class="reference internal" href="#general-settings"><span class="std std-ref">General Settings</span></a> screen.
+To hide features, uncheck them.</dd>
+<dt><span class="guilabel">Form Entry Settings</span></dt>
+<dd><p class="first">Displays a list of features related to viewing and filling out forms.
+To disable features, uncheck them.</p>
+<dl class="last docutils">
+<dt><span class="guilabel">Moving backwards</span></dt>
+<dd><p class="first">If you disable moving backwards,
+the enumerator cannot use the back button or <span class="gesture">swipe right</span>
+to move backwards through a form.</p>
+<p>However, disabling this feature
+does not completely restrict a user’s ability to access
+already-answered questions.
+So,
+when you uncheck this box to restrict backward movement,
+the app will suggest several additional restrictions
+which will prevent a non-admin user
+from revisiting already-asked questions:</p>
+<ul class="simple">
+<li>Disable <span class="guilabel">Edit Saved Form</span> option in the main menu</li>
+<li>Disable <span class="guilabel">Save Form</span> option in the Form entry menu</li>
+<li>Disable <span class="guilabel">Go To Prompt</span> option in the Form entry menu</li>
+<li>Set <span class="guilabel">Constraint processing</span> to validate upon forward swipe in the Form Management settings</li>
+</ul>
+<img alt="Image showing message displayed to configure other settings when Moving backwards option is unchecked." class="device-screen-vertical" src="_images/moving-backwards-disabled.png" />
+<p>Select <span class="guilabel">YES</span> to set these additional restrictions.</p>
+<div class="last admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">When you enable the moving backwards option,
+you have to configure the other changed settings
+since they are not automatically changed back.</p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collect-import-export.html" class="btn btn-neutral float-right" title="Importing and Exporting Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect-filling-forms.html" class="btn btn-neutral" title="Filling out Forms with Collect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

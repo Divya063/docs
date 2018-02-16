@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tips for Making Good Contributions &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Contributing to ODK Docs" href="contributing.html"/>
+        <link rel="next" title="Working with Docs in Windows using Cygwin" href="cygwin.html"/>
+        <link rel="prev" title="Docs Developer Guide" href="docs-developer-guide.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="docs-tech-guide.html">Docs Technical Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-syntax-guide.html">Docs Markup and Syntax Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-style-guide.html">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-developer-guide.html">Docs Developer Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tips for Making Good Contributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#smallest-meaningful-pr">Smallest meaningful PR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#descriptive-pr-names">Descriptive PR names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#small-atomic-commits">Small, atomic commits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#discuss-issues-before-working">Discuss issues before working</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#claim-issues">Claim issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#share-work-in-progress">Share work in progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-you-get-stuck-while-working">If you get stuck while working</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#it-is-okay-to-abandon-an-issue">It is okay to abandon an issue</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#if-an-issue-takes-a-long-time-to-complete">If an issue takes a long time to complete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#issues-only">Issues only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#actually-install-and-use-open-data-kit-or-other-tools">Actually install and use Open Data Kit or other tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#and-actually-do-the-thing">And actually do the thing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#always-build-locally">Always build locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#you-are-not-an-impostor">You are not an impostor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cygwin.html">Working with Docs in Windows using Cygwin</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="contributing.html">Contributing to ODK Docs</a> &raquo;</li>
+        
+      <li>Tips for Making Good Contributions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/contributing-tips.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tips-for-making-good-contributions">
+<h1>Tips for Making Good Contributions<a class="headerlink" href="#tips-for-making-good-contributions" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="smallest-meaningful-pr">
+<span id="small-pr"></span><h2>Smallest meaningful PR<a class="headerlink" href="#smallest-meaningful-pr" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>A PR should normally address one issue. This makes it easier to review, easier to deploy, and easier to roll back in case of a problem. Additionally, the smaller the PR, the less likely it is to create a merge issue.</p>
+<p>The exception is when several issues are closely related or can reasonably be worked on together.  In this case, it should be clear by looking at the conversation on the Github issues that the items are related and will be worked on together. Your PR message should also make it clear which issues are being worked on, and whether the PR closes the issues or not. Mention the PR by number:</p>
+<blockquote>
+<div><p>addresses #123</p>
+<p>closes #123</p>
+</div></blockquote>
+</div>
+<div class="section" id="descriptive-pr-names">
+<span id="id1"></span><h2>Descriptive PR names<a class="headerlink" href="#descriptive-pr-names" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>A PR title should answer the question, 「What does this Pull Request do?」</p>
+<p>Good PR titles:</p>
+<ul class="simple">
+<li>adds a video directive</li>
+<li>makes navigation buttons responsive</li>
+<li>swaps placement of nav buttons and file an issue note</li>
+</ul>
+<p>Bad PR titles:</p>
+<ul class="simple">
+<li>fix issue</li>
+<li>fix #123</li>
+<li>collect</li>
+</ul>
+</div>
+<div class="section" id="small-atomic-commits">
+<span id="small-commits"></span><h2>Small, atomic commits<a class="headerlink" href="#small-atomic-commits" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>When working locally, commit often. Don’t wait until you have 100 lines of changes across multiple files.</p>
+<ul class="simple">
+<li>If you need to copy or move a large section or file, commit that change before also editing it.</li>
+<li>If you have to create a new template file based on an existing template file, copy the file in one commit and then work on the changes. This makes it easier to know what you actually did.</li>
+<li>If writing a new doc, commits after each new section are a good idea.</li>
+</ul>
+<p>Commit messages should answer the question, 「What does this commit do?」</p>
+<p>Small, well-named commits will help you keep track of your own work and make rollbacks and other changes easier to deal with.</p>
+</div>
+<div class="section" id="discuss-issues-before-working">
+<span id="discuss-issues"></span><h2>Discuss issues before working<a class="headerlink" href="#discuss-issues-before-working" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Take the time to clarify the needs and scope of an issue before committing to work on it. Especially for coding tasks, make sure you state your understanding and your plan before working.</p>
+<p>If you have a question, ask. Don’t guess.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Many new contributors don’t ask questions because they are worried about appearing under informed. Please set this worry aside.</p>
+<p class="last"><strong>You will never be judged harshly for asking clarifying questions or for seeking more information.</strong></p>
+</div>
+</div>
+<div class="section" id="claim-issues">
+<span id="id2"></span><h2>Claim issues<a class="headerlink" href="#claim-issues" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If you decide to work on an issue, let the community know you are working on it by <em>claiming</em> the issue.</p>
+<blockquote>
+<div>&#64;opendatakit-bot claim</div></blockquote>
+<p>Once you’ve claimed an issue, other people won’t work on it. So make sure you’re actually going to work on it before claiming it.</p>
+<p>Don’t claim more than one or two open issues at a time.</p>
+</div>
+<div class="section" id="share-work-in-progress">
+<span id="wip-pr"></span><h2>Share work in progress<a class="headerlink" href="#share-work-in-progress" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>It can be helpful to share your in-progress work. To mark a PR as a work in progress, append <strong>WIP:</strong> to the beginning of the PR title. We will not merge <strong>WIP</strong> PRs, and we won’t do a review on them unless you ask.</p>
+<p>If you want a review, comment, opinion, or help on a <strong>WIP</strong> PR, please tag the relevant person in the PR comments.</p>
+<p>If you finish the work and want the PR to be merged, you do not need to open a new one. Just edit the PR title.</p>
+</div>
+<div class="section" id="if-you-get-stuck-while-working">
+<span id="if-you-get-stuck"></span><h2>If you get stuck while working<a class="headerlink" href="#if-you-get-stuck-while-working" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Ask for help in the issue comments. Maybe you can get back on track and complete the issue.<ul>
+<li>Asking questions is always better than guessing.</li>
+</ul>
+</li>
+<li>Submit a <strong>WIP</strong> (work in progress) pull request.<ul>
+<li>If we can see what progress you have made, it is easier to offer help.</li>
+<li>Even if you don’t complete the task, perhaps someone else can pull in your in-progress work and build on it.</li>
+<li>Sometimes your in-progress work is an improvement over not having it, and so we’ll merge in something even if it isn’t complete.</li>
+</ul>
+</li>
+<li>If you really cannot move forward, it is okay to abandon an issue.</li>
+</ul>
+<div class="section" id="it-is-okay-to-abandon-an-issue">
+<span id="abandon-issue"></span><h3>It is okay to abandon an issue<a class="headerlink" href="#it-is-okay-to-abandon-an-issue" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Sometimes you simply cannot complete work you have said you were going to complete. This could happen because you don’t have all the required skills or knowledge to complete the work, or because the issue cannot actually be completed as scoped, or because you don’t have the time.</p>
+<p>Please let the community know in the issue discussion.</p>
+<blockquote>
+<div>&#64;opendatakit-bot unclaim</div></blockquote>
+<p>This way, everyone knows that someone else can take up the project (or that we need to rethink it).</p>
+<p>If you did significant work on a project before abandoning it, consider filing a <strong>WIP</strong> (work in progress) PR, so that others can see what you did and potentially build off of it. (Be sure to mention the issue, so the work is easy to find later.)</p>
+</div>
+</div>
+<div class="section" id="if-an-issue-takes-a-long-time-to-complete">
+<span id="issue-takes-long-time"></span><h2>If an issue takes a long time to complete<a class="headerlink" href="#if-an-issue-takes-a-long-time-to-complete" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>For our purposes, a 「long time」 is a week or more, from when you first announce your intention to work on something until submitting a merge-ready PR.</p>
+<p>An issue might take a long time because:</p>
+<ul class="simple">
+<li>it is complex and requires lots of hours</li>
+<li>you only have a short period of time each day to work on it</li>
+<li>you are new to the project and are having to learn as you go</li>
+</ul>
+<p>The thing that matters is: <strong>Are you actively working on the issue, and making progress, at least a little bit?</strong></p>
+<p>If you are actively working on it, we do not want someone else to jump on and try to work on it at the same time. So please keep the community informed of your work by filing a <strong>WIP</strong> (work in progress) PR and committing to it as you work.</p>
+</div>
+<div class="section" id="issues-only">
+<span id="id3"></span><h2>Issues only<a class="headerlink" href="#issues-only" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>All PRs must be directly connected to open issues. PRs should not represent suggestions, good ideas, or independent initiative.</p>
+<p>If you have a good idea, file an issue. If you are curious about whether something should be an issue, chat with one of the core team in the <cite>#docs-code</cite> channel on the <a class="reference external" href="https://opendatakit.slack.com">Slack</a>.</p>
+<p>Once you have filed an issue, wait for comment and approval before diving into the work. We do not want surprise PRs.</p>
+</div>
+<div class="section" id="actually-install-and-use-open-data-kit-or-other-tools">
+<span id="use-odk"></span><h2>Actually install and use Open Data Kit or other tools<a class="headerlink" href="#actually-install-and-use-open-data-kit-or-other-tools" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You cannot write effectively about tools you have not used. If you’re going to write or edit documentation about any of the apps in the ODK ecosystem, you need to spend some time actually using it.</p>
+<p>Before diving into writing documentation, follow the <a class="reference internal" href="getting-started.html"><span class="doc">Getting Started Guide</span></a> guide so that you are familiar with the core ODK tools.</p>
+<p>This is also true of writing about Sphinx or any of our documentation build tools. Reading existing documentation is not enough to write about something.</p>
+<div class="section" id="and-actually-do-the-thing">
+<span id="do-the-thing"></span><h3>And actually do the thing<a class="headerlink" href="#and-actually-do-the-thing" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you are writing about a specific process (installing an application, for example), you need to actually complete the process yourself. If possible, follow your own instructions <em>after</em> writing them to make sure they make sense.</p>
+</div>
+</div>
+<div class="section" id="always-build-locally">
+<span id="id4"></span><h2>Always build locally<a class="headerlink" href="#always-build-locally" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Before submitting a PR, run the build locally to make sure you do not produce any errors or warnings. <strong>We do not accept PRs that produce errors or warnings.</strong></p>
+<p>It is best to run the build frequently as you work. You’ll often catch simple mistakes that are harder to track down later.</p>
+</div>
+<div class="section" id="you-are-not-an-impostor">
+<span id="no-impostors"></span><h2>You are not an impostor<a class="headerlink" href="#you-are-not-an-impostor" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Impostor_syndrome">Impostor syndrome</a> is the feeling that you are not good enough or accomplished enough to do the work you are doing.</p>
+<p>We all feel this way sometimes, and that’s okay. But it is important to realize that <strong>you are not an impostor.</strong></p>
+<p>You can contribute to this community, no matter your background or skills.</p>
+<ul class="simple">
+<li>If there is something you don’t know how to do, you can ask.<ul>
+<li>If it is issue related, ask on the issue.</li>
+<li>If it is more general, try the #docs-code channel in the <a class="reference external" href="http://slack.opendatakit.org">ODK Developer Slack</a>.</li>
+</ul>
+</li>
+<li>If you want to try something even though you aren’t sure you can do it, go ahead and try.</li>
+</ul>
+<p>Another worry you may have is that something will take you a long time when an 「expert」 might be able to do it quickly. You may feel, then, you aren’t the 「right person」 for the job. But if you are the only one with the time or desire to work on something, <strong>you are the right person to work on it.</strong></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cygwin.html" class="btn btn-neutral float-right" title="Working with Docs in Windows using Cygwin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="docs-developer-guide.html" class="btn btn-neutral" title="Docs Developer Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

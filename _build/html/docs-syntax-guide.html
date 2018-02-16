@@ -1,0 +1,1623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docs Markup and Syntax Guide &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Contributing to ODK Docs" href="contributing.html"/>
+        <link rel="next" title="Style Guide" href="docs-style-guide.html"/>
+        <link rel="prev" title="Docs Technical Guide" href="docs-tech-guide.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="docs-tech-guide.html">Docs Technical Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Docs Markup and Syntax Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#indentation">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-files">Documentation Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tables-of-content">Tables of Content</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sidebar-navigation-menu">Sidebar navigation menu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#secondary-tables-of-content">Secondary tables of content</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-odk-docs-uses-main-and-secondary-tables-of-content">How ODK Docs uses main and secondary tables of content</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sections-and-titles">Sections and Titles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#section-labels">Section labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-markup">Basic Markup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#escaping-characters">Escaping characters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#emphasis-and-inline-literal">Emphasis and Inline Literal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hyperlinks">Hyperlinks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lists">Lists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#paragraph-level-markup">Paragraph-level Markup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-specific-markup">Sphinx-specific Markup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#roles-and-directives">Roles and directives</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cross-referencing">Cross referencing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#writing-about-user-interface">Writing about User Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#writing-about-forms">Writing about forms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-semantic-markup">Other Semantic Markup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#images-and-figures">Images and Figures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#videos">Videos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#downloadable-files">Downloadable files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code-samples">Code Samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#substitutions">Substitutions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs-style-guide.html">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-developer-guide.html">Docs Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing-tips.html">Tips for Making Good Contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cygwin.html">Working with Docs in Windows using Cygwin</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="contributing.html">Contributing to ODK Docs</a> &raquo;</li>
+        
+      <li>Docs Markup and Syntax Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/docs-syntax-guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docs-markup-and-syntax-guide">
+<h1>Docs Markup and Syntax Guide<a class="headerlink" href="#docs-markup-and-syntax-guide" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The ODK documentation is built using <a class="reference external" href="http://sphinx-doc.org">Sphinx</a>, a static-site generator designed to create structured, semantic, and internally consistent documentation. Source documents are written in <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>, a semantic, extensible markup syntax similar to Markdown.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickstart.html">reStructuredText Primer</a> — Introduction to reStructuredText<ul>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">reStructuredText Quick Reference</a></li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">reStructuredText 1-page cheat sheet</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="http://www.sphinx-doc.org/en/stable/markup/index.html">Sphinx Markup</a> — Detailed guide to Sphinx’s markup concepts and reStructuredText extensions</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Sphinx and reStructuredText can be very flexible. For the sake of consistency and maintainability, this guide is <em>highly opinionated</em> about how documentation source files are organized and marked up.</p>
+</div>
+<div class="section" id="indentation">
+<span id="id1"></span><h2>Indentation<a class="headerlink" href="#indentation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Indentation is meaningful in Sphinx and reStructuredText text. Usually, indenting a section means that is 「belongs to」 the line it is indented under. For example:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">figure</span><span class="p">::</span> path-to-image.*
+
+  This is the caption of the figure. Notice that it is indented under the line defining the figure.
+</pre></div>
+</div>
+<p>The rules for indentation are:</p>
+<ul class="simple">
+<li>Use <strong>spaces, not tabs</strong>.</li>
+<li>Generally, indent <strong>two spaces</strong>.</li>
+</ul>
+<p>The exception to the two spaces rule is <a class="reference internal" href="#ol"><span class="std std-ref">Ordered (numbered) lists</span></a>, where indentation follows the content of the list item.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="m">1.</span> This is a list item.
+
+   This is some additional content related to Item 1. Notice that it is indented to the same column as the first line of content. In this case, that&#39;s three (3) spaces.
+
+<span class="gh">.</span>
+<span class="gh">.</span>
+<span class="gh">.</span>
+
+<span class="m">10.</span> The tenth item in a list.
+
+    This related content will be indented four spaces.
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentation-files">
+<span id="doc-files"></span><h2>Documentation Files<a class="headerlink" href="#documentation-files" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sphinx document files have the <code class="docutils literal"><span class="pre">.rst</span></code> extension. File names should be all lowercase and use hyphens (not underscores or spaces) as word separators.</p>
+<p>Normally, the title of the page should be the first line of the file, underlined with equal-signs.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">Title of Page</span>
+<span class="gh">================</span>
+
+Page content is here...
+</pre></div>
+</div>
+<p>You can alternatively wrap the title in two lines of asterisks, in some cases. (This should not be your default choice.)</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">*******************</span>
+<span class="gh">Title of Page</span>
+<span class="gh">*******************</span>
+
+Page content here.
+</pre></div>
+</div>
+<p>The asterisks style is useful when you are combining several existing documents and don’t want to change every subsection headline. Or, you can use it when you are working on a document that you have reason to think might be split into separate documents in the future.</p>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">If you use the double-asterisks style, your major section headlines (<cite>&lt;h2&gt;</cite>) should use the equal-signs underline style. This allows major sections to be easily promoted to individual pages.</p>
+</div>
+<p>See <a class="reference internal" href="#sections-titles"><span class="std std-ref">Sections and Titles</span></a> for more details.</p>
+</div>
+<div class="section" id="tables-of-content">
+<span id="about-toc"></span><h2>Tables of Content<a class="headerlink" href="#tables-of-content" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> directive defines a table of content. The content of a <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> is a list of page file names, without the <code class="docutils literal"><span class="pre">.rst</span></code> extension. When rendered, the <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> becomes an unordered list of page links, including links to sections and subsections of the included pages.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+
+  page-name
+  another-page
+  this-other-page
+</pre></div>
+</div>
+<p>The depth of section and subsection links to display in the output can be controlled using the <code class="xref rst rst-role docutils literal"><span class="pre">maxdepth</span></code> attribute. We typically use a depth of <code class="docutils literal"><span class="pre">2</span></code>, but you should use your judgment if you feel it should be more or less in any given context.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+  <span class="nc">:maxdepth:</span> <span class="nf">2</span>
+
+  this-page
+  that-page
+  thick-page
+  flat-page
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p><a class="reference external" href="http://www.sphinx-doc.org/en/stable/markup/toctree.html">The TOC Tree</a></p>
+<blockquote class="last">
+<div>The Sphinx documentation includes information about a number of other <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> attributes.</div></blockquote>
+</div>
+<div class="section" id="sidebar-navigation-menu">
+<span id="main-nav-menu"></span><h3>Sidebar navigation menu<a class="headerlink" href="#sidebar-navigation-menu" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The <code class="file docutils literal"><span class="pre">index.rst</span></code> file serves as a front-page to the documentation and contains the main tables of content, defined using <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> directives.</p>
+<p>These <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> directives control the sidebar navigation menu. To add a new document to a table of content, add the file name (without the <code class="docutils literal"><span class="pre">.rst</span></code> extension) to the relevant list of file names in <code class="file docutils literal"><span class="pre">index.rst</span></code>.</p>
+</div>
+<div class="section" id="secondary-tables-of-content">
+<span id="secondary-tocs"></span><h3>Secondary tables of content<a class="headerlink" href="#secondary-tables-of-content" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Collections of documents are sometimes given their own table of content on an individual page. (See, for example, <a class="reference internal" href="collect-setup.html"><span class="doc">Setting Up ODK Collect</span></a> and <a class="reference internal" href="collect-using.html"><span class="doc">Using ODK Collect</span></a>.)</p>
+<p>In these cases, the page containing the <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> serves as a sort of intro page for the collection. That intro must, itself, be included in the <a class="reference internal" href="#main-nav-menu"><span class="std std-ref">Sidebar navigation menu</span></a>.</p>
+<p>The contents of a <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> appear as section links in another <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> it is included in. That is, if a <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> in <code class="file docutils literal"><span class="pre">index.rst</span></code> lists <code class="docutils literal"><span class="pre">collect-using</span></code>, and <code class="file docutils literal"><span class="pre">collect-using.rst</span></code> has a <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code>, then the contents of that second <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> will appear in the <a class="reference internal" href="#main-nav-menu"><span class="std std-ref">Sidebar navigation menu</span></a>, as sub-items to <a class="reference internal" href="collect-using.html"><span class="doc">Using ODK Collect</span></a>. (Indeed, this is precisely the case in the docs currently.)</p>
+</div>
+<div class="section" id="how-odk-docs-uses-main-and-secondary-tables-of-content">
+<h3>How ODK Docs uses main and secondary tables of content<a class="headerlink" href="#how-odk-docs-uses-main-and-secondary-tables-of-content" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul>
+<li><p class="first">Major topics get a <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> in <code class="file docutils literal"><span class="pre">index.rst</span></code></p>
+<p>Major topics include things like:</p>
+<ul class="simple">
+<li>Each major product (Collect, Aggregate, Briefcase)</li>
+<li>Large, general categories like Contributing</li>
+</ul>
+<p>Major topic tables of content include both sub-collection intro pages and also individual pages that don’t fit into a sub-collection.</p>
+<p>The <code class="xref rst rst-role docutils literal"><span class="pre">caption</span></code> attribute of the <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> directive defines the section label in the <a class="reference internal" href="#main-nav-menu"><span class="std std-ref">Sidebar navigation menu</span></a>.</p>
+</li>
+<li><p class="first">Within a large topic, documents are grouped into collections of related pages, defined by a <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> on a topic intro page.</p>
+<p>Intro pages (pages that contain secondary <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> directives) may include additional content, introducing the collection or providing contextual wayfinding. However, this is not always necessary or desirable. Use your judgment, and avoid stating things just for the sake of having some text. (「Here are the pages in this collection.」)</p>
+<p>We also (very occasionally) include <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> directives in sub-collection pages.</p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">If it not obvious where a new document should appear in the navigation, the best practice is to simply ask about it in the GitHub issue driving the new page.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">For wayfinding purposes, we sometimes create an <a class="reference internal" href="#ul"><span class="std std-ref">Unordered (bullet) lists</span></a> of page links rather than a <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> directive. (For example, see <code class="file docutils literal"><span class="pre">collect-intro</span></code>. We do this when using a <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> would create redundant links in the <a class="reference internal" href="#main-nav-menu"><span class="std std-ref">Sidebar navigation menu</span></a>.</p>
+</div>
+<div class="admonition-why-are-the-docs-files-not-grouped-into-folders-in-the-source admonition">
+<p class="first admonition-title">Why are the docs files not grouped into folders in the source?</p>
+<p>We use <code class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></code> directives as our primary way of organizing the documentation for readers. We do not organize the source <code class="docutils literal"><span class="pre">rst</span></code> files into subfolders.</p>
+<p>The reason is that if we put them into topic-related subfolders, it would affect the URI of the document. Keeping all of our document files in a single flat directory results in a flat URI structure. Every page’s URI looks like <code class="docutils literal"><span class="pre">docs.opendatakit.org/page-name</span></code>.</p>
+<p class="last">If we used subdirectories, then our URIs would look like <code class="docutils literal"><span class="pre">docs.opendatakit.org/subdirectory-name/page-name</span></code>. This would mean that our URIs would change every time we moved a document from one folder to another, greatly increasing the time cost and broken-link risk of reorganizing the docs.</p>
+</div>
+</div>
+</div>
+<div class="section" id="sections-and-titles">
+<span id="sections-titles"></span><h2>Sections and Titles<a class="headerlink" href="#sections-and-titles" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Headlines require two lines:</p>
+<ul class="simple">
+<li>the text of the headline, followed by</li>
+<li>a line filled with a single character.</li>
+</ul>
+<p>Each level in a headline hierarchy uses a different character:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">Title of the Page - &lt;h1&gt; - Equal Signs</span>
+<span class="gh">=========================================</span>
+
+
+<span class="gh">Major Section - &lt;h2&gt; - Hyphens</span>
+<span class="gh">---------------------------------</span>
+
+
+<span class="gh">Subsection - &lt;h3&gt; - Tildes</span>
+<span class="gh">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+
+<span class="gh">Sub-subsection - &lt;h4&gt; - Double Quotes</span>
+<span class="gh">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+
+
+<span class="gh">Sub-sub-subsection - &lt;h5&gt; - Single Quotes</span>
+<span class="gh">&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>If you need to combine several existing pages together, or want to start a single-page doc that you think might be split into individual pages later on, you can add a top-level title, demoting the other headline types by one.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">************************************************</span>
+<span class="gh">Page Title - &lt;h1&gt; - Asterisks above and below</span>
+<span class="gh">************************************************</span>
+
+
+<span class="gh">Major Section - &lt;h2&gt; - Equal Signs</span>
+<span class="gh">=======================================</span>
+
+
+<span class="gh">Subsection - &lt;h3&gt; - Hyphens</span>
+<span class="gh">---------------------------------</span>
+
+
+<span class="gh">Sub-subsection - &lt;h4&gt; - Tildes</span>
+<span class="gh">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+
+<span class="gh">Sub-sub-subsection - &lt;h5&gt; - Double Quotes</span>
+<span class="gh">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+
+<span class="gh">Sub-sub-sub-subsection - &lt;h6&gt; - Single Quotes</span>
+<span class="gh">&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>In either case, the underline of characters needs to be <em>longer than</em> the line of text. In the case of the asterisks, the two lines of asterisks need to be the same length.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The exact order of underline characters is flexible in reStructuredText. However, this specific ordering should be used throughout the ODK documentation.</p>
+</div>
+<div class="section" id="section-labels">
+<span id="id2"></span><h3>Section labels<a class="headerlink" href="#section-labels" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>In order to facilitate efficient <a class="reference internal" href="#cross-referencing"><span class="std std-ref">Cross referencing</span></a>, sections should be labeled. This is done on the line above the section title. The format is:</p>
+<ul class="simple">
+<li>two dots</li>
+<li>underscore</li>
+<li>section label<ul>
+<li>lowercase</li>
+<li>hyphen separators</li>
+</ul>
+</li>
+<li>a single colon</li>
+</ul>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_section-label:</span>
+
+<span class="gh">Section Title</span>
+<span class="gh">----------------</span>
+
+Lorem ipsum content of section blah blah.
+</pre></div>
+</div>
+<p>The section label is usually a slugified version of the section title.</p>
+<p>Section titles must be unique throughout the entire documentation set. Therefore, if you write a common title that might appear in more than one document (<em>Learn More</em> or <em>Getting Started</em>, for example), you’ll need to include additional words to make the label unique. The best way to do this is to add a meaningful work from the document title.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">ODK Aggregate</span>
+<span class="gh">===============</span>
+
+ODK Aggregate is a server application...
+
+<span class="p">..</span> <span class="nt">_aggregate-getting-started:</span>
+
+<span class="gh">Getting Started</span>
+<span class="gh">-----------------</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="basic-markup">
+<span id="id3"></span><h2>Basic Markup<a class="headerlink" href="#basic-markup" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="escaping-characters">
+<span id="id4"></span><h3>Escaping characters<a class="headerlink" href="#escaping-characters" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Markup characters can be escaped using the <code class="docutils literal"><span class="pre">\</span></code> character.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="ge">*Italic.*</span>
+
+\*Not italic, surrounded by asterisks.\*
+</pre></div>
+</div>
+<p><em>Italic.</em></p>
+<p>*Not italic, surrounded by asterisks.*</p>
+</div>
+<div class="section" id="emphasis-and-inline-literal">
+<span id="inline-markup"></span><h3>Emphasis and Inline Literal<a class="headerlink" href="#emphasis-and-inline-literal" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Single asterisks for <span class="ge">*italic text*</span> (<span class="s">``&lt;em&gt;``</span>).
+
+Double asterisks for <span class="gs">**bold text**</span> (<span class="s">``&lt;strong&gt;``</span>).
+
+Double back-ticks for <span class="s">``inline literal text``</span> (<span class="s">``&lt;code&gt;``</span>).
+</pre></div>
+</div>
+<p>Single asterisks for <em>italic text</em> ( <code class="docutils literal"><span class="pre">&lt;em&gt;</span></code> ).</p>
+<p>Double asterisks for <strong>bold text</strong> ( <code class="docutils literal"><span class="pre">&lt;strong&gt;</span></code> ).</p>
+<p>Double back-ticks for <code class="docutils literal"><span class="pre">inline</span> <span class="pre">literal</span> <span class="pre">text</span></code> ( <code class="docutils literal"><span class="pre">&lt;code&gt;</span></code> ).</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The <strong>bold</strong>, <em>italic</em>, and <code class="docutils literal"><span class="pre">inline</span> <span class="pre">literal</span></code> styles do not carry semantic meaning. They should not be used when a more semantically appropriate markup construct is available; for example, when <a class="reference internal" href="#interface-writing"><span class="std std-ref">writing about GUI text</span></a>.</p>
+</div>
+</div>
+<div class="section" id="hyperlinks">
+<span id="id5"></span><h3>Hyperlinks<a class="headerlink" href="#hyperlinks" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>External</strong> hyperlinks — that is, links to resources <em>outside</em> the documentation — look like this:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>This is a link to <span class="s">`example </span><span class="si">&lt;http://example.com&gt;</span><span class="s">`_</span>.
+</pre></div>
+</div>
+<p>This is a link to <a class="reference external" href="http://example.com">example</a>.</p>
+<p>You can also use 「reference style」 links:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>This is a link to <span class="s">`example`_</span>.
+
+<span class="p">..</span> <span class="nt">_example:</span> http://example.com
+</pre></div>
+</div>
+<p>This may help make paragraphs with <em>a lot</em> of links more readable. In general, the inline style is preferable. If you use the reference style, be sure to keep the link references below the paragraph where they appear.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You can also simply place an unadorned URI in the text: http://example.com
+</pre></div>
+</div>
+<p>You can also simply place an unadorned URI in the text: <a class="reference external" href="http://example.com">http://example.com</a></p>
+</div>
+<div class="section" id="lists">
+<span id="id6"></span><h3>Lists<a class="headerlink" href="#lists" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="unordered-bullet-lists">
+<span id="ul"></span><h4>Unordered (bullet) lists<a class="headerlink" href="#unordered-bullet-lists" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Bulleted lists ( <span class="s">``&lt;ul&gt;``</span> ):
+
+<span class="m">-</span> use hyphens
+<span class="m">-</span> are unindented at the first level
+<span class="m">-</span> must have a blank line before and after
+
+  <span class="m">-</span> the blank line requirement means that nested list items will have a blank line before and after as well
+
+  <span class="m">-</span> you may <span class="ge">*optionally*</span> put a blank line <span class="ge">*between*</span> list items
+</pre></div>
+</div>
+<p>Bulleted lists ( <code class="docutils literal"><span class="pre">&lt;ul&gt;</span></code> ):</p>
+<ul class="simple">
+<li>use hyphens</li>
+<li>are unindented at the first level</li>
+<li>must have a blank line before and after<ul>
+<li>the blank line requirement means that nested list items will have a blank line before and after as well</li>
+<li>you may <em>optionally</em> put a blank line <em>between</em> list items</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="ordered-numbered-lists">
+<span id="ol"></span><h4>Ordered (numbered) lists<a class="headerlink" href="#ordered-numbered-lists" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Numbered lists ( <span class="s">``&lt;ol&gt;``</span> ):
+
+<span class="m">1.</span> Start each line with a number and period
+<span class="m">2.</span> Can begin on any number
+<span class="m">3.</span> Must have a blank line before and after
+<span class="m">4.</span> Can have nested sub-lists
+
+   a. nested lists are numbered separately
+   b. nested lists need a blank line before and after
+
+<span class="m">#.</span> Can have automatic number with the <span class="s">``#``</span> character.
+</pre></div>
+</div>
+<p>Numbered lists ( <code class="docutils literal"><span class="pre">&lt;ol&gt;</span></code> ):</p>
+<ol class="arabic simple">
+<li>Start each line with a number and period</li>
+<li>Can begin on any number</li>
+<li>Must have a blank line before and after</li>
+<li>Can have nested sub-lists<ol class="loweralpha">
+<li>nested lists are numbered separately</li>
+<li>nested lists need a blank line before and after</li>
+</ol>
+</li>
+<li>Can have an automatic number with the <code class="docutils literal"><span class="pre">#</span></code> character.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">See <a class="reference internal" href="docs-style-guide.html#ordered-vs-unordered"><span class="std std-ref">Ordered and unordered lists</span></a> in the <a class="reference internal" href="docs-style-guide.html"><span class="doc">Style Guide</span></a> for details on when to use ordered and unordered lists.</p>
+</div>
+</div>
+<div class="section" id="definition-lists">
+<span id="dl"></span><h4>Definition Lists<a class="headerlink" href="#definition-lists" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Definition list ( <span class="s">``&lt;dl&gt;``</span> )
+  a list with several term-definition pairs
+
+Terms
+  should not be indented
+
+Definitions
+  should be indented under the term
+
+Line spacing
+  there should be a blank line between term-definition pairs
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Definition list ( <code class="docutils literal"><span class="pre">&lt;dl&gt;</span></code> )</dt>
+<dd>a list with several term-definition pairs</dd>
+<dt>Terms</dt>
+<dd>should not be indented</dd>
+<dt>Definitions</dt>
+<dd>should be indented under the term</dd>
+<dt>Line spacing</dt>
+<dd>there should be a blank line between term-definition pairs</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="paragraph-level-markup">
+<span id="paragraph-markup"></span><h3>Paragraph-level Markup<a class="headerlink" href="#paragraph-level-markup" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Paragraphs are separated by blank lines. Line breaks in the source code do not create line breaks in the output.
+
+This means that you <span class="ge">*could*</span>, in theory,
+include a lot of arbitrary line breaks
+in your source document files.
+These line breaks would not appear in the output.
+Some people like to do this because they have been trained
+to not exceed 80 column lines, and they like
+to write .txt files this way.
+Please do not do this.
+
+There is <span class="gs">**no reason**</span> to put a limit on line length in source files for documentation, since this is prose and not code. Therefore, please do not put arbitrary line breaks in your files.
+</pre></div>
+</div>
+<p>Paragraphs are separated by blank lines. Line breaks in the source code do not create line breaks in the output.</p>
+<p>This means that you <em>could</em>, in theory,
+include a lot of arbitrary line breaks
+in your source document files.
+These line breaks would not appear in the output.
+Some people like to do this because they have been trained
+to not exceed 80 column lines, and they like
+to write .txt files this way.
+Please do not do this.</p>
+<p>There is <strong>no reason</strong> to put a limit on line length in source files for documentation, since this is prose and not code. Therefore, please do not put arbitrary line breaks in your files.</p>
+<div class="section" id="block-quotes">
+<h4>Block Quotes<a class="headerlink" href="#block-quotes" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>This is not a block quote. Block quotes are indented, and otherwise unadorned.
+
+  This is a block quote.
+  — Adam Michael Wood
+</pre></div>
+</div>
+<p>This is not a block quote. Block quotes are indented, and otherwise unadorned.</p>
+<blockquote>
+<div>This is a block quote.
+— Adam Michael Wood</div></blockquote>
+</div>
+<div class="section" id="line-blocks">
+<h4>Line Blocks<a class="headerlink" href="#line-blocks" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="o">|</span> Line blocks are useful for addresses,
+<span class="o">|</span> verse, and adornment-free lists.
+|
+<span class="o">|</span> Each new line begins with a
+<span class="o">|</span> vertical bar (&quot;|&quot;).
+<span class="o">|</span>     Line breaks and initial indents
+<span class="o">|</span>     are preserved.
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Line blocks are useful for addresses,</div>
+<div class="line">verse, and adornment-free lists.</div>
+<div class="line"><br /></div>
+<div class="line">Each new line begins with a</div>
+<div class="line">vertical bar (「|」).</div>
+<div class="line-block">
+<div class="line">Line breaks and initial indents</div>
+<div class="line">are preserved.</div>
+</div>
+</div>
+</div>
+<div class="section" id="tables">
+<span id="id7"></span><h4>Tables<a class="headerlink" href="#tables" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="section" id="grid-style">
+<span id="grid-table"></span><h5>Grid style<a class="headerlink" href="#grid-style" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>+------------+------------+-----------+
+<span class="o">|</span> Header 1   | Header 2   | Header 3  |
++============+============+===========+
+<span class="o">|</span> body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+<span class="o">|</span> body row 2 | Cells may span columns.|
++------------+------------+-----------+
+<span class="o">|</span> body row 3 | Cells may  | - Cells   |
++------------+ span rows. | - contain |
+<span class="o">|</span> body row 4 |            | - blocks. |
++------------+------------+-----------+
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="34%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 2</td>
+<td colspan="2">Cells may span columns.</td>
+</tr>
+<tr class="row-even"><td>body row 3</td>
+<td rowspan="2">Cells may
+span rows.</td>
+<td rowspan="2"><ul class="first last simple">
+<li>Cells</li>
+<li>contain</li>
+<li>blocks.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>body row 4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="simple-style">
+<span id="simple-table"></span><h5>Simple style<a class="headerlink" href="#simple-style" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>=====  =====  ======
+   Inputs     Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False  False  False
+True   False  True
+False  True   True
+True   True   True
+=====  =====  ======
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Inputs</th>
+<th class="head">Output</th>
+</tr>
+<tr class="row-even"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A or B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="csv-table">
+<span id="id8"></span><h5>CSV Table<a class="headerlink" href="#csv-table" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<p>The <code class="xref rst rst-role docutils literal"><span class="pre">csv-table</span></code> role is used to create a table from CSV (comma-separated values) data. CSV is a common data format generated by spreadsheet applications and commercial databases. The data may be internal (an integral part of the document) or external (a separate file).</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">csv-table</span><span class="p">::</span> Example Table
+ <span class="nc">:header:</span> <span class="nf">&quot;Treat&quot;, &quot;Quantity&quot;, &quot;Description&quot;</span>
+ <span class="nc">:widths:</span> <span class="nf">15, 10, 30</span>
+
+ &quot;Albatross&quot;, 2.99, &quot;On a stick!&quot;
+ &quot;Crunchy Frog&quot;, 1.49, &quot;If we took the bones out, it wouldn&#39;t be
+ crunchy, now would it?&quot;
+ &quot;Gannet Ripple&quot;, 1.99, &quot;On a stick!&quot;
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils" id="id23">
+<caption><span class="caption-text">Example Table</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col width="27%" />
+<col width="18%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Treat</th>
+<th class="head">Quantity</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Albatross</td>
+<td>2.99</td>
+<td>On a stick!</td>
+</tr>
+<tr class="row-odd"><td>Crunchy Frog</td>
+<td>1.49</td>
+<td>If we took the bones out, it wouldn’t be
+crunchy, now would it?</td>
+</tr>
+<tr class="row-even"><td>Gannet Ripple</td>
+<td>1.99</td>
+<td>On a stick!</td>
+</tr>
+</tbody>
+</table>
+<p>Some of the options recognized are:</p>
+<dl class="role">
+<dt id="role-widths">
+<code class="descname">:widths:</code><a class="headerlink" href="#role-widths" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Contains a comma or space-separated list of relative column widths. The default is equal-width columns.</p>
+<p>The special value <code class="docutils literal"><span class="pre">auto</span></code> may be used by writers to decide whether to delegate the determination of column widths to the backend.</p>
+<p>In most cases, the best result is either the default or <code class="docutils literal"><span class="pre">auto</span></code>. If you’re unsure, try it both ways and see which looks better to you.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-header">
+<code class="descname">:header:</code><a class="headerlink" href="#role-header" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Contains column titles. It must use the same CSV format as the main CSV data.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-delim">
+<code class="descname">:delim:</code><a class="headerlink" href="#role-delim" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Contains a one character string used to separate fields. Default value is comma. It must be a single character or Unicode code.</p>
+<p>The only reason to use something other than a comma is when copying large blocks of content from another source that uses a different style. If you are creating new table content yourself, use the comma.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">csv-table</span><span class="p">::</span> Table using # as delimiter
+  <span class="nc">:header:</span> <span class="nf">&quot;Name&quot;, &quot;Grade&quot;</span>
+  <span class="nc">:widths:</span> <span class="nf">auto</span>
+  <span class="nc">:delim:</span> <span class="nf">#</span>
+
+  &quot;Peter&quot;#&quot;A&quot;
+  &quot;Paul&quot;#&quot;B&quot;
+
+<span class="p">..</span> <span class="ow">csv-table</span><span class="p">::</span> Table using | as delimiter
+  <span class="nc">:header:</span> <span class="nf">&quot;Name&quot;, &quot;Grade&quot;</span>
+  <span class="nc">:widths:</span> <span class="nf">auto</span>
+  <span class="nc">:delim:</span> <span class="nf">|</span>
+
+  &quot;Peter&quot;|&quot;A&quot;
+  &quot;Paul&quot;|&quot;B&quot;
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-align">
+<code class="descname">:align:</code><a class="headerlink" href="#role-align" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>It specifies the horizontal alignment of the table. It can be <cite>left</cite>, <cite>right</cite> or <cite>center</cite>.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">csv-table</span><span class="p">::</span> Table aligned to right
+  <span class="nc">:header:</span> <span class="nf">&quot;Name&quot;, &quot;Grade&quot;</span>
+  <span class="nc">:align:</span> <span class="nf">right</span>
+
+  &quot;Peter&quot;, &quot;A&quot;
+  &quot;Paul&quot;, &quot;B&quot;
+</pre></div>
+</div>
+<table border="1" class="docutils align-right" id="id24">
+<caption><span class="caption-text">Table aligned to right</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Grade</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Peter</td>
+<td>A</td>
+</tr>
+<tr class="row-odd"><td>Paul</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-file">
+<code class="descname">:file:</code><a class="headerlink" href="#role-file" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Contains the local file system path to a CSV data file.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-url">
+<code class="descname">:url:</code><a class="headerlink" href="#role-url" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Contains an Internet URL reference to a CSV data file.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul>
+<li><p class="first">There is no support for checking that the number of columns in each row is the same. However, this directive supports CSV generators that do not insert 「empty」 entries at the end of short rows, by automatically adding empty entries.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">csv-table</span><span class="p">::</span> Table with different number of columns in each row
+   <span class="nc">:header:</span> <span class="nf">&quot;Name&quot;, &quot;Grade&quot;</span>
+
+   &quot;Peter&quot;
+   &quot;Paul&quot;, &quot;B&quot;
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><table border="1" class="docutils" id="id25">
+<caption><span class="caption-text">Table with different number of columns in each row</span><a class="headerlink" href="#id25" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Grade</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Peter</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Paul</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<ul class="last simple">
+<li>Whitespace delimiters are supported only for external CSV files.</li>
+</ul>
+</div>
+<p>For more details, refer to this <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#id4">guide on CSV Tables</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">In almost all cases, <code class="xref rst rst-dir docutils literal"><span class="pre">csv-table</span></code> is the easiest and most maintainable way to insert a table into a document. It should be preferred unless there is a compelling reason to use one of the other styles.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sphinx-specific-markup">
+<span id="id9"></span><h2>Sphinx-specific Markup<a class="headerlink" href="#sphinx-specific-markup" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="roles-and-directives">
+<span id="id10"></span><h3>Roles and directives<a class="headerlink" href="#roles-and-directives" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>A <em class="dfn">role</em> is an inline markup construct that wraps some text, similar to an HTML or XML tag. They look like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>:rolename:`some text`
+</pre></div>
+</div>
+<p>A directive is a block-level markup construct. They look like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">directivename</span><span class="p">::</span> <span class="n">additional</span> <span class="n">info</span> <span class="ow">or</span> <span class="n">options</span> <span class="n">here</span>
+  <span class="p">:</span><span class="n">option</span><span class="p">:</span> <span class="n">optional</span><span class="o">-</span><span class="n">value</span>
+  <span class="p">:</span><span class="n">option</span><span class="p">:</span> <span class="n">optional</span><span class="o">-</span><span class="n">value</span>
+
+  <span class="n">Content</span> <span class="n">of</span> <span class="n">block</span> <span class="n">here</span><span class="p">,</span> <span class="n">indented</span><span class="o">.</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">block</span> <span class="n">controlled</span> <span class="n">by</span> <span class="n">the</span> <span class="n">directive</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Most of the Sphinx-specific and ODK-specific markup will use one or both of these constructs.</p>
+</div>
+<div class="section" id="cross-referencing">
+<span id="id11"></span><h3>Cross referencing<a class="headerlink" href="#cross-referencing" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Cross referencing is linking internally, from one place in the documentation to another. This is <strong>not</strong> done using the <a class="reference internal" href="#hyperlinks"><span class="std std-ref">Hyperlinks</span></a> syntax, but with one of the several roles:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="na">:role:</span><span class="nv">`target`</span>
+  becomes...
+    &lt;a href=&quot;target&quot;&gt;reference title&lt;/a&gt;
+
+<span class="na">:role:</span><span class="nv">`anchor text &lt;target&gt;`</span>
+  becomes...
+    &lt;a href=&quot;target&quot;&gt;anchor text&lt;/a&gt;
+</pre></div>
+</div>
+<dl class="role">
+<dt id="role-doc">
+<code class="descname">:doc:</code><a class="headerlink" href="#role-doc" title="この定義へのパーマリンク">¶</a></dt>
+<dd><ul class="simple">
+<li>Links to documents (pages)</li>
+<li><em>target</em> is the file name, without the <code class="docutils literal"><span class="pre">.rst</span></code> extension</li>
+<li><em>title</em> is the first <a class="reference internal" href="#doc-files"><span class="std std-ref">headline</span></a> ( <code class="docutils literal"><span class="pre">&lt;h1&gt;</span></code> ) of the page</li>
+</ul>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-ref">
+<code class="descname">:ref:</code><a class="headerlink" href="#role-ref" title="この定義へのパーマリンク">¶</a></dt>
+<dd><ul class="simple">
+<li>Links to <a class="reference internal" href="#sections-titles"><span class="std std-ref">sections</span></a></li>
+<li><em>target</em> is the <a class="reference internal" href="#section-labels"><span class="std std-ref">Section labels</span></a></li>
+<li><em>title</em> is the <a class="reference internal" href="#sections-titles"><span class="std std-ref">section title (headline)</span></a></li>
+</ul>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-term">
+<code class="descname">:term:</code><a class="headerlink" href="#role-term" title="この定義へのパーマリンク">¶</a></dt>
+<dd><ul class="simple">
+<li>Links to items in the <a class="reference internal" href="glossary.html"><span class="doc">Glossary</span></a></li>
+<li><em>target</em> is the term, in the glossary</li>
+<li><em>title</em> is the term itself</li>
+</ul>
+</dd></dl>
+
+<p><strong>To recap:</strong> If you do not include an explicit <code class="docutils literal"><span class="pre">target</span></code>, the text inside the role will be understood as the target, and the anchor text for the link in the output will be the title of the target.</p>
+<p>For example:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="m">-</span> Link to this document:
+
+  <span class="m">-</span> <span class="na">:doc:</span><span class="nv">`contributing`</span>
+  <span class="m">-</span> <span class="na">:doc:</span><span class="nv">`anchor text &lt;contributing&gt;`</span>
+
+<span class="m">-</span> Link to this section:
+
+  <span class="m">-</span> <span class="na">:ref:</span><span class="nv">`cross-referencing`</span>
+  <span class="m">-</span> <span class="na">:ref:</span><span class="nv">`anchor text &lt;cross-referencing&gt;`</span>
+
+<span class="m">-</span> Link to a term:
+
+  <span class="m">-</span> <span class="na">:term:</span><span class="nv">`participant`</span>
+  <span class="m">-</span> <span class="na">:term:</span><span class="nv">`anchor text &lt;participant&gt;`</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Link to this document:<ul>
+<li><a class="reference internal" href="contributing.html"><span class="doc">Contributing to ODK Docs</span></a></li>
+<li><a class="reference internal" href="contributing.html"><span class="doc">anchor text</span></a></li>
+</ul>
+</li>
+<li>Link to this section:<ul>
+<li><a class="reference internal" href="#cross-referencing"><span class="std std-ref">Cross referencing</span></a></li>
+<li><a class="reference internal" href="#cross-referencing"><span class="std std-ref">anchor text</span></a></li>
+</ul>
+</li>
+<li>Link to a term:<ul>
+<li><a class="reference internal" href="glossary.html#term-participant"><span class="xref std std-term">participant</span></a></li>
+<li><a class="reference internal" href="glossary.html#term-participant"><span class="xref std std-term">anchor text</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="writing-about-user-interface">
+<span id="interface-writing"></span><h3>Writing about User Interface<a class="headerlink" href="#writing-about-user-interface" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Several roles are used when describing user interactions.</p>
+<dl class="role">
+<dt id="role-guilabel">
+<code class="descname">:guilabel:</code><a class="headerlink" href="#role-guilabel" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Marks up <em>actual UI text</em> of form labels or buttons.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Press the <span class="na">:guilabel:</span><span class="nv">`Submit`</span> button.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-menuselection">
+<code class="descname">:menuselection:</code><a class="headerlink" href="#role-menuselection" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Marks up the <em>actual UI text</em> of a navigation menu or form select element.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Select <span class="na">:menuselection:</span><span class="nv">`Help`</span> from menu.
+</pre></div>
+</div>
+<p>When writing about multi-level menus, use a single <code class="docutils literal"><span class="pre">:menuselection:</span></code> role, and separate menu choices with <code class="docutils literal"><span class="pre">--&gt;</span></code>.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>To save your file, go to <span class="na">:menuselection:</span><span class="nv">`File --&gt; Save`</span> in the Main Menu.
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>In some situations you might not be clear about which option (<a class="reference internal" href="#role-menuselection" title="menuselection role"><code class="xref rst rst-role docutils literal"><span class="pre">menuselection</span></code></a> or <a class="reference internal" href="#role-guilabel" title="guilabel role"><code class="xref rst rst-role docutils literal"><span class="pre">guilabel</span></code></a>) to use. GUIs in real life can sometimes be ambiguous. The general rule is:</p>
+<ul class="simple">
+<li>Actual UI text will always receive <a class="reference internal" href="#role-guilabel" title="guilabel role"><code class="xref rst rst-role docutils literal"><span class="pre">guilabel</span></code></a> role unless the text could reasonably be understood to be part of a menu.</li>
+<li>If the actual UI text could be understood as a menu, <a class="reference internal" href="#role-menuselection" title="menuselection role"><code class="xref rst rst-role docutils literal"><span class="pre">menuselection</span></code></a> should be used.</li>
+</ul>
+<p class="last">These both render the same on output, so don’t worry too much if you get it wrong. Just use your judgment and take your best guess.</p>
+</div>
+<dl class="role">
+<dt id="role-kbd">
+<code class="descname">:kbd:</code><a class="headerlink" href="#role-kbd" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Marks up a sequence of literal keyboard strokes.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>To stop the local server, type <span class="na">:kbd:</span><span class="nv">`CTRL C`</span>.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-command">
+<code class="descname">:command:</code><a class="headerlink" href="#role-command" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Marks up a terminal command.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>To build the documentation, use <span class="na">:command:</span><span class="nv">`sphinx-build`</span>.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-option">
+<code class="descname">:option:</code><a class="headerlink" href="#role-option" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Marks up a terminal command option.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>The <span class="na">:option:</span><span class="nv">`-b html`</span> option specifies the HTML builder.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-gesture">
+<code class="descname">:gesture:</code><a class="headerlink" href="#role-gesture" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Describes a touch screen gesture.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="na">:gesture:</span><span class="nv">`Swipe Left`</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="writing-about-forms">
+<span id="id12"></span><h3>Writing about forms<a class="headerlink" href="#writing-about-forms" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>We have added several custom text roles for writing about forms and the XForms and XLSForm formats.</p>
+<dl class="role">
+<dt id="role-th">
+<code class="descname">:th:</code><a class="headerlink" href="#role-th" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Used to refer to a table header cell.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-tc">
+<code class="descname">:tc:</code><a class="headerlink" href="#role-tc" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Used to refer to a table cell.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">External App String Widget</span>
+<span class="gh">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+The external app widget is displayed when the <span class="na">:th:</span><span class="nv">`appearance`</span> attribute begins with <span class="na">:tc:</span><span class="nv">`ex:`</span>.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-formstate">
+<code class="descname">:formstate:</code><a class="headerlink" href="#role-formstate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Specifies the state of the form in <a class="reference internal" href="collect-intro.html"><span class="doc">ODK Collect</span></a>, which could be one of the following:</p>
+<ul class="simple">
+<li>Blank</li>
+<li>Finalized</li>
+<li>Saved</li>
+<li>Sent</li>
+<li>Deleted</li>
+</ul>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="na">:formstate:</span><span class="nv">`Sent`</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="other-semantic-markup">
+<span id="misc-markup"></span><h3>Other Semantic Markup<a class="headerlink" href="#other-semantic-markup" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<dl class="role">
+<dt id="role-abbr">
+<code class="descname">:abbr:</code><a class="headerlink" href="#role-abbr" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Marks up an abbreviation. If the role content contains a parenthesized explanation, it will be treated specially: it will be shown in a tool-tip in HTML.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="na">:abbr:</span><span class="nv">`ODK (Open Data Kit)`</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-dfn">
+<code class="descname">:dfn:</code><a class="headerlink" href="#role-dfn" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Marks the defining instance of a term outside the glossary.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="na">:dfn:</span><span class="nv">`Open Data Kit`</span> (ODK) is a suite of open source applications that help organizations engaged in enumerator-mediated data collection.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt>
+<code class="descname">:file:</code></dt>
+<dd><p>Marks the name of a file or directory. Within the contents, you can use curly braces to indicate a 「variable」 part.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>is installed in <span class="na">:file:</span><span class="nv">`/usr/lib/python2.{x}/site-packages`</span>
+</pre></div>
+</div>
+<p>In the built documentation, the <code class="docutils literal"><span class="pre">x</span></code> will be displayed differently to indicate that it is variable.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-program">
+<code class="descname">:program:</code><a class="headerlink" href="#role-program" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Marks the name of an executable program.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>launch the <span class="na">:program:</span><span class="nv">`ODK Aggregate Installer`</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="images-and-figures">
+<span id="id13"></span><h3>Images and Figures<a class="headerlink" href="#images-and-figures" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="where-to-put-image-files">
+<span id="id14"></span><h4>Where to put image files<a class="headerlink" href="#where-to-put-image-files" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Image files should be put in the <code class="file docutils literal"><span class="pre">/src/img/</span></code> directory in the source, and they should be in a subdirectory with the same name as the document in which they appear. (That is, the filename without the <code class="docutils literal"><span class="pre">.rst</span></code> extension.)</p>
+</div>
+<div class="section" id="image-compression">
+<span id="id15"></span><h4>Image compression<a class="headerlink" href="#image-compression" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>You must perform lossless compression on the source images. Use one of the following tools to optimize the images:</p>
+<ul class="simple">
+<li><strong>ImageOptim</strong> is a tool that allows us to optimize the images. It is not format specific which means it can optimize both jpeg as well as png images. You can download it <a class="reference external" href="https://imageoptim.com/howto.html">from here</a> . After launching ImageOptim.app, dragging and dropping images into its window gives you an in-place optimized file.</li>
+<li><strong>Pngout</strong> is another option for optimizing png images. Installation and usage instructions can be found <a class="reference external" href="http://docs.ewww.io/article/13-installing-pngout/">here</a> .</li>
+<li><strong>Mozjpeg</strong> can be used to optimize jpeg images. Installation and related information can be found on <a class="reference external" href="https://nystudio107.com/blog/installing-mozjpeg-on-ubuntu-16-04-forge/">this link</a> .</li>
+</ul>
+</div>
+<div class="section" id="inserting-images-in-a-document">
+<span id="inserting-image"></span><h4>Inserting images in a document<a class="headerlink" href="#inserting-images-in-a-document" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>To place an image in a document, use the <code class="xref rst rst-dir docutils literal"><span class="pre">image</span></code> directive.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> /img/{document-subdirectory}/{file}.*
+  <span class="nc">:alt:</span> <span class="nf">Alt text. Every image should have descriptive alt text.</span>
+</pre></div>
+</div>
+<p>Note the literal asterisk (<code class="docutils literal"><span class="pre">*</span></code>) at the end, in place of a file extension. Use the asterisk, and omit the file extension.</p>
+</div>
+<div class="section" id="inserting-images-with-captions-figures">
+<span id="figures"></span><h4>Inserting images with captions (figures)<a class="headerlink" href="#inserting-images-with-captions-figures" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Use <code class="xref rst rst-dir docutils literal"><span class="pre">figure</span></code> to markup an image with a caption.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">figure</span><span class="p">::</span> /img/{document-subdirectory}/{file}.*
+  <span class="nc">:alt:</span> <span class="nf">Alt text. Every image should have descriptive alt text.</span>
+
+  The rest of the indented content will be the caption. This can be a short sentence or several paragraphs. Captions can contain any other rst markup.
+</pre></div>
+</div>
+</div>
+<div class="section" id="inline-images">
+<span id="id16"></span><h4>Inline images<a class="headerlink" href="#inline-images" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>To information on creating inline images, see <a class="reference internal" href="#substitutions"><span class="std std-ref">Substitutions</span></a>.</p>
+</div>
+<div class="section" id="image-file-names">
+<span id="id17"></span><h4>Image File Names<a class="headerlink" href="#image-file-names" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Image file names should:</p>
+<ul class="simple">
+<li>be short yet descriptive</li>
+<li>contain only lower case characters and (in <a class="reference internal" href="#sequentially-numbered-images"><span class="std std-ref">Sequentially numbered images</span></a> only) numbers</li>
+<li>have no spaces</li>
+<li>use hyphens as the separator</li>
+</ul>
+<p>Good image file names:</p>
+<ul class="simple">
+<li><code class="file docutils literal"><span class="pre">collect-home-screen.png</span></code></li>
+<li><code class="file docutils literal"><span class="pre">build-data-export-menu.png</span></code></li>
+</ul>
+<p>Bad image file names:</p>
+<ul class="simple">
+<li><code class="file docutils literal"><span class="pre">Collect</span> <span class="pre">home</span> <span class="pre">screen.png</span></code></li>
+<li><code class="file docutils literal"><span class="pre">collect_home_screen.png</span></code></li>
+<li><code class="file docutils literal"><span class="pre">3987948p2983768ohl84692p094.jpg-large</span></code></li>
+</ul>
+<div class="section" id="sequentially-numbered-images">
+<span id="id18"></span><h5>Sequentially numbered images<a class="headerlink" href="#sequentially-numbered-images" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<p>In the case of sequentially numbered images, the numbers should:</p>
+<ul class="simple">
+<li>be zero-indexed</li>
+<li>have two digits with leading zeroes</li>
+<li>be separated from the rest of the file name with a hyphen</li>
+<li>be placed at the end of the file name</li>
+</ul>
+<p>Good sequentially numbered image file names:</p>
+<ul class="simple">
+<li><code class="file docutils literal"><span class="pre">map-widget-00</span></code>, <code class="file docutils literal"><span class="pre">map-widget-01</span></code>, <code class="file docutils literal"><span class="pre">map-widget-02</span></code></li>
+</ul>
+<p>Bad sequentially numbered image file names:</p>
+<ul class="simple">
+<li><code class="file docutils literal"><span class="pre">1-map-widget</span></code>, <code class="file docutils literal"><span class="pre">2-map-widget</span></code></li>
+<li><code class="file docutils literal"><span class="pre">map-widget_00</span></code>, <code class="file docutils literal"><span class="pre">map-widget_01</span></code></li>
+<li><code class="file docutils literal"><span class="pre">map-widget-1</span></code>, <code class="file docutils literal"><span class="pre">map-widget-2</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="screenshots-from-odk-collect">
+<span id="screenshots"></span><h4>Screenshots from ODK Collect<a class="headerlink" href="#screenshots-from-odk-collect" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>If you have set up local <a class="reference internal" href="docs-tech-guide.html#android-tools"><span class="std std-ref">Android Tools</span></a>, you can connect your Android device to your computer and take screenshots from the command line.</p>
+<ul class="simple">
+<li>Connect your device via USB</li>
+<li>Enable Developer Settings<ul>
+<li><span class="menuselection">Settings ‣ About phone</span></li>
+<li>Tap <span class="menuselection">Build number</span> seven (7) times</li>
+</ul>
+</li>
+<li>Turn on USB Debugging<ul>
+<li><span class="menuselection">Settings ‣ Developer options ‣ USB debugging</span></li>
+</ul>
+</li>
+</ul>
+<p>Now, at the command line, from the root directory of the <code class="file docutils literal"><span class="pre">odk-docs</span></code> repo:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">python ss.py {document-name}/{image-name}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">{document-name}</span></code> is the filename (without extension) where the image will be used.</li>
+<li><code class="docutils literal"><span class="pre">{image-name}</span></code> is the name (without extension) given to the image.
+- follow the <a class="reference internal" href="#image-file-names"><span class="std std-ref">Image File Names</span></a> guidelines</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Make sure you do not overwrite an existing image.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">If you have a problem running ss.py, check to make sure your <a class="reference internal" href="docs-tech-guide.html#docs-venv"><span class="std std-ref">Python 3 virtual environment</span></a> is activated.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Be sure to obscure any personally-identifiable information from screen shots. Crop to the smallest relevant screen area. Annotate screen shots with arrows or circles to indicate relevant information.</p>
+</div>
+</div>
+</div>
+<div class="section" id="videos">
+<span id="id19"></span><h3>Videos<a class="headerlink" href="#videos" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Video files should be put in the <code class="file docutils literal"><span class="pre">/src/vid/</span></code> directory in the source, and they should be in a subdirectory with the same name as the document in which they appear. (That is, the filename without the <code class="docutils literal"><span class="pre">.rst</span></code> extension.)</p>
+<p>The purpose of on page videos is to illustrate complicated user interactions that might be difficult to describe otherwise. Longer tutorial videos should be hosted elsewhere and, if appropriate, linked to from the docs. Therefore:</p>
+<ul class="simple">
+<li>The length of the videos must be less than a minute.</li>
+<li>Videos should have no audio.</li>
+</ul>
+<p>To insert a video, use the custom <a class="reference internal" href="#directive-video" title="video directive"><code class="xref rst rst-dir docutils literal"><span class="pre">video</span></code></a> directive.</p>
+<dl class="directive">
+<dt id="directive-video">
+<code class="descname">.. video::</code><code class="descclassname"> path/to/video</code><a class="headerlink" href="#directive-video" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Specify the source path of the video and a descriptive alt content in the video directive. Alternate content is displayed when the video cannot be played. It can contain long texts as well as any other rst content.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">video</span><span class="p">::</span> /vid/{document-subdirectory}/{file}.ext
+
+  Alt content. Every video should have descriptive alt content.
+</pre></div>
+</div>
+<p>The following optional attributes are supported:</p>
+<dl class="role">
+<dt id="role-autoplay">
+<code class="descname">:autoplay:</code><a class="headerlink" href="#role-autoplay" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Specifies whether the video should start playing as soon as it is ready. Can take boolean value: true, false, yes or no. Default is <strong>no</strong>.</p>
+<p>It is almost never a good idea to turn <code class="docutils literal"><span class="pre">autoplay</span></code> on.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-controls">
+<code class="descname">:controls:</code><a class="headerlink" href="#role-controls" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Specifies whether the video controls should be displayed. Can take boolean value: true, false, yes or no. Default is <strong>yes</strong>.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-muted">
+<code class="descname">:muted:</code><a class="headerlink" href="#role-muted" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Specifies whether the audio output of the video should be muted. Can take boolean value: true, false, yes or no. Default is <strong>yes</strong>.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-loop">
+<code class="descname">:loop:</code><a class="headerlink" href="#role-loop" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Specifies whether the video should start over again, every time it is finished. Can take boolean value: true, false, yes or no. Default is <strong>no</strong>.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-preload">
+<code class="descname">:preload:</code><a class="headerlink" href="#role-preload" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Specifies if and how the author thinks the video should be loaded when the page loads. Can take one of the following three values: <strong>auto</strong>, <strong>metadata</strong> or <strong>none</strong>.</p>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-poster">
+<code class="descname">:poster:</code><a class="headerlink" href="#role-poster" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Contains the source address for an image to be shown while the video is downloading, or until the user hits the play button.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Images to be used as poster for a video should be in the same directory as the video and should have a filename like <code class="file docutils literal"><span class="pre">[same-file-name-as-video]-poster.ext</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="role">
+<dt id="role-class">
+<code class="descname">:class:</code><a class="headerlink" href="#role-class" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Specifies a class for the video element.</p>
+</dd></dl>
+
+<p>For more details on these attributes, see <a class="reference external" href="https://www.w3schools.com/tags/tag_video.asp">this guide</a>.</p>
+<p>To add a video in a document with the above options, you can do the following:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">video</span><span class="p">::</span> /vid/{document-subdirectory}/{file}.ext
+  <span class="nc">:autoplay:</span> <span class="nf">yes/no</span>
+  <span class="nc">:controls:</span> <span class="nf">yes/no</span>
+  <span class="nc">:muted:</span> <span class="nf">yes/no</span>
+  <span class="nc">:loop:</span> <span class="nf">yes/no</span>
+  <span class="nc">:class:</span> <span class="nf">class-name</span>
+  <span class="nc">:preload:</span> <span class="nf">auto/metadata/none</span>
+  <span class="nc">:poster::</span> <span class="nf">/vid/{document-subdirectory}/{file}.ext</span>
+
+  Alt content. Every video should have descriptive alt content.
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="section" id="capturing-video-from-collect">
+<span id="id20"></span><h4>Capturing video from Collect<a class="headerlink" href="#capturing-video-from-collect" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><a class="reference internal" href="collect-adb.html"><span class="doc">Android Debug Bridge (ADB)</span></a> can be used to capture a screen recording from <a class="reference internal" href="collect-intro.html"><span class="doc">ODK Collect</span></a>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb shell screenrecord /sdcard/example.mp4
+</pre></div>
+</div>
+<p>On pressing the enter key the video recording starts. Recording stops automatically after 3 minutes. Since videos have to be less than a minute, press <code class="kbd docutils literal"><span class="pre">CTRL</span> <span class="pre">C</span></code> to stop the recording.</p>
+<p>The video file is saved in your Android device to a file at <code class="file docutils literal"><span class="pre">/sdcard/example.mp4</span></code> file.</p>
+<p>To pull the video locally:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb pull /sdcard/example.mp4 local/path/to/save/to
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="downloadable-files">
+<span id="downloads"></span><h3>Downloadable files<a class="headerlink" href="#downloadable-files" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Downloadable files should be put in the <code class="file docutils literal"><span class="pre">/src/downloads/</span></code> directory in the source, and they should be in a subdirectory with the same name as the document in which they appear. (That is, the filename without the <code class="docutils literal"><span class="pre">.rst</span></code> extension.)</p>
+<p>To place a downloadable file in a document, use the <code class="xref rst rst-role docutils literal"><span class="pre">download</span></code> role.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>See this <span class="na">:download:</span><span class="nv">`example script &lt;/downloads/contributing/example_script.py&gt;`</span> to understand the procedure better.
+</pre></div>
+</div>
+</div>
+<div class="section" id="code-samples">
+<span id="id21"></span><h3>Code Samples<a class="headerlink" href="#code-samples" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Use the <code class="xref rst rst-dir docutils literal"><span class="pre">code-block</span></code> directive to insert code samples. Specify the language on the same line as the directive for syntax highlighting.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">rst</span>
+
+  Use the <span class="s">``code-block``</span> directive to markup code samples.
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">python</span>
+
+  <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello ODK!&quot;</span><span class="p">)</span>
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">console</span>
+
+  <span class="gp">$</span> python --version
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">java</span>
+
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+
+      <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+          <span class="c1">// Prints &quot;Hello, World&quot; to the terminal window.</span>
+          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, World&quot;</span><span class="o">);</span>
+      <span class="o">}</span>
+
+  <span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p><strong>rst</strong> code-blocks wrap overflow lines by default. To unwrap overflow lines, use <strong>unwrap</strong> class with <strong>rst</strong> code-blocks.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> rst
+  <span class="nc">:class:</span> <span class="nf">unwrap</span>
+</pre></div>
+</div>
+<p>Code-blocks for other languages don’t wrap overflow lines. Instead of wrapping, you need to scroll side-ways. To wrap overflow lines with other code-blocks, use <strong>wrap</strong> class with them.</p>
+<div class="last highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> python
+  <span class="nc">:class:</span> <span class="nf">wrap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="substitutions">
+<span id="id22"></span><h3>Substitutions<a class="headerlink" href="#substitutions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Substitutions are a useful way to define a value which is needed in many places.</p>
+<p>Substitution definitions are indicated by an explicit markup start (「.. 「) followed by a vertical bar, the substitution text (which gets substituted), another vertical bar, whitespace, and the definition block.</p>
+<p>A substitution definition block may contain inline-compatible directives such as <a class="reference internal" href="#images-and-figures"><span class="std std-ref">image</span></a> or <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#replace">replace</a>. For more information, refer this <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#substitution-definitions">guide</a>.</p>
+<p>You can define the value once like this:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">|RST|</span> <span class="ow">replace</span><span class="p">::</span> reStructuredText
+</pre></div>
+</div>
+<p>and then reuse it like this:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>We use |RST| to write documentation source files.
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal"><span class="pre">|RST|</span></code> will be replaced by reStructuredText</p>
+<p>You can also create a reference with styled text:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">|slack|</span> <span class="ow">replace</span><span class="p">::</span> <span class="gs">**ODK Slack**</span>
+<span class="cp">.. slack: https://opendatakit.slack.com</span>
+</pre></div>
+</div>
+<p>You can use the hyperlink reference by appending a 「_」 at the end of the vertical bars, for example:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You can ask about your problem in |slack|_.
+</pre></div>
+</div>
+<p>You can ask about your problem in <a class="reference external" href="https://opendatakit.slack.com"><strong>ODK Slack</strong></a>.</p>
+<p>The <code class="docutils literal"><span class="pre">rst_epilog</span></code> in <code class="file docutils literal"><span class="pre">conf.py</span></code> contains a list of global substitutions that can be used from any file. The list is given below:</p>
+<ul>
+<li><p class="first">If you want to create a hyperlink reference for ODK Slack, you can use <code class="docutils literal"><span class="pre">|odk-slack|_</span></code>.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You can use |odk-slack|_ to ask your questions.
+</pre></div>
+</div>
+<p>You can use <a class="reference external" href="https://opendatakit.slack.com">ODK Slack</a> to ask your questions.</p>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p class="first">To create a hyperlink reference for docs related issues, use <code class="docutils literal"><span class="pre">|docs-issue|_</span></code>.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>If you find a problem, file an |docs-issue|_.
+</pre></div>
+</div>
+<p>If you find a problem, file an <a class="reference external" href="https://github.com/opendatakit/docs/issues">issue</a>.</p>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p class="first">To create a hyperlink reference for ODK Forum, use <code class="docutils literal"><span class="pre">|forum|_</span></code>.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You can ask support questions in |forum|_.
+</pre></div>
+</div>
+<p>You can ask support questions in <a class="reference external" href="https://forum.opendatakit.org">ODK Forum</a>.</p>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p class="first">To create a hyperlink reference for contributors guide, use <code class="docutils literal"><span class="pre">|contrib-guide|_</span></code>.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Be sure to read the |contrib-guide|_.
+</pre></div>
+</div>
+<p>Be sure to read the <a class="reference external" href="http://docs.opendatakit.org/contributing/">contributors guide</a>.</p>
+</li>
+</ul>
+<p>You can add inline images in the document using substitutions. The following block of code substitutes arrow in the text with the image specified.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>The |arrow| icon opens the jump menu.
+
+<span class="p">..</span> <span class="nt">|arrow|</span> <span class="ow">image</span><span class="p">::</span> /img/{document-subdirectory}/{file}.*
+           <span class="nc">:alt:</span> <span class="nf">Alt text.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docs-style-guide.html" class="btn btn-neutral float-right" title="Style Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="docs-tech-guide.html" class="btn btn-neutral" title="Docs Technical Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

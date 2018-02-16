@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Data Out of Aggregate &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Using ODK Aggregate" href="aggregate-use.html"/>
+        <link rel="next" title="Visualizing Geographic Data" href="aggregate-visualize.html"/>
+        <link rel="prev" title="Administering Aggregate" href="aggregate-admin.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-forms.html">Managing Forms in Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-data.html">Working with Submitted Data in Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-admin.html">Administering Aggregate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Data Out of Aggregate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exporting">Exporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#csv-comma-separated-values">CSV (comma separated values)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json">JSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kml-keyhole-markup-language">KML (Keyhole Markup Language)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#publishing">Publishing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#google-fusion-tables">Google Fusion Tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#google-spreadsheets">Google Spreadsheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json-server">JSON Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#google-maps-engine">Google Maps Engine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#redcap-server">RedCap Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ohmage-json-server">Ohmage JSON Server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#apis">APIs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#briefcase-cli">Briefcase CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#briefcase-aggregate-api">Briefcase-Aggregate API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#openrosa-api">OpenRosa API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#direct-database-connection">Direct database connection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-media">Accessing Media</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-visualize.html">Visualizing Geographic Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-help.html">Getting Help in Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-use.html">Using ODK Aggregate</a> &raquo;</li>
+        
+      <li>Getting Data Out of Aggregate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-data-access.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-data-out-of-aggregate">
+<h1>Getting Data Out of Aggregate<a class="headerlink" href="#getting-data-out-of-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ODK Aggregate supports three primary mechanisms for data transfer:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#export-data"><span class="std std-ref">Exporting</span></a>:  one time snapshot</li>
+<li><a class="reference internal" href="#publish-data"><span class="std std-ref">Publishing</span></a>: continuous streaming of submissions</li>
+<li><a class="reference internal" href="#odk-api"><span class="std std-ref">APIs</span></a>: programmatic access to the data</li>
+</ul>
+<p>Since ODK supports complex data structures such as question grouping, repeating questions, and multimedia, compromises have been made for each mechanism in regards to these data structures. This document explains each mechanism and what each supports.</p>
+<div class="section" id="exporting">
+<span id="export-data"></span><h2>Exporting<a class="headerlink" href="#exporting" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The easiest way to get data from Aggregate is by using its ‘Export’ feature. Export allows the user to manually export all of the data (or filtered data) at any time into one of the following formats:</p>
+<div class="section" id="csv-comma-separated-values">
+<span id="export-to-csv"></span><h3>CSV (comma separated values)<a class="headerlink" href="#csv-comma-separated-values" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>CSV files are a text only, tabular representation of the data. Multimedia files are represented by including standard web links to the files. Repeats are also represented with links to the underlying data. Grouping information is not preserved. Metadata is only preserved if a filter is created with the metadata.</p>
+<p>To download CSV files of forms with repeats, consider using ODK Briefcase instead of ODK Aggregate’s export functionality. Instead of repeats that are represented with links to the underlying data, ODK Briefcase will export a set of CSV files, one for each repeating group. ODK Briefcase will also export any multimedia as files (e.g., pictures will get exported as JPEGs). The only metadata that is preserved is the submission date in the CSV is preserved, but the XML files that ODK Briefcase downloads has all form metadata.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">To import CSVs into Excel, you cannot download and open in one step; nor can you double-click on the CSV. You must open Excel and choose Import. If you are asked, the file origin or encoding is UTF-8.</p>
+</div>
+</div>
+<div class="section" id="json">
+<span id="export-to-json"></span><h3>JSON<a class="headerlink" href="#json" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>JSON is a text only representation of the data in a key:value format. Multimedia files are represented by including standard web links to the files. Repeating data is preserved, but grouping information not related to repeats is not. Metadata is only preserved if a filter is created with the metadata.</p>
+</div>
+<div class="section" id="kml-keyhole-markup-language">
+<span id="export-to-kml"></span><h3>KML (Keyhole Markup Language)<a class="headerlink" href="#kml-keyhole-markup-language" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>KML is a text only representation of the data similar to XML, but used for mapping applications like Google Earth. Multimedia files are represented by including standard web links to the files hosted on the server. Pictures will appear embedded in popup windows (when pushpins are clicked) in programs that render .kml files. Repeats and grouping information is not preserved. Metadata is only preserved if a filter is created with the metadata.</p>
+<table border="1" class="colwidths-auto docutils" id="id6">
+<caption><span class="caption-text"><strong>Export Data Summary</strong></span><a class="headerlink" href="#id6" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Format</th>
+<th class="head">Groups</th>
+<th class="head">Repeats</th>
+<th class="head">Multimedia</th>
+<th class="head">Metadata</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CSV(Aggregate)</td>
+<td>not preserved</td>
+<td>links to</td>
+<td>links to</td>
+<td>preservable</td>
+</tr>
+<tr class="row-odd"><td>CSV(Briefcase)</td>
+<td>not preserved</td>
+<td>split into separate CSVs</td>
+<td>exported as files</td>
+<td>only submission date</td>
+</tr>
+<tr class="row-even"><td>JSON</td>
+<td>not preserved</td>
+<td>preserved</td>
+<td>links to</td>
+<td>preservable</td>
+</tr>
+<tr class="row-odd"><td>KML</td>
+<td>not preserved</td>
+<td>not preserved</td>
+<td>links to</td>
+<td>preservable</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="publishing">
+<span id="publish-data"></span><h2>Publishing<a class="headerlink" href="#publishing" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Aggregate provides mechanism for either bulk publishing data to another service, or for streaming incoming data to a service as it is received, or both.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Under certain failure conditions, the downstream service can receive multiple copies of a given submission. This is known, expected, behavior.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>Duplicates typically occur if the downstream service is slow to respond or acknowledge a request.</li>
+<li>It is your responsibility to detect and eliminate these duplicates should they occur (they will always have exactly the same information in all fields).</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>If ODK Aggregate aborts its publishing attempt before it gets an acknowledgement, it will re-send the submission a short time later. If the downstream server successfully processed the first request, the re-send of that same submission can cause a duplicate record of it to appear in the downstream system. The instance ID of the submission will appear as the metainstanceid column in Google Sheets and as the <em>meta-instance-id</em> column in Google Fusion tables.</li>
+<li>When the downstream server fails to respond or responds with an error code, ODK Aggregate first delays a re-send for 60 seconds, and, if that also fails, it then backs off its publishing attempts, and will re-send at either 7.5-minute or 15-minute intervals until the downstream service successfully responds, after which ODK Aggregate will resume its normal publishing behavior.</li>
+</ul>
+</div>
+<p>Aggregate currently supports publishing data to the following services or in the following formats:</p>
+<div class="section" id="google-fusion-tables">
+<span id="fusion-table"></span><h3>Google Fusion Tables<a class="headerlink" href="#google-fusion-tables" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Fusion Tables is an experimental data visualization web application to gather, visualize, and share larger data tables. Multimedia files are represented by including standard web links to the files. Repeating groups of questions are split into separate tables. All metadata is preserved. Fusion Tables is hosted in Google’s cloud infrastructure. We know of no row limit, but one may exist. Fusion Tables also has an API that can be used to export/publish data.</p>
+<div class="admonition warning" id="non-repeat-group-warning">
+<p class="first admonition-title">警告</p>
+<p>Non-repeating grouping information is not preserved. This implies that if your form has a non-repeating group <cite>purchaser</cite> and a second non-repeating group <cite>supplier</cite> and within each of these groups, you have a <cite>name</cite> field, then when you publish to Fusion Tables, there will be two columns called <cite>name</cite>. Unfortunately, that badly confuses Fusion Tables, and generally results in data not transferring successfully into Fusion Tables.</p>
+<p class="last">The solution is to this problem is to design your forms with field names such as <cite>purchaser_name</cite> and <cite>supplier_name</cite>. In other words, use unique names throughout your form.</p>
+</div>
+<div class="admonition-oauth2-service-account-required admonition">
+<p class="first admonition-title">OAuth2 Service Account Required</p>
+<p class="last">Publishing data to Google Fusion Tables requires an <a class="reference internal" href="oauth2-service.html"><span class="doc">OAuth2 Service Account</span></a>.</p>
+</div>
+</div>
+<div class="section" id="google-spreadsheets">
+<span id="google-spreadsheet"></span><h3>Google Spreadsheets<a class="headerlink" href="#google-spreadsheets" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Spreadsheets is Google’s cloud-hosted spreadsheet solution. Multimedia files are represented by including standard web links to the files. Repeats are also represented with links to the underlying data. All metadata is preserved. Spreadsheets has a 400,000 cell limit, above which errors will be reported. Spreadsheets also has an API that can be used to export/publish data.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">As with Google Fusion tables, <a class="reference internal" href="#non-repeat-group-warning"><span class="std std-ref">non-repeating grouping information is not preserved</span></a>.</p>
+</div>
+<div class="admonition-oauth2-service-account-required admonition">
+<p class="first admonition-title">OAuth2 Service Account Required</p>
+<p class="last">Publishing data to Google Spreadsheets requires an <a class="reference internal" href="oauth2-service.html"><span class="doc">OAuth2 Service Account</span></a>.</p>
+</div>
+</div>
+<div class="section" id="json-server">
+<span id="id1"></span><h3>JSON Server<a class="headerlink" href="#json-server" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>JSON preserves grouping and repeat structures. The user can choose to let multimedia files be represented as web links or embedded as base64 encoded strings. All metadata is preserved.</p>
+</div>
+<div class="section" id="google-maps-engine">
+<span id="google-map-engine"></span><h3>Google Maps Engine<a class="headerlink" href="#google-maps-engine" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Maps Engine is a cloud-hosted service to easily create and share maps. Multimedia files are represented by including standard web links to the files. Grouping information is preserved in the variable names. Repeating groups are forbidden and submissions must have at least one geopoint. Maps Engine also has an API that can be used to export/publish data.</p>
+</div>
+<div class="section" id="redcap-server">
+<span id="id2"></span><h3>RedCap Server<a class="headerlink" href="#redcap-server" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>RedCap servers ignore grouping and repeating information. Multimedia files are sent as binary form elements in POST.</p>
+</div>
+<div class="section" id="ohmage-json-server">
+<span id="ohmag-json-server"></span><h3>Ohmage JSON Server<a class="headerlink" href="#ohmage-json-server" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Ohmage JSON preserves grouping and repeat structures. Multimedia files are sent as binary form elements in POST.</p>
+<p>For more details on JSON Server, RedCap Server and Ohmage JSON Server see <a class="reference external" href="https://github.com/opendatakit/opendatakit/wiki/Aggregate-Publishers-Implementation-Details">Aggregate Publishers Implementation Details</a></p>
+<table border="1" class="colwidths-auto docutils" id="id7">
+<caption><span class="caption-text"><strong>Publish data Summary</strong></span><a class="headerlink" href="#id7" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Service</th>
+<th class="head">Groups</th>
+<th class="head">Repeats</th>
+<th class="head">Multimedia</th>
+<th class="head">Metadata</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Google Fusion Tables</td>
+<td>not preserved</td>
+<td>split into separate tables</td>
+<td>links to</td>
+<td>preserved</td>
+</tr>
+<tr class="row-odd"><td>Google Spreadsheets</td>
+<td>not preserved</td>
+<td>links to</td>
+<td>links to</td>
+<td>preserved</td>
+</tr>
+<tr class="row-even"><td>JSON Server</td>
+<td>preserved</td>
+<td>preserved</td>
+<td>links to or embedded as base64</td>
+<td>preserved</td>
+</tr>
+<tr class="row-odd"><td>Google Maps Engine</td>
+<td>preserved</td>
+<td>forbidden</td>
+<td>links to</td>
+<td>not preserved</td>
+</tr>
+<tr class="row-even"><td>RedCap Server</td>
+<td>not preserved</td>
+<td>not preserved</td>
+<td>binary elements in POST</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Ohmage JSON Server</td>
+<td>preserved</td>
+<td>preserved</td>
+<td>binary elements in POST</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="apis">
+<span id="odk-api"></span><h2>APIs<a class="headerlink" href="#apis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ODK Aggreate has public APIs defined for sending data to and from its various components. This section gives references to those API implementations that can be used for connecting new applications to the ODK ecosystem.</p>
+<div class="section" id="briefcase-cli">
+<span id="id3"></span><h3>Briefcase CLI<a class="headerlink" href="#briefcase-cli" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ODK Briefcase 1.4.4 introduces a new Command Line Interface (CLI) to automate downloading forms from ODK Aggregate (or ODK Collect) and exporting the forms to an Excel-compatible format like CSV. For more details, see <a class="reference internal" href="briefcase-forms.html#cli-use"><span class="std std-ref">Working with command line on Briefcase</span></a>.</p>
+</div>
+<div class="section" id="briefcase-aggregate-api">
+<span id="briefacse-aggregate-api"></span><h3>Briefcase-Aggregate API<a class="headerlink" href="#briefcase-aggregate-api" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ODK Briefcase uses an API that external applications can use to pull all data from and push data to ODK Aggregate.</p>
+<p>Interfaces used during pull actions are:</p>
+<ul class="simple">
+<li>OpenRosa Form Discovery API</li>
+<li>download forms and media files using URLs form discovery</li>
+<li><code class="docutils literal"><span class="pre">view/submissionList</span></code> to obtain a chunk of submission keys</li>
+<li><code class="docutils literal"><span class="pre">view/downloadSubmission</span></code> to download an individual submission</li>
+</ul>
+<p>Interfaces used during push actions are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">formUpload</span></code> to upload a form and its media files to ODK Aggregate</li>
+<li><code class="docutils literal"><span class="pre">view/submissionList</span></code> to obtain a chunk of submission keys</li>
+<li>OpenRosa Form Submission/Overwite API (with extensions)</li>
+</ul>
+<p>For more details, see <a class="reference external" href="https://github.com/opendatakit/opendatakit/wiki/Briefcase-Aggregate-API">Briefcase Aggregate API</a>.</p>
+</div>
+<div class="section" id="openrosa-api">
+<span id="id5"></span><h3>OpenRosa API<a class="headerlink" href="#openrosa-api" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Collect and Aggregate communicate using a standard set of API calls defined in the <a class="reference internal" href="openrosa.html"><span class="doc">OpenRosa</span></a> specification, which can also be used by alternative clients.</p>
+</div>
+<div class="section" id="direct-database-connection">
+<span id="direct-database"></span><h3>Direct database connection<a class="headerlink" href="#direct-database-connection" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you are running on a Tomcat server, you have access to the underlying MySQL or PostgreSQL tables. The structure of those tables are documented at <a class="reference external" href="https://github.com/opendatakit/opendatakit/wiki/Aggregate-Database-Structure">Aggregate Database Structure</a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This is a fragile way to pull data from Aggregate because table structure could change between versions. Moreover, changing any of this data could corrupt your Aggregate install.</p>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-media">
+<span id="media-access"></span><h2>Accessing Media<a class="headerlink" href="#accessing-media" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Many of the export and publishing options provide a URL to the media (image, audio or video) without providing the content itself. To enable the viewing (following) of this link without requiring a log-in:</p>
+<ul class="simple">
+<li>Go to the <span class="guilabel">Permissions</span> sub-tab under the <span class="guilabel">Site Admin</span> tab.</li>
+<li>Check the checkbox for: <cite>Allow anonymous retrieval of images, audio and video data (needed for GoogleEarth balloon displays)</cite>.</li>
+<li>Click the <span class="guilabel">Save Changes</span> button.</li>
+</ul>
+<p>This allows anyone to view the media files on your server. Even though you are granting anyone access to this information, it is still quite secure because the users would need to have a valid URL.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-visualize.html" class="btn btn-neutral float-right" title="Visualizing Geographic Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-admin.html" class="btn btn-neutral" title="Administering Aggregate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/index.rst:20
+msgid "Welcome to Open Data Kit's documentation!"
+msgstr ""
+
+#: ../../src/index.rst:22
+msgid ":dfn:`Open Data Kit` (ODK) is a suite of open source applications that help organizations engaged in enumerator-mediated data collection. ODK tools assist with the collection and management of survey data using digital forms. These include the primary ODK applications:"
+msgstr ""
+
+#: ../../src/index.rst:24
+msgid ":doc:`collect-intro`, an Android mobile app that replaces paper-based forms."
+msgstr ""
+
+#: ../../src/index.rst:25
+msgid ":doc:`aggregate-intro`, a server-side data storage and analysis tool."
+msgstr ""
+
+#: ../../src/index.rst:27
+msgid "Also part of the ODK suite are several tools that support form creation and data management:"
+msgstr ""
+
+#: ../../src/index.rst:29
+msgid "**ODK Build** lets you design forms with a drag-and-drop form interface."
+msgstr ""
+
+#: ../../src/index.rst:30
+msgid "**ODK Validate** validates forms against the ODK XForms specification."
+msgstr ""
+
+#: ../../src/index.rst:31
+msgid "**ODK Form Uploader** uploads blank forms and their media files to ODK Aggregate."
+msgstr ""
+
+#: ../../src/index.rst:32
+msgid "**ODK Briefcase** packages and transfers data between instances of Collect and Aggregate."
+msgstr ""
+
+#: ../../src/index.rst:34
+msgid "ODK also maintains libraries and specifications that support these applications."
+msgstr ""
+
+#: ../../src/index.rst:36
+msgid "**ODK XForm** is a subset of the W3 XForm specification, for use in the ODK ecosystem."
+msgstr ""
+
+#: ../../src/index.rst:37
+msgid "**ODK JavaRosa** is a Java library that renders forms complying with the ODK XForm specification."
+msgstr ""
+
+#: ../../src/index.rst:38
+msgid "**XLSForm** defines an Excel format for designing forms."
+msgstr ""
+
+#: ../../src/index.rst:41
+msgid "For a complete list of our projects, check out `Open Data Kit on Github <https://github.com/opendatakit>`_."
+msgstr ""
+

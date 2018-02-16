@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Android security recommendations &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Tips and Best Practices" href="collect-best-practices.html"/>
+        <link rel="next" title="Projecting ODK Collect onto another screen" href="projecting-collect.html"/>
+        <link rel="prev" title="Improving Location Performance" href="collect-location.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="collect-adb.html">Using Android Debug Bridge with Collect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-shortcut.html">Creating Shortcuts to Collect Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-location.html">Improving Location Performance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Android security recommendations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#turn-on-data-encryption">Turn on data encryption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adjust-google-play-to-require-a-password-for-every-purchase">Adjust Google Play to require a password for every purchase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disable-cloud-based-backup">Disable cloud-based backup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#limit-who-can-use-google-now">Limit who can use Google Now</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lower-your-phone-s-sleep-timeout">Lower your phone’s sleep timeout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#limit-your-lock-screen-notifications">Limit your lock screen notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prevent-unauthorized-apps-from-installing">Prevent unauthorized apps from installing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-sure-you-keep-android-up-to-date">Make sure you keep Android up-to-date</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="projecting-collect.html">Projecting ODK Collect onto another screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-best-practices.html#related-topics">Related Topics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collect-best-practices.html">Tips and Best Practices</a> &raquo;</li>
+        
+      <li>Android security recommendations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/collect-security.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="android-security-recommendations">
+<h1>Android security recommendations<a class="headerlink" href="#android-security-recommendations" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="turn-on-data-encryption">
+<span id="data-encrypt"></span><h2>Turn on data encryption<a class="headerlink" href="#turn-on-data-encryption" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Turning on Android-level data encryption means when the device is locked, no one can see the data. Unlocking your encrypted device decrypts your data. Encryption can add protection in case your device is stolen. It’s an easier alternative to using encrypted forms that offer most of the benefits.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Encryption takes an hour or more to complete. Before you start, ensure that battery is charged and keep the device plugged in until encryption is complete. Make sure your data is backed up, just in case something goes wrong.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<ul class="last simple">
+<li>Interrupting encryption process may lead to loss of some or all of your data.</li>
+<li>The process is irreversible. The device cannot be decrypted once the encryption is setup and you will have to wipe out all the data for decryption or removing encryption.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">For devices running any version older than 4, you’ll need to either upgrade your operating system or consult the manufacturer’s instructions.</p>
+</div>
+<p>For devices running Android version 4 or later:</p>
+<ol class="arabic">
+<li><p class="first">Open your device’s Settings app.</p>
+<img alt="Image showing Settings app." class="device-screen-vertical" src="_images/settings.png" />
+</li>
+<li><p class="first"><span class="gesture">Tap</span> <span class="guilabel">Lock screen</span> in the <span class="guilabel">Device</span> section. Then <span class="gesture">tap</span> on <span class="guilabel">Screen lock</span> and create a pin or password.</p>
+<img alt="Image showing Lock screen option in the Device section." class="device-screen-vertical" src="_images/lock-screen.png" />
+<img alt="Image showing Screen lock option." class="device-screen-vertical" src="_images/screen-lock.png" />
+<img alt="Image showing Pin and Password options." class="device-screen-vertical" src="_images/pin-or-password.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Encryption cannot be performed until you have setup either a PIN or a password lock. Pattern lock is not allowed with encryption.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Setting a strong passcode is imperative to protect your Android phone. The longer the passcode (or alphanumeric password), the tougher it will be for an attacker to gain access to your device.
+Even a lock screen won’t necessarily prevent a thief or hacker from getting access to your data. You can use apps that destroy all the data after few failed attempts to unlock the device. For more details, see <a class="reference external" href="https://www.techrepublic.com/blog/five-apps/five-apps-to-wipe-data-from-your-android-phone/">this</a>.</p>
+</div>
+</li>
+<li><p class="first"><span class="gesture">Tap</span> <span class="guilabel">Security</span> in the <span class="guilabel">System</span> section.</p>
+<img alt="Image showing Security option in the System section." class="device-screen-vertical" src="_images/security.png" />
+</li>
+<li><p class="first">Go to <span class="guilabel">Encryption</span> section. Now select <span class="guilabel">Encrypt device</span> to start encryption. Follow the onscreen instructions. During encryption, your device might restart several times.</p>
+<img alt="Image showing Encrypt device option in the Encryption section." class="device-screen-vertical" src="_images/encrypt-device.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">On some phones, you’ll need to choose <span class="guilabel">Storage</span>, then <span class="menuselection">Storage encryption</span> or <span class="menuselection">Storage ‣ Lock screen and security ‣ Other security settings</span> to find the <span class="guilabel">Encrypt device</span> option</p>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>If you are using SD card for storage, you can encrypt that too by choosing <span class="guilabel">Encrypt SD card</span> in the <span class="guilabel">Encryption</span> section. This not only encrypts the contents of the SD card, but it also means that the card cannot be used on another device unless it is wiped.</p>
+<img alt="Image showing Encrypt SD card option in the Encryption section." class="device-screen-vertical last" src="_images/encrypt-sdcard.png" />
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">You should also ensure that device debugging (via adb) is disabled when collecting data, as that can enable users to pull data from the device after it has been successfully booted (when the sdcard encryption key is entered). i.e., if the debugging interface is enabled, someone could steal the device, connect it to a laptop, and pull data off it as long as it has not been shut down as they don’t need to successfully unlock the device’s lock screen to gain access.</p>
+</div>
+<p>For more details on encryption, see <a class="reference external" href="https://docs.microsoft.com/en-us/intune-user-help/encrypt-your-device-android">this</a>.</p>
+</div>
+<div class="section" id="adjust-google-play-to-require-a-password-for-every-purchase">
+<span id="play-store-password"></span><h2>Adjust Google Play to require a password for every purchase<a class="headerlink" href="#adjust-google-play-to-require-a-password-for-every-purchase" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can set up Google Play to require a password for every purchase, which makes sure that anything you buy is done so with your consent. This can prevent enumerators from installing apps which can bypass certain specified requirements.</p>
+<ol class="arabic">
+<li><p class="first">Open the Play store app, <span class="gesture">tap</span> on the left-hand slide-out menu, and then choose <span class="guilabel">Settings</span>.</p>
+<img alt="Image showing Play store app." class="device-screen-vertical" src="_images/play-store.png" />
+<img alt="Image showing three horizontal bars. Tap on them to display slide-out menu." class="device-screen-vertical" src="_images/play-store-menu.png" />
+<img alt="Image showing Settings option in menu." class="device-screen-vertical" src="_images/play-store-settings.png" />
+</li>
+<li><p class="first">Look for <span class="guilabel">Require password for purchases</span> and <span class="gesture">tap</span> on it. You’ll be asked to input your password.</p>
+<img alt="Image showing Require password for purchases option." class="device-screen-vertical" src="_images/require-authentication.png" />
+<img alt="Image showing box where you will need to input a password." class="device-screen-vertical" src="_images/enter-password.png" />
+</li>
+<li><p class="first">Choose the password input frequency as <span class="guilabel">For all purchases through Google Play on this device</span>.</p>
+<img alt="Image showing options for password input frequency: For all purchases through Google Play on this device, Every 30 minutes, Never." class="device-screen-vertical" src="_images/authenticate-option.png" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The password will not be set for free downloads. If you want to lock free downloads as well, use an app locking app like <a class="reference external" href="https://play.google.com/store/apps/details?id=com.domobile.applock">AppLock</a>.</p>
+</div>
+</div>
+<div class="section" id="disable-cloud-based-backup">
+<span id="disable-backup"></span><h2>Disable cloud-based backup<a class="headerlink" href="#disable-cloud-based-backup" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Though storing your data in the cloud is good for backing it up, law enforcement can demand that Google turn over your data. The best way to keep your Android phone from sending your personal data to its servers is to turn off backup. The downside is if you lose your phone, you may lose your data. Remember, you always have the option to manually back-up to your personal computer.</p>
+<p>To disable backup:</p>
+<ol class="arabic">
+<li><p class="first">Go to Settings app.</p>
+<img alt="Image showing Settings app." class="device-screen-vertical" src="_images/settings.png" />
+</li>
+<li><p class="first">Then <span class="gesture">tap</span> <span class="guilabel">Backup &amp; Reset</span> in <span class="guilabel">Personalisation</span> section.</p>
+<img alt="Image showing Backup and reset option in the Personalisation section." class="device-screen-vertical" src="_images/backup-reset.png" />
+</li>
+<li><p class="first">Now switch off the option to <span class="guilabel">Back up my data</span>.</p>
+<img alt="Image showing Back up my data option." class="device-screen-vertical" src="_images/backup-data.png" />
+<img alt="Image showing Backup turned off." class="device-screen-vertical" src="_images/backup-off.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="limit-who-can-use-google-now">
+<span id="limit-google-now"></span><h2>Limit who can use Google Now<a class="headerlink" href="#limit-who-can-use-google-now" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Google Now is your own intelligence assistant by bringing information to you when you need it but that gives Google a lot of access to your data to know what to dig up. The best way to use it is by turning it off from the lock screen, so only you with your passcode can use the feature and get access to your personal data. The steps to do this are as follows:</p>
+<ol class="arabic">
+<li><p class="first">Open the Google app, <span class="gesture">tap</span> on the left-hand slide-out menu, and then choose <span class="guilabel">Settings</span>.</p>
+<img alt="Image showing Google app." class="device-screen-vertical" src="_images/google-app.png" />
+<img alt="Image showing Google app menu." class="device-screen-vertical" src="_images/google-menu.png" />
+<img alt="Image showing Settings option in the slide-out menu." class="device-screen-vertical" src="_images/google-settings.png" />
+</li>
+<li><p class="first"><span class="gesture">Tap</span> on <span class="guilabel">Voice</span> in the <span class="guilabel">Search</span> section and then choose <span class="guilabel">『OK Google』 detection</span>.</p>
+<img alt="Image showing Voice option in the Search section." class="device-screen-vertical" src="_images/google-voice.png" />
+<img alt="Image showing OK Google detection option." class="device-screen-vertical" src="_images/ok-google-detect.png" />
+</li>
+<li><p class="first">Turn off the feature <span class="guilabel">Say 「OK Google」 any time</span>.</p>
+<img alt="Image showing OK Google feature turned off." class="device-screen-vertical" src="_images/turn-off-ok-google.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="lower-your-phone-s-sleep-timeout">
+<span id="lower-sleep-timeout"></span><h2>Lower your phone’s sleep timeout<a class="headerlink" href="#lower-your-phone-s-sleep-timeout" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Lowering your phone’s sleep timeout can prevent opportunistic people from getting access to your unlocked device. The lower the figure, the quicker it locks you out.</p>
+<ol class="arabic">
+<li><p class="first">Start by going to Settings app.</p>
+<img alt="Image showing Settings app." class="device-screen-vertical" src="_images/settings.png" />
+</li>
+<li><p class="first"><span class="gesture">Tap</span> on <span class="guilabel">Display and wallpaper</span> under the <span class="guilabel">Device</span> section.</p>
+<img alt="Image showing Display and wallpaper option in the Device section." class="device-screen-vertical" src="_images/display.png" />
+</li>
+<li><p class="first"><span class="gesture">Tap</span> on <span class="guilabel">Screen timeout</span> and lower the screen timeout by choosing an appropriate timeout from the list.</p>
+<img alt="Image showing Screen timeout option." class="device-screen-vertical" src="_images/screen-timeout.png" />
+<img alt="Image showing list of timeout to choose from." class="device-screen-vertical" src="_images/set-timeout.png" />
+</li>
+<li><p class="first">Once you’ve lowered your phone’s sleep timeout setting, you need to make sure that your Android device locks and presents the lock screen when it wakes up. <span class="gesture">Tap</span> on <span class="guilabel">Lock screen</span> in the <span class="guilabel">Device</span> section and then <span class="gesture">tap</span> on <span class="guilabel">Lock automatically</span> option and choose an appropriate timeout again.</p>
+<img alt="Image showing Lock screen option in the Device section." class="device-screen-vertical" src="_images/lock-screen.png" />
+<img alt="Image showing Lock automatically option." class="device-screen-vertical" src="_images/lock-automatic.png" />
+<img alt="Image showing list of timeout to choose from." class="device-screen-vertical" src="_images/set-lock-automatic.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="limit-your-lock-screen-notifications">
+<span id="limit-notification"></span><h2>Limit your lock screen notifications<a class="headerlink" href="#limit-your-lock-screen-notifications" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Your lock screen can show a lot about your life. Your Android phone or tablet can limit what’s shown on the lock screen in order to prevent others』 from seeing your personal content as it comes in.</p>
+<ol class="arabic">
+<li><p class="first">Go to Settings app then <span class="gesture">Tap</span> on <span class="guilabel">Sounds &amp; notifications</span> under the <span class="guilabel">Device</span> section.</p>
+<img alt="Image showing Settings app." class="device-screen-vertical" src="_images/settings.png" />
+<img alt="Image showing Sounds and notifications option in the Device section." class="device-screen-vertical" src="_images/sound-notification.png" />
+</li>
+<li><p class="first">Scroll down and <span class="gesture">tap</span> on <span class="guilabel">Notifications on lock screen</span> under the <span class="guilabel">Notification</span> section. You can change how notifications are shown when device is locked setting. The most privacy conscious setting is to Hide sensitive notification content so that you know which app is alerting you, without showing its contents.</p>
+<img alt="Image showing Notifications on lock screen option in the Notification section." class="device-screen-vertical" src="_images/notify-lock-screen.png" />
+<img alt="Image showing options: Show content, Hide content, Do not show notifications." class="device-screen-vertical" src="_images/notify-options.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="prevent-unauthorized-apps-from-installing">
+<span id="unauthorized-apps"></span><h2>Prevent unauthorized apps from installing<a class="headerlink" href="#prevent-unauthorized-apps-from-installing" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Android devices can run third-party content outside of the Google Play app store. This can open up a device to malware attacks.</p>
+<p>The easiest way to ensure that only verified and malware-checked apps can be installed on your phone or tablet is:</p>
+<ol class="arabic">
+<li><p class="first">Go to the Settings app and then <span class="gesture">tap</span> on <span class="guilabel">Security</span> in the <span class="guilabel">System</span> section.</p>
+<img alt="Image showing Settings app." class="device-screen-vertical" src="_images/settings.png" />
+<img alt="Image showing Security option in the System section." class="device-screen-vertical" src="_images/security.png" />
+</li>
+<li><p class="first">Make sure that the Unknown sources option is turned off. If this option is turned on, installation of apps from trusted as well as unknown sources will be allowed.</p>
+<img alt="Image showing Unknown sources option turned off." class="device-screen-vertical" src="_images/unknown-source.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="make-sure-you-keep-android-up-to-date">
+<span id="android-update"></span><h2>Make sure you keep Android up-to-date<a class="headerlink" href="#make-sure-you-keep-android-up-to-date" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Many Android phone makers will now offer monthly security patches to ensure that any known vulnerabilities will be patched. Install these patches every month. It’s one of the best ways to ensure that you won’t be attacked by hackers and malware.</p>
+<ol class="arabic">
+<li><p class="first">To periodically check for software updates, go to Settings app.</p>
+<img alt="Image showing Settings app." class="device-screen-vertical" src="_images/settings.png" />
+</li>
+<li><p class="first">Then <span class="gesture">tap</span> on <span class="guilabel">About device</span> under the <span class="guilabel">System</span> section.</p>
+<img alt="Image showing About device option in the System section." class="device-screen-vertical" src="_images/about-device.png" />
+<img alt="Image showing update information." class="device-screen-vertical" src="_images/update-info.png" />
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="projecting-collect.html" class="btn btn-neutral float-right" title="Projecting ODK Collect onto another screen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect-location.html" class="btn btn-neutral" title="Improving Location Performance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

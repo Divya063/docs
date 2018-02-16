@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reducing Data Corruption and Boosting Performance on App Engine &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Tips and Best Practices" href="aggregate-best-practices.html"/>
+        <link rel="next" title="ODK Briefcase" href="briefcase-guide.html"/>
+        <link rel="prev" title="Aggregate Limitations" href="aggregate-limitations.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="form-uploader.html">Form Uploader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-limitations.html">Aggregate Limitations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Reducing Data Corruption and Boosting Performance on App Engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-causing-data-corruption">What is causing data corruption?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#increasing-web-server-size">Increasing web server size</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#web-server-size">Web Server Size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#background-server-size">Background Server Size</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-best-practices.html">Tips and Best Practices</a> &raquo;</li>
+        
+      <li>Reducing Data Corruption and Boosting Performance on App Engine</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-boost-performance.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reducing-data-corruption-and-boosting-performance-on-app-engine">
+<h1>Reducing Data Corruption and Boosting Performance on App Engine<a class="headerlink" href="#reducing-data-corruption-and-boosting-performance-on-app-engine" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>If you have many form definitions on your server, you may get better performance and reduce the likelihood of data corruption if you increase the size of your server.</p>
+<div class="section" id="what-is-causing-data-corruption">
+<span id="id1"></span><h2>What is causing data corruption?<a class="headerlink" href="#what-is-causing-data-corruption" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Data corruption is generally caused by the premature termination of an action (for example, saving of a submission) because it took longer than the allotted time.</p>
+<p>The likelihood of data corruption is correlated with the following factors:</p>
+<ul class="simple">
+<li>quantity of form definitions on the server</li>
+<li>the size of the individual submissions</li>
+<li>the number of devices simultaneously submitting data</li>
+<li>the speed of the network.</li>
+</ul>
+<p>Increasing the web server size enables it to handle larger workloads faster, which can reduce the likelihood of hitting this time limit, thereby avoiding data corruption.</p>
+</div>
+<div class="section" id="increasing-web-server-size">
+<span id="increase-server-size"></span><h2>Increasing web server size<a class="headerlink" href="#increasing-web-server-size" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To change Google App Engine configuration, you must edit the configuration files produced by the installer and re-run the uploader script to push the changes to Google’s servers.</p>
+<p>There are two server settings that can be changed:</p>
+<div class="section" id="web-server-size">
+<span id="increase-web-server-size"></span><h3>Web Server Size<a class="headerlink" href="#web-server-size" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The web server handles all browser interactions and all data-submission and form-download requests from ODK Collect and ODK Briefcase. Increasing the size of the web server should reduce the likelihood of data corruption if it is not caused by slow network speeds.</p>
+<p>To change the Google App Engine web server size:</p>
+<ol class="arabic">
+<li><p class="first">Go to the folder you specified when you ran  the installer.</p>
+</li>
+<li><p class="first">Within that folder, navigate to <code class="file docutils literal"><span class="pre">ODKAggregate/default/WEB-INF/appengine-web.xml</span></code> and open that file.</p>
+</li>
+<li><p class="first">The file looks like this:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;appengine-web-app</span> <span class="na">xmlns=</span><span class="s">&quot;http://appengine.google.com/ns/1.0&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;application&gt;</span>opendatakit-simpledemo<span class="nt">&lt;/application&gt;</span>
+  <span class="nt">&lt;module&gt;</span>default<span class="nt">&lt;/module&gt;</span>
+  <span class="nt">&lt;version&gt;</span>1<span class="nt">&lt;/version&gt;</span>
+
+      <span class="nt">&lt;instance-class&gt;</span>F2<span class="nt">&lt;/instance-class&gt;</span>
+...
+</pre></div>
+</div>
+<p>To change the size of the web server, replace <strong>F2</strong> with a different instance class size.</p>
+<p>There are several different instance classes available. Select from among the instance classes beginning with the letter <strong>F</strong>. See <a class="reference external" href="https://cloud.google.com/appengine/docs/about-the-standard-environment#instance_classes">instance classes</a>  for their descriptions or search for <cite>Google AppEngine instance classes standard environment</cite> on the web.</p>
+</li>
+<li><p class="first">Re-run the upload tool within the ODKAggregate folder.</p>
+<ul class="simple">
+<li>Windows: double-click <code class="file docutils literal"><span class="pre">ODKAggregateAppEngineUpdater.jar</span></code></li>
+<li>Mac: double-click <code class="file docutils literal"><span class="pre">uploadAggregateToAppEngine.app</span></code></li>
+<li>Linux: double-click <code class="file docutils literal"><span class="pre">uploadAggregateToAppEngine.sh</span></code></li>
+</ul>
+</li>
+<li><p class="first">Once you have uploaded these changes to App Engine, your server will be running on the instance size that you have specified.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="background-server-size">
+<span id="increase-background-server-size"></span><h3>Background Server Size<a class="headerlink" href="#background-server-size" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>App Engine deployments use a 「background」 copy of the website to process long-running actions like generating CSV and KML files for export and for publishing all accumulated data to an external server.</p>
+<p>If you experience difficulty exporting to CSV or KML, the size of that server will also need to be updated.</p>
+<ol class="arabic">
+<li><p class="first">Go to the folder you specified when you ran  the installer.</p>
+</li>
+<li><p class="first">Within that folder, navigate to <code class="file docutils literal"><span class="pre">ODKAggregate/background/WEB-INF</span></code> and open that file.</p>
+</li>
+<li><p class="first">The file looks like this:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;appengine-web-app</span> <span class="na">xmlns=</span><span class="s">&quot;http://appengine.google.com/ns/1.0&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;application&gt;</span>opendatakit-simpledemo<span class="nt">&lt;/application&gt;</span>
+   <span class="nt">&lt;module&gt;</span>background<span class="nt">&lt;/module&gt;</span>
+   <span class="nt">&lt;version&gt;</span>1<span class="nt">&lt;/version&gt;</span>
+
+       <span class="nt">&lt;instance-class&gt;</span>B2<span class="nt">&lt;/instance-class&gt;</span>
+...
+</pre></div>
+</div>
+<p>To change the size of the server, replace <strong>B2</strong> with a different instance class size.</p>
+<p>There are several different instance classes available. Select from among the instance classes beginning with the letter <strong>B</strong>. See instance classes for their descriptions or search for <cite>Google AppEngine instance classes standard environment</cite> on the web as described in Web Server Size.</p>
+<ol class="arabic simple" start="4">
+<li>Re-run the upload tool within the ODKAggregate folder.</li>
+</ol>
+<ul class="simple">
+<li>Windows: double-click <code class="file docutils literal"><span class="pre">ODKAggregateAppEngineUpdater.jar</span></code></li>
+<li>Mac: double-click <code class="file docutils literal"><span class="pre">uploadAggregateToAppEngine.app</span></code></li>
+<li>Linux: double-click <code class="file docutils literal"><span class="pre">uploadAggregateToAppEngine.sh</span></code></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="5">
+<li>Once you have uploaded these changes to App Engine, your server will be running on the instance size that you have specified.</li>
+</ol>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">For data corruption caused by slow network speeds, you might also be able to change more aspects of the App Engine configuration (specified in these files) to make your web server always-available and to replace it with a Bx instance that does not have an automatic request time limit (the documentation provided by Google is currently unclear on whether this is still possible with the new services constructions).</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="briefcase-guide.html" class="btn btn-neutral float-right" title="ODK Briefcase" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-limitations.html" class="btn btn-neutral" title="Aggregate Limitations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

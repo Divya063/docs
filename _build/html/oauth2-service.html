@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OAuth2 Service Account &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>OAuth2 Service Account</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/oauth2-service.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="oauth2-service-account">
+<h1>OAuth2 Service Account<a class="headerlink" href="#oauth2-service-account" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Publishing your data into Google Spreadsheets or Google Fusion Tables requires a Google Oauth2 Service Account.</p>
+<div class="admonition note" id="api-request">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>Google now throttles requests for all of its APIs. This impacts ODK Aggregate’s Map visualization (which requires an API key) and the publishing to Google Sheets and the publishing to Google Fusion Tables (both of which require a service account).</li>
+<li>If you have difficulties with any of these, go to the Google Cloud Platform project in which you created your service account, navigate to the API Manager tab, navigate to the appropriate API (either via the Dashboard list or via the links on the library sub-tab).</li>
+<li>If the API is enabled, you will have a graphical overview of your use of the API. Click on the Quota heading on the page to see the quotas for the API. By clicking on the pencil icons to the right of these quotas, you will get a pop-up from which you can request an increase in a quota.</li>
+<li>The quota that most critically needs to be increased is the Google Sheets quota for write requests per second per user. A better limit is 500 per second per user, or perhaps higher if your forms have many fields and/or repeat groups.</li>
+</ul>
+</div>
+<p>The Google API Key used by the Maps visualization is created and managed on the same screen as the Google Oauth2 Service Account.This page guides you through the creation and uploading of these two credentials into ODK Aggregate</p>
+<div class="section" id="create-the-google-credentials">
+<span id="create-google-credentials"></span><h2>Create the Google Credentials<a class="headerlink" href="#create-the-google-credentials" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Credentials are associated with a Google Cloud Platform project.</p>
+<ol class="arabic simple">
+<li>If you are using App Engine for your ODK Aggregate server, then you have already set up a Google Cloud Platform project – you just need to navigate to it. Otherwise, you will need to create one. In either case, go to Google Cloud Platform and click on <span class="guilabel">Console</span>:</li>
+</ol>
+<img alt="Image showing console." src="_images/my-console.png" />
+<ol class="arabic simple" start="2">
+<li>If you have never configured a Google Cloud Platform project, please refer <a class="reference internal" href="aggregate-app-engine.html"><span class="doc">this section</span></a> to configure a project using App Engine under which aggregate server would run.</li>
+<li>If you have already configured you should be able to see the project screen, showing the project name in the upper-left side of the screen.In this case, I named my project 「My Project 80299」 and project id 「regal-mediator-181503」.</li>
+</ol>
+<img alt="Image showing project screen." src="_images/myconsole-2.png" />
+<ol class="arabic simple" start="4">
+<li>Click on the menu icon(three horizontal bars) in the upper-left side of the screen.</li>
+</ol>
+<img alt="Image showing menu." src="_images/menu-icon.png" />
+<ol class="arabic simple" start="5">
+<li>Now select <span class="guilabel">APIs &amp; services</span> from the menu and then select <span class="guilabel">Library</span> option</li>
+</ol>
+<img alt="Image showing APIs option." src="_images/api-menu.png" />
+<ol class="arabic simple" start="6">
+<li>This will take you to the lists all the application APIs that Google offers.</li>
+</ol>
+<img alt="Image showing lists pf application of APIs." src="_images/api-library1.png" />
+<p>To be able to publish to Google Sheets and Fusion Tables, and to be able to view maps, we need to enable this project to use 4 of these application APIs. The 4 application APIs we need to enable are:</p>
+<ul class="simple">
+<li>Google Maps Javascript API v3</li>
+<li>Drive API</li>
+<li>Sheets API</li>
+<li>Fusion Tables API</li>
+</ul>
+<p>The Sheets API is under the same section heading as the Drive API.</p>
+<ol class="arabic simple" start="7">
+<li>For each of these APIs, click on the API. This takes you to an information page for that API. On that page, click on the <span class="guilabel">Enable</span> button. E.g., on the Google Maps Javascript API v3 page, it looks like this:</li>
+</ol>
+<img alt="Image showing information page for API." src="_images/enable-api.png" />
+<ol class="arabic simple" start="8">
+<li>After clicking on <span class="guilabel">Enable</span>, if you have more application APIs to enable, click on the back-arrow within the page to return to the list of application APIs (and repeat the previous step):</li>
+</ol>
+<img alt="Image showing after enable screen." src="_images/after-enable.png" />
+<p>Otherwise, after enabling it, click on the <span class="guilabel">Create Credentials</span> button:</p>
+<img alt="Image showing Credentials option." src="_images/after-enable-create.png" />
+<ol class="arabic simple" start="9">
+<li>And on the credentials page, choose to create a <code class="docutils literal"><span class="pre">service</span> <span class="pre">account</span></code>.</li>
+</ol>
+<img alt="Image showing service account option." src="_images/Service-account.png" />
+<ol class="arabic simple" start="10">
+<li>This takes you to the list of service accounts for your Google Cloud Platform project.Click on <span class="guilabel">Create service account</span>.</li>
+</ol>
+<img alt="Image showing create service account option." src="_images/create-service-account.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">If you are using App Engine, there will already be a service account listed that was created and is used by Google’s infrastructure. Please ignore that.</p>
+</div>
+<ol class="arabic simple" start="11">
+<li>On the next screen, enter a name for the service account (e.g., 「ODK Oauth2 Publishing」), choose to furnish a new private key, select a role, and request the P12 format. Then click <span class="guilabel">Create</span>:</li>
+</ol>
+<img alt="Image showing service account dialog box." src="_images/create-service-dialog.png" />
+<ol class="arabic simple" start="12">
+<li>The private key for this service account will begin downloading (it will have a .p12 file extension). After it has downloaded, click <span class="guilabel">Close</span>.</li>
+</ol>
+<img alt="Image showing service account and key created dialog box." src="_images/created-account.png" />
+<ol class="arabic simple" start="13">
+<li>This returns you to the list of service accounts. Click on the the menu icon to the left of <strong>Google Cloud Platform</strong> and select <span class="guilabel">APIs &amp; services</span> from the menu and then select <span class="guilabel">Credentials</span> option.</li>
+</ol>
+<img alt="Image showing Credentials option." src="_images/credentials.png" />
+<ol class="arabic simple" start="14">
+<li>Choose <span class="guilabel">Create credentials</span> and select <code class="docutils literal"><span class="pre">API</span> <span class="pre">Key</span></code>.</li>
+</ol>
+<img alt="Image showing create credentials option." src="_images/create-credentials.png" />
+<ol class="arabic simple" start="15">
+<li>After selecting <code class="docutils literal"><span class="pre">API</span> <span class="pre">key</span></code> an API key will be generated, copy it as it will be used further and click on <span class="guilabel">Restrict Key</span>.</li>
+</ol>
+<img alt="Image showing API key ." src="_images/Api-key.png" />
+<ol class="arabic simple" start="16">
+<li>Enter a name (e.g., 「ODK Aggregate」), enter the hostname (and port, if nonstandard) of your ODK Aggregate server, followed by a slash and star and choose the key restriction(<strong>HTTP referrers</strong>). Then click <span class="guilabel">Save</span>:</li>
+</ol>
+<img alt="Image showing how to restrict api ." src="_images/restrict-api.png" />
+<ol class="arabic simple" start="17">
+<li>You will be redirected to credentials page, now click on <span class="guilabel">OAuth consent screen</span> tab.</li>
+</ol>
+<img alt="Image showing OAuth consent screen tab." src="_images/oauth.png" />
+<ol class="arabic simple" start="18">
+<li>Enter a product name and email address on this screen and fill in any additional fields that you might want to provide.Click <span class="guilabel">Save</span>.</li>
+</ol>
+<img alt="Image showing credentials information." src="_images/credentials-info.png" />
+<ol class="arabic simple" start="19">
+<li>Once again, click on the <span class="guilabel">Credentials</span> tab if not redirected, select the <code class="docutils literal"><span class="pre">ODK</span> <span class="pre">Oauth2</span> <span class="pre">Publishing</span></code> key that you created above, and choose <code class="docutils literal"><span class="pre">Manage</span> <span class="pre">service</span> <span class="pre">accounts</span></code>:</li>
+</ol>
+<img alt="Image showing manage service account option." src="_images/manage-service-account.png" />
+<ol class="arabic simple" start="20">
+<li>This takes you to details about that <strong>ODK Oauth2 Publishing</strong> service account. Keep this browser screen open; you will need to cut and paste values from this screen into ODK Aggregate. This is what those details look like:</li>
+</ol>
+<img alt="Image showing details about that ODK Oauth2 Publishing service account." src="_images/service-account-id.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>The <strong>Service Account</strong> information and the downloaded private key file must be uploaded to ODK Aggregate to enable publishing to Google Spreadsheets and Google Fusion Tables.</li>
+<li>The <strong>API Key</strong> is for use by Google Maps.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="entering-credentials-into-odk-aggregate-1-3-and-higher">
+<span id="entering-credential-odk-aggregate"></span><h2>Entering Credentials into ODK Aggregate 1.3 and higher<a class="headerlink" href="#entering-credentials-into-odk-aggregate-1-3-and-higher" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Once you have created the credentials , you need to upload these credentials to ODK Aggregate.</p>
+<p>The same credentials can be used across multiple ODK Aggregate servers.</p>
+<p>To upload the credentials:</p>
+<ol class="arabic simple">
+<li>Log onto ODK Aggregate as a Site Administrator. Click on the <span class="guilabel">Site Admin</span> then click on <span class="guilabel">Preferences</span> tab.Now, click on <span class="guilabel">Change Google API Credentials</span>.</li>
+</ol>
+<img alt="Image showing Change Google API Credentials option." src="_images/change-google-api.png" />
+<ol class="arabic simple" start="2">
+<li>This will bring up the <strong>Google API Credentials Upload</strong> dialog.From the Google website, copy and paste the <strong>API key</strong> into ODK Aggregate’s <code class="docutils literal"><span class="pre">Simple</span> <span class="pre">API</span> <span class="pre">Key</span></code> field.</li>
+<li>Click on <span class="guilabel">Choose File</span> and select the previously-downloaded (from Step 1, above) P12 private key file.</li>
+<li>From the Google website, copy and paste the <strong>Service account</strong> section’s 「Key ID」 into ODK Aggregate’s <code class="docutils literal"><span class="pre">ID</span> <span class="pre">(Key</span> <span class="pre">ID)</span> <span class="pre">or</span> <span class="pre">perhaps</span> <span class="pre">Client</span> <span class="pre">ID</span></code> field.</li>
+<li>From the Google website, copy and paste the <strong>Service account ID</strong> (it looks like an Email address) into ODK Aggregate’s <code class="docutils literal"><span class="pre">Service</span> <span class="pre">Account</span> <span class="pre">ID</span> <span class="pre">(looks</span> <span class="pre">like</span> <span class="pre">an</span> <span class="pre">Email</span> <span class="pre">address)</span></code> field:</li>
+</ol>
+<img alt="Image showing Google API Credentials Upload dialog box." src="_images/upload-api.png" />
+<ol class="arabic simple" start="6">
+<li>Click on <span class="guilabel">Upload Google Credentials</span>. This should present a successful-upload pop-up:</li>
+</ol>
+<img alt="Image showing successful upload pop-up box." src="_images/success.png" />
+<ol class="arabic simple" start="7">
+<li>Click on the <span class="guilabel">X</span> to close that pop-up. The <code class="docutils literal"><span class="pre">Simple</span> <span class="pre">API</span> <span class="pre">Access</span> <span class="pre">Key</span></code> and <code class="docutils literal"><span class="pre">Google</span> <span class="pre">OAuth2</span> <span class="pre">Credentials</span></code> should be updated:</li>
+</ol>
+<img alt="Image showing updated information." src="_images/site-admin.png" />
+<p>Your ODK Aggregate server is now configured to support publishing of data to Google Spreadsheets and Google Fusion Tables.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">If your publishers seems to be stalled in an Active Paused or Paused state, this is most likely caused by exceeding Google’s quota limits. See <a class="reference internal" href="#api-request"><span class="std std-ref">this section</span></a> for how to navigate to a pop-up from which you can request a quota limit increase.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

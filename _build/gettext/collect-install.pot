@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/collect-install.rst:15
+msgid "Installing Collect"
+msgstr ""
+
+#: ../../src/collect-install.rst:20
+msgid "Installing from Google Play Store (**Recommended**)"
+msgstr ""
+
+#: ../../src/collect-install.rst:22
+msgid "`The ODK Collect App is available in the Google Play store <https://play.google.com/store/apps/details?id=org.odk.collect.android&hl=en>`_."
+msgstr ""
+
+#: ../../src/collect-install.rst:26
+msgid "Installing Manually"
+msgstr ""
+
+#: ../../src/collect-install.rst:28
+msgid "The Google Play store always has the latest stable release."
+msgstr ""
+
+#: ../../src/collect-install.rst:30
+msgid "If you need a different version of Collect, you can download from the web and install manually."
+msgstr ""
+
+#: ../../src/collect-install.rst:32
+msgid "From your device's :guilabel:`Settings`, choose :menuselection:`Security`."
+msgstr ""
+
+#: ../../src/collect-install.rst:34
+msgid "Make sure *Unknown Sources* is checked."
+msgstr ""
+
+#: ../../src/collect-install.rst:35
+msgid "(On older versions of Android, this setting is in :menuselection:`Applications` rather than :menuselection:`Security`)"
+msgstr ""
+
+#: ../../src/collect-install.rst:37
+msgid "Open a web browser on your phone."
+msgstr ""
+
+#: ../../src/collect-install.rst:38
+msgid "Navigate to https://opendatakit.org/downloads/download-category/collect/  and download the ODK Collect APK."
+msgstr ""
+
+#: ../../src/collect-install.rst:39
+msgid "In the download window, you will see ODK_Collect_vN.N.N.apk. - Select it to download the file."
+msgstr ""
+
+#: ../../src/collect-install.rst:41
+msgid "On older devices, the APK will automatically install after you approve the security settings."
+msgstr ""
+
+#: ../../src/collect-install.rst:42
+msgid "On newer devices, you must go to the download list, rename the file to restore the .apk extension (the extension will have been renamed to .man during the download process), then click on it to install it."
+msgstr ""
+
+#: ../../src/collect-install.rst:46
+msgid "You can also `download the ODK Collect APK <https://opendatakit.org/downloads/download-category/collect/>`_ to your computer and load it on your device via `adb <https://developer.android.com/studio/command-line/adb.html>`_ or another tool like `AirDroid <https://www.howtogeek.com/105813/control-your-android-from-a-browser-with-airdroid/>`_."
+msgstr ""
+
+#: ../../src/collect-install.rst:50
+msgid "On older Android devices (4.0 and earlier), ODK Collect required an external SD Card. This is no longer an issue because Android devices have internal storage. Virtually all current Android devices will run ODK Collect."
+msgstr ""
+
+#: ../../src/collect-install.rst:54
+msgid "You can also `install ODK Collect on an Android emulator <https://github.com/opendatakit/opendatakit/wiki/DevEnv-Setup>`_. However, this can be slow and is only recommended for developers actively working on Collect."
+msgstr ""
+

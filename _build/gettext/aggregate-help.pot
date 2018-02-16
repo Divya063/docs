@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/aggregate-help.rst:15
+msgid "Getting Help in Aggregate"
+msgstr ""
+
+#: ../../src/aggregate-help.rst:17
+msgid "Aggregate provides three kinds of help accessible by pressing one of three buttons in the upper righthand corner."
+msgstr ""
+
+#: ../../src/aggregate-help.rst:19
+msgid "The red question mark will give you instructions for the tab you are currently viewing. When you click the button, a help panel will appear at the bottom of the screen. To hide the help panel, simply click the red question mark again."
+msgstr ""
+
+#: ../../src/aggregate-help.rst:24
+msgid "The green book will give you the most comprehensive help. When you click the button, a popup will appear providing detailed information as well as video instructions."
+msgstr ""
+
+#: ../../src/aggregate-help.rst:29
+msgid "The blue balloon increases the amount of detail that appears describing the button's functionality when you hover over most buttons."
+msgstr ""
+

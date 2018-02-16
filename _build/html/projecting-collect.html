@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Projecting ODK Collect onto another screen &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Tips and Best Practices" href="collect-best-practices.html"/>
+        <link rel="next" title="ODK Aggregate" href="aggregate-intro.html"/>
+        <link rel="prev" title="Android security recommendations" href="collect-security.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="collect-adb.html">Using Android Debug Bridge with Collect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-shortcut.html">Creating Shortcuts to Collect Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-location.html">Improving Location Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-security.html">Android security recommendations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Projecting ODK Collect onto another screen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-vysor">Using Vysor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enable-usb-debugging-mode-on-android">Enable USB Debugging Mode on Android</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-android-studio">Using Android Studio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-command-line">Using Command Line</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collect-best-practices.html#related-topics">Related Topics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collect-best-practices.html">Tips and Best Practices</a> &raquo;</li>
+        
+      <li>Projecting ODK Collect onto another screen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/projecting-collect.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="projecting-odk-collect-onto-another-screen">
+<h1>Projecting ODK Collect onto another screen<a class="headerlink" href="#projecting-odk-collect-onto-another-screen" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This guide helps the users to project ODK collect onto a screen. There are various methods available to do this, some of the methods are discussed below:</p>
+<div class="section" id="using-vysor">
+<span id="id1"></span><h2>Using Vysor<a class="headerlink" href="#using-vysor" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Vysor is an extension for the Google Chrome browser that connects to an app on your smartphone. This extension enables you to control your phone from your PC or Mac using the mouse/trackpad and keyboard.</p>
+<p>Before proceeding further make sure USB Debugging mode is enabled:</p>
+<div class="section" id="enable-usb-debugging-mode-on-android">
+<span id="enable-usb-debugging"></span><h3>Enable USB Debugging Mode on Android<a class="headerlink" href="#enable-usb-debugging-mode-on-android" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Go to <span class="menuselection">Settings</span>, choose <span class="guilabel">About phone</span>.</li>
+<li>Scroll down and tap <span class="guilabel">Build number</span> seven times.</li>
+</ol>
+<img alt="Image showing build number" class="device-screen-vertical" src="_images/build-number.png" />
+<ol class="arabic simple" start="3">
+<li>Go back to <span class="menuselection">Settings</span> and there you will find <span class="guilabel">Developer options</span> in the menu.</li>
+</ol>
+<img alt="Image showing developer options" class="device-screen-vertical" src="_images/developer-options.png" />
+<ol class="arabic simple" start="4">
+<li>Scroll down and enable <span class="guilabel">USB debugging</span> mode.</li>
+</ol>
+<img alt="Image showing USB debugging mode" class="device-screen-vertical" src="_images/usb-debugging.png" />
+<ol class="arabic simple" start="5">
+<li>Confirm the action when prompted.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Windows users should make sure that they have <a class="reference external" href="https://devs-lab.com/usb-adb-drivers-for-all-android-devices.html">downloaded</a> Universal ADB Drivers.</p>
+</div>
+<p>Follow the instructions given below to use Vysor:</p>
+<ol class="arabic simple">
+<li>Make sure you have Google chrome installed, if not download it from <a class="reference external" href="https://www.google.com/chrome/browser/desktop/index.html">here</a>.</li>
+<li>Download <a class="reference external" href="https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm">Vysor extension</a>.</li>
+<li>Click on <span class="guilabel">Add To Chrome</span></li>
+</ol>
+<img alt="Vysor download" src="_images/vysor-download.png" />
+<ol class="arabic simple" start="4">
+<li>Confirm your action by clicking on <span class="guilabel">Add app</span>.</li>
+</ol>
+<img alt="Vysor add app button" src="_images/vysor-add-app.png" />
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>On Windows, You may get an error <strong>WebGL is not supported</strong></p>
+<img alt="Image on WebGL error" src="_images/webgl.png" />
+<p>To fix this, follow the procedures given below:</p>
+<p>First, we need to enable hardware acceleration:</p>
+<ol class="arabic simple">
+<li>Go to <code class="docutils literal"><span class="pre">chrome://settings</span></code>, scroll down and click on <span class="guilabel">Advanced</span>.</li>
+</ol>
+<img alt="Image showing advanced settings" src="_images/advanced-setting.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>In the System section, ensure the Use <span class="guilabel">hardware acceleration when available</span> is enabled. You’ll need to relaunch Chrome for any changes to take effect. Click on <span class="guilabel">RELAUCH</span></li>
+</ol>
+<img alt="Image showing hardware acceleration option" src="_images/acceleration.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Then, we need to enable WebGL, go to <code class="docutils literal"><span class="pre">chrome://flags</span></code>, scroll down and search for <strong>WebGL 2.0</strong>. From the drop-down list choose <span class="guilabel">Enabled</span>.</li>
+</ol>
+<img alt="Image showing enabled WebGL 2.0" src="_images/webgl-enabled.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="last">Now you can return to <a class="reference external" href="https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm">Vysor extension</a> and install it again.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li>After adding the extension, you would be able to see it in the chrome toolbar, if it is not visible there go to <code class="docutils literal"><span class="pre">chrome://apps</span></code> and you would be able to see there.</li>
+</ol>
+<img alt="Image showing vysor app" src="_images/vysor-chrome.png" />
+<ol class="arabic simple" start="6">
+<li>Launch the extension and connect your phone through USB.</li>
+</ol>
+<img alt="Image showing options after launching vysor" src="_images/vysor-launch.png" />
+<ol class="arabic simple" start="7">
+<li>Click on <span class="guilabel">Find Devices</span>, select your device and click on <span class="guilabel">Select</span>.</li>
+</ol>
+<img alt="Image showing options to find and select devices." src="_images/find-device.png" />
+<ol class="arabic simple" start="8">
+<li>After clicking <span class="guilabel">Select</span>, Vysor would be automatically downloaded to your phone, and you will be able to see your phone screen.</li>
+</ol>
+<img alt="phone screen on vysor" src="_images/phone-screen.png" />
+<ol class="arabic simple" start="9">
+<li>Click on the Collect app and there you go, you have successfully projected your phone screen.</li>
+</ol>
+<img alt="Image showing collect-app after launching vysor" src="_images/collect-app.png" />
+</div>
+</div>
+<div class="section" id="using-android-studio">
+<span id="id3"></span><h2>Using Android Studio<a class="headerlink" href="#using-android-studio" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Android Studio is the official IDE for Android. It provides tools for building apps for every type of Android device. Android Emulator can be used to test your app virtually on any Android device configuration.</p>
+<p>Follow the procedures given below to run your app on the emulator:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://developer.android.com/studio/index.html#downloads">Download Android Studio</a> with SDK according to your platform.</li>
+<li>Here is a <a class="reference external" href="https://developer.android.com/studio/install.html">tutorial</a> on how to set up Android Studio according to different platforms.</li>
+<li>After installing, launch Android Studio and click on <span class="guilabel">Start a new Android Studio project</span> or if you have an existing project click on  <span class="guilabel">Open an existing Android Studio project</span>.</li>
+</ol>
+<img alt="Image showing Android studio screen" src="_images/android-studio.png" />
+<ol class="arabic simple" start="4">
+<li>To create a new project follow further steps but if you have an existing project skip to the step 9.</li>
+<li>Choose your project location and fill out the <span class="guilabel">Application name</span> and click on <span class="guilabel">Next</span>.</li>
+</ol>
+<img alt="Image showing new project window" src="_images/application-name.png" />
+<ol class="arabic simple" start="6">
+<li>Select the <span class="guilabel">Phone and Tablet</span> option and choose your <span class="menuselection">Minimum SDK</span>. Click on <span class="guilabel">Next</span>.</li>
+</ol>
+<img alt="Image showing Target Android Devices window" src="_images/target-android.png" />
+<ol class="arabic simple" start="7">
+<li>Select an Activity, <strong>Empty Activity is preferable</strong>. Click on <span class="guilabel">Next</span>.</li>
+</ol>
+<img alt="Image showing window having various activities" src="_images/activity.png" />
+<ol class="arabic simple" start="8">
+<li>In Customize the Activity window, don’t change the default options and click on <span class="guilabel">Finish</span>.</li>
+</ol>
+<img alt="Image showing Customize Activity window" src="_images/customize-activity.png" />
+<ol class="arabic simple" start="9">
+<li>After few minutes, you will be able to see the Android Studio main window, click on <img alt="Image showing avd manager icon" src="_images/avd-manager.png" /> icon, alternatively, you can click on <span class="menuselection">Tools</span> then select <span class="guilabel">Android</span>, from the drop-down menu select <span class="guilabel">AVD Manager</span>.</li>
+</ol>
+<img alt="Image showing Android Studio main window" src="_images/main-window.png" />
+<ol class="arabic simple" start="10">
+<li>If you are an existing user list of all virtual devices would appear on the screen, to create a new virtual device, click on <span class="guilabel">+ Create Virtual Device…</span></li>
+</ol>
+<img alt="Image showing list of virtual devices." src="_images/avd-list.png" />
+<ol class="arabic simple" start="11">
+<li>In the Select Hardware window, choose a device definition for your virtual device. I have chosen <span class="guilabel">Nexus 5</span>, click on <span class="guilabel">Next</span>.</li>
+</ol>
+<img alt="Image showing hardware window" src="_images/hardware.png" />
+<ol class="arabic simple" start="12">
+<li>Select a system image, I have chosen Lollipop version.Click on <span class="guilabel">Next</span>.</li>
+</ol>
+<img alt="Admin settings menu" src="_images/system-image.png" />
+<ol class="arabic simple" start="13">
+<li>Enter your <span class="guilabel">AVD Name</span>, choose startup orientation and click on <span class="guilabel">Finish</span>.</li>
+</ol>
+<img alt="Configuration verification menu" src="_images/verify-configuration.png" />
+<p>14 Now you would be able to see your virtual device in Android Virtual Device Manager. Click on <img alt="image showing run icon" src="_images/run-icon.png" /> to run your Android emulator.</p>
+<img alt="Image showing updated virtual devices" src="_images/update-virtual.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Please wait for some time as Android emulator takes very long time to start.</p>
+</div>
+<ol class="arabic simple" start="15">
+<li>After the emulator is started, you would be able to see the screen of your emulator. :</li>
+</ol>
+<img alt="Image showing emulator screen." src="_images/emulator-screen1.png" />
+<ol class="arabic simple" start="16">
+<li>Now click on <img alt="Image showing SDK manager icon" src="_images/sdk-manager.png" /> to see the location of Android SDK.</li>
+</ol>
+<img alt="Image showing SDK manager in the Android main window." src="_images/emulator-screen.png" />
+<ol class="arabic simple" start="17">
+<li>Open the terminal and move to the <cite>platform-tools</cite> of the <cite>SDK</cite> directory.</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> platform-tools
+</pre></div>
+</div>
+<ol class="arabic simple" start="18">
+<li>Copy the <code class="file docutils literal"><span class="pre">collect.apk</span></code> into <code class="file docutils literal"><span class="pre">platform-tools</span></code> folder. You can <a class="reference external" href="https://opendatakit.org/downloads/download-info/odk-collect-apk/">download</a> the apk file from here.</li>
+<li>Type the following command to see the list connected devices:</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb devices
+</pre></div>
+</div>
+<p>You should be able to see the emulator along with its port number, e.g emulator-5554, Here 5554 is the port number. If the emulator is not present in the list, restart the emulator.</p>
+<p>To install apk file, in the emulator type the following command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb install collect.apk
+</pre></div>
+</div>
+<p>If the command is successfully executed, you will find your file in the launcher of your emulator.</p>
+<img alt="Image showing collect app on the emulator screen" src="_images/collect-emulator.png" />
+<img alt="Image showing collect app on the emulator screen" src="_images/collect-emulator2.png" />
+<div class="section" id="using-command-line">
+<span id="id4"></span><h3>Using Command Line<a class="headerlink" href="#using-command-line" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>You can also run the emulator using command line. Follow the steps given below to start your emulator using the command line:</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>If SDK installation has been put in another drive or folder instead of in its default location of <code class="docutils literal"><span class="pre">$USER_HOME</span></code> or <code class="docutils literal"><span class="pre">$HOME</span></code>. Make sure you have set the environment variables according to that. In the command line type the following command to set environment variables.</p>
+<div class="last highlight-console"><div class="highlight"><pre><span></span><span class="go">set ANDROID_SDK_ROOT=path\sdk\</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple">
+<li>Open the terminal and move to the <code class="file docutils literal"><span class="pre">emulator</span></code> folder of the <cite>SDK</cite> directory.</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> emulator
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>For the list of available virtual devices, type the following command:</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> emulator -list-avds
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>If you are not able to locate <code class="file docutils literal"><span class="pre">emulator.exe</span></code> file in <code class="file docutils literal"><span class="pre">SDK</span></code> folder. Type the following command to know the location of the file:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> which emulator
+</pre></div>
+</div>
+<p>On Windows:</p>
+<div class="last highlight-doscon"><div class="highlight"><pre><span></span><span class="go">&gt; where emulator</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Use <strong class="command">emulator</strong> to start the emulator. Here <em>avd_name</em> is the name of Android virtual device that you have created.</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> emulator -avd avd_name
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ol class="arabic">
+<li><p class="first">You can use <strong class="command">sdkmanager</strong> command to update, install, and uninstall packages for the Android SDK. This method is not recommended as it is not   user-friendly and also takes time.</p>
+<p>To create an emualtor you need to download system image for a particular API level.</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sdkmanager --verbose <span class="s2">&quot;system-images;android-19;google_apis;x86&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The <code class="xref std std-option docutils literal"><span class="pre">--verbose</span></code> option or <a class="reference external" href="https://docs.python.org/2/using/cmdline.html#id3" title="(in Python v2.7)"><code class="xref std std-option docutils literal"><span class="pre">-v</span></code></a> option shows errors, warnings and all messages.</li>
+<li><code class="docutils literal"><span class="pre">system-images;android-19;google_apis</span></code> specifies the system image package for the Android virtual device.</li>
+<li><code class="docutils literal"><span class="pre">android-19</span></code> specifies the API level. You can choose different API level if you want.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">To create and manage Android Virtual device from the command line, you can use <strong class="command">avdmanager</strong>.</p>
+<p>After downloading system image, you can use the following command to create an emulator.</p>
+</li>
+</ol>
+<blockquote class="last">
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> avdmanager -v create avd --name testAVD -k <span class="s2">&quot;system-images;android-19;google_apis;x86&quot;</span> -g <span class="s2">&quot;google_apis&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The <code class="xref std std-option docutils literal"><span class="pre">create</span> <span class="pre">avd</span></code> option creates a new Android virtual device.</li>
+<li><code class="xref std std-option docutils literal"><span class="pre">--name</span></code> option is a <strong>required</strong> option which is used to specify name of the AVD. Here, the name of the AVD is testAVD.</li>
+<li>The <code class="xref std std-option docutils literal"><span class="pre">-g</span></code> specifies the sys-img tag to use for the AVD.</li>
+<li><code class="xref std std-option docutils literal"><span class="pre">-k</span></code> specifies package path of the system image for the AVD.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last">You can also use <a class="reference external" href="https://www.genymotion.com/">Genymotion</a> as an alternative as it is very fast as compared to custom android emulators. It is also easy to use and configure, and it is available free of cost for personal use.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-intro.html" class="btn btn-neutral float-right" title="ODK Aggregate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect-security.html" class="btn btn-neutral" title="Android security recommendations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

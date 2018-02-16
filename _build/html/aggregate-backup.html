@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Backing Up Aggregate &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Setting Up ODK Aggregate" href="aggregate-setup.html"/>
+        <link rel="next" title="Using ODK Aggregate" href="aggregate-use.html"/>
+        <link rel="prev" title="Upgrading Aggregate" href="aggregate-upgrade.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-deployment-planning.html">Planning Your Aggregate Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-install.html">Installing Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-upgrade.html">Upgrading Aggregate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Backing Up Aggregate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#recovering-from-briefcase">Recovering from Briefcase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recovering-database-from-mysql-dump">Recovering database from MySQL dump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-and-recovery-on-google-app-engine">Backup and recovery on Google App Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-backup">Create backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restoring-data-from-backup">Restoring data from Backup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-setup.html">Setting Up ODK Aggregate</a> &raquo;</li>
+        
+      <li>Backing Up Aggregate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-backup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="backing-up-aggregate">
+<h1>Backing Up Aggregate<a class="headerlink" href="#backing-up-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="recovering-from-briefcase">
+<span id="briefcase-backup"></span><h2>Recovering from Briefcase<a class="headerlink" href="#recovering-from-briefcase" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Use <a class="reference internal" href="briefcase-guide.html"><span class="doc">ODK Briefcase</span></a> to back up all forms and submissions on Aggregate. You can <a class="reference internal" href="briefcase-forms.html#pull-from-aggregate"><span class="std std-ref">pull forms from your Aggregate server</span></a> into your local machine using Briefcase. In particular, Briefcase’s <a class="reference internal" href="briefcase-forms.html#cli-use"><span class="std std-ref">command line interface</span></a> makes this easier.</p>
+</div>
+<div class="section" id="recovering-database-from-mysql-dump">
+<span id="mysql-backup"></span><h2>Recovering database from MySQL dump<a class="headerlink" href="#recovering-database-from-mysql-dump" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li>Stop running Tomcat.</li>
+<li><a class="reference internal" href="aggregate-upgrade.html"><span class="doc">Upgrade to the latest version of Aggregate</span></a>.</li>
+<li>Finally, restore it from MySQL dump. An SQL dump of a database is a common method to safely store away a snapshot of the database for archival purposes or to migrate data between database instances, e.g. between two major system releases. The content of a SQL dump is a large collection of SQL commands in ASCII. Running the script will recreate the database in the same state as it was when the dump was created. The primary tool to consider for making an ASCII dump is <a class="reference external" href="https://dev.mysql.com/doc/mysql-backup-excerpt/5.7/en/using-mysqldump.html">mysqldump</a>, which includes a wide variety of options.</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> mysqldump <span class="o">[</span> options <span class="o">]</span> <span class="o">[</span> dbname <span class="o">]</span>
+</pre></div>
+</div>
+<p>Some of the useful options are:</p>
+<ul class="simple">
+<li><code class="xref std std-option docutils literal"><span class="pre">-h</span> <span class="pre">hostname</span></code> or <code class="xref std std-option docutils literal"><span class="pre">--host=hostname</span></code> specifies host to connect to.</li>
+<li><code class="xref std std-option docutils literal"><span class="pre">-p</span> <span class="pre">portnr</span></code> or <code class="xref std std-option docutils literal"><span class="pre">--port=portnr</span></code> specifies port to connect to.</li>
+<li><code class="xref std std-option docutils literal"><span class="pre">-u</span> <span class="pre">user</span></code> or <code class="xref std std-option docutils literal"><span class="pre">--user=user</span></code> specifies user id.</li>
+<li><code class="xref std std-option docutils literal"><span class="pre">-d</span> <span class="pre">database</span></code> or <code class="xref std std-option docutils literal"><span class="pre">--database=database</span></code> specifies database to connect to.</li>
+</ul>
+<p>To take a backup of database:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> mysqldump database &gt; backup-file.sql<span class="p">;</span>
+</pre></div>
+</div>
+<p>To restore a database:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> mysql database &lt; backup-file.sql<span class="p">;</span>
+</pre></div>
+</div>
+<p>To copy a database from one server to another</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> mysqldump --opt database <span class="p">|</span> mysql --host<span class="o">=</span>remote_host -C database
+</pre></div>
+</div>
+<p><strong>remote_host</strong> indicates a remote server where you want to take backup.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Creation of the dump respects your credentials, which means you only can dump the tables you have access to.</p>
+</div>
+</div>
+<div class="section" id="backup-and-recovery-on-google-app-engine">
+<span id="gae-backup"></span><h2>Backup and recovery on Google App Engine<a class="headerlink" href="#backup-and-recovery-on-google-app-engine" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="create-backup">
+<span id="id1"></span><h3>Create backup<a class="headerlink" href="#create-backup" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Open a browser to  <a class="reference external" href="https://cloud.google.com/">Google Cloud Platform</a> and click on <span class="guilabel">Console</span> in the top right corner.</li>
+</ol>
+<img alt="Image showing console option." src="_images/cloud-console1.png" />
+<ol class="arabic simple" start="2">
+<li>Sign in with a Gmail account which you used for Aggregate installation.</li>
+</ol>
+<img alt="Image showing sign in window." src="_images/email-select1.png" />
+<ol class="arabic simple" start="3">
+<li>Choose the project id for your ODK Aggregate server by clicking on the project dropdown in the top left corner.</li>
+</ol>
+<img alt="Image showing project dropdown." src="_images/dropdown.png" />
+<img alt="Image showing project selection box." src="_images/project-select.png" />
+<ol class="arabic simple" start="4">
+<li>Click on the menu icon (three horizontal bars) to the left of <span class="guilabel">Google Cloud Platform</span> in the upper left side of the screen and then select <span class="guilabel">Datastore</span> from the menu. Click on <span class="menuselection">Admin</span> in the dropdown.</li>
+</ol>
+<img alt="Image showing Datastore and Admin option." src="_images/admin.png" />
+<ol class="arabic simple" start="5">
+<li>Enable Cloud Datastore Admin access by clicking on <span class="guilabel">Enable Datastore Admin</span>.</li>
+</ol>
+<img alt="Image showing Enable Datastore Admin option." src="_images/enable-admin.png" />
+<ol class="arabic simple" start="6">
+<li>Then, click on <span class="guilabel">Open Datastore Admin</span>.</li>
+</ol>
+<img alt="Image showing Open Datastore Admin option." src="_images/open-admin.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>It is recommended to disable writes during creation of backup. To disable writes, click on <span class="guilabel">Disable writes</span> on the Admin page.</p>
+<img alt="Image showing Disable writes option." class="last" src="_images/disable-writes.png" />
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Your Aggregate server may become unstable when you disable writes. It will be fine when you enable writes again.</p>
+</div>
+<ol class="arabic simple" start="7">
+<li>Select the entity kinds that you wish to back up and then click on <span class="guilabel">Backup Entities</span>.</li>
+</ol>
+<img alt="Image showing backup entities selection." src="_images/backup-select.png" />
+<ol class="arabic simple" start="8">
+<li>A backup form will be displayed.</li>
+</ol>
+<img alt="Image showing backup form." src="_images/backup-form.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>A backup name is supplied and it includes a datestamp. You must change this value if you make more than one backup per day because a backup is not made if a backup of the same name already exists.</li>
+<li>The default queue is used for the backup job; you can use this in most cases. If you use a non-default queue for backup/restore, you can only specify the target <strong>ah-builtin-python-bundle</strong> in <strong>queue.yaml</strong>. You cannot use any other targets. To know more about queues, see <a class="reference external" href="https://cloud.google.com/appengine/docs/standard/java/taskqueue/">this</a>.</li>
+<li>Select Google Cloud Storage as the backup storage location.</li>
+</ul>
+</div>
+<p>In the bucket name box, enter <em>your-project-id.appspot.com</em>. You can alternatively preface the bucket name with <strong>/gs/</strong>, for example, /gs/[BUCKET_NAME].</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Buckets are containers where your backup will be stored. You can also <a class="reference external" href="https://cloud.google.com/storage/docs/creating-buckets">create buckets</a> for your project.</p>
+</div>
+<p>Now click on <span class="guilabel">Backup Entities</span> to start the backup jobs.</p>
+<ol class="arabic simple" start="9">
+<li>A job status page is displayed. Click on <span class="guilabel">Back to Datastore Admin</span> to see the backup status.</li>
+</ol>
+<img alt="Image showing backup job status page." src="_images/backup-job.png" />
+<p>You can abort a backup by selecting a backup from the list of pending backups and clicking on <span class="guilabel">Abort</span>.</p>
+<img alt="Image showing Abort and Info option." src="_images/pending-backup.png" />
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">When you abort a backup job, App Engine attempts to delete backup data that has been saved up to that point. However, in some cases, some files can remain after the abort. You can locate these files in the location you chose for your backups in Google Cloud Storage and safely delete them after the abort completes. The names of such files start with the following pattern: <strong>datastore_backup_[BUCKET_NAME]</strong>.</p>
+</div>
+<p>Click on <span class="guilabel">Info</span> to get more information about the backup. On the info page, click <span class="guilabel">Back to Datastore Admin</span> to return to the main Cloud Datastore Admin screen.</p>
+<img alt="Image showing backup info." src="_images/backup-info.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>After the backup is complete, if you disabled Cloud Datastore writes, re-enable them by going to Admin page and clicking on <span class="guilabel">Enable writes</span>.</p>
+<img alt="Image showing Enable writes option." class="last" src="_images/enable-writes.png" />
+</div>
+</div>
+<div class="section" id="restoring-data-from-backup">
+<span id="restore-backup"></span><h3>Restoring data from Backup<a class="headerlink" href="#restoring-data-from-backup" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Go to the Admin page as described in the <a class="reference internal" href="#create-backup"><span class="std std-ref">creation of backup</span></a>.</li>
+</ol>
+<img alt="Image showing Datastore and Admin option." src="_images/admin.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>Disable Cloud Datastore writes for your application. It’s normally a good idea to do this to avoid conflicts between the restore and any new data written to Cloud Datastore. To disable writes, click on <span class="guilabel">Disable writes</span> on the Admin page.</p>
+<img alt="Image showing Disable writes option." class="last" src="_images/disable-writes.png" />
+</div>
+<ol class="arabic simple" start="2">
+<li>Click on <span class="guilabel">Open Datastore Admin</span>.</li>
+</ol>
+<img alt="Image showing Open Datastore Admin option." src="_images/open-admin.png" />
+<ol class="arabic simple" start="3">
+<li>In the list of available backups, select the backup that you want to restore from and click on <span class="guilabel">Restore</span>. You can click on <span class="guilabel">Info</span> to get more information about the backup. To delete a backup, select the backup and click on <span class="guilabel">Delete</span>.</li>
+</ol>
+<img alt="Image showing Restore, Info and Delete options." src="_images/backup-list.png" />
+<ol class="arabic simple" start="4">
+<li>In the advisory page that is displayed, notice the list of entities with checkboxes. By default, all of the entities will be restored. Uncheck the checkbox next to each entity that you don’t want to restore. Click on <span class="guilabel">Restore</span> at the bottom of the page to start the restoration.</li>
+</ol>
+<img alt="Image showing restore option." src="_images/restore-backup.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">In the advisory page, notice that the default queue, with its pre-configured performance settings, is used for the restore job. Change this to another queue that you have configured differently if you need different queue performance characteristics, making sure the queue chosen does not have any target specified in <strong>queue.yaml</strong> other than <strong>ah-builtin-python-bundle</strong>. To know more about queues, see <a class="reference external" href="https://cloud.google.com/appengine/docs/standard/java/taskqueue/">this</a>.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li>A job status page is displayed. Click on <span class="guilabel">Back to Datastore Admin</span> to see the status of the restore.</li>
+</ol>
+<img alt="Image showing job status page." src="_images/restore-job.png" />
+<img alt="Image showing restore status." src="_images/restore-status.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>After the restore is complete, if you disabled Cloud Datastore writes, re-enable them by going to Admin page and clicking on <span class="guilabel">Enable writes</span>.</p>
+<img alt="Image showing Enable writes option." class="last" src="_images/enable-writes.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>If you back up your data using Google Cloud Storage, you can restore backups to applications other than the application used to create the backup. To restore backup data from a source application to a target application, see this <a class="reference external" href="https://cloud.google.com/appengine/docs/standard/python/console/datastore-backing-up-restoring">guide</a>.</li>
+<li>Google has new beta service for <a class="reference external" href="https://cloud.google.com/datastore/docs/export-import-entities">exporting and importing</a>. Only Cloud Platform projects with <a class="reference external" href="https://cloud.google.com/support/billing/">billable accounts</a> can use the export and import functionality.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-use.html" class="btn btn-neutral float-right" title="Using ODK Aggregate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-upgrade.html" class="btn btn-neutral" title="Upgrading Aggregate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

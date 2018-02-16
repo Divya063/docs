@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Form Submission API &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="OpenRosa" href="openrosa.html"/>
+        <link rel="next" title="Form List API" href="openrosa-form-list.html"/>
+        <link rel="prev" title="Authentication API" href="openrosa-authentication.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="openrosa.html">OpenRosa</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="openrosa.html#openrosa-1-0-apis">OpenRosa 1.0 APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="openrosa-metadata.html">Metadata Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-http.html">HTTP Requests and Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-authentication.html">Authentication API</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Form Submission API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#form-submission">Form Submission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server-response-format">Server Response Format</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-form-list.html">Form List API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="openrosa.html">OpenRosa</a> &raquo;</li>
+        
+      <li>Form Submission API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/openrosa-form-submission.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="form-submission-api">
+<h1>Form Submission API<a class="headerlink" href="#form-submission-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This standard defines the API for submitting data to an OpenRosa compliant server and receiving a response from the server about the submission. This API is designed to provide a base level of interoperability between OpenRosa clients and servers while enabling application-specific extensions as well.</p>
+<div class="section" id="form-submission">
+<span id="id1"></span><h2>Form Submission<a class="headerlink" href="#form-submission" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OpenRosa servers must be able to receive XForms which are submitted by clients over HTTP.</p>
+<p>There are 3 major categories of requirements for submission which must be fulfilled:</p>
+<ul class="simple">
+<li>channel</li>
+<li>content</li>
+<li>correctness.</li>
+</ul>
+<div class="section" id="channel">
+<span id="id2"></span><h3>Channel<a class="headerlink" href="#channel" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>OpenRosa servers MUST provide a URI capable of accepting HTTP POST Requests. Access controls, firewalls and geographic or networking restrictions MAY limit the origins and/or clients that can access the server.</p>
+<p>The server MUST support HTTP 1.1 chunked transfer encoding for receiving the POST content. There is no minimum set of standards for timeouts, maximum content length, or other http configurations, but servers are encouraged to support lenient connections and the largest possible content size, since many of the connections will be from unreliable channels and in environments where splitting content up is impractical.</p>
+<p>For maximum compatibility with J2ME clients, it is recommended that a server SHOULD NOT issue redirects.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Using digest authentication and https when communicating with a server does not require any redirects — you can have authentication and secure transport without redirects.</p>
+</div>
+</div>
+<div class="section" id="content">
+<span id="id3"></span><h3>Content<a class="headerlink" href="#content" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>OpenRosa submissions (and responses) MUST provide headers conforming to the <a class="reference internal" href="openrosa-http.html"><span class="doc">OpenRosa Request standard</span></a>.</p>
+<p>Successful server responses MUST include an <code class="docutils literal"><span class="pre">X-OpenRosa-Accept-Content-Length</span></code> header in addition to the <a class="reference internal" href="openrosa-http.html#openrosa-responses"><span class="std std-ref">required OpenRosa Request response headers</span></a>. The <code class="docutils literal"><span class="pre">X-OpenRosa-Accept-Content-Length</span></code> header specifies this server’s recommended maximum size for a POST body, in bytes.</p>
+<p>Servers SHOULD include this header in their error responses. However, clients MUST NOT rely on the presence of this header (or any OpenRosa header) in every error response.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Overly-large requests sent to Google AppEngine will be rejected prior to being sent to any server, and will therefore not contain this (or any) OpenRosa header.</p>
+</div>
+<p>OpenRosa submissions are POSTed to servers as a multipart MIME Envelope with at least 1 part — the XML content of the form itself. Each of these parts should adhere to the following requirements</p>
+<div class="section" id="mime-envelope">
+<span id="id4"></span><h4>MIME Envelope<a class="headerlink" href="#mime-envelope" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li>Content Type: multipart/form-data</li>
+<li>Contains Exactly 1 XForm Part</li>
+<li>Contains 0 or More Additional Parts</li>
+</ul>
+</div>
+<div class="section" id="xform-part">
+<span id="id5"></span><h4>XForm Part<a class="headerlink" href="#xform-part" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li>Content Type: text/xml</li>
+<li>Name: xml_submission_file</li>
+</ul>
+</div>
+<div class="section" id="additional-parts">
+<span id="id6"></span><h4>Additional Parts<a class="headerlink" href="#additional-parts" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li>Content Type: arbitrary</li>
+<li>Name: matches an appropriate element inside of the XForm Element’s XML.</li>
+</ul>
+<p>Servers MAY be more permissive than this specification (for example, allowing multipart/mixed for the mime envelope), but MUST be capable of recognizing and properly receiving submissions in this format.</p>
+</div>
+</div>
+<div class="section" id="correctness">
+<span id="id7"></span><h3>Correctness<a class="headerlink" href="#correctness" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The server MUST consume an entire HTTP POST in conformance with that protocol. Once a POST is received, the range and structure of the server’s response is specified below.</p>
+</div>
+<div class="section" id="extended-transmission-considerations">
+<span id="id8"></span><h3>Extended Transmission Considerations<a class="headerlink" href="#extended-transmission-considerations" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If the client is capable of negotiating authenticated and/or secure transmissions to the server, it is recommended that the client first attempt a <code class="docutils literal"><span class="pre">HEAD</span></code> request to the server to negotiate the authentication and channel security prior to the first <code class="docutils literal"><span class="pre">POST</span></code> of the data, regardless of any channel security stated in the <code class="docutils literal"><span class="pre">&lt;submission&gt;</span></code> element of the form. This ensures that submitted data is not inadvertently sent in the clear on that first request due to the client device possessing an out-of-date form definition with inaccurate <code class="docutils literal"><span class="pre">&lt;submission&gt;</span></code> content.</p>
+<p>Issuing a <code class="docutils literal"><span class="pre">HEAD</span></code> request first also reduces overall transmission bandwidth in instances where client authentication occurs. Most authentication handshake protocols require the complete re-<code class="docutils literal"><span class="pre">POST</span></code> of the original request after the authentication is complete. By delaying the <code class="docutils literal"><span class="pre">POST</span></code> of the data until after the authentication has been negotiated on the <code class="docutils literal"><span class="pre">HEAD</span></code> request, overall transmission bandwidth is reduced.</p>
+<p>The client, upon receiving the <code class="docutils literal"><span class="pre">HEAD</span></code> response, can check that the response contains the <code class="docutils literal"><span class="pre">X-OpenRosa-Version</span></code> header to indicate that the host is an OpenRosa server (as opposed to a network login screen or proxy page). In this way, the server can change the scheme from <code class="docutils literal"><span class="pre">http</span></code> to <code class="docutils literal"><span class="pre">https</span></code> or update the submission page URL without a wasted redirect during the actual submission process. The client can also use the value of the <code class="docutils literal"><span class="pre">X-OpenRosa-Accept-Content-Length</span></code> header to inform itself of how big a POST body should be sent to this server. ODK Collect also requires a 204 (No Content) status code in the HEAD response.</p>
+<p>If a full <code class="docutils literal"><span class="pre">POST</span></code> of the form’s XML submission and its additional parts (for example, captured image, audio or video clips) would exceed the size specified in the <code class="docutils literal"><span class="pre">X-OpenRosa-Accept-Content-Length</span></code> header (the <em>maxSize</em>), it is recommended that the client split the <code class="docutils literal"><span class="pre">POST</span></code> into multiple individual <code class="docutils literal"><span class="pre">POST</span></code> requests, each containing the form’s XML submission and one or more additional parts such that each partial <code class="docutils literal"><span class="pre">POST</span></code> request is no greater than <em>maxSize</em>; if a single additional part is greater than <em>maxSize</em>, the <code class="docutils literal"><span class="pre">POST</span></code> should contain the form’s XML submission and that single additional part. Regardless of whether the client observes and honors the <code class="docutils literal"><span class="pre">X-OpenRosa-Accept-Content-Length</span></code> header, a compliant server with give its best effort to accept submissions of any length.</p>
+<p>The <code class="docutils literal"><span class="pre">X-OpenRosa-Accept-Content-Length</span></code> header is provided to avoid failures that may otherwise arise due to restrictions on the overall size of <code class="docutils literal"><span class="pre">HTTP</span></code> messages, or due to physical or virtual memory configurations of the server.</p>
+<p>The form’s XML submission is sent on each <code class="docutils literal"><span class="pre">POST</span></code> so that a client can avoid having any knowledge about the content of the files it is shipping around. Doing so also places the fewest restrictions on how the server handles the submission.</p>
+<div class="section" id="rationale-for-sending-the-form-s-xml-submission">
+<span id="rationale-for-sending-form-xml-submission"></span><h4>Rationale for sending the form’s XML submission<a class="headerlink" href="#rationale-for-sending-the-form-s-xml-submission" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>To avoid sending the form’s XML submission, you would need to inspect the submission and send up its identifiying information. By avoiding inspection of the submission, a much simpler Ajax-enabled webpage could conform to this API.</p>
+<p>On the server, having just the <code class="docutils literal"><span class="pre">instanceID</span></code> sent on subsequent <code class="docutils literal"><span class="pre">POST</span></code> requests might not be sufficient to process the request — sending only this information would burden those server implementations with maintaining a mapping from the instanceID to the natural key for this data. Not sending the form’s XML submission in subsequent POSTs biases against some server designs.</p>
+<p>Finally, since most XML submission documents are smaller than 2K bytes, and if you have a 10M byte threshold for splitting a submission across multiple requests (a reasonable lower limit), you’re burning only 0.02% of your bandwidth with the retransmission.</p>
+</div>
+</div>
+</div>
+<div class="section" id="server-response-format">
+<span id="id9"></span><h2>Server Response Format<a class="headerlink" href="#server-response-format" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The server response format will be XML formatted, and the response body will be an <a class="reference internal" href="openrosa-http.html#openrosa-responses"><span class="std std-ref">OpenRosa Response</span></a>.</p>
+<p>Example response:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;OpenRosaResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/http/response&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;message&gt;</span>Form Received! You&#39;ve submitted 5 forms today<span class="nt">&lt;/message&gt;</span>
+<span class="nt">&lt;/OpenRosaResponse&gt;</span>
+</pre></div>
+</div>
+<p>If the server is RESTful, the server MAY return an <code class="docutils literal"><span class="pre">HTTP</span></code> URI (using the standard <code class="docutils literal"><span class="pre">HTTP</span></code> Location header) where the form can be found.</p>
+<p>A form should not be assumed to be submitted until a <code class="docutils literal"><span class="pre">201</span></code> or <code class="docutils literal"><span class="pre">202</span></code> response code is received with an OpenRosaResponse envelope body.</p>
+<div class="section" id="server-status-codes">
+<span id="id10"></span><h3>Server Status Codes<a class="headerlink" href="#server-status-codes" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Server status codes will be the same as <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">standard http codes</a>. These use the general classification:</p>
+<dl class="docutils">
+<dt>201-202</dt>
+<dd>Successfully received by server.</dd>
+<dt>4XX</dt>
+<dd>Client Error</dd>
+<dt>5XX</dt>
+<dd>Server Error</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><code class="docutils literal"><span class="pre">1XX</span></code> (informational) and <code class="docutils literal"><span class="pre">3XX</span></code> (redirection) probably do not apply to these POSTs.</p>
+</div>
+<p>Some common interpretations of codes are below, but more could apply.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">HTTP Meaning</th>
+<th class="head">ODK Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>UNUSED</td>
+<td>Since the request is a post, a 200 response is not a sign of a successful submission. Many intermediate proxies will return a 200 response for gateway pages on WI-FI, etc, so receiving a 200 shouldn’t be assumed to be meaningful.</td>
+</tr>
+<tr class="row-odd"><td>201</td>
+<td>Form Received</td>
+<td>Everything went great. Thanks for submitting.</td>
+</tr>
+<tr class="row-even"><td>202</td>
+<td>Accepted</td>
+<td>We got and saved your data, but may not have fully processed it. You should not try to resubmit.</td>
+</tr>
+<tr class="row-odd"><td>204</td>
+<td>No Content</td>
+<td>Status returned in response to a HEAD request.</td>
+</tr>
+<tr class="row-even"><td>401</td>
+<td>Unauthorized</td>
+<td>Client tried to post something it didn’t have permission to post.</td>
+</tr>
+<tr class="row-odd"><td>403</td>
+<td>Forbidden</td>
+<td>You’re not allowed to post to this server.</td>
+</tr>
+<tr class="row-even"><td>404</td>
+<td>Not Found</td>
+<td>Unknown URI endpoint, domain, or other</td>
+</tr>
+<tr class="row-odd"><td>413</td>
+<td>Request too large</td>
+<td>The request body is too large for the server to process</td>
+</tr>
+<tr class="row-even"><td>500</td>
+<td>Internal Server Error</td>
+<td>Something went awry on the server and we’re not sure what it was</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="openrosa-form-list.html" class="btn btn-neutral float-right" title="Form List API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openrosa-authentication.html" class="btn btn-neutral" title="Authentication API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

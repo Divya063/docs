@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Visualizing Geographic Data &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Using ODK Aggregate" href="aggregate-use.html"/>
+        <link rel="next" title="Getting Help in Aggregate" href="aggregate-help.html"/>
+        <link rel="prev" title="Getting Data Out of Aggregate" href="aggregate-data-access.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-forms.html">Managing Forms in Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-data.html">Working with Submitted Data in Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-admin.html">Administering Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-data-access.html">Getting Data Out of Aggregate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Visualizing Geographic Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-google-fusion">Google Fusion Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-google-earth">Google Earth</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-help.html">Getting Help in Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-use.html">Using ODK Aggregate</a> &raquo;</li>
+        
+      <li>Visualizing Geographic Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-visualize.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="visualizing-geographic-data">
+<h1>Visualizing Geographic Data<a class="headerlink" href="#visualizing-geographic-data" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This guide helps the users to visualize the collected geodata uploaded on ODK Aggregate server. There are various options you can choose from, like <a class="reference external" href="https://support.google.com/fusiontables/answer/2571232?hl=en">Google Fusion Tables</a> and <a class="reference external" href="https://www.google.com/intl/en_in/earth/">Google Earth</a>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>If you’re looking to do some quick visualizations of a small dataset and aren’t too worried about the inherent risks of experimental tools, then you should use <a class="reference internal" href="#use-google-fusion"><span class="std std-ref">Google Fusion Tables</span></a>.</li>
+<li>If you’re serious about the long-term use of geodata and have large dataset use <a class="reference internal" href="#use-google-earth"><span class="std std-ref">Google Earth</span></a>.</li>
+</ul>
+</div>
+<p class="rubric">Prerequisites</p>
+<ol class="arabic simple">
+<li>Make sure you have set up your <a class="reference internal" href="aggregate-install.html"><span class="doc">ODK Aggregate server</span></a>.</li>
+<li>You should know how <a class="reference internal" href="collect-intro.html"><span class="doc">ODK Collect</span></a> works.</li>
+<li>You should be familiar with form designers like <a class="reference internal" href="odk-build.html"><span class="doc">ODK Build</span></a>,  <a class="reference internal" href="xlsform.html"><span class="doc">XLSForm</span></a> to create your location based forms and upload it to ODK Aggregate server.</li>
+</ol>
+<div class="section" id="use-google-fusion">
+<span id="id1"></span><h2>Google Fusion Tables<a class="headerlink" href="#use-google-fusion" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em class="dfn">Google Fusion Tables</em> is an experimental data visualization web application provided by Google for data management. Fusion tables can be used for visualizing dataset on a map.</p>
+<p>Follow these steps to view your data using fusion tables:</p>
+<ol class="arabic simple">
+<li>Login to your ODK Aggregate server.</li>
+<li>In the <span class="guilabel">Submissions</span> tab, under <span class="guilabel">Filter Submissions</span>, select the form you want to use.</li>
+</ol>
+<img alt="Image showing location-based form" src="_images/aggregate-form.png" />
+<ol class="arabic simple" start="3">
+<li>If you are using Google Cloud Platform make sure you have enabled relevant APIs like <strong>Google Drive API</strong>, <strong>Fusion Tables API</strong>, <strong>and Google Maps Javascript API</strong> otherwise you may get <em>RequestFailureException error</em>.</li>
+</ol>
+<img alt="Image showing an error message." src="_images/error.png" />
+<ol class="arabic simple" start="4">
+<li>To enable the APIs go to <a class="reference external" href="https://cloud.google.com/">Google Cloud Platform</a> and click on <span class="guilabel">Console</span> in the top right corner. Click on the three horizontal bars in the top left corner, now select <span class="guilabel">APIs &amp; services</span> from the menu and then select <span class="guilabel">Library</span> option.</li>
+</ol>
+<img alt="Image showing API and services option." src="_images/google-cloud.png" />
+<ol class="arabic simple" start="5">
+<li>You will be able to see the API Library page.</li>
+</ol>
+<img alt="Image showing API Library." src="_images/api-library.png" />
+<ol class="arabic simple" start="6">
+<li>Search the APIs in the search bar.</li>
+</ol>
+<img alt="Search box" src="_images/search-api.png" />
+<ol class="arabic simple" start="7">
+<li>Click on <span class="guilabel">Enable</span>.</li>
+</ol>
+<img alt="Image showing how to enable API." src="_images/fusion-api.png" />
+<ol class="arabic simple" start="8">
+<li>Now return to ODK Aggregate server and click on the <span class="guilabel">Publish</span> button.</li>
+</ol>
+<img alt="Image showing Publish button." src="_images/publish-form.png" />
+<ol class="arabic simple" start="9">
+<li>In <span class="guilabel">Publish to</span> field, choose the platform from the drop-down menu to which you want to publish your data, choose Google Fusion Tables. In the <span class="guilabel">Data to Publish</span> field, Select the option from the drop-down menu to define what you want to upload:</li>
+</ol>
+<ul class="simple">
+<li><span class="guilabel">Upload Existing Submission Data Only</span> will only upload the existing data you already have submitted to your ODK Aggregate server.</li>
+<li><span class="guilabel">Stream New Submission Data Only</span> can be used if you want new submissions to be automatically entered into Google Fusion Tables.</li>
+<li><span class="guilabel">BOTH Upload Existing and Stream New Submission Data</span> will upload your existing submissions into Fusion Tables and continue automatically adding new submissions to your table.</li>
+</ul>
+<p>Choose <span class="guilabel">BOTH Upload Existing and Stream New Submission Data</span> and click on <span class="guilabel">Publish</span>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">If you choose <span class="guilabel">BOTH Upload Existing and Stream New Submission Data</span> option, you would be able to create a link between your data in Google Earth and
+Google Fusion Tables, for more information, refer this <a class="reference external" href="https://support.google.com/fusiontables/answer/171215?hl=en">link</a>.</p>
+</div>
+<img alt="Image showing options for publishing data." src="_images/publish-form2.png" />
+<ol class="arabic simple" start="10">
+<li>You will need to enter an email address and that email address will be granted access to the documents.</li>
+</ol>
+<img alt="Image showing prompt for email." src="_images/email-prompt.png" />
+<ol class="arabic simple" start="11">
+<li>Check the inbox of the email address that you entered and there would be an email from <strong>odk-oauth2-publishing</strong>, click on <span class="guilabel">Open</span>.</li>
+</ol>
+<img alt="Image showing email from odk-oauth2." src="_images/email.png" />
+<ol class="arabic simple" start="12">
+<li>After clicking on <span class="guilabel">Open</span> you would be redirected to Google Fusion tables <a class="reference external" href="https://fusiontables.google.com/">website</a>. Here you would be able to see your submissions.</li>
+</ol>
+<img alt="Image showing submissions." src="_images/data.png" />
+<ol class="arabic simple" start="13">
+<li>Select <span class="guilabel">Map of location</span> and you should see your data points displayed on a Google Map.</li>
+</ol>
+<img alt="Image showing data point." src="_images/map1.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>If the points aren’t displaying where you expect them to display, visit <a class="reference external" href="https://support.google.com/fusiontables/?hl=en#topic=27020&amp;rd=1">Help</a> . You can also customize pop-up balloons in Google Fusion Tables using <span class="guilabel">Change info window</span> button under the <span class="menuselection">Feature map</span> option.</p>
+<img alt="Image showing Change Info button." class="last" src="_images/feature-info.png" />
+</div>
+</div>
+<div class="section" id="use-google-earth">
+<span id="id2"></span><h2>Google Earth<a class="headerlink" href="#use-google-earth" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em class="dfn">Google Earth</em> is a virtual globe that accesses satellite and aerial imagery, and other geographic data over the internet to represent the Earth as a three-dimensional globe</p>
+<p>Follow these steps to view your data using Google Earth:</p>
+<ol class="arabic simple">
+<li>Login to your ODK Aggregate server.</li>
+<li>In the <span class="guilabel">Submissions</span> tab, under <span class="guilabel">Filter Submissions</span>, select the form you want to use and click on <span class="guilabel">Export</span></li>
+</ol>
+<img alt="Image showing how to export form." src="_images/export.png" />
+<ol class="arabic simple" start="3">
+<li>Choose the type as <code class="file docutils literal"><span class="pre">KML</span> <span class="pre">file</span></code> and click on <span class="guilabel">Export</span>.</li>
+</ol>
+<img alt="Image showing how to export form." src="_images/kml-file.png" />
+<ol class="arabic simple" start="4">
+<li>You don’t need to change the default options, but you can select the <span class="menuselection">title</span> according to your choice. Click on <span class="guilabel">Export</span></li>
+<li>You will be redirected to <span class="guilabel">Export Submissions</span> page where you can download your kml file.</li>
+</ol>
+<img alt="Image showing how to download kml file." src="_images/export-submission1.png" />
+<ol class="arabic simple" start="6">
+<li>After downloading go to <a class="reference external" href="https://earth.google.com/web/">Google Earth website</a> or you can download it from <a class="reference external" href="https://www.google.com/earth/download/gep/agree.html">here</a>. Wait for a while as Google Earth takes time to load.</li>
+</ol>
+<img alt="Image showing Google Earth." src="_images/google-earth.png" />
+<ol class="arabic simple" start="7">
+<li>Click on <img alt="Image showing my places icon." src="_images/my-places.png" /> and to enable KML import click on <span class="guilabel">Settings</span>.</li>
+</ol>
+<img alt="Image showing settings option." src="_images/import-settings.png" />
+<ol class="arabic simple" start="8">
+<li>In the Settings window, enable KML file import and click on <span class="guilabel">SAVE</span>.</li>
+</ol>
+<img alt="Image showing how to enable KML file import." src="_images/enable-import.png" />
+<ol class="arabic simple" start="9">
+<li>Click on <span class="guilabel">IMPORT KML FILE</span> and import the downloaded kml file.</li>
+</ol>
+<img alt="Image showing import kml file option." src="_images/import-file.png" />
+<ol class="arabic simple" start="10">
+<li>Now you will be able to see your data in an organized manner on Google Earth.</li>
+</ol>
+<img alt="Image showing the data on Google Earth." src="_images/earth-data.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>On Google Earth, you can choose your map style, add additional points, lines and polygons to add more information for the enhancement of map. You can also try out <a class="reference external" href="https://www.google.com/earth/outreach/learn/annotating-google-earth/">this</a> tutorial on how to annotate Google Earth.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-help.html" class="btn btn-neutral float-right" title="Getting Help in Aggregate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-data-access.html" class="btn btn-neutral" title="Getting Data Out of Aggregate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

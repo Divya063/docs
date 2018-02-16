@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/xlsform.rst:16
+msgid "XLSForm"
+msgstr ""
+
+#: ../../src/xlsform.rst:20
+msgid ":dfn:`XLSForm` (formerly XLS2Xform) is a tool to simplify the creation of forms. Forms designed with Excel can be converted to *XForms* that can be used with ODK tools."
+msgstr ""
+
+#: ../../src/xlsform.rst:24
+msgid "When this tool was renamed to XLSForm there were many changes to the syntax. The new version is mostly backwards compatible with the old syntax."
+msgstr ""
+
+#: ../../src/xlsform.rst:25
+msgid "XLSForm works with ODK Collect version *1.1.7* or later."
+msgstr ""
+
+#: ../../src/xlsform.rst:29
+msgid "Using the Application"
+msgstr ""
+
+#: ../../src/xlsform.rst:31
+msgid "To design your form, you can refer to the `XLSForm form design documentation <http://xlsform.org/>`_ and check out the `sample Excel file <https://opendatakit.org/wp-content/uploads/2013/06/sample_xlsform.xls>`_."
+msgstr ""
+
+#: ../../src/xlsform.rst:32
+msgid "Once your xls form is ready, you can submit it `for conversion here <http://opendatakit.org/xiframe/>`_."
+msgstr ""
+
+#: ../../src/xlsform.rst:35
+msgid "Other XLSForm converters"
+msgstr ""
+
+#: ../../src/xlsform.rst:37
+msgid "For Windows users, a standalone (non-web-based) version of this tool (without the error report) is also available on our `downloads page here <https://opendatakit.org/downloads/download-info/xlsform-for-windows/>`_. If you use that tool, you should also download ODK Validate (`from here <https://opendatakit.org/downloads/download-info/odk-validate-2/>`_) and run the generated form through that tool to generate an error report."
+msgstr ""
+
+#: ../../src/xlsform.rst:38
+msgid "Nafundi's `XLSForm Offline <https://gumroad.com/l/xlsform-offline#/>`_ is an app for Windows and Mac that can convert and validate forms. It is always available, very fast, and easy to use."
+msgstr ""
+
+#: ../../src/xlsform.rst:39
+msgid ":ref:`pyxform <running-pyxform>` is a Python library. It works offline and can be used on the command line to convert forms."
+msgstr ""
+
+#: ../../src/xlsform.rst:40
+msgid "XLSForm is also available through `Ona <https://ona.io/home/>`_.io which requires internet connection and also makes it easy to share converted forms and collected data."
+msgstr ""
+
+#: ../../src/xlsform.rst:44
+msgid "`Enketo <https://enketo.org/>`_ previews generated from this converter will not include media."
+msgstr ""
+
+#: ../../src/xlsform.rst:45
+msgid "Forms do not have to be uploaded to :ref:`Aggregate <aggregate-introduction>` before they are used. They can be manually added to :ref:`Collect <collect-introduction>`. Simply place them in the :file:`/odk/forms` folder on your Android device’s SD card."
+msgstr ""
+
+#: ../../src/xlsform.rst:46
+msgid "For a simpler, more user friendly form designer, try `Build <https://opendatakit.org/use/build/>`_. For more powerful form designers, try `Kobo <http://www.kobotoolbox.org/>`_ or `enketo <https://enketo.org/>`_ or `PurcForms <https://code.google.com/archive/p/purcforms/>`_. We also have `sample forms <https://github.com/opendatakit/sample-forms/>`_ (Examples forms are not available for all the features) and `form design documentation <https://opendatakit.org/help/form-design/>`_. And in particular, `design guidelines <https://opendatakit.org/help/form-design/guidelines/>`_ if you wish to design forms manually."
+msgstr ""
+

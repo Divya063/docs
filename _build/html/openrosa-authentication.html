@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Authentication API &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="OpenRosa" href="openrosa.html"/>
+        <link rel="next" title="Form Submission API" href="openrosa-form-submission.html"/>
+        <link rel="prev" title="HTTP Requests and Responses" href="openrosa-http.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="openrosa.html">OpenRosa</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="openrosa.html#openrosa-1-0-apis">OpenRosa 1.0 APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="openrosa-metadata.html">Metadata Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-http.html">HTTP Requests and Responses</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Authentication API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-security-considerations">Data Security Considerations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#typical-interaction">Typical Interaction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation">Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#authentication">Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-form-submission.html">Form Submission API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-form-list.html">Form List API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="openrosa.html">OpenRosa</a> &raquo;</li>
+        
+      <li>Authentication API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/openrosa-authentication.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="authentication-api">
+<h1>Authentication API<a class="headerlink" href="#authentication-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This standard specifies the Request and Response format through which OpenRosa compliant servers authorize HTTP transactions.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>This API provides a standardized means with which OpenRosa clients are authenticated with compliant servers.</p>
+<p>OpenRosa compliant devices MUST support both:</p>
+<ul class="simple">
+<li>the subset of <a class="reference external" href="https://tools.ietf.org/html/rfc2617#section-3">RFC2617 Digest Authentication</a> defined below</li>
+<li>the <a class="reference external" href="https://tools.ietf.org/html/rfc2617#section-2">Basic Authentication mechanism also outlined in RFC2617</a>.</li>
+</ul>
+<p>OpenRosa compliant servers MUST support at least one of either:</p>
+<ul class="simple">
+<li>the subset of <a class="reference external" href="https://tools.ietf.org/html/rfc2617#section-3">RFC2617 Digest Authentication</a> defined below</li>
+<li>the <a class="reference external" href="https://tools.ietf.org/html/rfc2617#section-2">Basic Authentication mechanism also outlined in RFC2617</a>.</li>
+</ul>
+<p>We are following RFC2617 with additional OpenRosa compliance requirements defined in the implementation section below to ensure that the Digest Authentication implementations across devices do not compromise security and that they all implement a well-defined common subset of the RFC2617 Digest Authentication mechanism.</p>
+</div>
+<div class="section" id="data-security-considerations">
+<h2>Data Security Considerations<a class="headerlink" href="#data-security-considerations" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Any communication over HTTP (vs. HTTPS) can be observed by others and is susceptible to man-in-the-middle attacks (where a malicious intermediary inserts itself between the client and the server the client intended to contact). As a consequence, if communication is over HTTP, clients may be submitting their form data to a malicious intermediary. That intermediary will see the full contents of the form submission. Additionally, the intermediary may never forward the submission to the intended server — the client can never be certain that the submitted data has been recorded on the intended server.</p>
+<p>HTTPS requires that the server be configured with an SSL certificate issued by a signing authority. Man-in-the-middle attacks are possible over HTTPS if clients do not authenticate the server’s SSL certificate (or, less commonly, if the client device or signing authority has been compromised).</p>
+<p>OpenRosa compliant client devices MUST authenticate server certificates when establishing HTTPS channels to those servers.</p>
+<p>Because client communications are often through unsecured hotspots, it is recommended that HTTPS (with the authentication of server certificates) be used for all communications.</p>
+</div>
+<div class="section" id="typical-interaction">
+<h2>Typical Interaction<a class="headerlink" href="#typical-interaction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>A typical transaction consists of the following steps.</p>
+<ol class="arabic simple">
+<li>The client asks for a resource that requires authentication but does not provide a user name and password. Typically this is because the user simply entered the address or followed a link to the page.</li>
+<li>The server responds with the 401 response code, either requesting Digest Authentication and providing the authentication realm and a randomly-generated, single-use value called a nonce, or requesting Basic Authentication (in which case the server should also redirect and negotiate TLS channel security (https) if the client is not already communicating over https).</li>
+<li>At this point, the client will present the authentication realm (typically a description of the computer or system being accessed) to the user and prompt for a user name and password. The user may decide to cancel at this point.</li>
+<li>Once a user name and password have been supplied, the client re-sends the same request but adds an authentication header that includes the response code.</li>
+<li>Assuming the username and password are valid,  the server accepts the authentication and the page is returned. If the user name is invalid and/or the password is incorrect, the server might return the <cite>401</cite> response code and the client would prompt the user again.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">A client may already have the required user name and password without needing to prompt the user; for example, if they have previously been stored by a client.</p>
+</div>
+<p>For Basic Authentication, the 「response」 value is simply a base-64 compression of the user name concatenated with 「:」 and the plain-text password, as specified in RFC2617.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>Anyone with a network sniffer could read this value, decompress it, and obtain the user name and password. Hence, it is critical that this information only be transmitted over HTTPS or some other secure transport.</p>
+<p class="last">Even with HTTPS, sending this is not a highly secure practice.</p>
+</div>
+<p>For Digest Authentication, the 「response」 value is calculated in three steps, as follows. Where values are combined, they are delimited by colon symbols.</p>
+<ol class="arabic simple">
+<li>The MD5 hash of the combined user name, authentication realm and password is calculated. The result is referred to as HA1.</li>
+<li>The MD5 hash of the combined method and digest URI is calculated, e.g. of 「GET」 and 「/dir/index.html」. The result is referred to as HA2.</li>
+<li>The MD5 hash of the combined HA1 result, server nonce (nonce), request counter (nc), client nonce (cnonce), quality of protection code (qop) and HA2 result is calculated. The result, the user name and the cnonce are the 「response」 value provided by the client.</li>
+</ol>
+<p>The Digest Authentication response value is thus sent in such a way that an adversary can extract the user name from the response, but cannot extract the password from the response. It can therefore be sent over an unsecured channel (for example, HTTP ).</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Even with the more secure Digest Authentication, HTTPS is recommended.</p>
+</div>
+</div>
+<div class="section" id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Servers which implement the Authorization API should follow the specifications provided below in order to be compliant with OpenRosa standards.</p>
+<ul class="simple">
+<li>All HTTP interactions MUST be HTTP 1.1</li>
+<li>Servers MUST conform to RFC2617 for returning one or more authentication schemes in their <code class="docutils literal"><span class="pre">401</span></code> challenge. These define the authentication interactions that the server is willing to accept from the client (for example: Basic, Digest)</li>
+<li>Any server interactions MAY be unauthenticated.</li>
+<li>Non-device (for example, browser) interactions for which the server requires authentication are NOT required to support Basic or the OpenRosa Restricted Digest authentication scheme. That is, they are allowed to only support Form-based or some other authentication scheme.</li>
+<li>Device-and-server interactions for which the server requires authentication MUST implement either Basic authentication or the OpenRosa Restricted Digest authentication scheme as detailed below. The server or device MAY additionally implement other authentication schemes.</li>
+<li>The device MUST make every effort to proactively supply an <code class="docutils literal"><span class="pre">Authentication</span></code> header line if the requested URI falls within the list of domain URIs covered by a previous authentication interaction. This is to minimize the number of authentication challenges.</li>
+</ul>
+</div>
+<div class="section" id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Clients MUST NOT include authentication credentials in the URL to the server. That is, this syntax is strictly forbidden:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>http://username:password@myhost.org/mypage
+</pre></div>
+</div>
+<div class="section" id="basic-authentication">
+<h3>Basic Authentication<a class="headerlink" href="#basic-authentication" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Basic Authentication MUST NOT be performed over a non-secure (HTTP) connection.</p>
+<p>Once the client is aware that basic authentication is required, it SHOULD proactively supply the basic authentication credentials on every secure request to the server, rather than wait for the server to reject the request with a <code class="docutils literal"><span class="pre">401</span></code> response.</p>
+</div>
+<div class="section" id="openrosa-restricted-digest-authentication">
+<span id="openrosa-restrcted-digest-authentication"></span><h3>OpenRosa Restricted Digest Authentication<a class="headerlink" href="#openrosa-restricted-digest-authentication" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>This is the <a class="reference external" href="https://tools.ietf.org/html/rfc2617#section-3">Digest Access Authentication Scheme (RFC 2617 Section 3)</a> with the following restrictions:</p>
+<ul class="simple">
+<li>algorithm — server MUST omit or specify 「MD5」</li>
+<li>domain — server MUST specify to help device with proactive inclusion of Authenticate: header records.</li>
+<li>qop — device MUST support: omitted and 「auth」; server MAY request any of these.</li>
+<li>opaque — device MUST return if supplied; server MAY supply this or omit it</li>
+<li>stale — device MUST make every effort to not prompt the user for username and password if this is TRUE but instead recompute the key with previously cached values for the username and password.</li>
+<li>cnonce — device SHOULD use a string representation of at least a 48-bit random value (a random UUID has 126-bit randomness) for the cnonce.</li>
+</ul>
+<div class="section" id="digest-authentication-security-considerations">
+<h4>Digest Authentication Security Considerations<a class="headerlink" href="#digest-authentication-security-considerations" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Digest Authentication is based upon the MD5 hash algorithm which is now considered too weak for mainstream cryptographic uses. Digest Authentication remains viable only when the cnonce and nonce values are random and reasonably long. The use of longer random strings (e.g., random UUIDs have 126 bits of randomness) is critical for the continued use of this authentication mechanism.</p>
+</div>
+<div class="section" id="digest-authentication-calculations">
+<h4>Digest Authentication Calculations<a class="headerlink" href="#digest-authentication-calculations" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>RFC2069</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>HA1 = MD5(A1) = MD5(username:realm:password)
+
+HA2 = MD5(A2) = MD5(method:digestURI)
+
+response = MD5(HA1:nonce:HA2)
+</pre></div>
+</div>
+<p>RFC 2617 (HTTP Authentication: Basic and Digest Access Authentication)</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>HA1 = MD5(A1) = MD5(username:realm:password)
+
+if qop directive&#39;s value is &quot;auth&quot; or unspecified, then HA2 is:
+
+  HA2 = MD5(A2) = MD5(method:digestURI)
+
+if qop directive&#39;s value is &quot;auth-int&quot; then HA2 is:
+
+  HA2 = MD5(A2) = MD5(method:digestURI:MD5(entityBody))
+
+if qop directive&#39;s value is &quot;auth&quot; or &quot;auth-int&quot; then compute the response:
+
+  response = MD5(HA1:nonce:nonceCount:clientNonce:qop:HA2)
+
+if qop directive is unspecified
+
+  response = MD5(HA1:nonce:HA2)
+</pre></div>
+</div>
+<p>(the above shows that when qop is not specified, the simpler RFC2069 standard is followed)</p>
+</div>
+<div class="section" id="digest-authentication-example-interaction">
+<h4>Digest Authentication Example Interaction<a class="headerlink" href="#digest-authentication-example-interaction" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="section" id="no-authentication">
+<h5>No authentication<a class="headerlink" href="#no-authentication" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<p>Request:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/dir/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span> <span class="m">401</span> <span class="ne">Unauthorized</span>
+<span class="na">Server</span><span class="o">:</span> <span class="l">HTTPd/0.9</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Sun, 10 Apr 2005 20:26:47 GMT</span>
+<span class="na">WWW-Authenticate</span><span class="o">:</span> <span class="l">Digest realm=&quot;testrealm@host.com&quot;,</span>
+                       <span class="l">qop=&quot;auth,auth-int&quot;,</span>
+                       <span class="l">nonce=&quot;dcd98b7102dd2f0e8b11d0f600bfb0c093&quot;,</span>
+                       <span class="l">opaque=&quot;5ccc069c403ebaf9f0171e9517f40e41&quot;</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/html</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">311</span>
+
+<span class="cp">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span>
+<span class="cp">&quot;http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd&quot;&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">HTML</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">TITLE</span><span class="p">&gt;</span>Error<span class="p">&lt;/</span><span class="nt">TITLE</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">META</span> <span class="na">HTTP-EQUIV</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">CONTENT</span><span class="o">=</span><span class="s">&quot;text/html; charset=ISO-8859-1&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">BODY</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">H1</span><span class="p">&gt;</span>401 Unauthorized.<span class="p">&lt;/</span><span class="nt">H1</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">BODY</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">HTML</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="request-with-username-and-password">
+<h5>Request with username and password<a class="headerlink" href="#request-with-username-and-password" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<p>Request
+(username 「Mufasa」, password 「Circle Of Life」)</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/dir/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">localhost</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Digest username=&quot;Mufasa&quot;,</span>
+                      <span class="l">realm=&quot;testrealm@host.com&quot;,</span>
+                      <span class="l">nonce=&quot;dcd98b7102dd2f0e8b11d0f600bfb0c093&quot;,</span>
+                      <span class="l">uri=&quot;/dir/index.html&quot;,</span>
+                      <span class="l">qop=auth,</span>
+                      <span class="l">nc=00000001,</span>
+                      <span class="l">cnonce=&quot;0a4f113b&quot;,</span>
+                      <span class="l">response=&quot;6629fae49393a05397450978507c4ef1&quot;,</span>
+                      <span class="l">opaque=&quot;5ccc069c403ebaf9f0171e9517f40e41&quot;</span>
+</pre></div>
+</div>
+<p>Response</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Server</span><span class="o">:</span> <span class="l">HTTPd/0.9</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Sun, 10 Apr 2005 20:27:03 GMT</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/html</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">7984</span>
+</pre></div>
+</div>
+<p>Example calculation of response using MD5</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>HA1 = MD5( &quot;Mufasa:testrealm@host.com:Circle Of Life&quot; )
+    = 939e7578ed9e3c518a452acee763bce9
+
+HA2 = MD5( &quot;GET:/dir/index.html&quot; )
+    = 39aff3a2bab6126f332b942af96d3366
+
+Response = MD5( &quot;939e7578ed9e3c518a452acee763bce9:\
+                 dcd98b7102dd2f0e8b11d0f600bfb0c093:\
+                 00000001:0a4f113b:auth:\
+                 39aff3a2bab6126f332b942af96d3366&quot; )
+         = 6629fae49393a05397450978507c4ef1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="openrosa-form-submission.html" class="btn btn-neutral float-right" title="Form Submission API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openrosa-http.html" class="btn btn-neutral" title="HTTP Requests and Responses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

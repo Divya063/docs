@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Aggregate Limitations &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Tips and Best Practices" href="aggregate-best-practices.html"/>
+        <link rel="next" title="Reducing Data Corruption and Boosting Performance on App Engine" href="aggregate-boost-performance.html"/>
+        <link rel="prev" title="Form Uploader" href="form-uploader.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="form-uploader.html">Form Uploader</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Aggregate Limitations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pushing-data-to-aggregate-on-google-app-engine">Pushing Data to Aggregate on Google App Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simultaneous-push-requests-will-block-each-other-and-may-time-out">Simultaneous push requests will block each other and may time out</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#time-limit-may-be-exceeded-on-low-bandwitch-connections">Time limit may be exceeded on low-bandwitch connections</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#media-held-in-memory">Media held in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uploading-blank-forms-with-media-exceeding-10mb">Uploading blank forms with media exceeding 10MB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#issues-with-older-version-of-aggregate">Issues with older version of Aggregate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-1-4-8-used-deprecated-technology">Aggregate &lt; 1.4.8 used deprecated technology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-1-4-15-changed-sync-protocol">Aggregate 1.4.15 changed sync protocol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basic-auth-broken-prior-to-aggregate-1-4-14">Basic Auth broken prior to Aggregate 1.4.14</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-boost-performance.html">Reducing Data Corruption and Boosting Performance on App Engine</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-best-practices.html">Tips and Best Practices</a> &raquo;</li>
+        
+      <li>Aggregate Limitations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-limitations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aggregate-limitations">
+<h1>Aggregate Limitations<a class="headerlink" href="#aggregate-limitations" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This is a listing of known limitations and potential 「gotchas」 users of Aggregate may encounter.</p>
+<div class="section" id="pushing-data-to-aggregate-on-google-app-engine">
+<h2>Pushing Data to Aggregate on Google App Engine<a class="headerlink" href="#pushing-data-to-aggregate-on-google-app-engine" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If Aggregate is <a class="reference internal" href="aggregate-app-engine.html"><span class="doc">installed on Google App Engine</span></a>, using the default datastore as described in our documentation, a combination of request time limits and datastore implementation create the following issues.</p>
+<div class="section" id="simultaneous-push-requests-will-block-each-other-and-may-time-out">
+<h3>Simultaneous push requests will block each other and may time out<a class="headerlink" href="#simultaneous-push-requests-will-block-each-other-and-may-time-out" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Within ODK Aggregate, there is a global mutex (<em>TaskLock</em> across all server instances, mediated by the datastore layer) in the server when inserting submissions. Having multiple push requests occurring simultaneously will cause them to block on the mutex, chewing up their 60-second request limit, as they get processed in single file no matter how many server instances are spun up.</p>
+<p>The solution to this is: <strong>Serialize your push requests.</strong></p>
+</div>
+<div class="section" id="time-limit-may-be-exceeded-on-low-bandwitch-connections">
+<h3>Time limit may be exceeded on low-bandwitch connections<a class="headerlink" href="#time-limit-may-be-exceeded-on-low-bandwitch-connections" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The 60-second request limit can be very commonly exceeded over low-bandwidth connections, and even text-only submissions can be impacted on satellite connections. That is why ODK Collect splits submissions into multiple 10MB submission requests. The timer starts upon receipt of the first byte, so a slow connection can account for a sizeable portion of those 60 seconds. The same applies for sending a response. The processing on the server is generally negligible in relation to the transmission times.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>The above two limitations, the global mutex and the in-memory copies/full-packet-assembly, are a result of implementing on top of AppEngine and its Datastore.</li>
+<li>A server that used database transactions and that used streaming servlet 3.0 functionality would have less trouble with concurrent requests.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="media-held-in-memory">
+<h2>Media held in memory<a class="headerlink" href="#media-held-in-memory" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>When a form submission is uploaded, and when blank forms are downloaded, all the associated media files are held in memory at the same time, twice. For forms with a lot of media files, this can consume a lot of memory.</p>
+<p>The previous section already suggested serializing form submission uploads. This is not absolutely critical for form downlaods, but you should probably manage how many form download requests are being handled concurrently, in order to avoid memory problems.</p>
+</div>
+<div class="section" id="uploading-blank-forms-with-media-exceeding-10mb">
+<h2>Uploading blank forms with media exceeding 10MB<a class="headerlink" href="#uploading-blank-forms-with-media-exceeding-10mb" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Adding blank forms through the ODK Aggregate website is limited to an overall form&amp;plus;media size of 10MB. Beyond that, you have to perform multiple uploads of the form definition file with different subsets of the media files in order to fully upload the blank form and its media attachments.</p>
+<p>An easier solution is use:doc:<cite>Form Uploader &lt;form-uploader&gt;</cite>.</p>
+</div>
+<div class="section" id="issues-with-older-version-of-aggregate">
+<h2>Issues with older version of Aggregate<a class="headerlink" href="#issues-with-older-version-of-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="aggregate-1-4-8-used-deprecated-technology">
+<h3>Aggregate &lt; 1.4.8 used deprecated technology<a class="headerlink" href="#aggregate-1-4-8-used-deprecated-technology" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Aggregate 1.4.7 and earlier use a deprecated backend technology. Google may terminate support for that at any time with little warning. You should consider upgrading.</p>
+</div>
+<div class="section" id="aggregate-1-4-15-changed-sync-protocol">
+<h3>Aggregate 1.4.15 changed sync protocol<a class="headerlink" href="#aggregate-1-4-15-changed-sync-protocol" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Aggregate 1.4.15 fixed the ODK 2.0 rev 210 sync protocol. Prior to this, user permissions were incorrectly being computed and filtered. This prevented resetting the server with new content from the device (but syncing with existing content worked fine). The rev 210 sync protocol is incompatible with anything prior to rev 210.</p>
+</div>
+<div class="section" id="basic-auth-broken-prior-to-aggregate-1-4-14">
+<h3>Basic Auth broken prior to Aggregate 1.4.14<a class="headerlink" href="#basic-auth-broken-prior-to-aggregate-1-4-14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="openrosa.html"><span class="doc">OpenRosa</span></a> servers are <a class="reference internal" href="openrosa-authentication.html"><span class="doc">required to implement at least one authentication protocol</span></a> as outlined in <a class="reference external" href="thecapabilityofBasicAuth">RFC2617</a>.</p>
+<ul class="simple">
+<li>a subset of <a class="reference external" href="https://tools.ietf.org/html/rfc2617#section-3">RFC2617 Digest Authentication</a></li>
+<li><a class="reference external" href="https://tools.ietf.org/html/rfc2617#section-2">Basic Authentication</a>.</li>
+</ul>
+<p>Aggregate v1.4.14 added an SHA-1 library so that Basic Auth is possible. Prior to this, Basic Auth was not possible.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Basic Auth is not exposed in the setup wizard. Additionally, it requires that default passwords be changed.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-boost-performance.html" class="btn btn-neutral float-right" title="Reducing Data Corruption and Boosting Performance on App Engine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="form-uploader.html" class="btn btn-neutral" title="Form Uploader" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

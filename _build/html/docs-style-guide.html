@@ -1,0 +1,854 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Style Guide &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Contributing to ODK Docs" href="contributing.html"/>
+        <link rel="next" title="Docs Developer Guide" href="docs-developer-guide.html"/>
+        <link rel="prev" title="Docs Markup and Syntax Guide" href="docs-syntax-guide.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="docs-tech-guide.html">Docs Technical Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-syntax-guide.html">Docs Markup and Syntax Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Style Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#spelling-and-grammar">Spelling and grammar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#american-spelling-and-grammar">American spelling and grammar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quote-marks">Quote marks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serial-comma">Serial comma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#direct-address">Direct Address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ordered-and-unordered-lists">Ordered and unordered lists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#avoid-latin">Avoid Latin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#avoid-unneeded-words">Avoid unneeded words</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#semicolons">Semicolons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pronouns">Pronouns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#titles">Titles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verb-forms">Verb forms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-code-and-writing-about-code">Writing code and writing about code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#indenting">Indenting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#meaningful-names">Meaningful names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xml-and-html">XML and HTML</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#odk-jargon">ODK jargon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#odk-and-odk-docs">ODK and ODK Docs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#odk-app-and-project-names">ODK app and project names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xforms-and-xlsform">XForms and XLSForm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs-developer-guide.html">Docs Developer Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing-tips.html">Tips for Making Good Contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cygwin.html">Working with Docs in Windows using Cygwin</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="contributing.html">Contributing to ODK Docs</a> &raquo;</li>
+        
+      <li>Style Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/docs-style-guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="style-guide">
+<h1>Style Guide<a class="headerlink" href="#style-guide" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="spelling-and-grammar">
+<span id="id1"></span><h2>Spelling and grammar<a class="headerlink" href="#spelling-and-grammar" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="american-spelling-and-grammar">
+<span id="american-spelling"></span><h3>American spelling and grammar<a class="headerlink" href="#american-spelling-and-grammar" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Whenever U.S. English and British (or other) English spelling or usage disagree, standard U.S. spelling and usage is preferred.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>The colour of the button is grey.
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>The color of the button is gray.
+</pre></div>
+</div>
+</div>
+<div class="section" id="quote-marks">
+<span id="id2"></span><h3>Quote marks<a class="headerlink" href="#quote-marks" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Quote marks should generally be avoided if possible.</li>
+<li><em>Smart</em> quotes (also known as <em>curly quotes</em> or <em>directional quotes</em>) are not permitted in source files.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="avoid-quote-marks">
+<span id="avoid-quotes"></span><h4>Avoid quote marks<a class="headerlink" href="#avoid-quote-marks" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Quote marks are used in prose writing to indicate verbatim text. This is rarely useful in technical writing, as verbatim text usually requires a more specific semantic markup.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Click the button that says, &quot;Save.&quot;
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Click <span class="na">:guilabel:</span><span class="nv">`Save`</span>.
+</pre></div>
+</div>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You may see an error message that says, &quot;Something went wrong.&quot;
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You may get an error: <span class="s">``Something went wrong.``</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="straight-quotes">
+<span id="straight-quote"></span><h4>Straight quotes<a class="headerlink" href="#straight-quotes" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Any time that you <em>do</em> need to use quotation marks, use straight (or <em>plain</em>) quotes. Sphinx and Docutils will output the typographically correct quote style.</p>
+</div>
+</div>
+<div class="section" id="serial-comma">
+<span id="id3"></span><h3>Serial comma<a class="headerlink" href="#serial-comma" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>In a comma-delineated list of items, the penultimate item should be followed by a comma.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Apples, oranges and pears.
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Apples, oranges, and pears.
+</pre></div>
+</div>
+<p>A bulleted list is often more clear than an inline list.</p>
+<p class="rubric">Correct</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You will need to be familiar with git, GitHub, and Python.
+</pre></div>
+</div>
+<p class="rubric">Possibly Better</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You will need to be familiar with:
+
+<span class="m">-</span> git
+<span class="m">-</span> GitHub
+<span class="m">-</span> Python
+</pre></div>
+</div>
+<p>There’s no hard rule about which to use in any situation. Use your judgement: try it both ways and see which is more clear.</p>
+</div>
+<div class="section" id="direct-address">
+<span id="id4"></span><h3>Direct Address<a class="headerlink" href="#direct-address" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Direct address
+— speaking directly to the reader using the second person 「you」 —
+is prefered over
+passive voice (「it can be done」),
+first-person plural (「we can do it」),
+or other constructions.</p>
+<p>First person plural (「we」) should only be used
+when speaking of the ODK project team
+(「We recommend…」).</p>
+</div>
+<div class="section" id="ordered-and-unordered-lists">
+<span id="ordered-vs-unordered"></span><h3>Ordered and unordered lists<a class="headerlink" href="#ordered-and-unordered-lists" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>An ordered list is numbered. It should be used when the order of the list is essential. For example, when enumerating a series of steps in a procedure.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="m">-</span> First we do this.
+<span class="m">-</span> And then we do this.
+<span class="m">-</span> And then we do this.
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="m">1.</span> Do this.
+<span class="m">2.</span> Do this.
+<span class="m">3.</span> Do this.
+</pre></div>
+</div>
+<p>An unordered list is bulleted. It should be used for a collection of items in which order is not essential.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="m">1.</span> apples
+<span class="m">2.</span> oranges
+<span class="m">3.</span> bananas
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="m">-</span> apples
+<span class="m">-</span> oranges
+<span class="m">-</span> bananas
+</pre></div>
+</div>
+</div>
+<div class="section" id="avoid-latin">
+<span id="id5"></span><h3>Avoid Latin<a class="headerlink" href="#avoid-latin" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Several Latin abbreviations are common in written English:</p>
+<p>At best, these present a minor barrier to understanding. This is often made worse by unintentional misuse.</p>
+<p>Avoid Latin abbreviations.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>If you are writing about a specific process (e.g., installing an application)...
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>If you are writing about a specific process (for example, installing an application)...
+</pre></div>
+</div>
+<div class="section" id="etc">
+<span id="id6"></span><h4>Etc.<a class="headerlink" href="#etc" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><em>Et cetera</em> (or <em>etc.</em>) deserves a special mention.</p>
+<p><em>Et cetera</em> means 「and all the rest,」 and is often used to indicate that there is more that could or should be said, but which is being omitted.</p>
+<p>Writers often use <em>etc.</em> to gloss over details of the subject which they are not fully aware of. If you find yourself tempted use <em>etc.</em>, ask yourself if you really understand the thing you are writing about.</p>
+</div>
+</div>
+<div class="section" id="avoid-unneeded-words">
+<span id="id7"></span><h3>Avoid unneeded words<a class="headerlink" href="#avoid-unneeded-words" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="adverbs">
+<span id="id8"></span><h4>Adverbs<a class="headerlink" href="#adverbs" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Adverbs often contribute nothing. Common offenders include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>simply</li>
+<li>easily</li>
+<li>just</li>
+<li>very</li>
+<li>really</li>
+<li>basically</li>
+</ul>
+</div></blockquote>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>To open the file, simply click the button.
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>To open the file, click the button.
+</pre></div>
+</div>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>You can easily edit the form by...
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>To edit the form...
+</pre></div>
+</div>
+</div>
+<div class="section" id="filler-words-and-phrases">
+<span id="filler-phrases"></span><h4>Filler words and phrases<a class="headerlink" href="#filler-words-and-phrases" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Many words and phrases provide no direct meaning. They are often inserted to make a sentence seem more formal, or to simulate a perceived style of business communication. These should be removed.</p>
+<p>Common filler phrases and words include:</p>
+<ul class="simple">
+<li>to the extent that</li>
+<li>for all intents and purposes</li>
+<li>when all is said and done</li>
+<li>from the perspective of</li>
+<li>point in time</li>
+</ul>
+<p>This list is not exhaustive. These 「canned phrases」 are pervasive in technical writing. Remove them whenever they occur.</p>
+</div>
+</div>
+<div class="section" id="semicolons">
+<span id="id9"></span><h3>Semicolons<a class="headerlink" href="#semicolons" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Semicolons are used to separate two independent clauses which could stand as individual sentences but which the writer feels would benefit by close proximity.</p>
+<p>Semicolons can almost always be replaced with periods (full stops). This rarely diminishes correctness and often improves readability.</p>
+<p class="rubric">Correct</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>These &quot;canned phrases&quot; are pervasive in technical writing; remove them whenever they occur.
+</pre></div>
+</div>
+<p class="rubric">Better</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>These &quot;canned phrases&quot; are pervasive in technical writing. Remove them whenever they occur.
+</pre></div>
+</div>
+</div>
+<div class="section" id="pronouns">
+<span id="id10"></span><h3>Pronouns<a class="headerlink" href="#pronouns" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="third-person-personal-pronouns">
+<span id="third-person-pronouns"></span><h4>Third-person personal pronouns<a class="headerlink" href="#third-person-personal-pronouns" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Third-person personal pronouns are:</p>
+<ul class="simple">
+<li>he/him/his</li>
+<li>she/her/her(s)</li>
+<li>they/them/their(s)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">While some people consider <em>they/them/their</em> to be non-standard (or 「incorrect」) as third-person singular, it has gained wide use as a gender-neutral or gender-ambiguous alternative to <em>he</em> or <em>she</em>.</p>
+</div>
+<p>There are two issues with personal pronouns:</p>
+<ul class="simple">
+<li>gender bias</li>
+<li>clarity</li>
+</ul>
+<p>To avoid gender bias, the third person gender-neutral <em>they/then/their(s)</em> is preferred over <em>he</em> or <em>she</em> pronouns when writing about abstract individuals.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>The enumerator uses his device.
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>The enumerator uses their device.
+</pre></div>
+</div>
+<p>Unfortunately, <em>they/them/their</em> is not a perfect solution. Since it is conventionally used as a plural pronoun, it can cause confusion.</p>
+<p>Therefore, avoid the use of personal pronouns whenever possible. They are often out of place in technical writing anyway. Rewriting passages to avoid personal pronouns often makes the writing more clear.</p>
+<p class="rubric">Correct</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>When using Collect, first the enumerator opens the app on their device. Then they complete the survey.
+</pre></div>
+</div>
+<p class="rubric">Better</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>To use Collect:
+
+<span class="m">-</span> open the app
+<span class="m">-</span> complete the survey
+</pre></div>
+</div>
+</div>
+<div class="section" id="same">
+<span id="id11"></span><h4>「Same」<a class="headerlink" href="#same" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><em>Same</em>, when used as an impersonal pronoun, is non-standard in Modern American English. It should be avoided.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>ODK Collect is an Android app. The same can be used for...
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>ODK Collect is an Android app. It can be used for...
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>ODK Collect is an Android app that is used to...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="titles">
+<span id="titles-style-guide"></span><h3>Titles<a class="headerlink" href="#titles" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="title-case-and-sentence-case">
+<span id="title-casing"></span><h4>Title case and sentence case<a class="headerlink" href="#title-case-and-sentence-case" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Document titles should be in <code class="docutils literal"><span class="pre">Title</span> <span class="pre">Case</span></code> – that is, all meaningful words are to be capitalized.</p>
+<p>Section titles should use <code class="docutils literal"><span class="pre">Sentence</span> <span class="pre">case</span></code> – that is, only the first word should be capitalized, along with any proper nouns or other words usually capitalized in a sentence.</p>
+</div>
+</div>
+<div class="section" id="verb-forms">
+<span id="title-verb-forms"></span><h3>Verb forms<a class="headerlink" href="#verb-forms" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If a document or section describes a procedure that someone might do, use a verb ending in <em>-ing</em>. (That is, a <a class="reference external" href="https://en.wikipedia.org/wiki/Gerund">gerund</a>.) Do not use the 「How to…」 construction.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">How to install ODK Collect</span>
+<span class="gh">--------------------------</span>
+</pre></div>
+</div>
+<p class="rubric">Right</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">Installing ODK Collect</span>
+<span class="gh">----------------------</span>
+</pre></div>
+</div>
+<p>If section title is a directive to do something (for example, as a step in a procedure), use an imperative.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">Installing ODK Aggregate</span>
+<span class="gh">------------------------</span>
+
+<span class="gh">Download ODK Aggregate</span>
+<span class="gh">~~~~~~~~~~~~~~~~~~~~~~</span>
+
+Section content here.
+</pre></div>
+</div>
+<div class="section" id="section-labels">
+<span id="section-label-style-guide"></span><h4>Section labels<a class="headerlink" href="#section-labels" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Section titles should almost always be preceded by labels.</p>
+<p>The only exception is very short subsections that repeat — like the <strong>Right</strong> and <strong>Wrong</strong> titles in this document or the <strong>XLSForm Rows</strong> and <strong>XForm XML</strong> sections in the <a class="reference internal" href="form-widgets.html"><span class="doc">Form Widgets</span></a> document.</p>
+<p>In these cases, you may want to use the <code class="xref rst rst-dir docutils literal"><span class="pre">rubric</span></code> directive.</p>
+</div>
+<div class="section" id="other-titling-considerations">
+<span id="other-title-considerations"></span><h4>Other titling considerations<a class="headerlink" href="#other-titling-considerations" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li>Do not put step numbers in section titles.</li>
+<li>Readers skim. Section titles should be clear and provide information.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="writing-code-and-writing-about-code">
+<span id="writing-about-code"></span><h2>Writing code and writing about code<a class="headerlink" href="#writing-code-and-writing-about-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ODK Documentation includes code samples in a number of languages. Make sure to follow generally accepted coding style for each language.</p>
+<div class="section" id="indenting">
+<span id="id12"></span><h3>Indenting<a class="headerlink" href="#indenting" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>In code samples:</p>
+<ul class="simple">
+<li>Use spaces, not tabs.</li>
+<li>Two spaces for logical indents in most languages.<ul>
+<li>Python samples must use <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#indentation">four spaces per indent level</a>.</li>
+</ul>
+</li>
+<li>Strive for clarity. Sometimes nonstandard indentation, especially when combined with non-syntactic line breaks, makes things easier to read.<ul>
+<li>Make sure that line breaks and indentation stay within the valid syntax of the language.</li>
+</ul>
+</li>
+</ul>
+<p>Using two spaces keeps code sample lines shorter, which makes them easier to view.</p>
+<p class="rubric">Example of indenting for clarity</p>
+<div class="highlight-HTTP"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span> <span class="m">401</span> <span class="ne">Unauthorized</span>
+<span class="na">Server</span><span class="o">:</span> <span class="l">HTTPd/0.9</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Sun, 10 Apr 2005 20:26:47 GMT</span>
+<span class="na">WWW-Authenticate</span><span class="o">:</span> <span class="l">Digest realm=&quot;testrealm@host.com&quot;,</span>
+                         <span class="l">qop=&quot;auth,auth-int&quot;,</span>
+                         <span class="l">nonce=&quot;dcd98b7102dd2f0e8b11d0f600bfb0c093&quot;,</span>
+                         <span class="l">opaque=&quot;5ccc069c403ebaf9f0171e9517f40e41&quot;</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/html</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">311</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="meaningful-names">
+<span id="id13"></span><h3>Meaningful names<a class="headerlink" href="#meaningful-names" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>When writing sample code, avoid meaningless names.</p>
+<p class="rubric">Wrong</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">foo</span><span class="p">):</span>
+
+  <span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">foo</span><span class="p">:</span>
+     <span class="n">bar</span><span class="p">[</span><span class="n">foo</span><span class="p">]</span> <span class="o">=</span> <span class="n">foo</span><span class="p">[</span><span class="n">spam</span><span class="p">]</span> <span class="o">+</span> <span class="n">spam</span><span class="p">[</span><span class="n">foo</span><span class="p">]</span>
+
+  <span class="k">return</span> <span class="n">foobar</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="xml-and-html">
+<span id="xml-html-style-guide"></span><h3>XML and HTML<a class="headerlink" href="#xml-and-html" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Some of the terms often used to describe XML and HTML code structures are imprecise or confusing. For clarity, we restrict certain terms and uses.</p>
+<p>Likewise, coding practices and styles for XML and HTML vary widely. For the sake of clarity and consistency, samples should follow the guidelines set forth here.</p>
+<div class="section" id="element">
+<span id="xml-element"></span><h4>Element<a class="headerlink" href="#element" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>The following piece of code represents an <strong>element</strong>:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;element&gt;</span>
+  Some content.
+<span class="nt">&lt;/element&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>An element is <strong>not</strong> a <em>block</em> or a <em>tag</em>.</p>
+<ul class="last simple">
+<li><em>Tag</em> is defined below.</li>
+<li><em>Block</em> has a specific meaning in HTML and XML templates, and should generally be avoided outside those contexts.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="tag">
+<span id="xml-tag"></span><h4>Tag<a class="headerlink" href="#tag" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>A <strong>tag</strong> is the token that begins or ends an element.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;element&gt;</span>  <span class="c">&lt;!-- The opening tag of this element. --&gt;</span>
+  Some content.
+<span class="nt">&lt;/element&gt;</span> <span class="c">&lt;!-- The closing tag. --&gt;</span>
+</pre></div>
+</div>
+<p>The word <em>tag</em> has often been used to refer to the entire element. For clarity, we will avoid that here.</p>
+</div>
+<div class="section" id="node">
+<span id="xml-node"></span><h4>Node<a class="headerlink" href="#node" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>The word <em>node</em> is often used interchangeably with <em>element</em>.</p>
+<p>For clarity, we make the following distinction:</p>
+<ul class="simple">
+<li>An HTML or XML document has <em>elements</em>, not <em>nodes</em>.</li>
+<li>A <em>node</em> is part of a 「live」 DOM tree or other dynamic representation.<ul>
+<li>An XML or HTML element becomes an <em>element node</em> in a DOM tree.</li>
+<li>There are also other types of nodes in a DOM tree.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="attributes-and-values">
+<span id="xml-attributes-values"></span><h4>Attributes and values<a class="headerlink" href="#attributes-and-values" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>An element may have attributes. Attributes have values. Values are wrapped in straight double-quotes.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;element</span> <span class="na">attribute=</span><span class="s">&quot;value&quot;</span><span class="nt">&gt;</span>
+  Content.
+<span class="nt">&lt;/element&gt;</span>
+</pre></div>
+</div>
+<p>Other names for attributes, such as <em>variables</em> or <em>properties</em>, should be avoided.</p>
+</div>
+<div class="section" id="element-content">
+<span id="xml-element-content"></span><h4>Element content<a class="headerlink" href="#element-content" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>The code between the opening and closing tags of an element is the content. Content can include other elements, which are called <em>child elements</em>.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;element&gt;</span>
+  Content.
+  <span class="nt">&lt;child-element&gt;</span>
+    More content.
+  <span class="nt">&lt;/child-element&gt;</span>
+<span class="nt">&lt;/element&gt;</span>
+</pre></div>
+</div>
+<p>When an element is empty, it can be called a <em>null element</em>.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;null-element</span> <span class="na">attribute=</span><span class="s">&quot;value&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>In XML, null element tags always self-close. This is not the case in HTML.</p>
+<ul class="simple">
+<li>HTML elements that are always null (for example, <cite>&lt;img&gt;</cite>) do not need to be self-closed.</li>
+<li>Empty HTML elements that normally accept content have a separate closing tag.</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;awesome-picture.jpeg&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;some-javascript.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="capitalization">
+<span id="xml-capitalization"></span><h4>Capitalization<a class="headerlink" href="#capitalization" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>For all HTML samples, tag names and attribute names should be <code class="docutils literal"><span class="pre">all</span> <span class="pre">lowercase</span></code>.</p>
+<p>Newly-written XML examples should also be <code class="docutils literal"><span class="pre">all</span> <span class="pre">lowercase</span></code>.</p>
+<p>XML examples that show actual code generated by tools in the ODK ecosystem should replicate that code exactly, regardless of its capitalization practice.</p>
+</div>
+</div>
+</div>
+<div class="section" id="odk-jargon">
+<span id="id14"></span><h2>ODK jargon<a class="headerlink" href="#odk-jargon" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="odk-and-odk-docs">
+<span id="writing-about-odk"></span><h3>ODK and ODK Docs<a class="headerlink" href="#odk-and-odk-docs" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p class="rubric">Wrong</p>
+<ul class="simple">
+<li>Odk</li>
+<li>odk</li>
+<li>Open data kit</li>
+<li>OpenDataKit</li>
+<li>the Open Data Kit</li>
+<li>ODK docs</li>
+<li>ODK documentation</li>
+</ul>
+<p class="rubric">Right</p>
+<ul class="simple">
+<li>ODK</li>
+<li>Open Data Kit</li>
+<li>ODK Docs</li>
+<li>ODK Documentation</li>
+</ul>
+<p class="rubric">Probably want to avoid…</p>
+<ul class="simple">
+<li>Open Data Kit Documentation</li>
+</ul>
+</div>
+<div class="section" id="odk-app-and-project-names">
+<span id="odk-app-project-names"></span><h3>ODK app and project names<a class="headerlink" href="#odk-app-and-project-names" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ODK includes a number of components, including:</p>
+<ul class="simple">
+<li>Collect</li>
+<li>Aggregate</li>
+<li>Briefcase</li>
+</ul>
+<p>These should always be capitalized.</p>
+<p>The <strong>ODK</strong> prefix (as in, <em>ODK Collect</em>) should be used the first time a document mentions the app or project, or any other time it would be unclear.</p>
+<p>A few projects should <em>always</em> use the <strong>ODK</strong> prefix:</p>
+<ul class="simple">
+<li>ODK XForm</li>
+<li>ODK Javarosa</li>
+<li>ODK Docs</li>
+</ul>
+</div>
+<div class="section" id="xforms-and-xlsform">
+<span id="xform-xlsform"></span><h3>XForms and XLSForm<a class="headerlink" href="#xforms-and-xlsform" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><em>XForms</em> refers to XML-encoded forms.</li>
+<li><em>XLSForm</em> refers to a spreadsheet format used to define forms.</li>
+</ul>
+<p class="rubric">Wrong</p>
+<ul class="simple">
+<li>Xforms</li>
+<li>X-Forms</li>
+<li>xforms</li>
+<li>XFORMS</li>
+<li>XForm (no <em>s</em>, when referring to the specification)</li>
+<li>xlsform</li>
+<li>XLSform</li>
+<li>Xlsform</li>
+</ul>
+<p class="rubric">Right</p>
+<ul class="simple">
+<li>XForms</li>
+<li>an Xform (when referring to a single form)</li>
+<li>XLSForm</li>
+</ul>
+<div class="section" id="xforms-spec-xforms-tools-xforms">
+<span id="writing-about-xform"></span><h4>XForms Spec, XForms Tools, XForms<a class="headerlink" href="#xforms-spec-xforms-tools-xforms" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><em>XForms</em> can refer to:</p>
+<ul class="simple">
+<li>The <a class="reference external" href="https://en.wikipedia.org/wiki/XForms">XML-based form format</a></li>
+<li>The <a class="reference external" href="https://www.w3.org/TR/2009/REC-xforms-20091020/">official XForms specification from the W3C</a></li>
+<li>The <a class="reference external" href="https://opendatakit.github.io/xforms-spec/">ODK XForms Specification</a>, which is a subset of the full W3C recommendation.</li>
+<li>The general idea of an XML-based form.</li>
+</ul>
+<p><em>XForm</em> (without an <em>s</em>) refers to:</p>
+<ul class="simple">
+<li>A specific XML document that encodes a form.</li>
+</ul>
+<p>When writing about any of these things, make sure you are clear — in your mind as well as in your writing — which one you are talking about.</p>
+</div>
+<div class="section" id="xlsform">
+<span id="writing-about-xlsform"></span><h4>XLSForm<a class="headerlink" href="#xlsform" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><em>XLSForm</em> can refer to:</p>
+<ul class="simple">
+<li>The <a class="reference external" href="http://xlsform.org/">XLSForm format for describing form in an Excel spreadsheet</a></li>
+<li>A spreadsheet file that describes a form using the format.</li>
+<li>An <a class="reference external" href="http://opendatakit.org/use/xlsform/">online tool</a> and an <a class="reference external" href="https://gumroad.com/l/xlsform-offline">offline tool</a> for converting <code class="file docutils literal"><span class="pre">*.xls(x)</span></code> files to XForm documents.</li>
+</ul>
+<p>When writing about any of these things, make sure you are clear — in your mind as well as in your writing — which one you are talking about.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docs-developer-guide.html" class="btn btn-neutral float-right" title="Docs Developer Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="docs-syntax-guide.html" class="btn btn-neutral" title="Docs Markup and Syntax Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

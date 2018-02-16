@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Android Debug Bridge with Collect &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Tips and Best Practices" href="collect-best-practices.html"/>
+        <link rel="next" title="Creating Shortcuts to Collect Forms" href="collect-shortcut.html"/>
+        <link rel="prev" title="Tips and Best Practices" href="collect-best-practices.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Android Debug Bridge with Collect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-adb">Installing adb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-blank-forms">Loading blank forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-forms">Deleting forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downloading-forms-to-your-computer">Downloading forms to your computer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downloading-database">Downloading database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-screenshot">Saving screenshot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recording-a-video">Recording a video</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collect-shortcut.html">Creating Shortcuts to Collect Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-location.html">Improving Location Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-security.html">Android security recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projecting-collect.html">Projecting ODK Collect onto another screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-best-practices.html#related-topics">Related Topics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collect-best-practices.html">Tips and Best Practices</a> &raquo;</li>
+        
+      <li>Using Android Debug Bridge with Collect</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/collect-adb.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-android-debug-bridge-with-collect">
+<h1>Using Android Debug Bridge with Collect<a class="headerlink" href="#using-android-debug-bridge-with-collect" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference external" href="https://developer.android.com/studio/command-line/adb.html">Android Debug Bridge</a> is a command which acts as a bridge between the Android device and the terminal. It can control device over USB from a computer, copy files back and forth, install and uninstall apps, run shell commands etc. For the developers and users of ODK Collect, the most common uses are:</p>
+<ul class="simple">
+<li>loading blank forms to SD Card</li>
+<li>fetching completed forms</li>
+<li>deleting forms</li>
+<li>copying the form database</li>
+<li>installing the <strong>.apk</strong> file from the source code</li>
+</ul>
+<div class="section" id="installing-adb">
+<span id="install-adb"></span><h2>Installing adb<a class="headerlink" href="#installing-adb" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If you plan to work on ODK Collect or run the app using an emulator, download the <a class="reference external" href="https://developer.android.com/studio/index.html">Android Studio</a>. It already comes with the adb tool. To use it, <a class="reference external" href="https://www.howtogeek.com/125769/how-to-install-and-use-abd-the-android-debug-bridge-utility/">enable USB Debugging</a>.</p>
+<p>To install <strong class="command">adb</strong> as a standalone tool, please follow the instructions given <a class="reference external" href="https://android.gadgethacks.com/how-to/android-basics-install-adb-fastboot-mac-linux-windows-0164225/">here</a>.</p>
+<p>Forms can be manipulated from the command line itself. The following sections describe how <strong class="command">adb</strong> can be used to work with the app.</p>
+</div>
+<div class="section" id="loading-blank-forms">
+<span id="loading-blank-forms-with-adb"></span><h2>Loading blank forms<a class="headerlink" href="#loading-blank-forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The forms are stored in <code class="file docutils literal"><span class="pre">sdcard/odk/forms/</span></code> folder on the device. They can be loaded via a USB device using:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb push path/to/form.xml /sdcard/odk/forms/form.xml
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Path on the phone must include the file name and not just the folder name</p>
+</div>
+</div>
+<div class="section" id="deleting-forms">
+<span id="deleting-forms-with-adb"></span><h2>Deleting forms<a class="headerlink" href="#deleting-forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Forms can be deleted from <code class="file docutils literal"><span class="pre">sdcard/odk/forms</span></code> by running:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb shell rm -d /sdcard/odk/forms/my_form.xml
+</pre></div>
+</div>
+</div>
+<div class="section" id="downloading-forms-to-your-computer">
+<span id="downloading-forms"></span><h2>Downloading forms to your computer<a class="headerlink" href="#downloading-forms-to-your-computer" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To download a completed form or form instance from the computer, run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb pull /sdcard/odk/forms/my_form.xml
+</pre></div>
+</div>
+</div>
+<div class="section" id="downloading-database">
+<span id="downloading-database-with-adb"></span><h2>Downloading database<a class="headerlink" href="#downloading-database" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Developers might also need to check the entries in the database from the computer. In such case pull the database file from the SD card and use any <strong>SQLite visualizer</strong> to view it. To pull the database into the computer, run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>  adb -pull /sdcard/odk/database/database.name
+</pre></div>
+</div>
+</div>
+<div class="section" id="saving-screenshot">
+<span id="saving-screenshot-with-adb"></span><h2>Saving screenshot<a class="headerlink" href="#saving-screenshot" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>For taking a screenshot, run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb exec-out screencap /sdcard/screen.png
+</pre></div>
+</div>
+<p>Here, the image will be stored as <code class="docutils literal"><span class="pre">screen.png</span></code> which can be downloaded to the computer by running:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb pull /sdcard/screen.png
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">You can also use ODK docs program to get a screenshot by referring to the instructions given in the <a class="reference internal" href="docs-syntax-guide.html#screenshots"><span class="std std-ref">Contribution Guide</span></a>.</p>
+</div>
+</div>
+<div class="section" id="recording-a-video">
+<span id="recording-video-with-adb"></span><h2>Recording a video<a class="headerlink" href="#recording-a-video" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong class="command">adb</strong> can be used to record video on device’s screen. This can be done by running:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> adb shell screenrecord /sdcard/example.mp4
+</pre></div>
+</div>
+<p>As you hit <span class="guilabel">Enter</span>, this command will start recording your device’s screen using the default settings and save the resulting video to a file at <span class="guilabel">/sdcard/example.mp4</span> file on your device.</p>
+<p>To stop the recording, press <span class="guilabel">ctrl</span> + <span class="guilabel">C</span></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collect-shortcut.html" class="btn btn-neutral float-right" title="Creating Shortcuts to Collect Forms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect-best-practices.html" class="btn btn-neutral" title="Tips and Best Practices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

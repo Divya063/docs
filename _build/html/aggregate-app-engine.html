@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing on App Engine &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Installing Aggregate" href="aggregate-install.html"/>
+        <link rel="next" title="Installing on Tomcat (Local or Cloud)" href="aggregate-tomcat.html"/>
+        <link rel="prev" title="Installing Aggregate" href="aggregate-install.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-deployment-planning.html">Planning Your Aggregate Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="aggregate-install.html">Installing Aggregate</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Installing on App Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate-tomcat.html">Installing on Tomcat (Local or Cloud)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate-aws.html">Installing on AWS (Cloud)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate-vm.html">ODK Aggregate Virtual Machine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-upgrade.html">Upgrading Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-backup.html">Backing Up Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-setup.html">Setting Up ODK Aggregate</a> &raquo;</li>
+        
+          <li><a href="aggregate-install.html">Installing Aggregate</a> &raquo;</li>
+        
+      <li>Installing on App Engine</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-app-engine.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-on-app-engine">
+<h1>Installing on App Engine<a class="headerlink" href="#installing-on-app-engine" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Google App Engine is the recommended deployment platform for Aggregate.</p>
+<p class="last">There is no charge to set up an Aggregate server on App Engine, and lightly used instances will usually incur no charges.</p>
+</div>
+<div class="admonition-before-you-begin admonition">
+<p class="first admonition-title">Before you begin…</p>
+<ul class="simple">
+<li>Make sure <a class="reference external" href="https://java.com/en/download/">Java 8</a> or higher is <a class="reference external" href="https://www.java.com/en/download/help/download_options.xml">installed on your system</a>.</li>
+<li>You will need a Gmail account to use App Engine; this Gmail account will be the owner of the Google Cloud Platform project under which your App Engine will execute.</li>
+<li>Read the <a class="reference external" href="https://cloud.google.com/terms/">Google Cloud Platform term of service</a>.</li>
+</ul>
+<ul class="last simple" id="download-aggregate-installer">
+<li>Download <a class="reference external" href="https://opendatakit.org/downloads/">ODK Aggregate</a>. Select the latest release for your operating system.<ul>
+<li>You can <a class="reference internal" href="verify-downloads.html"><span class="doc">verify the download</span></a> using <em>SHA256 signatures</em>.</li>
+<li>If you are running OSX, you must unzip the downloaded file before running the installer within it.</li>
+<li>If you are on MacOSX Mountain Lion or onward, you will need to fiddle with <a class="reference external" href="http://osxdaily.com/2012/07/27/app-cant-be-opened-because-it-is-from-an-unidentified-developer/">GateKeeper settings</a> in order to run the installer.</li>
+<li>If you are on Windows 10, you will need to approve running an unsigned installer.</li>
+<li>If you are on Linux, you will need to change the downloaded file’s permissions to enable running it as a program. Right click on the file and click on <span class="guilabel">Properties</span>. Click on <span class="guilabel">Permissions</span> tab. Now check the box labeled as <span class="guilabel">Allow executing file as program</span>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<ol class="arabic">
+<li><p class="first">Go to <a class="reference external" href="https://cloud.google.com/">Google Cloud Platform</a> and click on <span class="guilabel">Console</span> in the top right corner.</p>
+<img alt="An image showing the console option on the Google Cloud Platform." src="_images/cloud-console.png" />
+</li>
+<li><p class="first">Sign in with a Gmail account which you wish to use.</p>
+<img alt="Image showing the sign in window of Gmail." src="_images/email-select.png" />
+</li>
+<li><p class="first">If you have never configured a Google Cloud Platform project, click on <span class="guilabel">Create an Empty Project</span>.</p>
+<img alt="Image showing Create an empty project option for first projects." src="_images/empty-project.png" />
+</li>
+<li><p class="first">If you have configured a Google Cloud Platform project before, this link will open onto either a page with a <span class="guilabel">Create Project</span> button and a table listing all of your projects, or it will open into one of your existing projects. In the later case, click on that project name at the top of the window. In the below image, the older project is <cite>Project-edu</cite>.</p>
+<img alt="Image showing previous project name `Project-edu`." src="_images/project.png" />
+<ul>
+<li><p class="first">Upon clicking on the project name, a window appears with a <span class="guilabel">+</span> symbol. Click on it to create a new project.</p>
+<img alt="Image showing the + sign which denotes creating a new project." src="_images/create-project.png" />
+</li>
+</ul>
+</li>
+<li><p class="first">Name your project.</p>
+<p>On the project-creation popup dialog, type in a project name that makes sense to you. You can enter a project name and click on <span class="guilabel">Create</span> if you don’t want to edit the project ID. You can choose <span class="guilabel">Edit</span> if you want to edit the project ID. The project ID will be the first part of the URL to your ODK Aggregate server.</p>
+<img alt="Image showing the window to enter a project name." src="_images/project-name.png" />
+<ul>
+<li><p class="first">If you click on <span class="guilabel">Edit</span>, a window will appear where you can enter a project id. After changing the project id click on <span class="guilabel">Create</span> to create your project.</p>
+<img alt="Image showing the window which comes after clicking on edit option to change the project id." src="_images/project-id.png" />
+</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">You may want to use a project id that combines your organization name and the name of your data collection group or project.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">You may need to accept Google’s terms and conditions.</p>
+</div>
+</li>
+<li><p class="first">After few seconds, you will see a notification in the top right corner of the window. Click on the notification icon and select the notification message <strong>Create Project:your project name</strong>.</p>
+<img alt="Image showing blue notification icon." src="_images/notification.png" />
+<img alt="Image showing the option to create your project." src="_images/go-to-project.png" />
+</li>
+<li><p class="first">You will be directed to an empty project screen showing the details of your project. If you want to change any settings, click on <span class="guilabel">Go to project settings</span> otherwise click on the menu icon (<span class="guilabel">☰</span>) to the left of <span class="guilabel">Google Cloud Platform</span> in the upper left side of the screen, and select <span class="guilabel">App Engine</span> from the dropdown menu.</p>
+<img alt="Image showing the project settings option and the menu option." src="_images/project-settings.png" />
+<img alt="Image showing App Engine option." src="_images/app-engine.png" />
+</li>
+<li><p class="first">Click on the <span class="guilabel">Select a language</span> menu and select <span class="guilabel">Java</span>.</p>
+<img alt="Image showing option to select a language." src="_images/language-select.png" />
+<img alt="Image showing various language options to choose from." src="_images/select-java.png" />
+</li>
+<li><p class="first">Select your preferred datacenter location and click <span class="guilabel">Next</span>.</p>
+<img alt="Image showing options to choose a region where the server will operate." src="_images/select-region.png" />
+</li>
+<li><p class="first">Google will then begin configuring the server.</p>
+<img alt="Image showing Google configuring the server." src="_images/prepare-engine.png" />
+</li>
+<li><p class="first">When this completes, you will be directed to begin a tutorial to install a sample application. Choose <span class="guilabel">Cancel Tutorial</span> and confirm that you want to not perform that tutorial.</p>
+<img alt="Image showing option to cancel the tutorial." src="_images/cancel-tutorial.png" />
+</li>
+<li><p class="first">Launch the ODK Aggregate installer on you computer. (<a class="reference internal" href="#download-aggregate-installer"><span class="std std-ref">See download info here.</span></a>)</p>
+<p>The installer will guide you through configuring ODK Aggregate for App Engine. Click on the <span class="guilabel">Forward</span> button each time you complete a step to move ahead.</p>
+<img alt="Image showing the installer for ODK Aggregate." src="_images/setup.png" />
+</li>
+<li><p class="first">Accept the license agreement.</p>
+<img alt="Image showing license agreement." src="_images/agreement.png" />
+</li>
+<li><p class="first">Select a parent directory under which an <code class="file docutils literal"><span class="pre">ODK</span> <span class="pre">Aggregate</span></code> directory will be created to contain the configured software. Click on the <span class="guilabel">folder</span> icon to choose a directory.</p>
+<img alt="Image showing window to choose a parent directory." src="_images/directory-setup.png" />
+</li>
+<li><p class="first">Select <span class="guilabel">Google App Engine</span> as the platform for the Aggregate server.</p>
+<img alt="Image displaying options to choose a platform for Aggregate." src="_images/choose-platform.png" />
+</li>
+<li><p class="first">Enter a name for your ODK Aggregate instance.</p>
+<img alt="Image showing window to select a name for your Aggregate instance." src="_images/set-name.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The ODK Aggregate instance name will be displayed to your users when they log into ODK Aggregate using their username and password.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Including the name of your organization in the instance name can help users confirm that they have contacted the correct website.</p>
+</div>
+</li>
+<li><p class="first">Enter a superuser name in the next window.</p>
+<img alt="Image showing window to enter a superuser name." src="_images/superuser.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>The user with the superuser account will have full permissions on the system.</li>
+<li>The password for this user will be set to <strong>aggregate</strong> initially.</li>
+<li>Only this user will be allowed to log onto the system when ODK Aggregate is run for the first time.</li>
+<li>Upon first logging in, the superuser should change the password and complete the configuration of ODK Aggregate by specifying additional users and what permissions they will have on the system.</li>
+</ul>
+</div>
+</li>
+<li><p class="first">Enter the project ID of the project you created on the Google Cloud platform.</p>
+<img alt="Image showing project id of the project created earlier entered in the application id box." src="_images/application-id.png" />
+</li>
+<li><p class="first">The installer will configure Aggregate and launch a upload tool.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Beginning with Java 7 Update 51, there are security level settings that may prevent the upload tool from running. A reported workaround is to add the <em>file: path</em> (e.g., :file:<code class="docutils literal"><span class="pre">`file:///`</span></code>) to the Exception Site list.</p>
+</div>
+</li>
+<li><p class="first">Enter the Gmail account that you specified when setting up the App Engine project. This will enable the <span class="guilabel">Get Token</span> button.</p>
+<img alt="Image showing the window for upload tool to enter the email id and get a token." src="_images/get-token.png" />
+</li>
+<li><p class="first">Click the <span class="guilabel">Get Token</span> button.</p>
+<ul>
+<li><p class="first">Your default browser will open to a Google site (<code class="docutils literal"><span class="pre">accounts.google.com</span></code>) where you are asked to choose a Gmail account. Select the account you specified earlier when setting up App Engine, and then allow <em>Google App Engine appcfg</em> to view and manage your AppEngine instances and datastores. Click <span class="guilabel">Allow</span>. This will take you to a screen with instructions to copy a code.</p>
+<img alt="Image showing window asking for App Engine Permissions." src="_images/allow.png" />
+</li>
+<li><p class="first">At the same time, a popup dialog should be displayed by the install wizard.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>If the pop-up dialog does not show, you will need to relaunch the upload tool. Close the upload tool and open a file browser or Finder window in the directory you specified earlier. Navigate to the ODK Aggregate directory.<ul>
+<li>If on Windows, double-click the <code class="file docutils literal"><span class="pre">ODKAggregateAppEngineUpdater.jar</span></code> file.</li>
+<li>If on Mac OSX, double-click the <code class="file docutils literal"><span class="pre">uploadAggregateToAppEngine.app</span></code> file.</li>
+<li>If on Linux, open a bash shell and run <code class="file docutils literal"><span class="pre">uploadAggregateToAppEngine.sh</span></code>.</li>
+</ul>
+</li>
+<li>Re-enter the e-mail address, and once again click <span class="guilabel">Get Token</span>. The pop-up dialog should now appear.</li>
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Copy the code from the browser into the installer’s popup dialog and click <span class="guilabel">OK</span>.</p>
+<img alt="Image showing pop-up dialog to enter a token." src="_images/token.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">The text box on Google’s site is not as wide as the code; be sure to copy the entire code.</p>
+</div>
+</li>
+<li><p class="first">If everything went well, you should see a status message letting you know the <code class="docutils literal"><span class="pre">Action</span> <span class="pre">Succeeded</span></code>.</p>
+<img alt="Image showing output for a successful result." src="_images/success-output.png" />
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<ul class="last simple">
+<li>If the output does not look like that, you may have delayed too long between getting the code and pasting it into the tool. Click <span class="guilabel">Delete Token</span> and try again.</li>
+<li>If you see a failure message in the output window, then it is likely that you have several different Gmail accounts and Google has gotten confused during the token-issuing process. In this case, when the browser window opens, before selecting an account, copy the URL, open a Private Browsing or Incognito Window in your browser, and paste the URL into that. Then proceed to get the token, etc. This should fix this issue.</li>
+</ul>
+</div>
+</li>
+<li><p class="first">Click <span class="guilabel">Upload ODK Aggregate</span>.</p>
+<img alt="Image showing successful output and upload option." src="_images/upload.png" />
+<p>Clicking on <span class="guilabel">Upload ODK Aggregate</span> will generate a very long list of progress messages into the Output window. The <cite>listBackends :</cite> and <cite>deleteBackendBackground :</cite> sections may report 「500 Internal Server Error」 and Severe errors, and Warnings about the use of Backends, a deprecated feature. You will see a number of warnings and errors; this is expected.</p>
+<p>For reference, here is a list of few of those errors:</p>
+<div class="details highlight-none"><div class="highlight"><pre><span></span>  listBackends : Warning: This application uses Backends, a deprecated feature that has been replaced by Modules, which offers additional functionality. Please convert your backends to modules as described at: https://developers.google.com/appengine/docs/java/modules/converting.
+
+  listBackends! : WARNING: Error posting to URL: https://appengine.google.com/api/backends/delete?backend=background&amp;app_id=project-123-181306&amp;
+  listBackends! : 500 Internal Server Error
+
+  listBackends : Unable to list backends: Error posting to URL: https://appengine.google.com/api/backends/list?app_id=project-123-181306&amp;
+  listBackends : 500 Internal Server Error
+
+  deleteBackendBackground : Warning: This application uses Backends, a deprecated feature that has been replaced by Modules, which offers additional functionality. Please convert your backends to modules as described at: https://developers.google.com/appengine/docs/java/modules/converting.
+
+  deleteBackendBackground!: WARNING: Error posting to URL: https://appengine.google.com/api/backends/delete?backend=background&amp;app_id=project-123-181306&amp;
+  deleteBackendBackground!: 400 Bad Request
+
+  deleteBackendBackground : Unable to delete backend: Error posting to URL: https://appengine.google.com/api/backends/delete?backend=background&amp;app_id=project-123-181306&amp;
+  deleteBackendBackground : 400 Bad Request
+</pre></div>
+</div>
+</li>
+<li><p class="first">Finally, you should see the message <code class="docutils literal"><span class="pre">status</span> <span class="pre">:</span> <span class="pre">Action</span> <span class="pre">Succeeded!</span></code>.</p>
+<ul class="simple">
+<li>To get a more clear view, you can see an <a class="reference external" href="https://opendatakit.org/wp-content/uploads/Apr2016-GoogleCloud/exampleUploadScriptOutput.txt">example log</a>.</li>
+</ul>
+</li>
+<li><p class="first">Once the installer has run and uploaded the ODK Aggregate configuration to App Engine, return to the Google Cloud Platform console.</p>
+</li>
+<li><p class="first">With the console displaying your project, click on the menu icon (☰) to the right of <em>Google Cloud Platform</em> in the upper left side of the screen and select <span class="guilabel">App Engine</span> from the menu.</p>
+</li>
+<li><p class="first">Click on the project’s URI in the top right corner of the window. This will open your Aggregate server page.</p>
+<img alt="Image showing a window where server url is displayed on top right corner." src="_images/project-aggregate.png" />
+</li>
+<li><p class="first"><span class="guilabel">Log In</span> with the superuser username that you specified in the installer (the initial password for this username will be <code class="docutils literal"><span class="pre">aggregate</span></code>), and access the site administration screens for your server.</p>
+<img alt="Image showing ODK Aggregate server and log in option." src="_images/server.png" />
+</li>
+<li><p class="first">You should immediately change your superuser password.</p>
+<p>Go to <span class="menuselection">Site Admin -&gt; Permissions</span> to change your password. You can also add additional users.</p>
+</li>
+</ol>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-tomcat.html" class="btn btn-neutral float-right" title="Installing on Tomcat (Local or Cloud)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-install.html" class="btn btn-neutral" title="Installing Aggregate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

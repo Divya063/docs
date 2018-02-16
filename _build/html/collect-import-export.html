@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Importing and Exporting Settings &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Collect Menus, Settings, and Security" href="collect-settings.html"/>
+        <link rel="next" title="Tips and Best Practices" href="collect-best-practices.html"/>
+        <link rel="prev" title="Collect Menus, Settings, and Security" href="collect-settings.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collect-using.html">Using ODK Collect</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="collect-forms.html">Managing Forms in Collect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-filling-forms.html">Filling out Forms with Collect</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="collect-settings.html">Collect Menus, Settings, and Security</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="collect-settings.html#main-menu">Main Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collect-settings.html#general-settings">General Settings</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="collect-settings.html#admin-settings">Admin Settings</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Importing and Exporting Settings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collect-using.html">Using ODK Collect</a> &raquo;</li>
+        
+          <li><a href="collect-settings.html">Collect Menus, Settings, and Security</a> &raquo;</li>
+        
+      <li>Importing and Exporting Settings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/collect-import-export.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="importing-and-exporting-settings">
+<h1>Importing and Exporting Settings<a class="headerlink" href="#importing-and-exporting-settings" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<img alt="Import/export settings menu of ODK Collect" class="device-screen-vertical" src="_images/import-settings.jpg" />
+<div class="section" id="qr-code">
+<h2>QR Code<a class="headerlink" href="#qr-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>QR Code or the Quick Response Code is a two dimensional barcode. QR codes can be used to configure Collect on many devices. The QR image presented contains all of your current General and Admin settings, including admin and server passwords. When this QR code is scanned from the ODK Collect app on another device, these settings are imported.</p>
+</div>
+<div class="section" id="sharing-qr-code">
+<h2>Sharing QR code<a class="headerlink" href="#sharing-qr-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can click on the <a class="reference internal" href="_images/share-icon.jpg"><img alt="Share icon for sharing the QR code." src="_images/share-icon.jpg" style="width: 43px; height: 43px;" /></a> icon to share the QR code as an image. When you click on it, it displays a list of applications and services like <em>whatsapp</em>, <em>facebook</em>, <em>hangouts</em>, <em>bluetooth</em>, <em>MMS</em> to name a few, which can be used to share the QR code. This is useful when there are several different data collection sites and all devices have to be configured in the same way, in which case the QR code can be shared from one reference device.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Since the QR code may contain the admin and server passwords without encryption, you should be careful about how you share it. It is advised to not send it through an external application but through <em>bluetooth</em>, <em>MMS</em> or any other such service that doesn’t allow the third party to access the data.</p>
+</div>
+</div>
+<div class="section" id="saving-qr-code-locally">
+<h2>Saving QR code locally<a class="headerlink" href="#saving-qr-code-locally" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can go to <span class="menuselection">⋮ ‣ Save settings to disk</span> to save the QR code.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Settings are exported and saved so that they can be loaded to other devices. When you save external settings, they are saved to <code class="file docutils literal"><span class="pre">/sdcard/odk/settings/collect.settings</span></code>. You can load external settings from this location to other devices as well.</p>
+<p>At app launch, the settings are loaded from a different location <code class="file docutils literal"><span class="pre">/sdcard/odk/collect.settings</span></code>, which tracks the state of your settings at all times.</p>
+<p class="last">Settings are saved to and loaded from different locations to avoid deleting the saved settings.</p>
+</div>
+</div>
+<div class="section" id="importing-settings-from-a-qr-saved-on-your-device">
+<h2>Importing settings from a QR saved on your device<a class="headerlink" href="#importing-settings-from-a-qr-saved-on-your-device" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can import settings from a QR code saved on your device by clicking on <span class="guilabel">Select Code from SD Card</span> option.</p>
+</div>
+<div class="section" id="making-your-own-qr-code">
+<h2>Making your own QR code<a class="headerlink" href="#making-your-own-qr-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>QR code is a JSON object with a structure as shown below:</p>
+<div class="highlight-JSON"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;general&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;protocol&quot;</span><span class="p">:</span> <span class="s2">&quot;google_sheets&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;constraint_behavior&quot;</span><span class="p">:</span> <span class="s2">&quot;on_finalize&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;admin&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;edit_saved&quot;</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The JSON object isn’t encrypted but is compressed using <a class="reference external" href="http://www.zlib.net/manual.html">zlib</a> before encoding into QRCode. Therefore the creation process can be summarized as follows:</p>
+<ol class="arabic simple">
+<li>Write a JSON object containing the changed settings with a structure as shown above.</li>
+<li>Compress it using zlib.</li>
+<li>Encode into QR code.</li>
+</ol>
+<p>After you finish generating the QR code, you can transfer it to your device and then import it by clicking on <span class="guilabel">Select Code from SD Card</span>  option.</p>
+</div>
+<div class="section" id="list-of-keys-for-all-settings">
+<h2>List of keys for all settings<a class="headerlink" href="#list-of-keys-for-all-settings" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Following is the list of keys for all settings and the set of values they can take:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;admin&quot;</span> <span class="o">:</span> <span class="p">{</span>
+
+    <span class="c1">// Stores the admin password</span>
+    <span class="s2">&quot;admin_password&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;admin_pw&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+
+    <span class="c1">// User access control to the main menu. The default value is true.</span>
+    <span class="s2">&quot;edit_saved&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;send_finalized&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;view_sent&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;get_blank&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;delete_saved&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+
+    <span class="c1">// User access control to form entry</span>
+    <span class="s2">&quot;save_mid&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;jump_to&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_language&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;access_settings&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;save_as&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;mark_as_finalized&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+
+    <span class="c1">// User access control settings for General settings</span>
+    <span class="s2">&quot;change_autosend&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_navigation&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_constraint_behavior&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_font_size&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_app_language&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;instance_form_sync&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;default_to_finalized&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;delete_after_send&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;high_resolution&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;image_size&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;show_splash_screen&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;show_map_sdk&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;show_map_basemap&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;analytics&quot;</span> <span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_form_metadata&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_server&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+
+    <span class="c1">// Server</span>
+    <span class="s2">&quot;import_settings&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_server&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;change_protocol_settings&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+
+    <span class="p">},</span>
+
+  <span class="s2">&quot;general&quot;</span> <span class="o">:</span> <span class="p">{</span>
+
+    <span class="c1">// Server settings</span>
+    <span class="s2">&quot;protocol&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;odk_default&quot;</span><span class="p">,</span> <span class="s2">&quot;google_sheets&quot;</span><span class="p">,</span> <span class="s2">&quot;other&quot;</span><span class="p">},</span>
+    <span class="c1">// Aggregate specific key</span>
+    <span class="s2">&quot;server_url&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="c1">// Google sheets specific keys</span>
+    <span class="s2">&quot;selected_google_account&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="s2">&quot;google_sheets_url&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="c1">// Other specific keys</span>
+    <span class="s2">&quot;formlist_url&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="s2">&quot;submission_url&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+
+    <span class="c1">// User interface</span>
+    <span class="s2">&quot;app_language&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="s2">&quot;af&quot;</span><span class="p">,</span> <span class="s2">&quot;am&quot;</span><span class="p">,</span> <span class="s2">&quot;ar&quot;</span><span class="p">,</span> <span class="s2">&quot;bn&quot;</span><span class="p">,</span> <span class="s2">&quot;ca&quot;</span><span class="p">,</span> <span class="s2">&quot;cs&quot;</span><span class="p">,</span> <span class="s2">&quot;de&quot;</span><span class="p">,</span> <span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;km&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;et&quot;</span><span class="p">,</span> <span class="s2">&quot;fa&quot;</span><span class="p">,</span> <span class="s2">&quot;fi&quot;</span><span class="p">,</span> <span class="s2">&quot;fr&quot;</span><span class="p">,</span> <span class="s2">&quot;ha&quot;</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hu&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="s2">&quot;it&quot;</span><span class="p">,</span> <span class="s2">&quot;ja&quot;</span><span class="p">,</span> <span class="s2">&quot;ka&quot;</span><span class="p">,</span> <span class="s2">&quot;zu&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;lt&quot;</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">,</span> <span class="s2">&quot;mr&quot;</span><span class="p">,</span> <span class="s2">&quot;my&quot;</span><span class="p">,</span> <span class="s2">&quot;ml&quot;</span><span class="p">,</span> <span class="s2">&quot;nb&quot;</span><span class="p">,</span> <span class="s2">&quot;nl&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="s2">&quot;pl&quot;</span><span class="p">,</span> <span class="s2">&quot;ps&quot;</span><span class="p">,</span> <span class="s2">&quot;pt&quot;</span><span class="p">,</span> <span class="s2">&quot;ro&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;ru&quot;</span><span class="p">,</span> <span class="s2">&quot;so&quot;</span><span class="p">,</span><span class="s2">&quot;sq&quot;</span><span class="p">,</span> <span class="s2">&quot;sw&quot;</span><span class="p">,</span> <span class="s2">&quot;ta&quot;</span><span class="p">,</span> <span class="s2">&quot;ti&quot;</span><span class="p">,</span> <span class="s2">&quot;tl&quot;</span><span class="p">,</span> <span class="s2">&quot;tr&quot;</span><span class="p">,</span> <span class="s2">&quot;uk&quot;</span><span class="p">,</span> <span class="s2">&quot;ur&quot;</span><span class="p">,</span> <span class="s2">&quot;vi&quot;</span><span class="p">,</span> <span class="s2">&quot;zh&quot;</span>
+         <span class="p">},</span>
+    <span class="s2">&quot;font_size&quot;</span><span class="o">:</span> <span class="p">{</span><span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">29</span><span class="p">},</span>
+    <span class="s2">&quot;navigation&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;swipe&quot;</span> <span class="p">,</span><span class="s2">&quot;buttons&quot;</span> <span class="p">,</span><span class="s2">&quot;swipe_buttons&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;showSplash&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;splashPath&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span> <span class="c1">// If showSplash is true, then you specify the path of image here.</span>
+    <span class="s2">&quot;map_sdk_behavior&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;google_maps&quot;</span><span class="p">,</span> <span class="s2">&quot;osmdroid&quot;</span><span class="p">},</span>
+    <span class="c1">// if map_sdk_behavior is google_maps, then map_basemap_behavior can take the following values:</span>
+    <span class="s2">&quot;map_basemap_behavior&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;streets&quot;</span><span class="p">,</span> <span class="s2">&quot;satellite&quot;</span><span class="p">,</span> <span class="s2">&quot;terrain&quot;</span><span class="p">,</span> <span class="s2">&quot;hybrid&quot;</span><span class="p">},</span>
+    <span class="c1">// if map_sdk_behavior is osmdroid, then map_basemap_behavior can take the following values:</span>
+    <span class="s2">&quot;map_basemap_behavior&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;openmap_streets&quot;</span><span class="p">,</span> <span class="s2">&quot;openmap_usgs_topo&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;openmap_usgs_sat&quot;</span><span class="p">,</span> <span class="s2">&quot;openmap_stamen_terrain&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;openmap_cartodb_positron&quot;</span><span class="p">,</span> <span class="s2">&quot;openmap_cartodb_darkmatter&quot;</span>
+                          <span class="p">},</span>
+
+    <span class="c1">// Form submission</span>
+    <span class="s2">&quot;delete_send&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;autosend&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;autosend_wifi&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;autosend_network&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+
+    <span class="c1">// Form filling</span>
+    <span class="s2">&quot;constraint_behavior&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;on_swipe&quot;</span><span class="p">,</span> <span class="s2">&quot;on_finalize&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;default_to_finalized&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;high_resolution&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;image_size&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;original&quot;</span><span class="p">,</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="s2">&quot;very_small&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">},</span>
+
+    <span class="c1">// Form import</span>
+    <span class="s2">&quot;instance_sync&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+
+    <span class="c1">// User and Device identity</span>
+    <span class="s2">&quot;form_metadata&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="s2">&quot;metadata_migrated&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="s2">&quot;metadata_username&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="s2">&quot;metadata_phonenumber&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="s2">&quot;metadata_email&quot;</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="s2">&quot;analytics&quot;</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="c1">// Anonymous usage data</span>
+
+  <span class="p">},</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The subkeys in the general key can be a part of the admin key too.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">QR code only contains settings whose values are not the default values because of the constraints on the amount of data a QR code can hold.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">The QR code used for settings-import contains the admin and server passwords <em>in plain text</em>. To remove them from the code, <span class="gesture">tap</span> the warning on the QR code screen.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collect-best-practices.html" class="btn btn-neutral float-right" title="Tips and Best Practices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect-settings.html" class="btn btn-neutral" title="Collect Menus, Settings, and Security" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

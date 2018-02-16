@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Briefcase Aggregate API &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="next" title="Encrypted Forms" href="encrypted-forms.html"/>
+        <link rel="prev" title="Launching ODK Collect from External Apps" href="launch-collect-from-app.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Briefcase Aggregate API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pull">Pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#push">Push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interface-details">Interface Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#openrosa-form-discovery-api">OpenRosa Form Discovery API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#openrosa-form-submission-overwite-api">OpenRosa Form Submission/Overwite API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#server-processing">Server Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#response">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#briefcase-treatment">Briefcase Treatment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#download-forms-and-media-files">Download forms and media files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formupload">formUpload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-view-submissionlist">GET view/submissionList</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#returned-document">Returned Document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#odk-briefcase-treatment">ODK Briefcase Treatment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#get-view-downloadsubmission">GET view/downloadSubmission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#response-document">Response Document</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Briefcase Aggregate API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/briefcase-api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="briefcase-aggregate-api">
+<h1>Briefcase Aggregate API<a class="headerlink" href="#briefcase-aggregate-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="introduction">
+<span id="id1"></span><h2>Introduction<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>This describes the interfaces ODK Briefcase uses when interacting with ODK Aggregate v1.0.</p>
+<p>In general, the server should adhere to the OpenRosa API described <a class="reference external" href="https://bitbucket.org/javarosa/javarosa/wiki/OpenRosaAPI">here</a>.</p>
+</div>
+<div class="section" id="pull">
+<span id="id2"></span><h2>Pull<a class="headerlink" href="#pull" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Interfaces used during Pull actions.</p>
+<p>The APIs used:</p>
+<ol class="arabic simple">
+<li>OpenRosa Form Discovery API</li>
+<li>Download forms and media files using URLs form discovery.</li>
+<li><code class="docutils literal"><span class="pre">view/submissionList</span></code> to obtain a chunk of submission keys.</li>
+<li><code class="docutils literal"><span class="pre">view/downloadSubmission</span></code> to download an individual submission.</li>
+</ol>
+</div>
+<div class="section" id="push">
+<span id="id3"></span><h2>Push<a class="headerlink" href="#push" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Interfaces used during Push actions.</p>
+<ol class="arabic simple">
+<li><em>formUpload</em> to upload a form and its media files to ODK Aggregate.</li>
+<li><code class="docutils literal"><span class="pre">view/submissionList</span></code> to obtain a chunk of submission keys.</li>
+<li>OpenRosa Form Submission/Overwrite API (with extensions)</li>
+</ol>
+</div>
+<div class="section" id="interface-details">
+<span id="id4"></span><h2>Interface Details<a class="headerlink" href="#interface-details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="openrosa-form-discovery-api">
+<span id="openrosa-discover-api"></span><h3>OpenRosa Form Discovery API<a class="headerlink" href="#openrosa-form-discovery-api" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Vanilla conformance.</p>
+</div>
+<div class="section" id="openrosa-form-submission-overwite-api">
+<span id="openrosa-submit-api"></span><h3>OpenRosa Form Submission/Overwite API<a class="headerlink" href="#openrosa-form-submission-overwite-api" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="server-processing">
+<h4>Server Processing<a class="headerlink" href="#server-processing" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>The server does special processing to look for an <code class="docutils literal"><span class="pre">instanceID</span></code> or a <code class="docutils literal"><span class="pre">submissionDate</span></code> attribute on the top-level element of the submission.</p>
+<p>If the OpenRosa Metadata block is not present, it uses the instanceID attribute value as the instance ID for this submission.</p>
+<p>If the <code class="docutils literal"><span class="pre">submissionDate</span></code> is present, it uses that value as the submission date for this submission (rather than the current datetime). SubmissionDate should be in ISO8601 format.</p>
+</div>
+<div class="section" id="response">
+<h4>Response<a class="headerlink" href="#response" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>The response from the server looks like:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;OpenRosaResponse</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/http/response&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;message&gt;</span>...<span class="nt">&lt;/message&gt;</span>
+<span class="nt">&lt;submissionMetadata</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.opendatakit.org/xforms&quot;</span>
+        <span class="na">id=</span><span class="s">&quot;formid&quot;</span> <span class="na">version=</span><span class="s">&quot;...&quot;</span> <span class="na">encrypted=</span><span class="s">&quot;yes&quot;</span> <span class="na">instanceID=</span><span class="s">&quot;...&quot;</span>
+        <span class="na">submissionDate=</span><span class="s">&quot;...&quot;</span>
+        <span class="na">isComplete=</span><span class="s">&quot;true&quot;</span> <span class="na">markedAsCompleteDate=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">&lt;submissionMetadata/&gt;</span></code> tag contains all the metadata for this submission that the server has assigned it.</p>
+<p>The form id and version are given (version is omitted if null).</p>
+<p>If the form is an encrypted form, the <code class="docutils literal"><span class="pre">encrypted</span></code> attribute is present, otherwise it is omitted. If present, it has a value of <em>yes</em> (vs. <em>true</em>).</p>
+<p>The instanceID is either the server-assigned instance id or the <code class="docutils literal"><span class="pre">instanceID</span></code> from the OpenRosa Metadata block.</p>
+<p>The <code class="docutils literal"><span class="pre">submissionDate</span></code> is the date of first submission of this record on the server.</p>
+<p>The <code class="docutils literal"><span class="pre">isComplete</span></code> flag is <em>true</em> if the server has all attachments associated with this filled-in form. Otherwise, it will be <em>false</em>. If it is <em>true</em>, the <code class="docutils literal"><span class="pre">markedAsCompleteDate</span></code> will be the date when the submission became complete.</p>
+<p>The date fields are formatted using:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">org.javarosa.core.model.utils.DateUtils</span><span class="o">;</span>
+
+<span class="n">DateUtils</span><span class="o">.</span><span class="na">formatDateTime</span><span class="o">(</span><span class="n">d</span><span class="o">,</span> <span class="n">DateUtils</span><span class="o">.</span><span class="na">FORMAT_ISO8601</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>The only 2 fields ODK Briefcase currently uses are the <code class="docutils literal"><span class="pre">instanceID</span></code> and <code class="docutils literal"><span class="pre">submissionDate</span></code> fields. It may eventually use the <code class="docutils literal"><span class="pre">isComplete</span></code> flag.</p>
+</div>
+<div class="section" id="briefcase-treatment">
+<h4>Briefcase Treatment<a class="headerlink" href="#briefcase-treatment" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>After a submission has been pushed to the server, it updates the top-level element, inserting the <code class="docutils literal"><span class="pre">instanceID</span></code> and <code class="docutils literal"><span class="pre">submissionDate</span></code> fields if they are not already present.</p>
+<p>If they are present, it compares the fields and warns if there is any discrepancy between them.</p>
+</div>
+</div>
+<div class="section" id="download-forms-and-media-files">
+<span id="download-forms"></span><h3>Download forms and media files<a class="headerlink" href="#download-forms-and-media-files" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>It is same as the API ODK Collect uses.</p>
+<p>ODK Briefcase downloads the forms so that it has the form model available for CSV exports and to ensure that a push uses matching form definitions.</p>
+</div>
+<div class="section" id="formupload">
+<span id="id5"></span><h3>formUpload<a class="headerlink" href="#formupload" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>This is <code class="docutils literal"><span class="pre">FormUploadServlet</span></code> in ODK Aggregate.</p>
+<p>It is a multipart POST. The POST always contains the form definition file, and has as many media files as would fit in under 10MB. This follows the behavior of the OpenRosa Form Submission/Overwrite API.</p>
+<p>Because of the limitations of HTML file input tags, all media files must be in a single folder (no sub-directories). The server assumes this is the case.</p>
+<p>Here is a sample web page fragment to post to this servlet:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;ie_backward_compatible_form&quot;</span> <span class="na">action=</span><span class="s">&quot;/formUpload&quot;</span>
+      <span class="na">enctype=</span><span class="s">&quot;multipart/form-data&quot;</span> <span class="na">encoding=</span><span class="s">&quot;multipart/form-data&quot;</span>
+      <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">accept-charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">&quot;uploadTable&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;tbody&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+   <span class="nt">&lt;td&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;form_def_file&quot;</span><span class="nt">&gt;</span>Form definition (xml file):<span class="nt">&lt;/label&gt;</span>
+   <span class="nt">&lt;/td&gt;</span>
+   <span class="nt">&lt;td&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;form_def_file&quot;</span> <span class="na">class=</span><span class="s">&quot;gwt-Button&quot;</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span>
+           <span class="na">name=</span><span class="s">&quot;form_def_file&quot;</span> <span class="na">size=</span><span class="s">&quot;80&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+   <span class="nt">&lt;td&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;mediaFiles&quot;</span><span class="nt">&gt;</span>Optional Media file(s):<span class="nt">&lt;/label&gt;</span>
+   <span class="nt">&lt;/td&gt;</span>
+   <span class="nt">&lt;td&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;mediaFiles&quot;</span> <span class="na">class=</span><span class="s">&quot;gwt-Button&quot;</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span>
+           <span class="na">multiple=</span><span class="s">&quot;&quot;</span> <span class="na">name=</span><span class="s">&quot;datafile&quot;</span> <span class="na">size=</span><span class="s">&quot;80,20&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;clear_media_files&quot;</span> <span class="na">class=</span><span class="s">&quot;gwt-Button&quot;</span>
+           <span class="na">type=</span><span class="s">&quot;button&quot;</span>
+           <span class="na">onclick=</span><span class="s">&quot;clearMediaInputField(&#39;mediaFiles&#39;)&quot;</span>
+           <span class="na">value=</span><span class="s">&quot;Clear&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+   <span class="nt">&lt;td&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;gwt-Button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span>
+           <span class="na">value=</span><span class="s">&quot;Upload Form&quot;</span> <span class="na">name=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+ <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-view-submissionlist">
+<span id="get-submissionlist"></span><h3>GET view/submissionList<a class="headerlink" href="#get-view-submissionlist" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Download the list of completed submissions for a given form. Incomplete or partial submissions <strong>must not</strong> be returned. You may wish to report only approved submissions if you have a QA review step.</p>
+<p>There are 3 query arguments:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">formId</span></code> – identifies the form. Just the id from the form definition (e.g., geo_tagger_v2).</li>
+<li><code class="docutils literal"><span class="pre">cursor</span></code> – an opaque string used by the server to as a query resume point. Omit on the first call.</li>
+<li><code class="docutils literal"><span class="pre">numEntries</span></code> – the number of entries to return.</li>
+</ol>
+<div class="section" id="returned-document">
+<h4>Returned Document<a class="headerlink" href="#returned-document" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>The returned XML document is of the form:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;idChunk</span> <span class="na">xmlns=</span><span class="s">&quot;http://opendatakit.org/submissions&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;idList&gt;</span>
+  <span class="nt">&lt;id&gt;</span>uuid:e5aa4247-cfb8-4cc5-87cd-52fbfe491b13<span class="nt">&lt;/id&gt;</span>
+  <span class="nt">&lt;id&gt;</span>uuid:8ca4433a-fed2-4d1c-b333-c0378203f68f<span class="nt">&lt;/id&gt;</span>
+ <span class="nt">&lt;/idList&gt;</span>
+ <span class="nt">&lt;resumptionCursor&gt;</span>opaquedata<span class="nt">&lt;/resumptionCursor&gt;</span>
+<span class="nt">&lt;/idChunk&gt;</span>
+</pre></div>
+</div>
+<p>Where the <code class="docutils literal"><span class="pre">idList</span></code> contains a series of <code class="docutils literal"><span class="pre">id</span></code> elements containing strings that can be used to construct the needed string to pass to the <code class="docutils literal"><span class="pre">view/downloadSubmission</span></code> API.</p>
+<p>The <code class="docutils literal"><span class="pre">resumptionCursor</span></code> holds opaque data that is used by the server to track the location at which to resume the list of ids.</p>
+</div>
+<div class="section" id="odk-briefcase-treatment">
+<h4>ODK Briefcase Treatment<a class="headerlink" href="#odk-briefcase-treatment" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>ODK Briefcase repeatedly calls this API, passing in the previous response’s <code class="docutils literal"><span class="pre">resumptionCursor</span></code> value until the returned <code class="docutils literal"><span class="pre">resumptionCursor</span></code> value matches that given in the request. Once it no longer changes, ODK Briefcase assumes that all id data has been downloaded from the server.</p>
+</div>
+</div>
+<div class="section" id="get-view-downloadsubmission">
+<span id="get-downloadsubmission"></span><h3>GET view/downloadSubmission<a class="headerlink" href="#get-view-downloadsubmission" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Download an individual submission.</p>
+<p>One Query argument: <code class="docutils literal"><span class="pre">formId</span></code> – a multipart XPath-like string query that identifies the individual submission.</p>
+<p>The formId is a string of the form:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>formid[@version=null and @uiVersion=null]/topElement[@key=idvalue]
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">formid</span></code> is the form id, as would be provided to the submissionList API.</li>
+<li><code class="docutils literal"><span class="pre">version</span></code> is either null if not used or the version number of the form (ODK Aggregate only supports integer version strings at this time).</li>
+<li><code class="docutils literal"><span class="pre">topElement</span></code> is the name of the top-level element in the submission. This is the element nested just within the <code class="docutils literal"><span class="pre">&lt;instance&gt;</span></code> element of the <code class="docutils literal"><span class="pre">&lt;model&gt;</span></code> (it also has the id attribute, which should be equal to the formid).</li>
+<li><code class="docutils literal"><span class="pre">idvalue</span></code> is the value of the individual submission id returned by the <code class="docutils literal"><span class="pre">view/submissionList</span></code>      API, usually a UUID.</li>
+</ul>
+<p>An example, where no version was attached to the form definition uploaded to Aggregate:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>GET /view/downloadSubmission?formId=my_odk_form[@version=null and @uiVersion=null]/data[@key=uuid:38fd4ef4-28b9-441e-a818-dd8cbe514b2c]
+</pre></div>
+</div>
+<p>While it is desirable for the <code class="docutils literal"><span class="pre">idvalue</span></code> to be the <code class="docutils literal"><span class="pre">instanceID</span></code> of the submission, it is not required. For ODK Aggregate v1.x, it will be the instance ID; for ODK Aggregate 0.9.x, it is not the instance ID.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><code class="docutils literal"><span class="pre">formid</span></code> may be a URL (since it might be an xmlns), so when parsing this query parameter, it is safest to find the last instance of <code class="docutils literal"><span class="pre">&#64;version</span></code> and split the string at that location. In any case, it is your string to parse and interpret for your server configuration.</p>
+</div>
+<div class="section" id="response-document">
+<h4>Response Document<a class="headerlink" href="#response-document" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>The response is of the form:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;submission</span> <span class="na">xmlns=</span><span class="s">&quot;http://opendatakit.org/submissions&quot;</span>
+            <span class="na">xmlns:orx=</span><span class="s">&quot;http://openrosa.org/xforms&quot;</span> <span class="nt">&gt;</span>
+ <span class="nt">&lt;data&gt;</span>
+   ...reconstructed submission XML...
+ <span class="nt">&lt;/data&gt;</span>
+ <span class="nt">&lt;mediaFile&gt;</span>
+   <span class="nt">&lt;fileName&gt;</span>...<span class="nt">&lt;/fileName&gt;</span>
+   <span class="nt">&lt;hash&gt;</span>md5:...<span class="nt">&lt;/hash&gt;</span>
+   <span class="nt">&lt;downloadUrl&gt;</span>...<span class="nt">&lt;/downloadUrl&gt;</span>
+ <span class="nt">&lt;/mediaFile&gt;</span>
+ ...repeat as needed...
+<span class="nt">&lt;/submission&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">&lt;mediaFile&gt;</span></code> tag has the same interpretation as it does in the OpenRosa Form Listing API’s manifest XML.</p>
+<p>The reconstructed submission XML generally does not respect the namespaces of the original form definition. As a special case, if it finds a form group that could be interpreted as the OpenRosa Metadata block, it does use the <code class="docutils literal"><span class="pre">orx</span></code> namespace for that.</p>
+<p>Like the <code class="docutils literal"><span class="pre">&lt;submissionMetadata&gt;</span></code> tag on the Form Submission/Overwrite API response, the top-level element in the submission XML contains all the metadata fields supplied by the server.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="encrypted-forms.html" class="btn btn-neutral float-right" title="Encrypted Forms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="launch-collect-from-app.html" class="btn btn-neutral" title="Launching ODK Collect from External Apps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

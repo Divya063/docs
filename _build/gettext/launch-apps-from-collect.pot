@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/launch-apps-from-collect.rst:15
+msgid "Launching External Apps from Collect Forms"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:19
+msgid ":doc:`launch-collect-from-app`"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:24
+msgid "Launching external apps to populate single fields"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:26
+msgid "ODK Collect can launch external applications to populate string, integer or decimal fields using the ``ex:intentString`` appearance. A ``value`` parameter that holds the current value for that field is passed to the application. Since v1.4.3, additional parameters can be specified. The names of these parameters are user defined and ``value`` is the only reserved name."
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:29
+#: ../../src/launch-apps-from-collect.rst:59
+msgid "XLSForm"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:31
+#: ../../src/launch-apps-from-collect.rst:61
+msgid "survey"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "type"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "name"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "label"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "appearance"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "integer"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "counter"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "Click launch to start the counter app"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "ex:org.opendatakit.counter(form_id='counter-form', form_name='Counter Form', question_id='1', question_name='Counter')"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:37
+msgid "XForm XML"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:45
+msgid "In the examples above, the parameters specified are ``form_id``, ``form_name``, ``question_id`` and ``question_name``. Any number of extra parameters can be specified. The parameter values can be:"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:47
+msgid "XPath expressions referring to other fields and including function calls"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:48
+msgid "String literals defined in single quotes"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:49
+msgid "Raw integers or decimals"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:54
+msgid "Launching external apps to populate multiple fields"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:56
+msgid "Since v1.4.3, a ``field-list`` group can have an ``intent`` attribute that allows an external application to populate it."
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "body::intent"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "begin_group"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "mygroup"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "Fields to populate"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "field-list"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "org.mycompany.myapp(my_text='Some text', uuid=/myform/meta/instanceID)"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "text"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "sometext"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "Some text"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "someinteger"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "Some integer"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:1
+msgid "end_group"
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:83
+msgid "The ``intent`` attribute is only used when the group has an ``appearance`` of ``field-list``. The format and the functionality of the ``intent`` value is the same as above. If bundle of values returned by the external application contains values whose keys match the type and the name of the sub-fields, then these values overwrite the current values of those sub-fields."
+msgstr ""
+
+#: ../../src/launch-apps-from-collect.rst:85
+msgid "The external app is launched with the parameters that are defined in the intent string plus the values of all the sub-fields that are either text, decimal, or integer. Any other sub-field is invisible to the external app."
+msgstr ""
+

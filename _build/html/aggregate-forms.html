@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing Forms in Aggregate &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Using ODK Aggregate" href="aggregate-use.html"/>
+        <link rel="next" title="Working with Submitted Data in Aggregate" href="aggregate-data.html"/>
+        <link rel="prev" title="Using ODK Aggregate" href="aggregate-use.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Managing Forms in Aggregate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#view-blank-form-list">View blank form list</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#blank-form-info-in-list">Blank form info in list</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-new-forms">Adding New Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-and-downloading-forms">Viewing and downloading forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disabling-or-enabling-downloading-of-a-form">Disabling or enabling downloading of a form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disabling-or-enabling-submission-of-a-form">Disabling or enabling submission of a form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-a-blank-form">Deleting a blank form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-form-data">Exporting form data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#publishing-form-data">Publishing form data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-published-data">Viewing published data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-submissions-manually">Managing submissions manually</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-forms-directly">Submitting forms directly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-form-submissions">Removing form submissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#incomplete-form-submissions">Incomplete form submissions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-data.html">Working with Submitted Data in Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-admin.html">Administering Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-data-access.html">Getting Data Out of Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-visualize.html">Visualizing Geographic Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-help.html">Getting Help in Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-use.html">Using ODK Aggregate</a> &raquo;</li>
+        
+      <li>Managing Forms in Aggregate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-forms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-forms-in-aggregate">
+<h1>Managing Forms in Aggregate<a class="headerlink" href="#managing-forms-in-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>You can add, download and delete forms, export data into useful formats, publish data into another service, manually upload submissions and view the published data. ODK Aggregate provides all these options under the <span class="guilabel">Form Management</span> tab.</p>
+<div class="section" id="view-blank-form-list">
+<span id="aggregate-view-blank-form-list"></span><h2>View blank form list<a class="headerlink" href="#view-blank-form-list" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Click on <span class="guilabel">Forms list</span> tab to see a list of all your forms.</p>
+<p>From here, you can add new forms, delete forms, download forms as well as restrict submissions for a form.</p>
+<img alt="Image showing list of all forms." src="_images/form-list.png" />
+<div class="section" id="blank-form-info-in-list">
+<span id="aggregate-form-list-info"></span><h3>Blank form info in list<a class="headerlink" href="#blank-form-info-in-list" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>In addition to the functional columns described below, the form list displayes the following information about each form.</p>
+<ul class="simple">
+<li><span class="guilabel">Form Id</span> is the unique name for the form.</li>
+<li><span class="guilabel">Media Files</span> is the count of media files associated with the form.</li>
+<li><span class="guilabel">User</span> is the user who uploaded the form.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="adding-new-forms">
+<span id="aggregate-add-new-forms"></span><h2>Adding New Forms<a class="headerlink" href="#adding-new-forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Under the <span class="guilabel">Form list</span> tab, you will see <span class="guilabel">Add New Form</span> button  to upload a new form definition to ODK Aggregate.</p>
+<img alt="Image showing add form button." src="_images/add-form.png" />
+<p>When you click on it a box will open asking for details of the form. <span class="guilabel">Form Definition</span> is required and <span class="guilabel">Media File(s)</span> is optional. Choose the <code class="docutils literal"><span class="pre">.xml</span></code> file that will be used. You can also choose the appropriate media files for the form.</p>
+<img alt="Image showing add form options." src="_images/add-form-options.png" />
+</div>
+<div class="section" id="viewing-and-downloading-forms">
+<span id="aggregate-view-download-form"></span><h2>Viewing and downloading forms<a class="headerlink" href="#viewing-and-downloading-forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>From the <a class="reference internal" href="#aggregate-view-blank-form-list"><span class="std std-ref">form list</span></a>,  click on form’s <span class="guilabel">Title</span> to view the XForm (the actual XML file). You can then download the file by clicking on <span class="guilabel">Download XML</span> in the Form XML Viewer.</p>
+<img alt="Image showing xml viewer for form." src="_images/xml-viewer.png" />
+</div>
+<div class="section" id="disabling-or-enabling-downloading-of-a-form">
+<span id="aggregate-toggle-form-download"></span><h2>Disabling or enabling downloading of a form<a class="headerlink" href="#disabling-or-enabling-downloading-of-a-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To disable or enable the ability of Collect or other clients to download forms, toggle the checkbox in the <span class="guilabel">Downloadable</span> column of the <a class="reference internal" href="#aggregate-view-blank-form-list"><span class="std std-ref">blank forms list</span></a>.</p>
+</div>
+<div class="section" id="disabling-or-enabling-submission-of-a-form">
+<span id="aggrgete-toggle-form-submission"></span><h2>Disabling or enabling submission of a form<a class="headerlink" href="#disabling-or-enabling-submission-of-a-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To disable or enable the ability of Collect or other clients to submit completed instances of a form, toggle the checkbox in the <span class="guilabel">Accept Submissions</span> column of the <a class="reference internal" href="#aggregate-view-blank-form-list"><span class="std std-ref">blank forms list</span></a>.</p>
+</div>
+<div class="section" id="deleting-a-blank-form">
+<span id="aggregate-delete-blank-form"></span><h2>Deleting a blank form<a class="headerlink" href="#deleting-a-blank-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Click on the <span class="guilabel">Delete</span> button for the form in the <a class="reference internal" href="#aggregate-view-blank-form-list"><span class="std std-ref">blank forms list</span></a>.</p>
+</div>
+<div class="section" id="exporting-form-data">
+<span id="export-form"></span><h2>Exporting form data<a class="headerlink" href="#exporting-form-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Click on <span class="guilabel">Export</span> option in the form list to export form into useful formats and choose the format in which you want to export data. You can also choose a filter which you have saved for the form to export only a certain subset of form. Details on <a class="reference internal" href="aggregate-data-access.html#export-data"><span class="std std-ref">exporting data</span></a> are given in the <a class="reference internal" href="aggregate-data-access.html"><span class="doc">data transfer</span></a> section.</p>
+</div>
+<div class="section" id="publishing-form-data">
+<span id="publish-form"></span><h2>Publishing form data<a class="headerlink" href="#publishing-form-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Click on <span class="guilabel">Publish</span> option in the form list to publish the form into another service. You can choose where you want to publish data and which data you want to publish. Details on <a class="reference internal" href="aggregate-data-access.html#publish-data"><span class="std std-ref">publishing data</span></a> are given in the <a class="reference internal" href="aggregate-data-access.html"><span class="doc">data transfer</span></a> section.</p>
+<div class="section" id="viewing-published-data">
+<span id="view-publish-data"></span><h3>Viewing published data<a class="headerlink" href="#viewing-published-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>You can get a view of the published data you have created for a particular form by clicking on <span class="guilabel">Published Data</span>.</p>
+<img alt="Image showing published data." src="_images/published-data.png" />
+<ul class="simple">
+<li>Select the form corresponding to the published data in the <span class="guilabel">Form</span> dropdown.</li>
+<li>Read the message that appears and click on <span class="guilabel">Purge Published Data</span>.</li>
+<li><span class="guilabel">Created By</span> shows the email of the user who created the published file.</li>
+<li><span class="guilabel">Status</span> can be <cite>ACTIVE</cite> (the file is ready to view) or <cite>ESTABLISHED</cite> (something went wrong in the process of exporting.)</li>
+<li><span class="guilabel">Start Date</span> shows the time when you finished filling out the <span class="guilabel">Publish</span> form.</li>
+<li><span class="guilabel">Action</span> is based on your selection of upload only, stream only, or both in the <span class="guilabel">Publish</span> form.</li>
+<li><span class="guilabel">Type</span> shows the type you choose to publish your data to.</li>
+<li><span class="guilabel">Owner</span> shows the owner of the published data.</li>
+<li><span class="guilabel">Name</span> is the place where you published your data. If the type was a Google Fusion Table, click on the link to view the Fusion Table.</li>
+<li>Select delete box in the <span class="guilabel">Delete</span> column if you want to delete your published file.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="managing-submissions-manually">
+<span id="managing-form-submissions"></span><h2>Managing submissions manually<a class="headerlink" href="#managing-submissions-manually" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can manually upload submissions for a form and check incomplete submissions under the <span class="guilabel">Submission Admin</span> tab.</p>
+<img alt="Image showing submission admin tab." src="_images/submission-admin.png" />
+<div class="section" id="submitting-forms-directly">
+<span id="aggregate-submit-forms-directly"></span><h3>Submitting forms directly<a class="headerlink" href="#submitting-forms-directly" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>To manually upload form submissions, click on <span class="guilabel">Manually upload submission data</span>.</p>
+<img alt="Image showing window to manually upload submissions." src="_images/submission-upload.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Submissions in the Collect app are located under the /odk/instances directory on the phone’s sdcard. This directory will contain subdirectories with names of the form in the format <code class="docutils literal"><span class="pre">formID_yyyy-mm-dd_hh-MM-ss</span></code>. Within each of these subdirectories are the submission data file (<code class="docutils literal"><span class="pre">formID_yyyy-mm-dd_hh-MM-ss.xml</span></code>), and zero or more associated media files (images, audio, video) associated with this submission.</p>
+<blockquote class="last">
+<div></div></blockquote>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">If you upload a submission, but fail to upload all media attachments, it places the submission in the incomplete submissions bucket. While it resides there, it won’t be published to external servers or downloadable via ODK Briefcase.</p>
+</div>
+</div>
+<div class="section" id="removing-form-submissions">
+<span id="aggregate-remove-form-submissions"></span><h3>Removing form submissions<a class="headerlink" href="#removing-form-submissions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>To remove a form submission, select the form in the <span class="guilabel">Form</span> dropdown and click on <span class="guilabel">Purge Submission Data</span>.</p>
+</div>
+<div class="section" id="incomplete-form-submissions">
+<span id="id1"></span><h3>Incomplete form submissions<a class="headerlink" href="#incomplete-form-submissions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>To see a list of incomplete submissions for a particular form under the <span class="guilabel">Incomplete Submissions</span> list.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-data.html" class="btn btn-neutral float-right" title="Working with Submitted Data in Aggregate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-use.html" class="btn btn-neutral" title="Using ODK Aggregate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

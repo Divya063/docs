@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing on AWS (Cloud) &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Installing Aggregate" href="aggregate-install.html"/>
+        <link rel="next" title="ODK Aggregate Virtual Machine" href="aggregate-vm.html"/>
+        <link rel="prev" title="Installing on Tomcat (Local or Cloud)" href="aggregate-tomcat.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-deployment-planning.html">Planning Your Aggregate Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="aggregate-install.html">Installing Aggregate</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="aggregate-app-engine.html">Installing on App Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate-tomcat.html">Installing on Tomcat (Local or Cloud)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Installing on AWS (Cloud)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate-vm.html">ODK Aggregate Virtual Machine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-upgrade.html">Upgrading Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-backup.html">Backing Up Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-setup.html">Setting Up ODK Aggregate</a> &raquo;</li>
+        
+          <li><a href="aggregate-install.html">Installing Aggregate</a> &raquo;</li>
+        
+      <li>Installing on AWS (Cloud)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-aws.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-on-aws-cloud">
+<h1>Installing on AWS (Cloud)<a class="headerlink" href="#installing-on-aws-cloud" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This document provides instructions on setting up ODK Aggregate using <a class="reference external" href="http://tomcat.apache.org/">Apache Tomcat</a> and <a class="reference external" href="https://www.mysql.com/">MySQL</a> on a Linux micro-instance on the <a class="reference external" href="https://aws.amazon.com/">Amazon Web Services</a>  <a class="reference external" href="https://aws.amazon.com/ec2/">EC2 infrastructure</a>.</p>
+<div class="admonition-additional-resources admonition">
+<p class="first admonition-title">Additional Resources</p>
+<ul class="last simple">
+<li>For more on the general set-up of Tomcat on AWS, see <a class="reference external" href="http://www.excelsior-usa.com/articles/tomcat-amazon-ec2-basic.html">Cat in the cloud Apache Tomcat Series</a>.</li>
+<li>For an introduction to hosting on AWS, see <a class="reference external" href="https://aws.amazon.com/documentation/gettingstarted/">Amazon’s getting-started guides</a>.</li>
+<li>For details on setting up ODK Aggregate on Tomcat, but not in an AWS environment, see <a class="reference internal" href="aggregate-tomcat.html"><span class="doc">Installing on Tomcat (Local or Cloud)</span></a>.</li>
+</ul>
+</div>
+<div class="admonition-before-you-get-started admonition">
+<p class="first admonition-title">Before you get started…</p>
+<p>Get an Amazon Web Services account at <a class="reference external" href="http://aws.amazon.com/ec2/">http://aws.amazon.com/ec2/</a>.</p>
+<blockquote class="last">
+<div><div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>You will need to confirm a working phone number.</li>
+<li>If you want to use a U.S. number but are presently overseas, you can use a Google Voice number routed to Google Chat.</li>
+</ul>
+</div>
+</div></blockquote>
+</div>
+<ol class="arabic">
+<li><p class="first">Go to the AWS/EC2 management console and note your region (shown in the upper-left).</p>
+</li>
+<li><p class="first">Launch a new instance with the <span class="guilabel">Launch Instance</span> button prominently displayed on the EC2 console home screen.</p>
+<p>Accept the default behavior and use the quick-launch wizard.</p>
+</li>
+<li><p class="first">For the launch configuration, choose the <span class="guilabel">Amazon Linux AMI: EBS-Backed (64-bit)</span> option.</p>
+<p>This is one of the instance types that you can run on a micro-instance as part of their <a class="reference external" href="http://aws.amazon.com/free/">free tier</a>.</p>
+<p>Leave everything else with the default settings, including the instance type. The instance type will default to <code class="docutils literal"><span class="pre">t2.micro</span></code> which is a small, limited instance that can be run for free. For a price, you can upgrade the instance type later if you need better performance.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The exact AMI name and ID will depend on your region.</p>
+</div>
+</li>
+<li><p class="first">Create a new key pair, download the private key, and keep the private key safe.</p>
+<p>This will be your only method of communicating with your new instance and <strong>you will not be allowed to download it again</strong>.</p>
+</li>
+<li><p class="first">After creating the instance, add security rules for allowing both HTTP and HTTPS.</p>
+<p>Choose the <span class="guilabel">Security Groups</span> tab and click on the auto-created security group associated with your new instance. This might have been called <code class="docutils literal"><span class="pre">launch-wizard-1</span></code>. If you’re not sure, you can go to the <span class="guilabel">Instances</span> tab to see which <span class="guilabel">Security Group</span> is listed for the new instance.</p>
+<p>In the properties pane at the bottom, click on the <span class="guilabel">Inbound tab</span>, select <code class="docutils literal"><span class="pre">HTTP</span></code> from the <span class="guilabel">create a new rule</span> drop-down, then click <span class="guilabel">Add Rule</span>. Do the same for <code class="docutils literal"><span class="pre">HTTPS</span></code>. Then click <span class="guilabel">Apply Rule Changes</span>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">To avoid potential problems with MTU settings and packet loss, also add a rule to allow <em>All ICMP</em>. Add a rule for both IPv4 and IPv6. After you create the new rule, click <span class="guilabel">Apply Rule Changes</span>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Tomcat defaults to listening on nonstandard ports <code class="docutils literal"><span class="pre">8080</span></code> and <code class="docutils literal"><span class="pre">8443</span></code>. In this guide we provide instructions to use the standard HTTP and HTTPS ports instead.</p>
+<p class="last">However, if you want to leave Aggregate on the non-standard ports, you can certainly do so. In that case, simply add two additional security rules to allow access via <code class="docutils literal"><span class="pre">8080</span></code> and <code class="docutils literal"><span class="pre">8443</span></code>.</p>
+</div>
+</li>
+<li><p class="first">Switch to the <span class="guilabel">Instances</span> tab, click on your instance, and note its Public DNS Address in the properties pane below.</p>
+<p>This is the default address that you will use to access your instance.</p>
+</li>
+<li><p class="first">Allocate an <em>elastic IP</em> and domain name.</p>
+<p>This step is not required, but it allows you to access your Aggregate instance using a human readable URL set by you. So we recommend it.</p>
+<p>Navigate to Elastic IPs and click <span class="guilabel">Allocate New Address</span>. Associate it with your new instance.  Note your new IP. Also, if possible, configure DNS to route one or more names to this address. You can then use this IP and/or name to access your instance (and can forget the Public DNS Address assigned by AWS).</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The IP is free so long as you keep it associated with a running instance. If you stop your instance and do not release the IP address for others to use (in essence, wasting it), then Amazon will begin charging you for holding the unused address.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">When you set up Aggregate below, you will need to configure it with the domain name you will use to access it. Thus, it is best if you configure the domain name first.</p>
+</div>
+</li>
+<li><p class="first">Connect to your instance.</p>
+<p>Go to the <span class="guilabel">Instances</span> tab and select <span class="menuselection">Connect</span> from the Instance Actions drop-down (alternatively, you can right-click on the instance and choose Connect). From here AWS presents you with several options.</p>
+<ul class="simple">
+<li>The easiest is to connect using their Java SSH client. If you choose that option, you just have to specify the location of your private key file (created above) and AWS launches an in-browser SSH client to connect to your instance.</li>
+<li>You can also select to connect with a stand-alone SSH client. If you choose this option, AWS will provide extremely helpful instructions, including an SSH command that you can cut and paste into your local command window. It will also inform you that you may need to update the permissions on your local private key file in order for the ssh client to run properly, and it will even give you the command to run (for example, <strong class="command">chmod 400 xxx.pem</strong>).</li>
+<li>Once you connect, you will probably be told that there are new security updates to install. You can run <strong class="command">sudo yum update</strong> to install these updates, as it advises.</li>
+</ul>
+</li>
+<li><p class="first">Transfer files to your instance.</p>
+<p>When you login using <code class="docutils literal"><span class="pre">ssh</span></code>, you will be in the (empty) <code class="docutils literal"><span class="pre">ec2-user</span></code> home directory. You will want to be able to transfer files between here and your local directory. You have several options.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If you’re using the command-line ssh, you can also use the command-line scp to copy files. The syntax is similar to ssh, but of course you also need to specify the source and destination file paths.</li>
+<li>An easier option is to use an <a class="reference external" href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP client</a> like <a class="reference external" href="https://filezilla-project.org/">FileZilla</a>. (You can use any FTP client, as long as it supports SFTP).<ul>
+<li>To configure FileZilla to connect to your instance, go into <span class="menuselection">Edit‣Settings/Preferences‣Connection‣SFTP</span> and add your private key to FileZilla’s keystore (it will offer to convert the key format, which you should accept). Then, go into Site Manager and create a new site. The host should be the IP, name, or Public DNS for your instance, the port can be blank, the protocol should be <strong>SFTP – SSH File Transfer Protocol</strong>, the login type should be Normal, and the user should be <strong>ec2-user</strong>. Everything else should be left at the defaults, including the password (which will be blank). When you connect, the default directory will be the ec2-user’s home directory, but you can also navigate to other directories.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Install Tomcat 6.</p>
+<p>While logged into your ec2 instance:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo yum install tomcat6
+</pre></div>
+</div>
+<p>This installs configuration files into <code class="file docutils literal"><span class="pre">/etc/tomcat6</span></code> and other files into <code class="file docutils literal"><span class="pre">/usr/share/tomcat6</span></code>. Log files go into <code class="file docutils literal"><span class="pre">/var/log/tomcat6</span></code>.</p>
+</li>
+<li><p class="first">Install MySQL.</p>
+<p>While logged into your ec2 instance:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo yum install mysql mysql-server
+</pre></div>
+</div>
+<p>Open <code class="file docutils literal"><span class="pre">/etc/my.cnf</span></code>. In the <code class="docutils literal"><span class="pre">[mysqld]</span></code> section, add:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>character_set_server=utf8
+collation_server=utf8_unicode_ci
+max_allowed_packet=1073741824
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Whatever your preferred editor, when updating files on the server, the easiest tool is probably <a class="reference external" href="https://en.wikipedia.org/wiki/Vim_(text_editor)">vim</a>. This will open the file directly in your terminal.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> vi /etc/my.conf
+</pre></div>
+</div>
+<p class="last">Vim can be a little tricky to use at first. There are many tutorials online. You may find <a class="reference external" href="http://www.openvim.com/">this interactive Vim introduction</a> helpful.</p>
+</div>
+</li>
+<li><p class="first">Run MySQL.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo service mysqld start
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install and transfer ODK Aggregate files.</p>
+<ol class="loweralpha simple">
+<li>First, install ODK Aggregate on your local computer (not on your AWS instance).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">During set-up, it’s important to specify that this will be a MySQL installation, and it is also very important that you specify the correct domain name or IP address that will be used to access your Aggregate server. Ideally, this will be a specific domain name that you have already mapped to an elastic IP (and can re-map later if you change the IP).</p>
+</div>
+<ol class="loweralpha simple" start="2">
+<li>The installation will create a file named <code class="file docutils literal"><span class="pre">create_db_and_user.sql</span></code>. Upload this to your ec2-user home directory.</li>
+<li>The installation will also create a file named <code class="file docutils literal"><span class="pre">ODKAggregate.war</span></code>. Rename this to <code class="file docutils literal"><span class="pre">ROOT.war</span></code> and upload it to the <code class="file docutils literal"><span class="pre">/usr/share/tomcat6/webapps</span></code> folder. If you receive a <em>Permission Denied</em> error, you might need to execute <strong class="command">chmod -R 755</strong> or something similar for the webapps folder.</li>
+<li>After <code class="file docutils literal"><span class="pre">ROOT.war</span></code> has been copied to the server, you need to make sure Tomcat has permission to use it. Run <strong class="command">sudo chown tomcat ROOT.war</strong> and <strong class="command">sudo chgrp tomcat ROOT.war</strong> in the webapps directory to ensure this is the case.</li>
+</ol>
+</li>
+<li><p class="first">Configure MySQL.</p>
+<ol class="loweralpha simple">
+<li>On your AWS instance, run <code class="file docutils literal"><span class="pre">/usr/bin/mysql_secure_installation</span></code> to set a root password and secure your MySQL installation.</li>
+<li>Run <strong class="command">mysql –u root -p</strong> to log in to MySQL (specifying the password you just set), and type <strong class="command">source ~/create_db_and_user.sql</strong>. This will create the ODK user and database. Type <strong class="command">quit</strong> on the mysql prompt to quit from MySQL.</li>
+<li>Run <strong class="command">sudo /sbin/chkconfig –levels 235 mysqld on</strong> to auto-start MySQL whenever your instance boots up.</li>
+</ol>
+</li>
+<li><p class="first">Configure Tomcat.</p>
+<ol class="loweralpha simple">
+<li>Download the MySQL Connector/J from the <a class="reference external" href="http://dev.mysql.com/downloads/connector/j/)">MySQL download page</a>. Unzip it and transfer the <code class="file docutils literal"><span class="pre">mysql‐connector‐java‐x.x.x‐bin.jar</span></code> file up to your instance’s <code class="file docutils literal"><span class="pre">/usr/share/tomcat6/lib</span></code> directory.</li>
+<li>Edit <code class="file docutils literal"><span class="pre">/etc/tomcat6/server.xml</span></code> in order to customize settings.</li>
+<li>Assuming that you want to run Aggregate on the standard HTTP port (80) and HTTPS port (443):</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Change <code class="docutils literal"><span class="pre">&lt;Connector</span> <span class="pre">port=&quot;8080&quot;</span> <span class="pre">protocol=&quot;HTTP/1.1&quot;</span></code> to <code class="docutils literal"><span class="pre">&lt;Connector</span> <span class="pre">port=&quot;8080&quot;</span> <span class="pre">proxyPort=&quot;80&quot;</span> <span class="pre">protocol=&quot;HTTP/1.1&quot;</span></code> (that is, add the <code class="docutils literal"><span class="pre">proxyPort</span></code> attribute).</li>
+<li>If you are using SSL, also change <code class="docutils literal"><span class="pre">&lt;Connector</span> <span class="pre">port=&quot;8443&quot;</span> <span class="pre">protocol=&quot;HTTP/1.1&quot;</span> <span class="pre">SSLEnabled=&quot;true&quot;</span></code> to <code class="docutils literal"><span class="pre">&lt;Connector</span> <span class="pre">port=&quot;8443&quot;</span> <span class="pre">proxyPort=&quot;443&quot;</span> <span class="pre">protocol=&quot;HTTP/1.1&quot;</span> <span class="pre">SSLEnabled=&quot;true&quot;</span></code>.</li>
+<li>Execute the following commands to have Linux forward to the ports on which Tomcat listens:</li>
+</ul>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport <span class="m">80</span> -j REDIRECT --to-port <span class="m">8080</span>
+<span class="gp">$</span> sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport <span class="m">443</span> -j REDIRECT --to-port <span class="m">8443</span>
+<span class="gp">$</span> sudo /sbin/service iptables save
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>If you have an SSL certificate for HTTPS support:<ul>
+<li>Make sure that the <code class="docutils literal"><span class="pre">&lt;Connector</span> <span class="pre">port=&quot;8443&quot;</span></code> part of the configuration file is not commented out. If it is, un-comment it.</li>
+<li>Upload your SSL keystore file and the certificate(s) to the server.</li>
+<li>Install it as instructed. (If you buy from RapidSSL, for example, they provide you with Tomcat installation instructions. For example, you may need to download a special P7S certificate file, then install it on the server with <strong class="command">keytool -import -alias YOURALIAS trustcacerts file xxxxx.p7s -keystore xxxxx.keystore</strong>.)</li>
+<li>In the <code class="docutils literal"><span class="pre">&lt;Connector</span> <span class="pre">port=&quot;8443&quot;</span></code> part of the configuration file, specify the location of your keystore file and password (for example: <code class="docutils literal"><span class="pre">keystoreFile=&quot;/…/xxxxx.keystore&quot;</span> <span class="pre">keystorePass=&quot;changeit&quot;</span></code>).</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Start Tomcat with <strong class="command">sudo service tomcat6 start</strong>.</li>
+<li>Configure Tomcat to auto-start when the instance boots with <strong class="command">sudo chkconfig –level 345 tomcat6 on</strong>.</li>
+</ul>
+</li>
+<li><p class="first">Login and test.</p>
+<p>At this point, you should be able to login to your AWS-hosted Aggregate instance by going to its domain name or IP address in your web browser (with or without HTTPS, depending on your set-up).</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">For your first login, you will need to login with the Google account you specified during the Aggregate installation process. Then you can add additional users from the <span class="guilabel">Site Admin</span> tab.</p>
+</div>
+<p>Once you have confirmed that your Aggregate instance is working, you can back it up by creating an image of the instance (an <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">AMI</a>).</p>
+<p>To do this, go to the <span class="guilabel">Instances</span> tab in the AWS-EC2 console, then select the <span class="guilabel">Create Image (EBS AMI)</span> Instance Action for your instance.</p>
+</li>
+<li><p class="first">Further set-up for production servers.</p>
+<ul class="simple">
+<li>You will want to create a system to monitor and manage the log files in <code class="file docutils literal"><span class="pre">/var/log/tomcat6</span></code>.</li>
+<li>You will also want to create a system for regular back-ups and a plan for how to restore them when needed. This will be needed to safely back up the MySQL database, which may be in-use at any given time.</li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>The micro instance is only free for 12 months from AWS sign-up, and that you may exceed the free quotas on disk space or network bandwidth before that point (<a class="reference external" href="http://aws.amazon.com/free/">see</a>).</li>
+<li>You may at some point need to upgrade your instance to a standard instance if the micro instance is not providing enough performance.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-vm.html" class="btn btn-neutral float-right" title="ODK Aggregate Virtual Machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-tomcat.html" class="btn btn-neutral" title="Installing on Tomcat (Local or Cloud)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

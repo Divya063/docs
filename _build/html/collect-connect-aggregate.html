@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Connecting to your own ODK Aggregate Server &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Connecting to a Server" href="collect-connect.html"/>
+        <link rel="next" title="Connecting to a Google Drive Account" href="collect-connect-google.html"/>
+        <link rel="prev" title="Connecting to a Server" href="collect-connect.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="collect-install.html">Installing Collect</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="collect-connect.html">Connecting to a Server</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Connecting to your own ODK Aggregate Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collect-connect-google.html">Connecting to a Google Drive Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collect-connect.html#other-options">Other options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collect-setup.html">Setting Up ODK Collect</a> &raquo;</li>
+        
+          <li><a href="collect-connect.html">Connecting to a Server</a> &raquo;</li>
+        
+      <li>Connecting to your own ODK Aggregate Server</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/collect-connect-aggregate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="connecting-to-your-own-odk-aggregate-server">
+<h1>Connecting to your own ODK Aggregate Server<a class="headerlink" href="#connecting-to-your-own-odk-aggregate-server" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition-before-you-get-started admonition">
+<p class="first admonition-title">Before you get started…</p>
+<p>You need to <a class="reference internal" href="aggregate-install.html"><span class="doc">install ODK Aggregate</span></a> before you can connect to it.</p>
+<p>When connecting to an ODK Aggregate server from Collect, you will need a username and password from your Aggregate server. This can be the superuser created when you install Aggregate, or another user account created by you.</p>
+<ul class="last simple">
+<li>See <a class="reference internal" href="aggregate-install.html"><span class="doc">Installing Aggregate</span></a> to setup your ODK Aggregate server.</li>
+<li>See <a class="reference internal" href="aggregate-admin.html"><span class="doc">Aggregate Site Admin</span></a> for details on setting up new users.</li>
+</ul>
+</div>
+<ol class="arabic">
+<li><p class="first">From the Action Button (<span class="guilabel">⋮</span>), select <span class="menuselection">General Settings</span></p>
+<img alt="The Main Menu screen of the Collect app. The three-dot 'kebab' menu in the upper-right corner is circled in red." src="_images/main-menu-highlight-kebab.png" />
+<img alt="The Main Menu screen of the Collect App. A modal menu has unrolled in the top-right corner, with the option *About*, *General Settings*, and *Admin Settings*. *General Settings* is circled in red." src="_images/kebab-menu-general-settings.png" />
+</li>
+<li><p class="first">Select <span class="guilabel">Server</span></p>
+<img alt="The General Settings menu in the Collect app. The options are *Server*, *User Interface*, *Form management*, and *User and device identity*. *Server* is circled in red." src="_images/general-settings-server.png" />
+</li>
+<li><p class="first">Select <span class="guilabel">Type</span>, and set it to <span class="menuselection">ODK Aggregate</span></p>
+<img alt="The Server Settings screen in the Collect app. The first item in the menu is labeled *Type*, and this item is circled in red." src="_images/server-settings-type-aggregate.png" />
+<img alt="The Server Settings screen in the Collect App, as displayed in the previous image. There is now a modal menu labeled *Platform*, with single-select radio buttons for: *ODK Aggregate*, *Google Drive, Google Sheets*, and *Other*. *ODK Aggregate* is selected and circled in red." src="_images/server-settings-type-modal.png" />
+</li>
+<li><p class="first">Edit <span class="guilabel">ODK Aggregate settings</span></p>
+<img alt="The Server Settings screen in the Collect app. Below the *Type* option is a section titled *ODK Aggregate Settings*, with the items labeled *URL*, *Username*, and *Password*. These three items are numbered in red." src="_images/server-settings-aggregate-settings.png" />
+<img alt="The Server Settings screen in the Collect app, with a modal overlay titled *Server URL*. There is a single text-entry field with a URL, and buttons labeled OK and CANCEL." src="_images/server-settings-server-url.png" />
+<img alt="The Server Settings screen in the Collect app, with a modal overlay titled *ODK Username.* There is a single text-entry field, and buttons labeled OK and CANCEL." src="_images/server-settings-odk-username.png" />
+<img alt="The Server Settings screen in the Collect app, with a modal overlay titled *ODK Password*. There is a single obscured-text field, and buttons for OK and CANCEL." src="_images/server-settings-odk-password.png" />
+</li>
+</ol>
+<hr class="docutils" />
+<div class="admonition-connecting-to-another-openrosa-server-app admonition">
+<p class="first admonition-title">Connecting to another OpenRosa server app</p>
+<p>Any server application that implements the <a class="reference external" href="https://bitbucket.org/javarosa/javarosa/wiki/OpenRosaAPI">OpenRosa API</a> can be connected to, using <a class="reference internal" href="#"><span class="doc">the instructions laid out above</span></a>. You would still choose <span class="menuselection">ODK Aggregate</span> as the server type.</p>
+<p>In <span class="menuselection">Server Settings</span>, there is currently a <span class="guilabel">Type</span> option of <span class="menuselection">Other</span>. It is unlikely you will need this option, since any server application will need to implement the same API as ODK Aggregate.</p>
+<p>If you think you might need to connect to a non-Aggregate server application, and are having trouble, we encourage you to visit our <a class="reference external" href="https://forum.opendatakit.org/c/support">Support Forum</a>.</p>
+<p class="last">The <span class="menuselection">Other</span> option will likely be deprecated in the future, and its use is not recommended.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collect-connect-google.html" class="btn btn-neutral float-right" title="Connecting to a Google Drive Account" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect-connect.html" class="btn btn-neutral" title="Connecting to a Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

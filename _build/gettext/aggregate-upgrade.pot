@@ -1,0 +1,1601 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/aggregate-upgrade.rst:15
+msgid "Upgrading Aggregate"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:20
+msgid "Need for Upgrading"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:22
+msgid "It is important to upgrade to newer ODK Aggregate versions as they come out. You don't need to do this immediately, but this should be something you do at least once a year."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:24
+msgid "There are several reasons for this."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:27
+msgid "Security vulnerabilities"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:29
+msgid "The ODK developers are constantly upgrading the libraries we use with newer, safer, versions. The older your software, the greater the number of vulnerabilities in it."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:32
+msgid "Hosting revisions"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:34
+msgid "If you are using Google App Engine as we recommend, your hosting environment is being continuously updated."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:36
+msgid "Google AppEngine is a managed environment, unlike AWS or other \"bare-box\" hosting services. Google is continuously updating features and removing support for older features in this environment."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:38
+msgid "The Aggregate development team is committed to supporting Google App Engine, so we update our application as the platform changes. If you do not upgrade gradually as new versions come out, your installation may stop working or cease to have a viable upgrade path."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:41
+msgid "Performance improvements"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:43
+msgid "As we find performance issues and address them, the Aggregate gets faster and cheaper to run."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:46
+msgid "Enhanced capabilities"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:48
+msgid ":doc:`javarosa`, the underlying form rendering library is updated about annually. Those updates add new functions, features, and occasionally data types. New features are slowly added to ODK Aggregate, too."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:50
+msgid "To use these newer features, keep your Aggregate installation up to date."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:55
+msgid "Determining your Aggregate version"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:57
+msgid "If you are able to log onto the server as a Site Administrator, the ODK Aggregate version is displayed at the top of the :guilabel:`Preferences` sub-tab under the :guilabel:`Site Admin` tab."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:59
+msgid "If you are unable to log onto your server, you will need to search for the version in the application logs. To do that:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:61
+msgid "Open a browser to https://appengine.google.com."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:62
+msgid "Choose the project id for your ODK Aggregate server by clicking on the project dropdown in the top left corner."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:70
+msgid "Search `logs` in the search box and select `logging`."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:75
+msgid "In the filter text box paste this text : `afterPropertiesSet` and hit enter."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:76
+msgid "Expand the list of logs and find the log which shows the version of Aggregate. It will of the following format:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:87
+msgid "In the 1.0 Production release, the Version appears on the :guilabel:`Site Admin` Tab, under the :guilabel:`Preferences` sub-tab. If no version information is displayed even after you log in, then you are running an extremely old version of ODK Aggregate; in that case follow this cheat sheet:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:89
+msgid "`Beta 1 and earlier`: :guilabel:`Permissions` tab looks nothing like the tab in the Production release."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:90
+msgid "`Beta 2`: :guilabel:`Permissions` tab looks like the Production release; Forms tab does not show the number of media files associated with a form."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:91
+msgid "`Beta 3`: The number of media files associated with a form is displayed; publishing to Google is broken."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:92
+msgid "`Beta 4`: There are :guilabel:`Form Management` and :guilabel:`Site Admin` tabs; publishing to Google is broken."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:93
+msgid "`RC1`: csv exports apply the active Filter to the exported columns; publishing to Google is broken."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:94
+msgid "`RC2`: :guilabel:`Submissions` tab is paginated (shows 500 records per page by default); publishing to Google works."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:95
+msgid "`RC3`: kml exports apply the active Filter to the exported data. All data is exported. It no longer truncates to the first 500 records."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:96
+msgid "`RC4`: Submissions for forms with non-repeating groups are now properly reconstructed into Briefcase. Date fields are broken."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:99
+msgid "Publishing to Google is broken prior to RC2 (due to a change in Google infrastructure)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:104
+msgid "General steps for upgrading"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:106
+msgid "Disable all submissions to ODK Aggregate, in the :guilabel:`Form Management` tab."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:107
+msgid "Use :doc:`ODK Briefcase <briefcase-forms>` to pull a copy of all data to your computer."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:108
+msgid "Search upward in the :ref:`release notes <release-notes>` below, starting from your current ODK Aggregate version to locate the most recent ODK Aggregate version that does not require any manual upgrade steps."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:109
+#: ../../src/aggregate-upgrade.rst:111
+msgid "Log onto your server to confirm that it is still functioning."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:110
+msgid "Download the next ODK Aggregate version, perform the manual upgrade steps if any and upgrade to that version (and perform any post-install upgrade steps, if any)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:112
+msgid "Repeat the steps 3-6 until you have upgraded to the current version."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:113
+msgid "Enable submissions to ODK Aggregate via the :guilabel:`Form Management` tab."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:117
+msgid "You need to know the exact *instance name* that was used in prior installs for your username and password to continue to work. If you add a space or change capitalization or spelling, the passwords will be invalid (you just need to re-run the installer with the correct string to correct the problem)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:122
+msgid "Release notes"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:127
+msgid "Aggregate v1.4.15"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:129
+msgid "Update javarosa to the new opendatakit-javarosa-2.3.0.jar."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:130
+msgid "Fix: rev 210 sync protocol. User permissions were incorrectly being computed and filtered. This prevented resetting the server with new content from the device (but syncing with existing content worked fine)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:134
+msgid "The rev 210 sync protocol is incompatible with anything prior to rev 210."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:136
+#: ../../src/aggregate-upgrade.rst:155
+#: ../../src/aggregate-upgrade.rst:175
+#: ../../src/aggregate-upgrade.rst:207
+#: ../../src/aggregate-upgrade.rst:235
+#: ../../src/aggregate-upgrade.rst:262
+#: ../../src/aggregate-upgrade.rst:291
+#: ../../src/aggregate-upgrade.rst:333
+#: ../../src/aggregate-upgrade.rst:355
+#: ../../src/aggregate-upgrade.rst:382
+#: ../../src/aggregate-upgrade.rst:402
+#: ../../src/aggregate-upgrade.rst:424
+#: ../../src/aggregate-upgrade.rst:455
+#: ../../src/aggregate-upgrade.rst:472
+#: ../../src/aggregate-upgrade.rst:493
+#: ../../src/aggregate-upgrade.rst:515
+#: ../../src/aggregate-upgrade.rst:597
+#: ../../src/aggregate-upgrade.rst:655
+msgid "Upgrade notes"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:139
+#: ../../src/aggregate-upgrade.rst:158
+msgid "Do not upgrade if you are using ODK 2.0 rev 208 or earlier."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:140
+#: ../../src/aggregate-upgrade.rst:159
+msgid "See :ref:`v1.4.13 <v1.4.13>` upgrade notes."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:145
+msgid "Aggregate v1.4.14"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:147
+msgid "Update javarosa to the new opendatakit-javarosa-2.2.0.jar"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:148
+msgid "Fix for JSON publisher correctly handling UTF-8"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:149
+msgid "Added SHA-1 library to browser so that Basic Auth can now be configured and will now work (this capability is not exposed in the wizard-based installer/configurer; existing passwords need to be changed before they can be used in a Basic Auth configuration)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:150
+msgid "Revised sync protocol and database schema for ODK 2.0. This is incompatible with anything prior to rev 210 (not yet available)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:151
+msgid "Microsoft SQLServer configurations can now run on Linux and MacOSX boxes."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:152
+msgid "Updated to the latest AppEngine SDK."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:153
+msgid "Updated build environment to a mixed Java 7 and Java 8 environment."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:164
+msgid "Aggregate v1.4.13"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:166
+msgid "Add support for Microsoft SQL Server database and Azure SQL Server"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:167
+msgid "Updated to expect Tomcat 8 and JDBC 4 libraries. This extensively impacted the datastore layer."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:168
+msgid "Rewrote the Google Sheets publisher to use a newer API."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:169
+msgid "Changed the PAUSED publisher state to expose a restart button. Fixed bug that prevented ABANDONED button from working. When a publisher enters the Paused state, this button triggers ODK Aggregate to resume from that state. This happens automatically every 8 minutes or so, but having a resume button simplifies integration testing. i.e., when a publisher is in the Paused state, you do NOT need to click this button -- but if you are testing a publisher to your own server, it can be useful to have."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:170
+msgid "Fixes for ODK 2.0 datatype form."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:171
+msgid "NaN +Infinity and -Infinity are now handled within Google AppEngine. These cannot be supported on systems using MySQL and SQL Server (a fundamental limitation of those databases). On PostgreSQL systems, if you alter your tables to use REAL instead of DECIMAL(38,0) columns, it will be able to store and process these special values."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:172
+msgid "Updated a multitude of jars (libraries)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:173
+msgid "If this is a first-time install using PostgreSQL, please see the upgrade steps below for the additional commands you need to execute to complete the PostgreSQL configuration. These commands are missing from the :file:`create_db_and_user.sql` but are required for PostgreSQL operations."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:178
+msgid "If publishing to Google Sheets, you must go to the API Manager tab and enable the Google Sheets API."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:179
+msgid "Tomcat installs now require Tomcat 8 or higher. The war file produced by the installer will work as-is on those systems -- no need for any manual modifications to get things to work (though MySQL still requires downloading and copying the MySQL Connector/J, and SQL Server also has a manual configuration step)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:180
+msgid "If using an older MySQL database, please upgrade to MySQL 5.7 or higher; note that some MySQL releases expire all database passwords after 360 days. Please verify the behavior of your version of MySQL and either change the password expiration policy or create a calendar reminder to change the password before it expires. For ODK Aggregate, you will need to re-run the installer to specify any new password. For more information, see the MySQL documentation. e.g., `MySQL password expiration policy <https://dev.mysql.com/doc/refman/5.7/en/password-management.html>`_"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:181
+#: ../../src/aggregate-upgrade.rst:220
+msgid "The ODK 2.0 sync protocol in this release is compatible with the ODK 2.0 Rev 200, 202, 204, 206 and 208 tools. Note that you cannot just upgrade from a server earlier than 1.4.10; you have to delete everything and start over."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:182
+msgid "See :ref:`v1.4.12 <v1.4.12>` upgrade steps if upgrading from an earlier ODK Aggregate version."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:183
+msgid "If using an older PostgreSQL database, please upgrade to at least 9.4. For all PostgreSQL servers, you must execute an additional command to grant permissions to the schema on the server. This is a change from the earlier 9.1 install and the additional command is missing from the :file:`create_db_and_user.sql` script. The commands to be executed in the pgAdmin query window are as follows, with your_database, your_schema and database_username replaced with the values you specified when you ran the installer:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:193
+msgid "Aggregate v1.4.12"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:195
+msgid "Update to installer with new language and links to documentation."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:196
+msgid "Revise upload tool for Google AppEngine deployments to more-consistently display the token-entry dialog."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:197
+msgid "Add .csv-based downloading and bulk updating of configured users and their capabilities."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:198
+msgid "Change MySQL ODK 1.x and ODK 2.0 data table constructions to use MEDIUMBLOB columns for media attachments. Fix several issues around accessing attachments. See Upgrade notes below and MySQL configuration instructions in :doc:`installing Aggregate on Tomcat  <aggregate-tomcat>` for configuration that is required for MySQL."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:199
+msgid "Tweak Google AppEngine configuration to reduce frontend usage hours and thereby reduce costs."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:200
+msgid "Performance improvements to Google AppEngine task locks (primarily for ODK 2.0 support)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:201
+msgid "Add ``/users/list`` URL that returns the list of all configured users and the roles they have been granted. Access to this URL requires authentication and is restricted to ODK Aggregate usernames and Google accounts (anonymousUser access is forbidden). If the authenticated user does not have Tables Super-user, Administer Tables, or Site Administrator permissions, a singleton list is returned that contains only information about their own identity and its capabilities."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:202
+msgid "Changes to support row-level filtering in ODK 2.0."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:203
+msgid "Implement a paginated view of ODK 2.0 data rows; 100 records per page."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:204
+msgid "Upgrade to Google AppEngine 1.9.42 SDK."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:205
+msgid "The ODK 2.0 \"datatypes\" example form and table (in the app-designer repository) fail to upload to ODK Aggregate. This will be addressed in a future release."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:210
+msgid "For MySQL installations, please make sure you have this server configuration (if this is a new database install, you can reduce *max_allowed_packet* to *16842752*):"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:218
+#: ../../src/aggregate-upgrade.rst:246
+#: ../../src/aggregate-upgrade.rst:273
+msgid "For ODK 1.x uses, no special upgrade steps are required."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:219
+#: ../../src/aggregate-upgrade.rst:247
+msgid "If you are using ODK 2.0 features, you must visit the :guilabel:`Permissions` sub-tab under the :guilabel:`Site Admin` tab and click :guilabel:`Save Changes` to complete the upgrade to this release. You do not need to modify anything on that page, just click the button."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:221
+msgid "See :ref:`v1.4.11 <v1.4.11>` upgrade steps if upgrading from an earlier ODK Aggregate version."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:226
+msgid "Aggregate v1.4.11"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:228
+msgid "Add a mutex around ODK 1.x form submission creation and updating. This should eliminate submission data corruption."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:229
+msgid "If only ODK 2.0 privileges are assigned, hide the Submissions tab."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:230
+msgid "Fix: advisory memcache interaction to delete the entry when rolling back the datastore update."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:231
+msgid "Add **Tables Super-user** as a configurable user capability. Users with this capability will be able to modify the table-level and row-level privileges on ODK 2.0 rev 206 data tables. These privileges are advisory and do not provide strong access or revision control."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:232
+msgid "Add ``/roles/granted`` URL that returns the roles granted to an authenticated username or google account. This will be used by ODK 2.0 rev 206 tools to determine and save the capabilities of the configured user on a device. Those capabilities are then used to apply advisory access controls on the tables and rows."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:238
+#: ../../src/aggregate-upgrade.rst:265
+#: ../../src/aggregate-upgrade.rst:294
+#: ../../src/aggregate-upgrade.rst:336
+#: ../../src/aggregate-upgrade.rst:358
+msgid "For MySQL installations, please make sure you have this server configuration:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:248
+msgid "The ODK 2.0 sync protocol in this release is compatible with the ODK 2.0 Rev 200, 202 and 204 tools. You cannot just upgrade from a server earlier than 1.4.10; you have to delete everything and start over."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:249
+msgid "See :ref:`v1.4.10 <v1.4.10>` upgrade steps if upgrading from an earlier ODK Aggregate version."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:254
+msgid "Aggregate v1.4.10"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:256
+msgid "On AppEngine, add advisory memcache interactions inside database mutex implementation (TaskLockImpl) to detect and thereby reduce race conditions that could lead to database corruption. These changes do not alter the fundamental mutex mechanism. They may reduce the likelihood of a mutex failure."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:257
+msgid "Fix ODK 2.0 sync: table-specific pre-loaded instance attachments under :file:`config/assets/csv/tableid/instances/...` were not being identified as table-specific."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:258
+msgid "Fix ODK 2.0 sync: add mutex around app-level file, table-level file and row-level attachment REST interactions. Eliminates the possibility of joint-updating that could corrupt the app-, table- or row-level manifests."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:259
+msgid "Fix ODK 2.0 sync: change row-level file attachment bulk-update to not refetch the manifest after adding each file attachment. This had caused 1% failure rate on row-level attachment syncing when there were large numbers of file attachments (30-60) for each row."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:260
+msgid "Fix ODK 2.0 sync: when authorization fails (permission denied), return UNAUTHORIZED response rather than DENIED. This reports an authorization failure on the client vs. a protocol error."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:274
+#: ../../src/aggregate-upgrade.rst:303
+msgid "The ODK 2.0 sync protocol is compatible with the ODK 2.0 Rev 200, 202 and 204 tools."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:275
+msgid "For ODK 2.0 uses, if you have pre-loaded datasets (via tables.init) that have row-level attachments (e.g., geotagger example dataset), you should:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:277
+msgid "Remove these incorrectly-categorized files from the server (anything under :file:`assets/csv/table_id/instances/...` on the :guilabel:`Manage App Level Files` sub-tab)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:278
+msgid "Deploy your device configuration to a clean device"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:279
+msgid "Reset App Server to correctly upload these files so that they appear under the :guilabel:`Manage Table Level Files` sub-tab."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:284
+msgid "Aggregate v1.4.9"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:286
+msgid "Add XPath 3.1 math functions (e.g., exp, log, sin, cos, etc.)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:287
+msgid "Fix AppEngine adaptation layer for Apache HttpClient so that Oauth2 authentications work change version string in :file:`ODKAggregateAppEngineUpdater.jar` to be a date stamp."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:288
+msgid "Fix ODK 2.0 interfaces to support ODK Aggregate username / password for authentication."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:289
+msgid "Fix ODK 2.0 Sync so that a delete-table request can be repeated until successful or Not Found (404) when it times out."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:302
+#: ../../src/aggregate-upgrade.rst:344
+#: ../../src/aggregate-upgrade.rst:366
+msgid "For all other installations, there are no special upgrade steps required."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:308
+msgid "Aggregate v1.4.8"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:310
+msgid "Submission Filters are once again working."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:311
+msgid "Update javarosa library with fixes for:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:313
+msgid "fix date, time, dateTime handling of time zones (in collaboration with SurveyCTO)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:314
+msgid "fix itemset choice lists -- various issues."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:315
+msgid "fix jr:choice-name() context resolution so that it can work with relative paths and repeat groups (SurveyCTO contribution)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:316
+msgid "add CONTROL_FILE_CAPTURE for future arbitrary-file-attachment handling"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:317
+msgid "use consistent UTF-8 treatment when writing and reading files"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:318
+msgid "better detection and handling of binary-file-format changes across versions"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:319
+msgid "build with Java 7"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:321
+msgid "Add support for geotrace and geoshape to Export-to-KML (for ODK 1.x)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:322
+msgid "Update Apache HTTP Client libraries to 4.5.2; this should support SNI protocol interactions of external publishers (ODK 1.x - untested)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:323
+msgid "Change Google App Engine update mechanism to use new wizard update tool."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:324
+msgid "Change Google App Engine code to use EAR / module format."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:325
+msgid "Widespread jar update."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:326
+msgid "Correct bug in csv-export library shared with ODK 2.0 tools for exporting datasets in those tools (does not impact Export as CSV in the 1.x toolchain)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:327
+msgid "Add new bulk attachment-POST APIs for ODK 2.0 sync protocol."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:328
+msgid "Rework ui tests to use Chrome for the Selenium web testing."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:329
+msgid "Rework all of the eclipse projects and add documentation for setting up a tomcat eclipse debug environment."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:330
+msgid "Rework the Google App Engine maven projects to use the EAR / module format."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:331
+msgid "Update maven plugins and tools to newer versions."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:345
+msgid "The ODK 2.0 sync protocol is compatible with the ODK 2.0 Rev 200 and higher tools."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:350
+msgid "Aggregate v1.4.7"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:352
+msgid "Submission Filters are broken in this release. When submissions rows are corrupted, consistently report the information necessary for end-users to delete or repair the corrupted submission."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:353
+msgid "Correct ODK 2.0 delete-table functionality so that it does not generate errors when it is not running on AppEngine. The code had been performing an unguarded explicit cast to an AppEngine-only implementation class."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:370
+msgid "Google disabled functionality used by this installer and earlier versions to upload ODK Aggregate to Google App Engine. See :ref:`here <downgrade-steps>` for the work-around."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:375
+msgid "Aggregate v1.4.6"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:377
+msgid "Submission Filters are broken in this release."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:378
+msgid "Fix for Google Sheets publisher-creation problem caused by April 20th deprecation of the Google Docs API. We were making a single call to that obsolete API to create a blank Google Sheets document."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:379
+msgid "Update to javarosa-2015-04-17 jar. That jar adds OpenStreetMap support to javarosa. Removal of the *Sign in with Google* mechanisms that used OpenID."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:380
+msgid "Widespread update to jars, custom repository configuration, and the elimination of several custom-built jars because of the elimination of OpenID and the maturity of Maven as a version repository."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:385
+msgid "No special upgrade steps required."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:388
+msgid "Aggregate v1.4.5"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:390
+msgid "Update to javarosa-2015-01-10 jar."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:391
+msgid "Update to jQuery 1.11.1"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:392
+msgid "Update the ODK 2.0 Data model and Sync protocol (incompatible with device releases: rev 122 and earlier)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:393
+msgid "Fix: support performing mark-as-complete on encrypted submissions (requires ODK Briefcase v1.4.5 or higher)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:394
+msgid "Fix: add server preference to ignore partially inserted/deleted submissions. Logs them but ignores them so that you can access all other rows in your dataset. Disabled by default. By default, all actions fail upon encountering any malformed submission. You should not ignore these failures but should correct them as soon as is practical."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:395
+msgid "Attempted fix: for *Log In* issue -- insert sleep to give Google a chance to propagate clearing of session cookie. Tweak the webpage resize/layout calculations to be more efficient."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:396
+msgid "Fix: make incomplete deletions and insertions more recoverable."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:397
+msgid "Performance: change MySQL table creation to not declare primary keys and just use ordinary indices for the primary key."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:398
+msgid "Security: Support Enketo-express (allow non-https communications with Enketo server). When the communications are not secure, this change discloses the Enketo access token to eavesdroppers."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:399
+msgid "Security: Filter out forbidden characters in redirect string to prevent XSS attacks."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:400
+msgid "Security: Add clickjacking prevention header as detailed here: https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:405
+msgid "If you were testing out ODK Tables, you should delete all ODK Tables files and data tables before upgrading, as the database schema has changed. The server no longer works with ODK Sync 2.0 rev 122 (or earlier releases)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:410
+msgid "Aggregate v1.4.4"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:412
+msgid "Installer now asks for an ODK Aggregate username for the super-user (not a Google e-mail account). Default password is aggregate."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:413
+msgid "Banner displayed if super-user's password has not been changed from aggregate."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:414
+msgid "Fix: column name generator bug (upload of form definition failed)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:415
+msgid "Fix: add more detailed error messages when a submission is corrupted"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:416
+msgid "IE6 and IE7 are no longer supported. Upgrade your browser."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:417
+msgid "Allow user to specify the ODK 2.0 App Name."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:418
+msgid "Allow anonymous access to ODK 2.0 Sync APIs."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:419
+msgid "Enforce *Administer Tables* access for ODK 2.0 Sync APIs that alter server configuration."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:420
+msgid "For ODK 2.0 Sync APIs, remove JBoss Resteasy; use Apache Wink instead."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:421
+msgid "Extensive version updates to supporting software libraries."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:422
+msgid "Update :file:`CONFIGURE.txt` instructions for maven builds. Define ANT scripts for external dependencies."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:427
+msgid "Upgrades require several manual interventions:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:429
+msgid "You must have Java 7 installed - the GAE 1.9.7 SDK used within the installer now requires that version of Java. If you are upgrading from ODK Aggregate 1.4.3, you have already done this."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:430
+#: ../../src/aggregate-upgrade.rst:461
+msgid "If you were testing out ODK Tables, you should delete all ODK Tables data tables before upgrading, as the database schema has changed."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:431
+msgid "You must flush the session cookies on the server. Session cookies are used to identify the logged-in users of the system. The security software versions were updated in this release, causing the older cookies to become invalid. See below for the upgrade steps."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:433
+msgid "After performing the above steps, the upgrade steps after those are as follows:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:435
+msgid "Open a browser and go to your `Google AppEngine dashboard <https://appengine.google.com/>`_."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:436
+msgid "Click through to your application id. Then click on :guilabel:`Memcache Viewer` under the :guilabel:`Data` heading in the left sidebar. Keep this window open."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:437
+msgid "Now, run the installer and deploy ODK Aggregate 1.4.4 to this application id."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:438
+msgid "After it has deployed, click on :guilabel:`Flush Cache` in the dashboard window's Memcache Viewer screen."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:439
+msgid "Follow the instructions :ref:`here <permission-tab>` for changing the password of the super-user username."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:441
+msgid "Other than the need to flush this cache, and the need to delete any ODK Tables data before upgrading, this should be a seamless upgrade from ODK Aggregate 1.4.x."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:446
+msgid "Aggregate v1.4.3"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:448
+msgid "Updated javarosa jar."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:449
+msgid "Add stub Tomcat/MySQL Eclipse project with readme."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:450
+msgid "Update selenium test environment and various 3rd party jars."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:451
+msgid "Update the GAE SDK inside the installer to 1.9.0."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:452
+msgid "New ODK Tables sync protocol and UI. Breaks ODK Tables Alpha 2 sync."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:453
+msgid "New sync protocol exchanges SAVEPOINT_TYPE, FILTER_TYPE, FILTER_VALUE."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:458
+msgid "Upgrades require a manual intervention:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:460
+msgid "You must have Java 7 installed - the GAE 1.9.0 SDK used within the installer now requires that version of Java."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:463
+#: ../../src/aggregate-upgrade.rst:477
+#: ../../src/aggregate-upgrade.rst:498
+msgid "Otherwise, this should be a seamless upgrade from ODK Aggregate 1.4."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:468
+msgid "Aggregate v1.4.2"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:470
+msgid "Fixes to ODK Tables sync protocol for the combined release. Due to interactions with Google AppEngine, the ODK Tables Synchronization protocol does not currently work on Google AppEngine servers. You must :doc:`install a local server or a VM image  <aggregate-vm>` in order to use that mechanism."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:475
+#: ../../src/aggregate-upgrade.rst:496
+msgid "If you were testing out ODK Tables, you should delete all tables before upgrading, as the database schema has changed."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:482
+msgid "Aggregate v1.4.1"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:484
+msgid "You can now use `Enketo <https://enketo.org/>`_ browser-based Webforms to fill-in and publish submissions directly into ODK Aggregate. This feature was developed and donated by `SDRC India <http://sdrc.co.in/>`_. To enable Enketo integration, go to the :guilabel:`Preferences` sub-tab under :guilabel:`Site Admin` tab and click on :guilabel:`Enketo API Configuration`."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:485
+msgid "Fix the Z-ALPHA JSON publisher and the JSON File export to emit an array of zero or more objects, one object per submission, with proper treatment of embedded quotes, etc and confirmed that the output passes JSLint."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:486
+msgid "Fix the CVS File export functionality to double-up all occurrences of double-quotes in a field before surrounding that field with double quotes (per RFC 4180)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:487
+msgid "Clean up date and time handling in REDCap publisher and enforce GMT time zone interpretation when rendering date and time strings."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:488
+msgid "Various GWT interfaces have been changed to use concrete ArrayList types (reduces code size)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:489
+msgid "New permissions have been added in support of ODK Tables -- Synchronize Tables and Administer Tables and for most ODK Tables interactions, the user is required to have Synchronize Tables permissions."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:490
+msgid "Extensive changes to ODK Tables sync protocol and database structures. There will be further changes in the next update."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:491
+msgid "Fix sizing calculations and CSS so that the ODK logo does not get clipped or overwritten."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:503
+msgid "Aggregate v1.4"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:505
+msgid "Changed behavior: simple JSON publisher now POSTs an application/json entity body; added option for how to treat binary content. Incompatible change; see Upgrading section if you were using the Z-ALPHA JSON Server"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:506
+msgid "Changed representation: ODK Tabled storage schema has been revised. Incompatible change; see Upgrading section if you used your server to upload or download data to ODK Tables. Syncing with ODK Tables is broken in this release. Only v1.3.4 on Google AppEngine works with the ODK Tables alpha (we are in the middle of changing table schemas)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:507
+msgid "Fix: file exports were not properly writing UTF-8 character sets."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:508
+msgid "Fix: PostgreSQL failures on some forms (column names must be less than 63 characters)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:509
+msgid "Upgrade Aggregate’s Google publishers to use the updated Oauth2 libraries (e.g., Google Fusion Tables, Google Spreadsheet). Publishing from Google Apps domains does not work (it never has)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:510
+msgid "Add support for publishing data to Google Maps Engine."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:511
+msgid "Rework Spreadsheet and Fusion Table publishers to use Google libraries (consistent with the new Google Maps Engine publisher)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:512
+msgid "Additional active-paused state in publisher to extend the delay in publishing attempts (and reduce quota usage) if the destination publisher is reporting an error."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:513
+msgid "Improved how failures during form definition uploads are rolled back to increase the likelihood that the database is restored to a clean state."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:518
+msgid "You may need to clear your browser cache to complete the upgrade. If the browser screen flickers after upgrading, first clear your browser cache and reload the page."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:519
+msgid "If you were using the Z-ALPHA JSON Server, you must delete all instances of that publisher before upgrading. After upgrading, the updated publisher will send a single application/json entity body to the external server instead of a multi-part form containing that entity."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:520
+msgid "If you were using ODK Tables with ODK Aggregate, you need to delete all the ODK Tables data on ODK Aggregate before upgrading."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:525
+msgid "Aggregate v1.3.4"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:527
+msgid "Fix for the v1.3.3 fix for Google AppEngine -- The original fix caused the creation of new publishers to Google Spreadsheets to fail, export to files to fail, form deletions to fail, and purge-sent-submissions actions to fail. This fix should rectify those issues."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:532
+msgid "Aggregate v1.3.3"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:534
+msgid "Fix for Google AppEngine -- entity keys (unique identifiers assigned by Google AppEngine and used internally by ODK Aggregate) may now contain slashes. Submissions that have been assigned an entity key containing a slash were breaking the 'SubmissionKey' parsing used when publishing, retrieving images, accessing repeat groups, or retrieving submissions using ODK Briefcase."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:539
+msgid "Aggregate v1.3.2"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:541
+msgid "Expose the ODK Tables data and management tabs."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:542
+msgid "When installing for first time, ODK Aggregate will not require you to log in. Access restrictions are not altered when upgrading. This only affects new deployments. issue 710 (on Google Code) - upon an initial install, configure anonymousUser with Data Collector and Form Manager (and Data Viewer) permissions."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:543
+msgid "Watchdog sweep interval shortened to 30 seconds in fast-publishing mode (from 60 seconds). Ensure watchdog is scheduled to be fired when there are records remaining to be published."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:544
+msgid "Fix publisher failure to Google Spreadsheets and Fusion Tables by prepending 'n' to element names beginning with digits."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:545
+msgid "Fix publishing failure with Fusion Tables when a form with repeat groups has submissions without any repeats."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:546
+msgid "Fix publisher-creation failure that can cause cycling UI refresh."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:547
+msgid "Update javarosa library, adding format-date-time()."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:548
+msgid "Update to selemium 2.33.0 to resolve Firefox ESR 17.0.7 failures."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:553
+msgid "Aggregate v1.3.1"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:555
+msgid "Change watchdog to run more frequently if there is an active publisher. Provide a :guilabel:`disable` button on the Site Admin / Preferences page to restore older behavior (to conserve GAE quota)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:559
+#: ../../src/aggregate-upgrade.rst:589
+msgid "Following issues arise while using this version:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:561
+msgid "Form upload fails for some forms on MySQL with stack exhaustion."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:562
+msgid "Fix to simple JSON publisher had caused instability when used."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:563
+msgid "Popups don't show centered in screen when displayed on top of scrolling regions."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:564
+msgid "Forms with repeat groups cannot be versioned."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:565
+msgid "Rows-per-page value keeps getting reset on refresh."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:570
+msgid "Aggregate v1.3"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:572
+msgid "Wholesale transition from OAuth 1.0 to OAuth 2.0, breaking all publishers."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:573
+msgid "Installer now supports migrated AppEngine instances (for the Master-Slave -to- High-Replication Datastore migration)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:574
+msgid "Google Fusion Tables publisher now provides the links to the tables of all the repeat groups, the top-level record, and a left-outer-join view of the first repeat group and top-level record. This gives a 'flat' view of the data."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:575
+msgid "Google Spreadsheets and Google Fusion Tables publishers are now using OAuth 2.0 for authentication. This breaks all existing publishers (you need to republish). For more details on this, see :doc:`OAuth2-service <oauth2-service>`."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:576
+msgid "Google Maps v3 API is now used for the visualization features."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:577
+msgid "Added a *Published Through* and an *Owner* column to the *Published Data* table to communicate the progress of the publisher and who is receiving the data."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:578
+msgid "JSON file export now exports multiple-choice values as a JSON array of string values, rather than a space-separated string."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:579
+msgid "MySQL media attachments are stored as BLOB types, allowing the default MySQL configuration to work."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:580
+msgid "forms are now listed alphabetically"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:581
+msgid "New additions:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:583
+msgid "Alpha release REDCap (XML) publisher"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:584
+msgid "Alpha release Simple JSON publisher"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:585
+msgid "Alpha release Ohmage JSON publisher"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:591
+msgid "Google Spreadsheet publisher failed badly if name was blank."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:592
+msgid "Extra comma in JSON file export (in repeat groups)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:593
+msgid "Arbitrary intermingling of http and https requests are problematic"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:594
+msgid "Filters are not saved unless display metadata is checked."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:595
+msgid "Title of existing form cannot be changed."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:600
+msgid "After the upgrade, ODK Aggregate needs to be :doc:`configured with OAuth 2.0 credentials <oauth2-service>` on the Site Admin / Permissions page. Once configured, you will then be able to create new publishers for your data (it is not possible to resume or restore publishing to the original publishers)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:602
+msgid "To avoid having to create new publishers that re-publish already-published data, follow these steps before upgrading:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:604
+msgid "Go to the :guilabel:`Form Management` tab."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:605
+msgid "Uncheck :guilabel:`Accept Submissions`."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:606
+msgid "Verify that all submissions appearing on the :guilabel:`Submissions` tab have been successfully published to Fusion Tables and Google Spreadsheets."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:607
+msgid "At this point, because ODK Aggregate is not accepting any new submissions, your surveyors are unable to send filled-in forms and we can be assured that no data is in transit during the upgrade process."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:608
+msgid "Deploy ODK Aggregate 1.3.0."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:609
+msgid "Go to the Publishers page, and create replacement publishers using :guilabel:`Stream New Submissions ONLY`."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:610
+msgid "Now go to Fusion Tables or Spreadsheets and copy the data from the v1.2 tables into the newly-created publisher tables."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:611
+msgid "Check :guilabel:`Accept Submissions` under the :guilabel:`Form Management` tab."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:612
+msgid "At this point, new submissions will stream into the new publishers and you have manually copied the old data into the new publisher, so these new publishers will now have all of your data."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:616
+msgid "The database tables for the new publishers and older publishers do not overlap, so if you roll back to the ODK Aggregate 1.2 release, you will not see the new publishers, but the earlier 1.2 publishers will 'reappear.' If you want to, after the upgrade, in MySQL or PostgreSQL, you can drop the unused old tables:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:618
+msgid "``_server_preferences`` (has been replaced by ``_server_preference_properties``)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:619
+msgid "``_form_service_cursor`` (has been replaced by ``_form_service_cursor_2``)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:620
+msgid "``_fusion_table`` (has been replaced by ``_fusion_table_2``)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:621
+msgid "``_fusion_table_repeat`` (has been replaced by ``_fusion_table_repeat_2``)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:622
+msgid "``_google_spreadsheet`` (has been replaced by ``_google_spreadsheet_2``)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:623
+msgid "``_google_spreadsheet_repeat`` (has been replaced by ``_google_spreadsheet_repeat_2``)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:628
+msgid "Aggregate v1.2"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:630
+msgid "Updated javarosa library with cascading select support (as with KoBo Collect)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:631
+msgid "Add a :guilabel:`Delete` button to the Exports list to enable deleting the generated files."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:632
+msgid "Exported files using filters now export the metadata if displayed by the filter."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:633
+msgid "Improved Map visualization display and pop-ups (showing images)"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:634
+msgid "Improved filter, export and publishing pop-ups."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:635
+msgid "Update to use LONGBLOB and LONGSTRING on MySQL (new tables only)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:639
+msgid "The use of LONGBLOB and LONGSTRING requires a configuration change in the MySQL server. The server requires the transmisison packet size to be configured large enough to hold the largest LONGBLOB or LONGSTRING you will ever send to the server. See `this <https://dev.mysql.com/doc/connector-net/en/connector-net-programming-blob-serverprep.html>`_ for details."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:641
+msgid "Alternatively, after creating your tables, you can use the MySQL ``ALTER TABLE`` command to change the LONGBLOB field to a BLOB field. This was the pre-1.2 setting, and will be the 1.2.1 setting for image fields, returning the system to use 65kB image chunks and avoiding the need to change the server configuration. If you do this, you will need to stop and restart your ODK Aggregate server for the change to be detected and take effect."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:644
+msgid "Cache thumbnail images for 1 hr for improved performance and lower AppEngine datastore usage."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:645
+msgid "Form definition files and media attachments can now be altered and those changes uploaded to the ODK Aggregate server. The server still maintains only one version of the form, and all alterations must not affect the number of questions in the form or change the data type of any field (e.g., from int to decimal or string, etc.)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:646
+msgid "Whenever a form or any of its media files are modified, the version attribute in the top-level element (where the form id is defined) must be changed."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:650
+msgid "Version attributes are recommended to be of the form \"yyyymmddnn\", e.g., 2012060400 -- the last two digits are the form iteration within the given day. They must be integer values and the new value must compare lexically greater than the prior value (this means, for example, since \"9\" compares lexically greater than \"10\", you cannot update a version from 9 to 10 -- but you could upgrade from \"09\" to \"10\")."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:652
+msgid "There is a 15-minute grace period for uploading revisions after which the version must be incremented (e.g., incremented to 2012060401)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:653
+msgid "Fix odd start-up failures on Google AppEngine."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:658
+msgid "Existing 1.0 installations can upgrade to the 1.2 release, but, once upgraded, if you use the new form-versioning feature, these installations cannot downgrade from 1.2 to the earlier 1.0 releases."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:660
+msgid "MySQL and PostgreSQL require special upgrade instructions. The ``_filter_group`` table has a new column. If you are running ODK Aggregate 1.0 or 1.1, you will need to issue an ``alter table`` command on this table to add this column."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:662
+msgid "For MySQL:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:668
+msgid "For PostgreSQL:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:674
+msgid "Depending upon your database management tool, you may need to qualify the table name with the schema."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:679
+msgid "General steps for v1.1 to v1.0.4"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:681
+msgid "For any Aggregate version from v1.1 to v1.0.4, no additional upgrade steps are required if none of your forms use **odk:length** to alter the maximum string length."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:683
+msgid "Otherwise, for ONLY those forms that use **odk:length**:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:685
+msgid "Download the forms that use odk:length using the ODK Briefcase application."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:686
+msgid "Delete the forms on Google AppEngine (this may take several minutes or hours if you have many submissions)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:687
+msgid "Upload the forms from ODK Briefcase back onto your Google AppEngine instance."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:689
+msgid "**odk:length** has always been respected on MySQL and PostgreSQL; there are no additional steps to be performed on those systems."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:694
+msgid "General steps for version v1.0.3 to v1.0"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:696
+msgid "For any Aggregate version from v1.0.3 to v1.0, if you are running RC4, RC3, RC2, or RC1 (on Google's AppEngine or with MySQL or PostgreSQL), there are no special upgrade steps. It should just work."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:698
+msgid "If you are using Beta 4, follow these upgrade instructions:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:700
+msgid "**On GAE**: No additional steps required. It should just work."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:702
+msgid "**On MySQL or PostgreSQL**: The persistent results tables that hold the exported csv and kml files have changed (adding support for emitting csv files filtered by the active filter)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:704
+#: ../../src/aggregate-upgrade.rst:741
+msgid "Stop Tomcat."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:705
+#: ../../src/aggregate-upgrade.rst:742
+msgid "In your database's administration tool, connect to the database and:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:707
+msgid "``drop table _persistent_results;``"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:708
+msgid "``drop table _persistent_result_file_bin;``"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:709
+msgid "``drop table _persistent_result_file_ref;``"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:710
+msgid "``drop table _persistent_result_file_blb;``"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:712
+msgid "Copy the new WAR to the :file:`/webapps` directory."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:713
+#: ../../src/aggregate-upgrade.rst:749
+msgid "Start Tomcat."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:715
+msgid "For all other Alpha or Beta releases, you must either use a new appspot instance or delete all data in your appspot instance. If you are using MySQL or PostgreSQL with an Alpha or Beta release, you should start with an empty database."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:720
+msgid "General steps to upgrade from Alpha and Beta releases"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:723
+msgid "On GAE"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:725
+msgid "If running builds prior to Beta 2 on Google AppEngine cloud services, any forms with Decimal data will need to be deleted and reloaded. Decimal data had been represented as strings and is now represented properly as double-precision numbers in Google AppEngine."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:726
+msgid "Disable writes to the datastore (via Application Settings / Disable Datastore Writes )"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:727
+msgid "Deploy to GAE."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:728
+msgid "Delete all the records in these kinds (using Datastore Viewer):"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:730
+msgid "opendatakit._granted_authority_hierarchy"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:731
+msgid "opendatakit._registered_users"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:732
+msgid "opendatakit._user_granted_authority"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:734
+msgid "Disable your application via Application Settings / Disable Application."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:735
+msgid "Enable writes."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:736
+msgid "Enable your application."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:739
+msgid "On MySQL or PostgreSQL"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:744
+msgid "``drop table _granted_authority_hierarchy;``"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:745
+msgid "``drop table _registered_users;``"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:746
+msgid "``drop table _user_granted_authority;``"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:748
+msgid "copy the new WAR to the :file:`/webapps` directory."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:753
+msgid "The primary upgrade impact is the loss of all registered users and their privileges (what the manual steps above do). Beta 3 changes the user configuration. Registered users are now either Gmail accounts or ODK Aggregate usernames. ODK Aggregate now supports only anonymous access and/or registered users."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:758
+msgid "Migration from ODK Aggregate 0.9x to 1.x"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:762
+msgid "Aggregate 0.9.x has a 1000-record limit to the number of records it can display (this is by design); it does, however, still retain all records i.e. it will hold as many records as you've uploaded and does not loose or ignore the 1001st record, etc; in general, any webserver will have a limit to what it can display interactively (at some point it will run out of memory or time out)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:763
+msgid "On Aggregate 0.9.x, we provide the Briefcase applet (one of the links on the top row) to allow you to extract your data from the server into a local CSV file for local processing. That should retrieve all data within the server, and should work regardless of the number of submissions you have uploaded."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:764
+msgid "Aggregate 1.0 has far fewer display restrictions and has implemented display paging on the submissions display page so you can page through all the submissions on the server, rather than just the first 1000 (and you get to set the page size, as well)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:765
+msgid "Aggregate 1.x has stricter requirements on the form definition than 0.9.x, so you will likely need to edit your form definitions before they can be successfully uploaded into Aggregate 1.x."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:766
+msgid "Migration will necessitate creating a new AppEngine application id and migrating your ODK Collect devices to use that new AppEngine URL. This allows you to keep the old Aggregate 0.9.x instance should you need to return to it (e.g., if there is an error discovered after data migration), and it gives you time to validate the accuracy of the data that was migrated. It is simply safer to do the migration this way rather than overwrite your older instance."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:768
+msgid "Since Google is now charging for AppEngine usage, the lowest-cost sequence for the AppEngine migration is as follows:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:770
+msgid "Upgrade ODK Aggregate 0.9.x to the latest 0.9.x release. If you have any 0.9.x release, you can upgrade to the latest 0.9.x release without any changes (the newer updates are backward compatible). Get the latest Aggregate release from the ODK Downloads page `here <https://opendatakit.org/downloads/download-info/odk-aggregate-v0-9-8-1/>`_."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:771
+msgid "Create a new application id for the 1.x instance."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:772
+msgid "Download the latest installer for ODK Aggregate 1.x, run it, and deploy to the new application id. For installation process, see the :doc:`Aggregate Installation Guide  <aggregate-app-engine>`."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:773
+msgid "Manually download the form definitions (as XML) from Aggregate 0.9.x. Browse to your Aggregate 0.9.x instance and choose the :guilabel:`View XML` button on the main forms page. Then, from the resulting page, choose the :guilabel:`Download XML` button. Repeat for every form you have on the system."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:777
+msgid "You may wish to specify a new folder for the downloads of your forms so that you can easily locate and edit them."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:779
+msgid "Manually upload the form definitions to Aggregate 1.x, editing and fixing the form definitions as needed. First sign into your Aggregate server. Go to the :guilabel:`Forms List` sub-tab under :guilabel:`Form Management` tab. Click the :guilabel:`Add New Form` button. Select the form to upload, and click on :guilabel:`Upload Form`. Repeat with the remaining forms."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:783
+msgid "Following issues may arise in form upload process:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:785
+msgid "Your form definition may be using *xmlns=\"myformid\"* to define the Identifier (Aggregate 0.9.x) now referred to as the Form Id (Aggregate 1.x) of the form. In Aggregate 1.x, we enforce that all xmlns assignments conform to URL syntax. This is a w3c standard and a requirement of some Xml parsers and editing systems. Since most users have just a simple short alphanumeric id for their forms, the fix is to change from using xmlns to using id to define your \"form id\". E.g., use *id=\"myformid\"* instead. This variant allows \"myformid\" to be any alphanumeric string with additional non-space characters (e.g., dashes and underscores)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:786
+msgid "Aggregate 1.0.1 warns you if you have fields in the form that do not have defined data types. I.e., they lack any <bind> expressions or their <bind> expression does not specify a type=\"datatype\" expression, with datatype being one of the known data types. This is a concern because Aggregate can filter results based on the values of individual columns. The ranking order for the string \"111\" would place it before (less than) \"13\", but that would be incorrect if this field were actually an integer value. The warnings are to catch omissions like this so that filters can work properly and so that data can be properly published to Fusion Tables."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:789
+msgid "Configure the Aggregate 1.x instance to accept submissions from ODK Collect. If you are running ODK Collect 1.1.5, you will need to configure Aggregate 1.x to grant the anonymousUser the Data Collector privilege. This allows unauthenticated users to submit data to Aggregate 1.x. If you are running ODK Collect 1.1.7 or higher, you can choose to define one or more local usernames and passwords, and configure ODK Collect 1.1.7 to identify itself with one of those usernames and passwords when accessing the server. Steps to do either of this are as follows:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:791
+msgid "Go to the :guilabel:`Permissions` sub-tab under the :guilabel:`Site Admin` tab."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:792
+msgid "If you are creating new local user(s), type the username(s) in the text box in the Add Users section of the page and click :guilabel:`Add`. You can add multiple users by separating the usernames with spaces or commas. The table above will update with the added users. Ensure that the Account Type is *ODK* for each of these users."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:793
+msgid "Check the :guilabel:`Data Collector` check box beside each username that will be used by ODK Collect. If you have ODK Collect 1.1.5, check the check box beside the anonymousUser."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:794
+msgid "Click :guilabel:`Save Changes` to apply your changes."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:795
+msgid "Then, for each username you created, you must click :guilabel:`Change Password` and set the password for that username."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:797
+msgid "Configure all your ODK Collect clients to use the new Aggregate 1.x instance. On both ODK Collect 1.1.5 and 1.1.7, ensure that the Server URL points to the new instance and begins with *https* (for AppEngine instances). For MySQL or PostgreSQL systems, specify *https* only if the server has an SSL certificate. For ODK Collect 1.1.7, if you are requiring authentication, enter one of the configured usernames and passwords into the phone."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:799
+msgid ":doc:`Install <briefcase-install>` the latest ODK Briefcase application."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:800
+msgid "Run ODK Briefcase, choosing to :ref:`pull all forms <pull-from-aggregate>` from your 0.9.x instance to the local server. You will need enough space to store these files."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:801
+msgid "For any form definitions you have changed, manually overwrite the downloaded form definition within the Briefcase directory with the one updated for Aggregate 1.x. The ODK Briefcase Storage Area has a :file:`/forms` directory under it, and, in that, it has directories for each form downloaded from Aggregate 0.9.x. The form definition is within that directory and must have the same name (with a file extension of .xml) as the directory containing it."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:802
+msgid "Run ODK Briefcase, choosing to :ref:`push all forms <push-to-aggregate>` from your local server to the new Aggregate 1.x instance."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:803
+msgid "Validate that your Aggregate 1.x instance has all the data you expect, and the values are complete and correct (by, e.g., publishing to Fusion Tables and comparing this dataset to the corresponding dataset produced by 0.9.x)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:804
+msgid "Once you are comfortable with the operations of the Aggregate 1.x instance, you should go to the Aggregate 0.9.x dashboard and delete that application id."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:806
+msgid "Click on the :guilabel:`Application Settings` link on the left sidebar under the Administration heading."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:807
+msgid "Click on the :guilabel:`Disable Application..` button on this page."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:808
+msgid "Choose to disable it, and then, when prompted, choose to delete the application."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:810
+msgid "This is more cost-effective than deleting the forms (and data) from the old instance and trying to reuse it as that would incur usage charges. Deleting the entire instance accomplishes that without running up any charges."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:815
+msgid "If you have to do this migration mid-survey and need to be able to incrementally pull data from ODK Aggregate v0.9.x, you should follow these steps:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:817
+msgid "Pull data from ODK Aggregate v0.9.x"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:818
+msgid "Push data to ODK Aggregate v1.x"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:819
+msgid "Pull data from ODK Aggregate v1.x"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:820
+msgid "Repeat periodically."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:822
+msgid "The extra pull of data down from ODK Aggregate v1.x sets a flag within ODK Briefcase that identifies the record as being \"complete\" (having all of its attachments). This does not prevent ODK Briefcase from downloading all the data each time from ODK Aggregate v0.9.x, but it does enable it to avoid repeatedly uploading this data to ODK Aggregate v1.x."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:827
+msgid "Downgrade steps"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:829
+msgid "On April 12, 2016, Google disabled the login mechanism used by the older update scripts that were packaged with these installers."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:831
+msgid "To use these older installers:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:833
+msgid "Download and run an ODK Aggregate 1.4.8 (or newer) installer. On the final screen, uncheck the :guilabel:`Launch upload tool (3-10 minutes)` checkbox and click :guilabel:`Finish`."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:834
+msgid "Go into the directory where the installer placed the files, go into the :file:`ODK Aggregate` directory, and rename the :file:`ODKAggregate` directory inside it to *NewRemoval*."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:835
+msgid "Download and run the pre-1.4.8 ODK Aggregate installer. On the final screen, uncheck the :guilabel:`Launch upload tool (3-10 minutes)` checkbox and click :guilabel:`Finish`."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:836
+msgid "Go into the directory where the pre-1.4.8 installer placed its files, go into the :file:`ODK Aggregate` directory, and copy the :file:`ODKAggregate` directory from there to the installer directory created by the newer installer (effectively replacing the configuration produced by the newer installer with the configuration produced by the older one)."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:837
+msgid "In the directory created by the newer installer, if on:"
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:839
+msgid "*Windows*: double-click the :file:`ODKAggregateAppEngineUpdater.jar` and use that to update your App Engine instance."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:840
+msgid "*Mac OSX*: double-click the :file:`uploadAggregateToAppEngine.app` file in that directory."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:841
+msgid "*Linux*: open a bash shell, navigate to this directory, and run the :file:`uploadAggregateToAppEngine.sh` file."
+msgstr ""
+
+#: ../../src/aggregate-upgrade.rst:845
+msgid "If you are reverting from a 1.4.8 or later release to a 1.4.7 or earlier release, you must manually delete the background module of your App Engine using the Google Cloud Platform administration web pages."
+msgstr ""
+

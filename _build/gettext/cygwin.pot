@@ -1,0 +1,289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/cygwin.rst:16
+msgid "Working with Docs in Windows using Cygwin"
+msgstr ""
+
+#: ../../src/cygwin.rst:19
+msgid "The main contribution guide :doc: `contributing` was built for \\*nix systems, and the same commands may not work in Windows. Cygwin is a Windows tool, equivalent to \\*nix bash terminal. This guide helps to set up ODK Docs platform from the default Windows command prompt (CMD)."
+msgstr ""
+
+#: ../../src/cygwin.rst:25
+msgid "The prerequisites"
+msgstr ""
+
+#: ../../src/cygwin.rst:26
+msgid "The following are software tools that you need in the first place. If it is already installed. Just follow the steps and apply what is missing."
+msgstr ""
+
+#: ../../src/cygwin.rst:28
+msgid "Cygwin"
+msgstr ""
+
+#: ../../src/cygwin.rst:29
+#: ../../src/cygwin.rst:73
+msgid "Python 3"
+msgstr ""
+
+#: ../../src/cygwin.rst:30
+msgid "Virtualenv"
+msgstr ""
+
+#: ../../src/cygwin.rst:31
+msgid "Virtualenvwrapper-win"
+msgstr ""
+
+#: ../../src/cygwin.rst:32
+#: ../../src/cygwin.rst:203
+msgid "Git and GLFS"
+msgstr ""
+
+#: ../../src/cygwin.rst:37
+msgid "The requirements"
+msgstr ""
+
+#: ../../src/cygwin.rst:38
+msgid "These are a set of the main packages. ODK team combined them in a file such that all will be installed at once."
+msgstr ""
+
+#: ../../src/cygwin.rst:40
+msgid "alabaster==0.7.10"
+msgstr ""
+
+#: ../../src/cygwin.rst:41
+msgid "Babel==2.4.0"
+msgstr ""
+
+#: ../../src/cygwin.rst:42
+msgid "docutils==0.13.1"
+msgstr ""
+
+#: ../../src/cygwin.rst:43
+msgid "imagesize==0.7.1"
+msgstr ""
+
+#: ../../src/cygwin.rst:44
+msgid "Jinja2==2.9.6"
+msgstr ""
+
+#: ../../src/cygwin.rst:45
+msgid "MarkupSafe==1.0"
+msgstr ""
+
+#: ../../src/cygwin.rst:46
+msgid "Pygments==2.2.0"
+msgstr ""
+
+#: ../../src/cygwin.rst:47
+msgid "pytz==2017.2"
+msgstr ""
+
+#: ../../src/cygwin.rst:48
+msgid "requests==2.14.2"
+msgstr ""
+
+#: ../../src/cygwin.rst:49
+msgid "six==1.10.0"
+msgstr ""
+
+#: ../../src/cygwin.rst:50
+msgid "snowballstemmer==1.2.1"
+msgstr ""
+
+#: ../../src/cygwin.rst:51
+msgid "Sphinx==1.6.1"
+msgstr ""
+
+#: ../../src/cygwin.rst:52
+msgid "sphinx-rtd-theme==0.2.4"
+msgstr ""
+
+#: ../../src/cygwin.rst:53
+msgid "sphinxcontrib-websupport==1.0.1"
+msgstr ""
+
+#: ../../src/cygwin.rst:54
+msgid "typing==3.6.1"
+msgstr ""
+
+#: ../../src/cygwin.rst:55
+msgid "update==0.4.4"
+msgstr ""
+
+#: ../../src/cygwin.rst:59
+msgid "Install Cygwin"
+msgstr ""
+
+#: ../../src/cygwin.rst:60
+msgid "Cygwin tool lets Windows users execute many \\*nix commands. Install `Cygwin <https://cygwin.com/install.html/>`_ and add its path to Windows to work completely from the default command prompt. `For instructions <https://www.howtogeek.com/howto/41382/how-to-use-linux-commands-in-windows-with-cygwin/>`_."
+msgstr ""
+
+#: ../../src/cygwin.rst:67
+msgid "If you encounter any downloading problems, make sure to select a mirror site near you. The entire list is available on the `Cygwin website <https://cygwin.com/mirrors.html/>`_."
+msgstr ""
+
+#: ../../src/cygwin.rst:74
+msgid "You need to install `Python 3 <https://www.python.org/downloads/>`_. Select Python installation that fits your system (32 or 64 bit). `For instructions, see <https://www.youtube.com/watch?v=oHOiqFs_x8Y>`_."
+msgstr ""
+
+#: ../../src/cygwin.rst:76
+msgid "Make sure to select the option \"Add Python to the Path\", as shown below."
+msgstr ""
+
+#: ../../src/cygwin.rst:81
+msgid "Next, make sure to select \"pip\", which is `a package manager < https://pypi.python.org/pypi/pip>_` written in Python. We will use it to install packages. See the following image:"
+msgstr ""
+
+#: ../../src/cygwin.rst:86
+msgid "Alternatively, if you forgot to add Python 3 to the PATH, add it manually using the following command:"
+msgstr ""
+
+#: ../../src/cygwin.rst:95
+msgid ":file:`C:/Users/your username/python3` is the default Python 3 installation PATH. If you change it, please substitute the above path by the new one."
+msgstr ""
+
+#: ../../src/cygwin.rst:100
+msgid "Virtual Environment"
+msgstr ""
+
+#: ../../src/cygwin.rst:102
+msgid "`A virtual environment tool <https://virtualenv.pypa.io/en/stable/userguide/>`_ creates multiple Pythons environments, each has its packages and dependencies."
+msgstr ""
+
+#: ../../src/cygwin.rst:104
+msgid "For easy installation, ``pip`` command can be used, which comes with Python 3 (as shown in Python installation)."
+msgstr ""
+
+#: ../../src/cygwin.rst:110
+msgid "Create a new directory for your odkdocs work:"
+msgstr ""
+
+#: ../../src/cygwin.rst:117
+msgid "To work with virtualenv, you have two options:"
+msgstr ""
+
+#: ../../src/cygwin.rst:119
+msgid "Use the native virtualenv."
+msgstr ""
+
+#: ../../src/cygwin.rst:120
+msgid "Use virtualenvwrapper on the top of virtualenv."
+msgstr ""
+
+#: ../../src/cygwin.rst:125
+msgid "Native Virtual Environment"
+msgstr ""
+
+#: ../../src/cygwin.rst:126
+msgid "Create a new Python 3 virtual environment, \"odkenv\" is the name of the virtualenv, you can choose any name."
+msgstr ""
+
+#: ../../src/cygwin.rst:132
+msgid "After creating the virtualenv, multiple files are copied into the folder odkenv in your working directory."
+msgstr ""
+
+#: ../../src/cygwin.rst:138
+msgid "The folder Scripts contains all virtualenv controls as \".bat\" files."
+msgstr ""
+
+#: ../../src/cygwin.rst:140
+#: ../../src/cygwin.rst:193
+msgid "To activate the odkenv:"
+msgstr ""
+
+#: ../../src/cygwin.rst:153
+msgid "To deactivate the odkenv:"
+msgstr ""
+
+#: ../../src/cygwin.rst:162
+msgid "Virtual Environment Wrapper"
+msgstr ""
+
+#: ../../src/cygwin.rst:166
+msgid "This step is not an alternative to virtualenv. You must install virtualenv first."
+msgstr ""
+
+#: ../../src/cygwin.rst:168
+msgid "The `Virtualenvwrapper <https://pypi.python.org/pypi/virtualenvwrapper-win>` mediates between user CMD and virtualenv to ease management and working with multiple virtual environments. To install virtualenvwrapper, use the following:"
+msgstr ""
+
+#: ../../src/cygwin.rst:175
+msgid "Create a new virtualenv:"
+msgstr ""
+
+#: ../../src/cygwin.rst:181
+msgid "Once the odkenv is created, it is automatically activated:"
+msgstr ""
+
+#: ../../src/cygwin.rst:187
+msgid "To deactivate the odkenv, write:"
+msgstr ""
+
+#: ../../src/cygwin.rst:205
+msgid "Install `Git for windows <https://git-scm.com/downloads>`_. Make sure that git is installed properly by typing (git) in the CMD."
+msgstr ""
+
+#: ../../src/cygwin.rst:207
+msgid "Install `GLFS <https://git-lfs.github.com/>`_."
+msgstr ""
+
+#: ../../src/cygwin.rst:213
+msgid "Android Tools"
+msgstr ""
+
+#: ../../src/cygwin.rst:215
+msgid "Install `Android Debug Bridge <collect-adb>` to learn more about ADB. ADB is part of Android studio, `To download <https://developer.android.com/studio/index.html/>`_"
+msgstr ""
+
+#: ../../src/cygwin.rst:217
+msgid "To use ADB, you must run Android Studio once. The default location of ADB is :file:`C:/Users/your username/AppData/Local/Android/sdk/platform-tools`. Add it to ``Windows PATH`` by using the following command:"
+msgstr ""
+
+#: ../../src/cygwin.rst:226
+msgid "Fork and Clone the ODK Docs repo"
+msgstr ""
+
+#: ../../src/cygwin.rst:228
+msgid "From Github, fork the `ODK Docs <https://github.com/opendatakit/docs>`_. This will create a copy of the docs in your Github account called ``origin``. Move to the ODk working directory, and clone the ODk Docs into your local machine."
+msgstr ""
+
+#: ../../src/cygwin.rst:237
+msgid "Set the Upstream Remote"
+msgstr ""
+
+#: ../../src/cygwin.rst:245
+msgid "Install the Requirements"
+msgstr ""
+
+#: ../../src/cygwin.rst:247
+msgid "This step will install a bunch of packages that are listed in the :file: `requirement.txt` file. ODK team prepared this file for you to ease the installation."
+msgstr ""
+
+#: ../../src/cygwin.rst:250
+msgid "First, you need to activate your virtual environment (odkenv):"
+msgstr ""
+
+#: ../../src/cygwin.rst:256
+msgid "Make sure you are inside the docs folder, then run:"
+msgstr ""
+
+#: ../../src/cygwin.rst:262
+msgid "You completed the installation and you can start change and build ODK Docs."
+msgstr ""
+

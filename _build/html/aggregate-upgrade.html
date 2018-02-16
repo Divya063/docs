@@ -1,0 +1,1151 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Upgrading Aggregate &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Setting Up ODK Aggregate" href="aggregate-setup.html"/>
+        <link rel="next" title="Backing Up Aggregate" href="aggregate-backup.html"/>
+        <link rel="prev" title="ODK Aggregate Virtual Machine" href="aggregate-vm.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aggregate-deployment-planning.html">Planning Your Aggregate Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-install.html">Installing Aggregate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Upgrading Aggregate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#need-for-upgrading">Need for Upgrading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#security-vulnerabilities">Security vulnerabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hosting-revisions">Hosting revisions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performance-improvements">Performance improvements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enhanced-capabilities">Enhanced capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#determining-your-aggregate-version">Determining your Aggregate version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-steps-for-upgrading">General steps for upgrading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#release-notes">Release notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-15">Aggregate v1.4.15</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-14">Aggregate v1.4.14</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-13">Aggregate v1.4.13</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-12">Aggregate v1.4.12</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-11">Aggregate v1.4.11</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-10">Aggregate v1.4.10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-9">Aggregate v1.4.9</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-8">Aggregate v1.4.8</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-7">Aggregate v1.4.7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-6">Aggregate v1.4.6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-5">Aggregate v1.4.5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-4">Aggregate v1.4.4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-3">Aggregate v1.4.3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-2">Aggregate v1.4.2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4-1">Aggregate v1.4.1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-4">Aggregate v1.4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-3-4">Aggregate v1.3.4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-3-3">Aggregate v1.3.3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-3-2">Aggregate v1.3.2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-3-1">Aggregate v1.3.1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-3">Aggregate v1.3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-v1-2">Aggregate v1.2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-steps-for-v1-1-to-v1-0-4">General steps for v1.1 to v1.0.4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-steps-for-version-v1-0-3-to-v1-0">General steps for version v1.0.3 to v1.0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-steps-to-upgrade-from-alpha-and-beta-releases">General steps to upgrade from Alpha and Beta releases</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#migration-from-odk-aggregate-0-9x-to-1-x">Migration from ODK Aggregate 0.9x to 1.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downgrade-steps">Downgrade steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aggregate-backup.html">Backing Up Aggregate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="aggregate-setup.html">Setting Up ODK Aggregate</a> &raquo;</li>
+        
+      <li>Upgrading Aggregate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/aggregate-upgrade.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="upgrading-aggregate">
+<h1>Upgrading Aggregate<a class="headerlink" href="#upgrading-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="need-for-upgrading">
+<span id="upgrade-aggregate"></span><h2>Need for Upgrading<a class="headerlink" href="#need-for-upgrading" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>It is important to upgrade to newer ODK Aggregate versions as they come out. You don’t need to do this immediately, but this should be something you do at least once a year.</p>
+<p>There are several reasons for this.</p>
+<div class="section" id="security-vulnerabilities">
+<h3>Security vulnerabilities<a class="headerlink" href="#security-vulnerabilities" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The ODK developers are constantly upgrading the libraries we use with newer, safer, versions. The older your software, the greater the number of vulnerabilities in it.</p>
+</div>
+<div class="section" id="hosting-revisions">
+<h3>Hosting revisions<a class="headerlink" href="#hosting-revisions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you are using Google App Engine as we recommend, your hosting environment is being continuously updated.</p>
+<p>Google AppEngine is a managed environment, unlike AWS or other 「bare-box」 hosting services. Google is continuously updating features and removing support for older features in this environment.</p>
+<p>The Aggregate development team is committed to supporting Google App Engine, so we update our application as the platform changes. If you do not upgrade gradually as new versions come out, your installation may stop working or cease to have a viable upgrade path.</p>
+</div>
+<div class="section" id="performance-improvements">
+<h3>Performance improvements<a class="headerlink" href="#performance-improvements" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>As we find performance issues and address them, the Aggregate gets faster and cheaper to run.</p>
+</div>
+<div class="section" id="enhanced-capabilities">
+<h3>Enhanced capabilities<a class="headerlink" href="#enhanced-capabilities" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="javarosa.html"><span class="doc">ODK JavaRosa</span></a>, the underlying form rendering library is updated about annually. Those updates add new functions, features, and occasionally data types. New features are slowly added to ODK Aggregate, too.</p>
+<p>To use these newer features, keep your Aggregate installation up to date.</p>
+</div>
+</div>
+<div class="section" id="determining-your-aggregate-version">
+<span id="determine-version"></span><h2>Determining your Aggregate version<a class="headerlink" href="#determining-your-aggregate-version" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If you are able to log onto the server as a Site Administrator, the ODK Aggregate version is displayed at the top of the <span class="guilabel">Preferences</span> sub-tab under the <span class="guilabel">Site Admin</span> tab.</p>
+<p>If you are unable to log onto your server, you will need to search for the version in the application logs. To do that:</p>
+<ol class="arabic simple">
+<li>Open a browser to <a class="reference external" href="https://appengine.google.com">https://appengine.google.com</a>.</li>
+<li>Choose the project id for your ODK Aggregate server by clicking on the project dropdown in the top left corner.</li>
+</ol>
+<img alt="Image showing dropdown option." src="_images/dropdown1.png" />
+<img alt="Image showing project selection window." src="_images/select-project.png" />
+<ol class="arabic simple" start="3">
+<li>Search <cite>logs</cite> in the search box and select <cite>logging</cite>.</li>
+</ol>
+<img alt="Image showing searching log." src="_images/search-logs.png" />
+<ol class="arabic simple" start="4">
+<li>In the filter text box paste this text : <cite>afterPropertiesSet</cite> and hit enter.</li>
+<li>Expand the list of logs and find the log which shows the version of Aggregate. It will of the following format:</li>
+</ol>
+<div class="highlight-none"><div class="highlight"><pre><span></span>13:24:54.806 org.opendatakit.common.security.Realm afterPropertiesSet: Version: v1.4.15 Production (Realm.java:51)
+</pre></div>
+</div>
+<img alt="Image showing search result for version." src="_images/find-version.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>In the 1.0 Production release, the Version appears on the <span class="guilabel">Site Admin</span> Tab, under the <span class="guilabel">Preferences</span> sub-tab. If no version information is displayed even after you log in, then you are running an extremely old version of ODK Aggregate; in that case follow this cheat sheet:</p>
+<ul class="simple">
+<li><cite>Beta 1 and earlier</cite>: <span class="guilabel">Permissions</span> tab looks nothing like the tab in the Production release.</li>
+<li><cite>Beta 2</cite>: <span class="guilabel">Permissions</span> tab looks like the Production release; Forms tab does not show the number of media files associated with a form.</li>
+<li><cite>Beta 3</cite>: The number of media files associated with a form is displayed; publishing to Google is broken.</li>
+<li><cite>Beta 4</cite>: There are <span class="guilabel">Form Management</span> and <span class="guilabel">Site Admin</span> tabs; publishing to Google is broken.</li>
+<li><cite>RC1</cite>: csv exports apply the active Filter to the exported columns; publishing to Google is broken.</li>
+<li><cite>RC2</cite>: <span class="guilabel">Submissions</span> tab is paginated (shows 500 records per page by default); publishing to Google works.</li>
+<li><cite>RC3</cite>: kml exports apply the active Filter to the exported data. All data is exported. It no longer truncates to the first 500 records.</li>
+<li><cite>RC4</cite>: Submissions for forms with non-repeating groups are now properly reconstructed into Briefcase. Date fields are broken.</li>
+</ul>
+<p class="last">Publishing to Google is broken prior to RC2 (due to a change in Google infrastructure).</p>
+</div>
+</div>
+<div class="section" id="general-steps-for-upgrading">
+<span id="general-steps-for-upgrading-aggregate"></span><h2>General steps for upgrading<a class="headerlink" href="#general-steps-for-upgrading" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li>Disable all submissions to ODK Aggregate, in the <span class="guilabel">Form Management</span> tab.</li>
+<li>Use <a class="reference internal" href="briefcase-forms.html"><span class="doc">ODK Briefcase</span></a> to pull a copy of all data to your computer.</li>
+<li>Search upward in the <a class="reference internal" href="#release-notes"><span class="std std-ref">release notes</span></a> below, starting from your current ODK Aggregate version to locate the most recent ODK Aggregate version that does not require any manual upgrade steps.</li>
+<li>Log onto your server to confirm that it is still functioning.</li>
+<li>Download the next ODK Aggregate version, perform the manual upgrade steps if any and upgrade to that version (and perform any post-install upgrade steps, if any).</li>
+<li>Log onto your server to confirm that it is still functioning.</li>
+<li>Repeat the steps 3-6 until you have upgraded to the current version.</li>
+<li>Enable submissions to ODK Aggregate via the <span class="guilabel">Form Management</span> tab.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">You need to know the exact <em>instance name</em> that was used in prior installs for your username and password to continue to work. If you add a space or change capitalization or spelling, the passwords will be invalid (you just need to re-run the installer with the correct string to correct the problem).</p>
+</div>
+</div>
+<div class="section" id="release-notes">
+<span id="id1"></span><h2>Release notes<a class="headerlink" href="#release-notes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="aggregate-v1-4-15">
+<span id="v1-4-15"></span><h3>Aggregate v1.4.15<a class="headerlink" href="#aggregate-v1-4-15" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Update javarosa to the new opendatakit-javarosa-2.3.0.jar.</li>
+<li>Fix: rev 210 sync protocol. User permissions were incorrectly being computed and filtered. This prevented resetting the server with new content from the device (but syncing with existing content worked fine).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The rev 210 sync protocol is incompatible with anything prior to rev 210.</p>
+</div>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="last simple">
+<li>Do not upgrade if you are using ODK 2.0 rev 208 or earlier.</li>
+<li>See <a class="reference internal" href="#v1-4-13"><span class="std std-ref">v1.4.13</span></a> upgrade notes.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-14">
+<span id="v1-4-14"></span><h3>Aggregate v1.4.14<a class="headerlink" href="#aggregate-v1-4-14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Update javarosa to the new opendatakit-javarosa-2.2.0.jar</li>
+<li>Fix for JSON publisher correctly handling UTF-8</li>
+<li>Added SHA-1 library to browser so that Basic Auth can now be configured and will now work (this capability is not exposed in the wizard-based installer/configurer; existing passwords need to be changed before they can be used in a Basic Auth configuration)</li>
+<li>Revised sync protocol and database schema for ODK 2.0. This is incompatible with anything prior to rev 210 (not yet available).</li>
+<li>Microsoft SQLServer configurations can now run on Linux and MacOSX boxes.</li>
+<li>Updated to the latest AppEngine SDK.</li>
+<li>Updated build environment to a mixed Java 7 and Java 8 environment.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="last simple">
+<li>Do not upgrade if you are using ODK 2.0 rev 208 or earlier.</li>
+<li>See <a class="reference internal" href="#v1-4-13"><span class="std std-ref">v1.4.13</span></a> upgrade notes.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-13">
+<span id="v1-4-13"></span><h3>Aggregate v1.4.13<a class="headerlink" href="#aggregate-v1-4-13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Add support for Microsoft SQL Server database and Azure SQL Server</li>
+<li>Updated to expect Tomcat 8 and JDBC 4 libraries. This extensively impacted the datastore layer.</li>
+<li>Rewrote the Google Sheets publisher to use a newer API.</li>
+<li>Changed the PAUSED publisher state to expose a restart button. Fixed bug that prevented ABANDONED button from working. When a publisher enters the Paused state, this button triggers ODK Aggregate to resume from that state. This happens automatically every 8 minutes or so, but having a resume button simplifies integration testing. i.e., when a publisher is in the Paused state, you do NOT need to click this button – but if you are testing a publisher to your own server, it can be useful to have.</li>
+<li>Fixes for ODK 2.0 datatype form.</li>
+<li>NaN +Infinity and -Infinity are now handled within Google AppEngine. These cannot be supported on systems using MySQL and SQL Server (a fundamental limitation of those databases). On PostgreSQL systems, if you alter your tables to use REAL instead of DECIMAL(38,0) columns, it will be able to store and process these special values.</li>
+<li>Updated a multitude of jars (libraries).</li>
+<li>If this is a first-time install using PostgreSQL, please see the upgrade steps below for the additional commands you need to execute to complete the PostgreSQL configuration. These commands are missing from the <code class="file docutils literal"><span class="pre">create_db_and_user.sql</span></code> but are required for PostgreSQL operations.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="simple">
+<li>If publishing to Google Sheets, you must go to the API Manager tab and enable the Google Sheets API.</li>
+<li>Tomcat installs now require Tomcat 8 or higher. The war file produced by the installer will work as-is on those systems – no need for any manual modifications to get things to work (though MySQL still requires downloading and copying the MySQL Connector/J, and SQL Server also has a manual configuration step).</li>
+<li>If using an older MySQL database, please upgrade to MySQL 5.7 or higher; note that some MySQL releases expire all database passwords after 360 days. Please verify the behavior of your version of MySQL and either change the password expiration policy or create a calendar reminder to change the password before it expires. For ODK Aggregate, you will need to re-run the installer to specify any new password. For more information, see the MySQL documentation. e.g., <a class="reference external" href="https://dev.mysql.com/doc/refman/5.7/en/password-management.html">MySQL password expiration policy</a></li>
+<li>The ODK 2.0 sync protocol in this release is compatible with the ODK 2.0 Rev 200, 202, 204, 206 and 208 tools. Note that you cannot just upgrade from a server earlier than 1.4.10; you have to delete everything and start over.</li>
+<li>See <a class="reference internal" href="#v1-4-12"><span class="std std-ref">v1.4.12</span></a> upgrade steps if upgrading from an earlier ODK Aggregate version.</li>
+<li>If using an older PostgreSQL database, please upgrade to at least 9.4. For all PostgreSQL servers, you must execute an additional command to grant permissions to the schema on the server. This is a change from the earlier 9.1 install and the additional command is missing from the <code class="file docutils literal"><span class="pre">create_db_and_user.sql</span></code> script. The commands to be executed in the pgAdmin query window are as follows, with your_database, your_schema and database_username replaced with the values you specified when you ran the installer:</li>
+</ul>
+<div class="last highlight-none"><div class="highlight"><pre><span></span>\c &quot;your_database&quot;;
+alter schema &quot;your_schema&quot; owner to &quot;database_username&quot;;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-12">
+<span id="v1-4-12"></span><h3>Aggregate v1.4.12<a class="headerlink" href="#aggregate-v1-4-12" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Update to installer with new language and links to documentation.</li>
+<li>Revise upload tool for Google AppEngine deployments to more-consistently display the token-entry dialog.</li>
+<li>Add .csv-based downloading and bulk updating of configured users and their capabilities.</li>
+<li>Change MySQL ODK 1.x and ODK 2.0 data table constructions to use MEDIUMBLOB columns for media attachments. Fix several issues around accessing attachments. See Upgrade notes below and MySQL configuration instructions in <a class="reference internal" href="aggregate-tomcat.html"><span class="doc">installing Aggregate on Tomcat</span></a> for configuration that is required for MySQL.</li>
+<li>Tweak Google AppEngine configuration to reduce frontend usage hours and thereby reduce costs.</li>
+<li>Performance improvements to Google AppEngine task locks (primarily for ODK 2.0 support).</li>
+<li>Add <code class="docutils literal"><span class="pre">/users/list</span></code> URL that returns the list of all configured users and the roles they have been granted. Access to this URL requires authentication and is restricted to ODK Aggregate usernames and Google accounts (anonymousUser access is forbidden). If the authenticated user does not have Tables Super-user, Administer Tables, or Site Administrator permissions, a singleton list is returned that contains only information about their own identity and its capabilities.</li>
+<li>Changes to support row-level filtering in ODK 2.0.</li>
+<li>Implement a paginated view of ODK 2.0 data rows; 100 records per page.</li>
+<li>Upgrade to Google AppEngine 1.9.42 SDK.</li>
+<li>The ODK 2.0 「datatypes」 example form and table (in the app-designer repository) fail to upload to ODK Aggregate. This will be addressed in a future release.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="simple">
+<li>For MySQL installations, please make sure you have this server configuration (if this is a new database install, you can reduce <em>max_allowed_packet</em> to <em>16842752</em>):</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>character_set_server=utf8
+collation_server=utf8_unicode_ci
+max_allowed_packet=1073741824
+</pre></div>
+</div>
+<ul class="last simple">
+<li>For ODK 1.x uses, no special upgrade steps are required.</li>
+<li>If you are using ODK 2.0 features, you must visit the <span class="guilabel">Permissions</span> sub-tab under the <span class="guilabel">Site Admin</span> tab and click <span class="guilabel">Save Changes</span> to complete the upgrade to this release. You do not need to modify anything on that page, just click the button.</li>
+<li>The ODK 2.0 sync protocol in this release is compatible with the ODK 2.0 Rev 200, 202, 204, 206 and 208 tools. Note that you cannot just upgrade from a server earlier than 1.4.10; you have to delete everything and start over.</li>
+<li>See <a class="reference internal" href="#v1-4-11"><span class="std std-ref">v1.4.11</span></a> upgrade steps if upgrading from an earlier ODK Aggregate version.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-11">
+<span id="v1-4-11"></span><h3>Aggregate v1.4.11<a class="headerlink" href="#aggregate-v1-4-11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Add a mutex around ODK 1.x form submission creation and updating. This should eliminate submission data corruption.</li>
+<li>If only ODK 2.0 privileges are assigned, hide the Submissions tab.</li>
+<li>Fix: advisory memcache interaction to delete the entry when rolling back the datastore update.</li>
+<li>Add <strong>Tables Super-user</strong> as a configurable user capability. Users with this capability will be able to modify the table-level and row-level privileges on ODK 2.0 rev 206 data tables. These privileges are advisory and do not provide strong access or revision control.</li>
+<li>Add <code class="docutils literal"><span class="pre">/roles/granted</span></code> URL that returns the roles granted to an authenticated username or google account. This will be used by ODK 2.0 rev 206 tools to determine and save the capabilities of the configured user on a device. Those capabilities are then used to apply advisory access controls on the tables and rows.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="simple">
+<li>For MySQL installations, please make sure you have this server configuration:</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>character_set_server=utf8
+collation_server=utf8_unicode_ci
+max_allowed_packet=1073741824
+</pre></div>
+</div>
+<ul class="last simple">
+<li>For ODK 1.x uses, no special upgrade steps are required.</li>
+<li>If you are using ODK 2.0 features, you must visit the <span class="guilabel">Permissions</span> sub-tab under the <span class="guilabel">Site Admin</span> tab and click <span class="guilabel">Save Changes</span> to complete the upgrade to this release. You do not need to modify anything on that page, just click the button.</li>
+<li>The ODK 2.0 sync protocol in this release is compatible with the ODK 2.0 Rev 200, 202 and 204 tools. You cannot just upgrade from a server earlier than 1.4.10; you have to delete everything and start over.</li>
+<li>See <a class="reference internal" href="#v1-4-10"><span class="std std-ref">v1.4.10</span></a> upgrade steps if upgrading from an earlier ODK Aggregate version.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-10">
+<span id="v1-4-10"></span><h3>Aggregate v1.4.10<a class="headerlink" href="#aggregate-v1-4-10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>On AppEngine, add advisory memcache interactions inside database mutex implementation (TaskLockImpl) to detect and thereby reduce race conditions that could lead to database corruption. These changes do not alter the fundamental mutex mechanism. They may reduce the likelihood of a mutex failure.</li>
+<li>Fix ODK 2.0 sync: table-specific pre-loaded instance attachments under <code class="file docutils literal"><span class="pre">config/assets/csv/tableid/instances/...</span></code> were not being identified as table-specific.</li>
+<li>Fix ODK 2.0 sync: add mutex around app-level file, table-level file and row-level attachment REST interactions. Eliminates the possibility of joint-updating that could corrupt the app-, table- or row-level manifests.</li>
+<li>Fix ODK 2.0 sync: change row-level file attachment bulk-update to not refetch the manifest after adding each file attachment. This had caused 1% failure rate on row-level attachment syncing when there were large numbers of file attachments (30-60) for each row.</li>
+<li>Fix ODK 2.0 sync: when authorization fails (permission denied), return UNAUTHORIZED response rather than DENIED. This reports an authorization failure on the client vs. a protocol error.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="simple">
+<li>For MySQL installations, please make sure you have this server configuration:</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>character_set_server=utf8
+collation_server=utf8_unicode_ci
+max_allowed_packet=1073741824
+</pre></div>
+</div>
+<ul class="last simple">
+<li>For ODK 1.x uses, no special upgrade steps are required.</li>
+<li>The ODK 2.0 sync protocol is compatible with the ODK 2.0 Rev 200, 202 and 204 tools.</li>
+<li>For ODK 2.0 uses, if you have pre-loaded datasets (via tables.init) that have row-level attachments (e.g., geotagger example dataset), you should:<ol class="arabic">
+<li>Remove these incorrectly-categorized files from the server (anything under <code class="file docutils literal"><span class="pre">assets/csv/table_id/instances/...</span></code> on the <span class="guilabel">Manage App Level Files</span> sub-tab)</li>
+<li>Deploy your device configuration to a clean device</li>
+<li>Reset App Server to correctly upload these files so that they appear under the <span class="guilabel">Manage Table Level Files</span> sub-tab.</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-9">
+<span id="v1-4-9"></span><h3>Aggregate v1.4.9<a class="headerlink" href="#aggregate-v1-4-9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Add XPath 3.1 math functions (e.g., exp, log, sin, cos, etc.)</li>
+<li>Fix AppEngine adaptation layer for Apache HttpClient so that Oauth2 authentications work change version string in <code class="file docutils literal"><span class="pre">ODKAggregateAppEngineUpdater.jar</span></code> to be a date stamp.</li>
+<li>Fix ODK 2.0 interfaces to support ODK Aggregate username / password for authentication.</li>
+<li>Fix ODK 2.0 Sync so that a delete-table request can be repeated until successful or Not Found (404) when it times out.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="simple">
+<li>For MySQL installations, please make sure you have this server configuration:</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>character_set_server=utf8
+collation_server=utf8_unicode_ci
+max_allowed_packet=1073741824
+</pre></div>
+</div>
+<ul class="last simple">
+<li>For all other installations, there are no special upgrade steps required.</li>
+<li>The ODK 2.0 sync protocol is compatible with the ODK 2.0 Rev 200, 202 and 204 tools.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-8">
+<span id="v1-4-8"></span><h3>Aggregate v1.4.8<a class="headerlink" href="#aggregate-v1-4-8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Submission Filters are once again working.</li>
+<li>Update javarosa library with fixes for:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>fix date, time, dateTime handling of time zones (in collaboration with SurveyCTO)</li>
+<li>fix itemset choice lists – various issues.</li>
+<li>fix jr:choice-name() context resolution so that it can work with relative paths and repeat groups (SurveyCTO contribution).</li>
+<li>add CONTROL_FILE_CAPTURE for future arbitrary-file-attachment handling</li>
+<li>use consistent UTF-8 treatment when writing and reading files</li>
+<li>better detection and handling of binary-file-format changes across versions</li>
+<li>build with Java 7</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Add support for geotrace and geoshape to Export-to-KML (for ODK 1.x).</li>
+<li>Update Apache HTTP Client libraries to 4.5.2; this should support SNI protocol interactions of external publishers (ODK 1.x - untested).</li>
+<li>Change Google App Engine update mechanism to use new wizard update tool.</li>
+<li>Change Google App Engine code to use EAR / module format.</li>
+<li>Widespread jar update.</li>
+<li>Correct bug in csv-export library shared with ODK 2.0 tools for exporting datasets in those tools (does not impact Export as CSV in the 1.x toolchain).</li>
+<li>Add new bulk attachment-POST APIs for ODK 2.0 sync protocol.</li>
+<li>Rework ui tests to use Chrome for the Selenium web testing.</li>
+<li>Rework all of the eclipse projects and add documentation for setting up a tomcat eclipse debug environment.</li>
+<li>Rework the Google App Engine maven projects to use the EAR / module format.</li>
+<li>Update maven plugins and tools to newer versions.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="simple">
+<li>For MySQL installations, please make sure you have this server configuration:</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>character_set_server=utf8
+collation_server=utf8_unicode_ci
+max_allowed_packet=1073741824
+</pre></div>
+</div>
+<ul class="last simple">
+<li>For all other installations, there are no special upgrade steps required.</li>
+<li>The ODK 2.0 sync protocol is compatible with the ODK 2.0 Rev 200 and higher tools.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-7">
+<span id="v1-4-7"></span><h3>Aggregate v1.4.7<a class="headerlink" href="#aggregate-v1-4-7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Submission Filters are broken in this release. When submissions rows are corrupted, consistently report the information necessary for end-users to delete or repair the corrupted submission.</li>
+<li>Correct ODK 2.0 delete-table functionality so that it does not generate errors when it is not running on AppEngine. The code had been performing an unguarded explicit cast to an AppEngine-only implementation class.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="simple">
+<li>For MySQL installations, please make sure you have this server configuration:</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>character_set_server=utf8
+collation_server=utf8_unicode_ci
+max_allowed_packet=1073741824
+</pre></div>
+</div>
+<ul class="last simple">
+<li>For all other installations, there are no special upgrade steps required.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Google disabled functionality used by this installer and earlier versions to upload ODK Aggregate to Google App Engine. See <a class="reference internal" href="#downgrade-steps"><span class="std std-ref">here</span></a> for the work-around.</p>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-6">
+<span id="v1-4-6"></span><h3>Aggregate v1.4.6<a class="headerlink" href="#aggregate-v1-4-6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Submission Filters are broken in this release.</li>
+<li>Fix for Google Sheets publisher-creation problem caused by April 20th deprecation of the Google Docs API. We were making a single call to that obsolete API to create a blank Google Sheets document.</li>
+<li>Update to javarosa-2015-04-17 jar. That jar adds OpenStreetMap support to javarosa. Removal of the <em>Sign in with Google</em> mechanisms that used OpenID.</li>
+<li>Widespread update to jars, custom repository configuration, and the elimination of several custom-built jars because of the elimination of OpenID and the maturity of Maven as a version repository.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<p class="last">No special upgrade steps required.</p>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-5">
+<h3>Aggregate v1.4.5<a class="headerlink" href="#aggregate-v1-4-5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Update to javarosa-2015-01-10 jar.</li>
+<li>Update to jQuery 1.11.1</li>
+<li>Update the ODK 2.0 Data model and Sync protocol (incompatible with device releases: rev 122 and earlier).</li>
+<li>Fix: support performing mark-as-complete on encrypted submissions (requires ODK Briefcase v1.4.5 or higher).</li>
+<li>Fix: add server preference to ignore partially inserted/deleted submissions. Logs them but ignores them so that you can access all other rows in your dataset. Disabled by default. By default, all actions fail upon encountering any malformed submission. You should not ignore these failures but should correct them as soon as is practical.</li>
+<li>Attempted fix: for <em>Log In</em> issue – insert sleep to give Google a chance to propagate clearing of session cookie. Tweak the webpage resize/layout calculations to be more efficient.</li>
+<li>Fix: make incomplete deletions and insertions more recoverable.</li>
+<li>Performance: change MySQL table creation to not declare primary keys and just use ordinary indices for the primary key.</li>
+<li>Security: Support Enketo-express (allow non-https communications with Enketo server). When the communications are not secure, this change discloses the Enketo access token to eavesdroppers.</li>
+<li>Security: Filter out forbidden characters in redirect string to prevent XSS attacks.</li>
+<li>Security: Add clickjacking prevention header as detailed here: <a class="reference external" href="https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet">https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet</a>.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<p class="last">If you were testing out ODK Tables, you should delete all ODK Tables files and data tables before upgrading, as the database schema has changed. The server no longer works with ODK Sync 2.0 rev 122 (or earlier releases).</p>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-4">
+<span id="v1-4-4"></span><h3>Aggregate v1.4.4<a class="headerlink" href="#aggregate-v1-4-4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Installer now asks for an ODK Aggregate username for the super-user (not a Google e-mail account). Default password is aggregate.</li>
+<li>Banner displayed if super-user’s password has not been changed from aggregate.</li>
+<li>Fix: column name generator bug (upload of form definition failed)</li>
+<li>Fix: add more detailed error messages when a submission is corrupted</li>
+<li>IE6 and IE7 are no longer supported. Upgrade your browser.</li>
+<li>Allow user to specify the ODK 2.0 App Name.</li>
+<li>Allow anonymous access to ODK 2.0 Sync APIs.</li>
+<li>Enforce <em>Administer Tables</em> access for ODK 2.0 Sync APIs that alter server configuration.</li>
+<li>For ODK 2.0 Sync APIs, remove JBoss Resteasy; use Apache Wink instead.</li>
+<li>Extensive version updates to supporting software libraries.</li>
+<li>Update <code class="file docutils literal"><span class="pre">CONFIGURE.txt</span></code> instructions for maven builds. Define ANT scripts for external dependencies.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<p>Upgrades require several manual interventions:</p>
+<ul class="simple">
+<li>You must have Java 7 installed - the GAE 1.9.7 SDK used within the installer now requires that version of Java. If you are upgrading from ODK Aggregate 1.4.3, you have already done this.</li>
+<li>If you were testing out ODK Tables, you should delete all ODK Tables data tables before upgrading, as the database schema has changed.</li>
+<li>You must flush the session cookies on the server. Session cookies are used to identify the logged-in users of the system. The security software versions were updated in this release, causing the older cookies to become invalid. See below for the upgrade steps.</li>
+</ul>
+<p>After performing the above steps, the upgrade steps after those are as follows:</p>
+<ol class="arabic simple">
+<li>Open a browser and go to your <a class="reference external" href="https://appengine.google.com/">Google AppEngine dashboard</a>.</li>
+<li>Click through to your application id. Then click on <span class="guilabel">Memcache Viewer</span> under the <span class="guilabel">Data</span> heading in the left sidebar. Keep this window open.</li>
+<li>Now, run the installer and deploy ODK Aggregate 1.4.4 to this application id.</li>
+<li>After it has deployed, click on <span class="guilabel">Flush Cache</span> in the dashboard window’s Memcache Viewer screen.</li>
+<li>Follow the instructions <a class="reference internal" href="aggregate-admin.html#permission-tab"><span class="std std-ref">here</span></a> for changing the password of the super-user username.</li>
+</ol>
+<p class="last">Other than the need to flush this cache, and the need to delete any ODK Tables data before upgrading, this should be a seamless upgrade from ODK Aggregate 1.4.x.</p>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-3">
+<span id="v1-4-3"></span><h3>Aggregate v1.4.3<a class="headerlink" href="#aggregate-v1-4-3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Updated javarosa jar.</li>
+<li>Add stub Tomcat/MySQL Eclipse project with readme.</li>
+<li>Update selenium test environment and various 3rd party jars.</li>
+<li>Update the GAE SDK inside the installer to 1.9.0.</li>
+<li>New ODK Tables sync protocol and UI. Breaks ODK Tables Alpha 2 sync.</li>
+<li>New sync protocol exchanges SAVEPOINT_TYPE, FILTER_TYPE, FILTER_VALUE.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<p>Upgrades require a manual intervention:</p>
+<ol class="arabic simple">
+<li>You must have Java 7 installed - the GAE 1.9.0 SDK used within the installer now requires that version of Java.</li>
+<li>If you were testing out ODK Tables, you should delete all ODK Tables data tables before upgrading, as the database schema has changed.</li>
+</ol>
+<p class="last">Otherwise, this should be a seamless upgrade from ODK Aggregate 1.4.</p>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-2">
+<span id="v1-4-2"></span><h3>Aggregate v1.4.2<a class="headerlink" href="#aggregate-v1-4-2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Fixes to ODK Tables sync protocol for the combined release. Due to interactions with Google AppEngine, the ODK Tables Synchronization protocol does not currently work on Google AppEngine servers. You must <a class="reference internal" href="aggregate-vm.html"><span class="doc">install a local server or a VM image</span></a> in order to use that mechanism.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<p>If you were testing out ODK Tables, you should delete all tables before upgrading, as the database schema has changed.</p>
+<p class="last">Otherwise, this should be a seamless upgrade from ODK Aggregate 1.4.</p>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4-1">
+<span id="v1-4-1"></span><h3>Aggregate v1.4.1<a class="headerlink" href="#aggregate-v1-4-1" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>You can now use <a class="reference external" href="https://enketo.org/">Enketo</a> browser-based Webforms to fill-in and publish submissions directly into ODK Aggregate. This feature was developed and donated by <a class="reference external" href="http://sdrc.co.in/">SDRC India</a>. To enable Enketo integration, go to the <span class="guilabel">Preferences</span> sub-tab under <span class="guilabel">Site Admin</span> tab and click on <span class="guilabel">Enketo API Configuration</span>.</li>
+<li>Fix the Z-ALPHA JSON publisher and the JSON File export to emit an array of zero or more objects, one object per submission, with proper treatment of embedded quotes, etc and confirmed that the output passes JSLint.</li>
+<li>Fix the CVS File export functionality to double-up all occurrences of double-quotes in a field before surrounding that field with double quotes (per RFC 4180).</li>
+<li>Clean up date and time handling in REDCap publisher and enforce GMT time zone interpretation when rendering date and time strings.</li>
+<li>Various GWT interfaces have been changed to use concrete ArrayList types (reduces code size).</li>
+<li>New permissions have been added in support of ODK Tables – Synchronize Tables and Administer Tables and for most ODK Tables interactions, the user is required to have Synchronize Tables permissions.</li>
+<li>Extensive changes to ODK Tables sync protocol and database structures. There will be further changes in the next update.</li>
+<li>Fix sizing calculations and CSS so that the ODK logo does not get clipped or overwritten.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<p>If you were testing out ODK Tables, you should delete all tables before upgrading, as the database schema has changed.</p>
+<p class="last">Otherwise, this should be a seamless upgrade from ODK Aggregate 1.4.</p>
+</div>
+</div>
+<div class="section" id="aggregate-v1-4">
+<span id="v1-4"></span><h3>Aggregate v1.4<a class="headerlink" href="#aggregate-v1-4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Changed behavior: simple JSON publisher now POSTs an application/json entity body; added option for how to treat binary content. Incompatible change; see Upgrading section if you were using the Z-ALPHA JSON Server</li>
+<li>Changed representation: ODK Tabled storage schema has been revised. Incompatible change; see Upgrading section if you used your server to upload or download data to ODK Tables. Syncing with ODK Tables is broken in this release. Only v1.3.4 on Google AppEngine works with the ODK Tables alpha (we are in the middle of changing table schemas).</li>
+<li>Fix: file exports were not properly writing UTF-8 character sets.</li>
+<li>Fix: PostgreSQL failures on some forms (column names must be less than 63 characters)</li>
+<li>Upgrade Aggregate’s Google publishers to use the updated Oauth2 libraries (e.g., Google Fusion Tables, Google Spreadsheet). Publishing from Google Apps domains does not work (it never has).</li>
+<li>Add support for publishing data to Google Maps Engine.</li>
+<li>Rework Spreadsheet and Fusion Table publishers to use Google libraries (consistent with the new Google Maps Engine publisher)</li>
+<li>Additional active-paused state in publisher to extend the delay in publishing attempts (and reduce quota usage) if the destination publisher is reporting an error.</li>
+<li>Improved how failures during form definition uploads are rolled back to increase the likelihood that the database is restored to a clean state.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<ul class="last simple">
+<li>You may need to clear your browser cache to complete the upgrade. If the browser screen flickers after upgrading, first clear your browser cache and reload the page.</li>
+<li>If you were using the Z-ALPHA JSON Server, you must delete all instances of that publisher before upgrading. After upgrading, the updated publisher will send a single application/json entity body to the external server instead of a multi-part form containing that entity.</li>
+<li>If you were using ODK Tables with ODK Aggregate, you need to delete all the ODK Tables data on ODK Aggregate before upgrading.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-3-4">
+<span id="v1-3-4"></span><h3>Aggregate v1.3.4<a class="headerlink" href="#aggregate-v1-3-4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Fix for the v1.3.3 fix for Google AppEngine – The original fix caused the creation of new publishers to Google Spreadsheets to fail, export to files to fail, form deletions to fail, and purge-sent-submissions actions to fail. This fix should rectify those issues.</li>
+</ol>
+</div>
+<div class="section" id="aggregate-v1-3-3">
+<span id="v1-3-3"></span><h3>Aggregate v1.3.3<a class="headerlink" href="#aggregate-v1-3-3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Fix for Google AppEngine – entity keys (unique identifiers assigned by Google AppEngine and used internally by ODK Aggregate) may now contain slashes. Submissions that have been assigned an entity key containing a slash were breaking the 『SubmissionKey』 parsing used when publishing, retrieving images, accessing repeat groups, or retrieving submissions using ODK Briefcase.</li>
+</ol>
+</div>
+<div class="section" id="aggregate-v1-3-2">
+<span id="v1-3-2"></span><h3>Aggregate v1.3.2<a class="headerlink" href="#aggregate-v1-3-2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Expose the ODK Tables data and management tabs.</li>
+<li>When installing for first time, ODK Aggregate will not require you to log in. Access restrictions are not altered when upgrading. This only affects new deployments. issue 710 (on Google Code) - upon an initial install, configure anonymousUser with Data Collector and Form Manager (and Data Viewer) permissions.</li>
+<li>Watchdog sweep interval shortened to 30 seconds in fast-publishing mode (from 60 seconds). Ensure watchdog is scheduled to be fired when there are records remaining to be published.</li>
+<li>Fix publisher failure to Google Spreadsheets and Fusion Tables by prepending 『n』 to element names beginning with digits.</li>
+<li>Fix publishing failure with Fusion Tables when a form with repeat groups has submissions without any repeats.</li>
+<li>Fix publisher-creation failure that can cause cycling UI refresh.</li>
+<li>Update javarosa library, adding format-date-time().</li>
+<li>Update to selemium 2.33.0 to resolve Firefox ESR 17.0.7 failures.</li>
+</ol>
+</div>
+<div class="section" id="aggregate-v1-3-1">
+<span id="v1-3-1"></span><h3>Aggregate v1.3.1<a class="headerlink" href="#aggregate-v1-3-1" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Change watchdog to run more frequently if there is an active publisher. Provide a <span class="guilabel">disable</span> button on the Site Admin / Preferences page to restore older behavior (to conserve GAE quota).</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>Following issues arise while using this version:</p>
+<ul class="last simple">
+<li>Form upload fails for some forms on MySQL with stack exhaustion.</li>
+<li>Fix to simple JSON publisher had caused instability when used.</li>
+<li>Popups don’t show centered in screen when displayed on top of scrolling regions.</li>
+<li>Forms with repeat groups cannot be versioned.</li>
+<li>Rows-per-page value keeps getting reset on refresh.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-3">
+<span id="v1-3"></span><h3>Aggregate v1.3<a class="headerlink" href="#aggregate-v1-3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Wholesale transition from OAuth 1.0 to OAuth 2.0, breaking all publishers.</p>
+</li>
+<li><p class="first">Installer now supports migrated AppEngine instances (for the Master-Slave -to- High-Replication Datastore migration).</p>
+</li>
+<li><p class="first">Google Fusion Tables publisher now provides the links to the tables of all the repeat groups, the top-level record, and a left-outer-join view of the first repeat group and top-level record. This gives a 『flat』 view of the data.</p>
+</li>
+<li><p class="first">Google Spreadsheets and Google Fusion Tables publishers are now using OAuth 2.0 for authentication. This breaks all existing publishers (you need to republish). For more details on this, see <a class="reference internal" href="oauth2-service.html"><span class="doc">OAuth2-service</span></a>.</p>
+</li>
+<li><p class="first">Google Maps v3 API is now used for the visualization features.</p>
+</li>
+<li><p class="first">Added a <em>Published Through</em> and an <em>Owner</em> column to the <em>Published Data</em> table to communicate the progress of the publisher and who is receiving the data.</p>
+</li>
+<li><p class="first">JSON file export now exports multiple-choice values as a JSON array of string values, rather than a space-separated string.</p>
+</li>
+<li><p class="first">MySQL media attachments are stored as BLOB types, allowing the default MySQL configuration to work.</p>
+</li>
+<li><p class="first">forms are now listed alphabetically</p>
+</li>
+<li><p class="first">New additions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Alpha release REDCap (XML) publisher</li>
+<li>Alpha release Simple JSON publisher</li>
+<li>Alpha release Ohmage JSON publisher</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>Following issues arise while using this version:</p>
+<ul class="last simple">
+<li>Google Spreadsheet publisher failed badly if name was blank.</li>
+<li>Extra comma in JSON file export (in repeat groups).</li>
+<li>Arbitrary intermingling of http and https requests are problematic</li>
+<li>Filters are not saved unless display metadata is checked.</li>
+<li>Title of existing form cannot be changed.</li>
+</ul>
+</div>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<p>After the upgrade, ODK Aggregate needs to be <a class="reference internal" href="oauth2-service.html"><span class="doc">configured with OAuth 2.0 credentials</span></a> on the Site Admin / Permissions page. Once configured, you will then be able to create new publishers for your data (it is not possible to resume or restore publishing to the original publishers).</p>
+<p>To avoid having to create new publishers that re-publish already-published data, follow these steps before upgrading:</p>
+<ol class="last arabic simple">
+<li>Go to the <span class="guilabel">Form Management</span> tab.</li>
+<li>Uncheck <span class="guilabel">Accept Submissions</span>.</li>
+<li>Verify that all submissions appearing on the <span class="guilabel">Submissions</span> tab have been successfully published to Fusion Tables and Google Spreadsheets.</li>
+<li>At this point, because ODK Aggregate is not accepting any new submissions, your surveyors are unable to send filled-in forms and we can be assured that no data is in transit during the upgrade process.</li>
+<li>Deploy ODK Aggregate 1.3.0.</li>
+<li>Go to the Publishers page, and create replacement publishers using <span class="guilabel">Stream New Submissions ONLY</span>.</li>
+<li>Now go to Fusion Tables or Spreadsheets and copy the data from the v1.2 tables into the newly-created publisher tables.</li>
+<li>Check <span class="guilabel">Accept Submissions</span> under the <span class="guilabel">Form Management</span> tab.</li>
+<li>At this point, new submissions will stream into the new publishers and you have manually copied the old data into the new publisher, so these new publishers will now have all of your data.</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>The database tables for the new publishers and older publishers do not overlap, so if you roll back to the ODK Aggregate 1.2 release, you will not see the new publishers, but the earlier 1.2 publishers will 『reappear.』 If you want to, after the upgrade, in MySQL or PostgreSQL, you can drop the unused old tables:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">_server_preferences</span></code> (has been replaced by <code class="docutils literal"><span class="pre">_server_preference_properties</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">_form_service_cursor</span></code> (has been replaced by <code class="docutils literal"><span class="pre">_form_service_cursor_2</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">_fusion_table</span></code> (has been replaced by <code class="docutils literal"><span class="pre">_fusion_table_2</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">_fusion_table_repeat</span></code> (has been replaced by <code class="docutils literal"><span class="pre">_fusion_table_repeat_2</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">_google_spreadsheet</span></code> (has been replaced by <code class="docutils literal"><span class="pre">_google_spreadsheet_2</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">_google_spreadsheet_repeat</span></code> (has been replaced by <code class="docutils literal"><span class="pre">_google_spreadsheet_repeat_2</span></code>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aggregate-v1-2">
+<span id="v1-2"></span><h3>Aggregate v1.2<a class="headerlink" href="#aggregate-v1-2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Updated javarosa library with cascading select support (as with KoBo Collect).</li>
+<li>Add a <span class="guilabel">Delete</span> button to the Exports list to enable deleting the generated files.</li>
+<li>Exported files using filters now export the metadata if displayed by the filter.</li>
+<li>Improved Map visualization display and pop-ups (showing images)</li>
+<li>Improved filter, export and publishing pop-ups.</li>
+<li>Update to use LONGBLOB and LONGSTRING on MySQL (new tables only).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>The use of LONGBLOB and LONGSTRING requires a configuration change in the MySQL server. The server requires the transmisison packet size to be configured large enough to hold the largest LONGBLOB or LONGSTRING you will ever send to the server. See <a class="reference external" href="https://dev.mysql.com/doc/connector-net/en/connector-net-programming-blob-serverprep.html">this</a> for details.</p>
+<p class="last">Alternatively, after creating your tables, you can use the MySQL <code class="docutils literal"><span class="pre">ALTER</span> <span class="pre">TABLE</span></code> command to change the LONGBLOB field to a BLOB field. This was the pre-1.2 setting, and will be the 1.2.1 setting for image fields, returning the system to use 65kB image chunks and avoiding the need to change the server configuration. If you do this, you will need to stop and restart your ODK Aggregate server for the change to be detected and take effect.</p>
+</div>
+<ol class="arabic simple" start="7">
+<li>Cache thumbnail images for 1 hr for improved performance and lower AppEngine datastore usage.</li>
+<li>Form definition files and media attachments can now be altered and those changes uploaded to the ODK Aggregate server. The server still maintains only one version of the form, and all alterations must not affect the number of questions in the form or change the data type of any field (e.g., from int to decimal or string, etc.).</li>
+<li>Whenever a form or any of its media files are modified, the version attribute in the top-level element (where the form id is defined) must be changed.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Version attributes are recommended to be of the form 「yyyymmddnn」, e.g., 2012060400 – the last two digits are the form iteration within the given day. They must be integer values and the new value must compare lexically greater than the prior value (this means, for example, since 「9」 compares lexically greater than 「10」, you cannot update a version from 9 to 10 – but you could upgrade from 「09」 to 「10」).</p>
+</div>
+<ol class="arabic simple" start="10">
+<li>There is a 15-minute grace period for uploading revisions after which the version must be incremented (e.g., incremented to 2012060401).</li>
+<li>Fix odd start-up failures on Google AppEngine.</li>
+</ol>
+<div class="upgrade admonition">
+<p class="first admonition-title">Upgrade notes</p>
+<p>Existing 1.0 installations can upgrade to the 1.2 release, but, once upgraded, if you use the new form-versioning feature, these installations cannot downgrade from 1.2 to the earlier 1.0 releases.</p>
+<p>MySQL and PostgreSQL require special upgrade instructions. The <code class="docutils literal"><span class="pre">_filter_group</span></code> table has a new column. If you are running ODK Aggregate 1.0 or 1.1, you will need to issue an <code class="docutils literal"><span class="pre">alter</span> <span class="pre">table</span></code> command on this table to add this column.</p>
+<p>For MySQL:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>ALTER TABLE `_filter_group` ADD COLUMN `INCLUDE_METADATA` char(1) NULL;
+</pre></div>
+</div>
+<p>For PostgreSQL:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>ALTER TABLE &quot;_filter_group&quot; ADD COLUMN &quot;INCLUDE_METADATA&quot; boolean NULL;
+</pre></div>
+</div>
+<p class="last">Depending upon your database management tool, you may need to qualify the table name with the schema.</p>
+</div>
+</div>
+<div class="section" id="general-steps-for-v1-1-to-v1-0-4">
+<span id="v1-1tov1-0-4"></span><h3>General steps for v1.1 to v1.0.4<a class="headerlink" href="#general-steps-for-v1-1-to-v1-0-4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>For any Aggregate version from v1.1 to v1.0.4, no additional upgrade steps are required if none of your forms use <strong>odk:length</strong> to alter the maximum string length.</p>
+<p>Otherwise, for ONLY those forms that use <strong>odk:length</strong>:</p>
+<ol class="arabic simple">
+<li>Download the forms that use odk:length using the ODK Briefcase application.</li>
+<li>Delete the forms on Google AppEngine (this may take several minutes or hours if you have many submissions).</li>
+<li>Upload the forms from ODK Briefcase back onto your Google AppEngine instance.</li>
+</ol>
+<p><strong>odk:length</strong> has always been respected on MySQL and PostgreSQL; there are no additional steps to be performed on those systems.</p>
+</div>
+<div class="section" id="general-steps-for-version-v1-0-3-to-v1-0">
+<span id="v1-0-3tov1-0"></span><h3>General steps for version v1.0.3 to v1.0<a class="headerlink" href="#general-steps-for-version-v1-0-3-to-v1-0" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>For any Aggregate version from v1.0.3 to v1.0, if you are running RC4, RC3, RC2, or RC1 (on Google’s AppEngine or with MySQL or PostgreSQL), there are no special upgrade steps. It should just work.</p>
+<p>If you are using Beta 4, follow these upgrade instructions:</p>
+<p><strong>On GAE</strong>: No additional steps required. It should just work.</p>
+<p><strong>On MySQL or PostgreSQL</strong>: The persistent results tables that hold the exported csv and kml files have changed (adding support for emitting csv files filtered by the active filter).</p>
+<ol class="arabic">
+<li><p class="first">Stop Tomcat.</p>
+</li>
+<li><p class="first">In your database’s administration tool, connect to the database and:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">drop</span> <span class="pre">table</span> <span class="pre">_persistent_results;</span></code></li>
+<li><code class="docutils literal"><span class="pre">drop</span> <span class="pre">table</span> <span class="pre">_persistent_result_file_bin;</span></code></li>
+<li><code class="docutils literal"><span class="pre">drop</span> <span class="pre">table</span> <span class="pre">_persistent_result_file_ref;</span></code></li>
+<li><code class="docutils literal"><span class="pre">drop</span> <span class="pre">table</span> <span class="pre">_persistent_result_file_blb;</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Copy the new WAR to the <code class="file docutils literal"><span class="pre">/webapps</span></code> directory.</p>
+</li>
+<li><p class="first">Start Tomcat.</p>
+</li>
+</ol>
+<p>For all other Alpha or Beta releases, you must either use a new appspot instance or delete all data in your appspot instance. If you are using MySQL or PostgreSQL with an Alpha or Beta release, you should start with an empty database.</p>
+</div>
+<div class="section" id="general-steps-to-upgrade-from-alpha-and-beta-releases">
+<span id="alpha-beta"></span><h3>General steps to upgrade from Alpha and Beta releases<a class="headerlink" href="#general-steps-to-upgrade-from-alpha-and-beta-releases" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="on-gae">
+<h4>On GAE<a class="headerlink" href="#on-gae" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">If running builds prior to Beta 2 on Google AppEngine cloud services, any forms with Decimal data will need to be deleted and reloaded. Decimal data had been represented as strings and is now represented properly as double-precision numbers in Google AppEngine.</p>
+</li>
+<li><p class="first">Disable writes to the datastore (via Application Settings / Disable Datastore Writes )</p>
+</li>
+<li><p class="first">Deploy to GAE.</p>
+</li>
+<li><p class="first">Delete all the records in these kinds (using Datastore Viewer):</p>
+<blockquote>
+<div><ul class="simple">
+<li>opendatakit._granted_authority_hierarchy</li>
+<li>opendatakit._registered_users</li>
+<li>opendatakit._user_granted_authority</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Disable your application via Application Settings / Disable Application.</p>
+</li>
+<li><p class="first">Enable writes.</p>
+</li>
+<li><p class="first">Enable your application.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="on-mysql-or-postgresql">
+<h4>On MySQL or PostgreSQL<a class="headerlink" href="#on-mysql-or-postgresql" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Stop Tomcat.</p>
+</li>
+<li><p class="first">In your database’s administration tool, connect to the database and:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">drop</span> <span class="pre">table</span> <span class="pre">_granted_authority_hierarchy;</span></code></li>
+<li><code class="docutils literal"><span class="pre">drop</span> <span class="pre">table</span> <span class="pre">_registered_users;</span></code></li>
+<li><code class="docutils literal"><span class="pre">drop</span> <span class="pre">table</span> <span class="pre">_user_granted_authority;</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">copy the new WAR to the <code class="file docutils literal"><span class="pre">/webapps</span></code> directory.</p>
+</li>
+<li><p class="first">Start Tomcat.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">The primary upgrade impact is the loss of all registered users and their privileges (what the manual steps above do). Beta 3 changes the user configuration. Registered users are now either Gmail accounts or ODK Aggregate usernames. ODK Aggregate now supports only anonymous access and/or registered users.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="migration-from-odk-aggregate-0-9x-to-1-x">
+<span id="v0-9xtov1-x"></span><h2>Migration from ODK Aggregate 0.9x to 1.x<a class="headerlink" href="#migration-from-odk-aggregate-0-9x-to-1-x" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>Aggregate 0.9.x has a 1000-record limit to the number of records it can display (this is by design); it does, however, still retain all records i.e. it will hold as many records as you’ve uploaded and does not loose or ignore the 1001st record, etc; in general, any webserver will have a limit to what it can display interactively (at some point it will run out of memory or time out).</li>
+<li>On Aggregate 0.9.x, we provide the Briefcase applet (one of the links on the top row) to allow you to extract your data from the server into a local CSV file for local processing. That should retrieve all data within the server, and should work regardless of the number of submissions you have uploaded.</li>
+<li>Aggregate 1.0 has far fewer display restrictions and has implemented display paging on the submissions display page so you can page through all the submissions on the server, rather than just the first 1000 (and you get to set the page size, as well).</li>
+<li>Aggregate 1.x has stricter requirements on the form definition than 0.9.x, so you will likely need to edit your form definitions before they can be successfully uploaded into Aggregate 1.x.</li>
+<li>Migration will necessitate creating a new AppEngine application id and migrating your ODK Collect devices to use that new AppEngine URL. This allows you to keep the old Aggregate 0.9.x instance should you need to return to it (e.g., if there is an error discovered after data migration), and it gives you time to validate the accuracy of the data that was migrated. It is simply safer to do the migration this way rather than overwrite your older instance.</li>
+</ul>
+</div>
+<p>Since Google is now charging for AppEngine usage, the lowest-cost sequence for the AppEngine migration is as follows:</p>
+<ol class="arabic simple">
+<li>Upgrade ODK Aggregate 0.9.x to the latest 0.9.x release. If you have any 0.9.x release, you can upgrade to the latest 0.9.x release without any changes (the newer updates are backward compatible). Get the latest Aggregate release from the ODK Downloads page <a class="reference external" href="https://opendatakit.org/downloads/download-info/odk-aggregate-v0-9-8-1/">here</a>.</li>
+<li>Create a new application id for the 1.x instance.</li>
+<li>Download the latest installer for ODK Aggregate 1.x, run it, and deploy to the new application id. For installation process, see the <a class="reference internal" href="aggregate-app-engine.html"><span class="doc">Aggregate Installation Guide</span></a>.</li>
+<li>Manually download the form definitions (as XML) from Aggregate 0.9.x. Browse to your Aggregate 0.9.x instance and choose the <span class="guilabel">View XML</span> button on the main forms page. Then, from the resulting page, choose the <span class="guilabel">Download XML</span> button. Repeat for every form you have on the system.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">You may wish to specify a new folder for the downloads of your forms so that you can easily locate and edit them.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li>Manually upload the form definitions to Aggregate 1.x, editing and fixing the form definitions as needed. First sign into your Aggregate server. Go to the <span class="guilabel">Forms List</span> sub-tab under <span class="guilabel">Form Management</span> tab. Click the <span class="guilabel">Add New Form</span> button. Select the form to upload, and click on <span class="guilabel">Upload Form</span>. Repeat with the remaining forms.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>Following issues may arise in form upload process:</p>
+<ul class="last simple">
+<li>Your form definition may be using <em>xmlns=」myformid」</em> to define the Identifier (Aggregate 0.9.x) now referred to as the Form Id (Aggregate 1.x) of the form. In Aggregate 1.x, we enforce that all xmlns assignments conform to URL syntax. This is a w3c standard and a requirement of some Xml parsers and editing systems. Since most users have just a simple short alphanumeric id for their forms, the fix is to change from using xmlns to using id to define your 「form id」. E.g., use <em>id=」myformid」</em> instead. This variant allows 「myformid」 to be any alphanumeric string with additional non-space characters (e.g., dashes and underscores).</li>
+<li>Aggregate 1.0.1 warns you if you have fields in the form that do not have defined data types. I.e., they lack any &lt;bind&gt; expressions or their &lt;bind&gt; expression does not specify a type=」datatype」 expression, with datatype being one of the known data types. This is a concern because Aggregate can filter results based on the values of individual columns. The ranking order for the string 「111」 would place it before (less than) 「13」, but that would be incorrect if this field were actually an integer value. The warnings are to catch omissions like this so that filters can work properly and so that data can be properly published to Fusion Tables.</li>
+</ul>
+</div>
+<ol class="arabic simple" start="6">
+<li>Configure the Aggregate 1.x instance to accept submissions from ODK Collect. If you are running ODK Collect 1.1.5, you will need to configure Aggregate 1.x to grant the anonymousUser the Data Collector privilege. This allows unauthenticated users to submit data to Aggregate 1.x. If you are running ODK Collect 1.1.7 or higher, you can choose to define one or more local usernames and passwords, and configure ODK Collect 1.1.7 to identify itself with one of those usernames and passwords when accessing the server. Steps to do either of this are as follows:<ol class="loweralpha">
+<li>Go to the <span class="guilabel">Permissions</span> sub-tab under the <span class="guilabel">Site Admin</span> tab.</li>
+<li>If you are creating new local user(s), type the username(s) in the text box in the Add Users section of the page and click <span class="guilabel">Add</span>. You can add multiple users by separating the usernames with spaces or commas. The table above will update with the added users. Ensure that the Account Type is <em>ODK</em> for each of these users.</li>
+<li>Check the <span class="guilabel">Data Collector</span> check box beside each username that will be used by ODK Collect. If you have ODK Collect 1.1.5, check the check box beside the anonymousUser.</li>
+<li>Click <span class="guilabel">Save Changes</span> to apply your changes.</li>
+<li>Then, for each username you created, you must click <span class="guilabel">Change Password</span> and set the password for that username.</li>
+</ol>
+</li>
+<li>Configure all your ODK Collect clients to use the new Aggregate 1.x instance. On both ODK Collect 1.1.5 and 1.1.7, ensure that the Server URL points to the new instance and begins with <em>https</em> (for AppEngine instances). For MySQL or PostgreSQL systems, specify <em>https</em> only if the server has an SSL certificate. For ODK Collect 1.1.7, if you are requiring authentication, enter one of the configured usernames and passwords into the phone.</li>
+<li><a class="reference internal" href="briefcase-install.html"><span class="doc">Install</span></a> the latest ODK Briefcase application.</li>
+<li>Run ODK Briefcase, choosing to <a class="reference internal" href="briefcase-forms.html#pull-from-aggregate"><span class="std std-ref">pull all forms</span></a> from your 0.9.x instance to the local server. You will need enough space to store these files.</li>
+<li>For any form definitions you have changed, manually overwrite the downloaded form definition within the Briefcase directory with the one updated for Aggregate 1.x. The ODK Briefcase Storage Area has a <code class="file docutils literal"><span class="pre">/forms</span></code> directory under it, and, in that, it has directories for each form downloaded from Aggregate 0.9.x. The form definition is within that directory and must have the same name (with a file extension of .xml) as the directory containing it.</li>
+<li>Run ODK Briefcase, choosing to <a class="reference internal" href="briefcase-forms.html#push-to-aggregate"><span class="std std-ref">push all forms</span></a> from your local server to the new Aggregate 1.x instance.</li>
+<li>Validate that your Aggregate 1.x instance has all the data you expect, and the values are complete and correct (by, e.g., publishing to Fusion Tables and comparing this dataset to the corresponding dataset produced by 0.9.x).</li>
+<li>Once you are comfortable with the operations of the Aggregate 1.x instance, you should go to the Aggregate 0.9.x dashboard and delete that application id.</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Click on the <span class="guilabel">Application Settings</span> link on the left sidebar under the Administration heading.</li>
+<li>Click on the <span class="guilabel">Disable Application..</span> button on this page.</li>
+<li>Choose to disable it, and then, when prompted, choose to delete the application.</li>
+</ol>
+</div></blockquote>
+<p>This is more cost-effective than deleting the forms (and data) from the old instance and trying to reuse it as that would incur usage charges. Deleting the entire instance accomplishes that without running up any charges.</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>If you have to do this migration mid-survey and need to be able to incrementally pull data from ODK Aggregate v0.9.x, you should follow these steps:</p>
+<ol class="arabic simple">
+<li>Pull data from ODK Aggregate v0.9.x</li>
+<li>Push data to ODK Aggregate v1.x</li>
+<li>Pull data from ODK Aggregate v1.x</li>
+<li>Repeat periodically.</li>
+</ol>
+<p class="last">The extra pull of data down from ODK Aggregate v1.x sets a flag within ODK Briefcase that identifies the record as being 「complete」 (having all of its attachments). This does not prevent ODK Briefcase from downloading all the data each time from ODK Aggregate v0.9.x, but it does enable it to avoid repeatedly uploading this data to ODK Aggregate v1.x.</p>
+</div>
+</div>
+<div class="section" id="downgrade-steps">
+<span id="id2"></span><h2>Downgrade steps<a class="headerlink" href="#downgrade-steps" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>On April 12, 2016, Google disabled the login mechanism used by the older update scripts that were packaged with these installers.</p>
+<p>To use these older installers:</p>
+<ol class="arabic simple">
+<li>Download and run an ODK Aggregate 1.4.8 (or newer) installer. On the final screen, uncheck the <span class="guilabel">Launch upload tool (3-10 minutes)</span> checkbox and click <span class="guilabel">Finish</span>.</li>
+<li>Go into the directory where the installer placed the files, go into the <code class="file docutils literal"><span class="pre">ODK</span> <span class="pre">Aggregate</span></code> directory, and rename the <code class="file docutils literal"><span class="pre">ODKAggregate</span></code> directory inside it to <em>NewRemoval</em>.</li>
+<li>Download and run the pre-1.4.8 ODK Aggregate installer. On the final screen, uncheck the <span class="guilabel">Launch upload tool (3-10 minutes)</span> checkbox and click <span class="guilabel">Finish</span>.</li>
+<li>Go into the directory where the pre-1.4.8 installer placed its files, go into the <code class="file docutils literal"><span class="pre">ODK</span> <span class="pre">Aggregate</span></code> directory, and copy the <code class="file docutils literal"><span class="pre">ODKAggregate</span></code> directory from there to the installer directory created by the newer installer (effectively replacing the configuration produced by the newer installer with the configuration produced by the older one).</li>
+<li>In the directory created by the newer installer, if on:<ul>
+<li><em>Windows</em>: double-click the <code class="file docutils literal"><span class="pre">ODKAggregateAppEngineUpdater.jar</span></code> and use that to update your App Engine instance.</li>
+<li><em>Mac OSX</em>: double-click the <code class="file docutils literal"><span class="pre">uploadAggregateToAppEngine.app</span></code> file in that directory.</li>
+<li><em>Linux</em>: open a bash shell, navigate to this directory, and run the <code class="file docutils literal"><span class="pre">uploadAggregateToAppEngine.sh</span></code> file.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">If you are reverting from a 1.4.8 or later release to a 1.4.7 or earlier release, you must manually delete the background module of your App Engine using the Google Cloud Platform administration web pages.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aggregate-backup.html" class="btn btn-neutral float-right" title="Backing Up Aggregate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aggregate-vm.html" class="btn btn-neutral" title="ODK Aggregate Virtual Machine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

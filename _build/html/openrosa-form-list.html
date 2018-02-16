@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Form List API &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="OpenRosa" href="openrosa.html"/>
+        <link rel="next" title="ODK JavaRosa" href="javarosa.html"/>
+        <link rel="prev" title="Form Submission API" href="openrosa-form-submission.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="openrosa.html">OpenRosa</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="openrosa.html#openrosa-1-0-apis">OpenRosa 1.0 APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="openrosa-metadata.html">Metadata Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-http.html">HTTP Requests and Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-authentication.html">Authentication API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrosa-form-submission.html">Form Submission API</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Form List API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#discovery-request">Discovery Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#successful-response-document">Successful Response Document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-manifest-document">The Manifest Document</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="openrosa.html">OpenRosa</a> &raquo;</li>
+        
+      <li>Form List API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/openrosa-form-list.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="form-list-api">
+<h1>Form List API<a class="headerlink" href="#form-list-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This standard specifies how clients discover a list of available blank forms on a server.</p>
+<div class="section" id="discovery-request">
+<span id="id1"></span><h2>Discovery Request<a class="headerlink" href="#discovery-request" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The discovery request should be sent in compliance with the HTTP 1.1 protocol.</p>
+<p>If a server will filter the set of forms based upon the user’s identity, then the server should require that the user be authenticated through either the <a class="reference internal" href="openrosa-authentication.html"><span class="doc">Authentication API</span></a> or through an alternative authentication mechanism. The server can then make use of the user’s authenticated identity through those mechanisms to filter the set of forms to be returned.</p>
+<p>The device will make a discovery request to a configured URI with a single query parameter, the <code class="docutils literal"><span class="pre">deviceID</span></code>. The <code class="docutils literal"><span class="pre">deviceID</span></code> should be the same id as provided by the default population mechanism defined in the <a class="reference internal" href="openrosa-metadata.html"><span class="doc">Metadata Scheme</span></a>. The server may filter the set of forms returned using this information.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">The <code class="docutils literal"><span class="pre">deviceID</span></code> is advisory information only, and is inherently not authoritative. Anyone can claim to have a given IMEI, for example.</p>
+</div>
+<p>Together, the authentication and <code class="docutils literal"><span class="pre">deviceID</span></code> enable a server to tailor the set of forms to both the user and the device (and therefore the device’s capabilities).</p>
+<div class="section" id="query-parameters">
+<span id="discovery-request-query-parameters"></span><h3>Query Parameters<a class="headerlink" href="#query-parameters" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Optional query parameters MAY also be supplied:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">formID</span></code> If specified, the server MUST return information for only this formID.</li>
+<li><code class="docutils literal"><span class="pre">verbose</span></code> If specified with the value true, the server MAY include a <code class="docutils literal"><span class="pre">&lt;descriptionText/&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;descriptionUrl&gt;</span></code> element providing a longer description of an XForm.</li>
+<li><code class="docutils literal"><span class="pre">listAllVersions</span></code> If specified, provides a listing of all hosted versions of each form (including the <code class="docutils literal"><span class="pre">&lt;version&gt;</span></code> element) in the response document (see below).</li>
+</ul>
+<p>If not supplied or not present, the server MUST NOT include this optional information in its response.</p>
+</div>
+<div class="section" id="request-header">
+<span id="discovery-request-header"></span><h3>Request Header<a class="headerlink" href="#request-header" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Requests from the device SHOULD set the <code class="docutils literal"><span class="pre">Accept-Language</span></code> header to indicate the preferred language of the form name</p>
+<div class="admonition-read-more admonition">
+<p class="first admonition-title">Read More</p>
+<p>The <code class="docutils literal"><span class="pre">Accept-Language</span></code> HTTP header is documented here:</p>
+<p><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4</a></p>
+<p>and an article on its evolving use for determining locale is here:</p>
+<p class="last"><a class="reference external" href="http://www.w3.org/International/questions/qa-accept-lang-locales">http://www.w3.org/International/questions/qa-accept-lang-locales</a></p>
+</div>
+<p>Aside from the query parameters, the structure of the server URI and whether the request is made over <code class="docutils literal"><span class="pre">http</span></code> or <code class="docutils literal"><span class="pre">https</span></code>, is entirely implementor- and server- dependent.</p>
+<p>Compliant servers MUST NOT require additional query parameters on this request.</p>
+<p>Compliant devices MUST be able to handle arbitrary <code class="docutils literal"><span class="pre">http</span></code> and <code class="docutils literal"><span class="pre">https</span></code> URIs and must be able to <a class="reference internal" href="openrosa-authentication.html"><span class="doc">authenticate</span></a> with the server during this transaction, if required by the server.</p>
+</div>
+</div>
+<div class="section" id="successful-response-document">
+<span id="id2"></span><h2>Successful Response Document<a class="headerlink" href="#successful-response-document" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If accepted by the server, the server will respond with a <code class="docutils literal"><span class="pre">Content-Type:</span> <span class="pre">text/xml;</span> <span class="pre">charset=utf-8</span></code> response. An example of such a document is shown below:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39; ?&gt;</span>
+<span class="nt">&lt;xforms</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/xforms/xformsList&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xform&gt;</span>
+    <span class="nt">&lt;formID&gt;</span>mydomain.org:formId<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;name&gt;</span>Form with zero or more additional files<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.1<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;hash&gt;</span>md5:c28fc778a9291672badee04ac880a05d<span class="nt">&lt;/hash&gt;</span>
+    <span class="nt">&lt;descriptionText&gt;</span>A possibly very long description of the form<span class="nt">&lt;/descriptionText&gt;</span>
+    <span class="nt">&lt;downloadUrl&gt;</span>http://myhost.com/app/path/getMe/formIdA<span class="nt">&lt;/downloadUrl&gt;</span>
+    <span class="nt">&lt;manifestUrl&gt;</span>http://myothehost.com/app/path/getOtherStuff?formId=formIdA<span class="nt">&lt;/namifestUrl&gt;</span>
+  <span class="nt">&lt;/xform&gt;</span>
+  <span class="nt">&lt;xform&gt;</span>
+    <span class="nt">&lt;formID&gt;</span>http://mydomain.org/uniqueFormXmlns<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;name&gt;</span>Form without additional files<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;version&gt;</span>v50 alpha<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;hash&gt;</span>md5:c28fc778a9291672badee04ac770a05d<span class="nt">&lt;/hash&gt;</span>
+    <span class="nt">&lt;descriptionUrl&gt;</span>http://mysecondhost.com/a/description/getMe@formId=uniqueKey<span class="nt">&lt;/descriptionUrl&gt;</span>
+    <span class="nt">&lt;downloadUrl&gt;</span>http://mysecondhost.com/a/different/path/getMe@formId=uniqueKey<span class="nt">&lt;/downloadUrl&gt;</span>
+  <span class="nt">&lt;/xform&gt;</span>
+  <span class="nt">&lt;xforms-group&gt;</span>
+     <span class="nt">&lt;groupID&gt;</span>someId<span class="nt">&lt;/groupID&gt;</span>
+     <span class="nt">&lt;name&gt;</span>Short name of grouping<span class="nt">&lt;/name&gt;</span>
+     <span class="nt">&lt;listUrl&gt;</span>http://whateverhost.com/other/path/forDownload?group=fido<span class="nt">&lt;/listUrl&gt;</span>
+     <span class="nt">&lt;descriptionText&gt;</span>Longer description of what is here<span class="nt">&lt;/descriptionText&gt;</span>
+     <span class="nt">&lt;descriptionUrl&gt;</span>http://morehost.com/description/link<span class="nt">&lt;/descriptionUrl&gt;</span>
+  <span class="nt">&lt;/xforms-group&gt;</span>
+<span class="nt">&lt;/xforms&gt;</span>
+</pre></div>
+</div>
+<p>This document consists of:</p>
+<ul class="simple">
+<li>a top-level <code class="docutils literal"><span class="pre">&lt;xforms/&gt;</span></code> element in the <code class="docutils literal"><span class="pre">http://openrosa.org/xforms/xformsList</span></code> namespace enclosing,<ul>
+<li>zero or more <code class="docutils literal"><span class="pre">&lt;xform/&gt;</span></code> tags followed by</li>
+<li>zero or more <code class="docutils literal"><span class="pre">&lt;xforms-group&gt;</span></code> tags.</li>
+</ul>
+</li>
+</ul>
+<p>Within each of the <code class="docutils literal"><span class="pre">&lt;xform/&gt;</span></code> tags, there must be exactly one of each of the following:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;formID/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;name/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;version/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;hash/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;downloadUrl/&gt;</span></code></li>
+</ul>
+<p>There may be zero or one</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;descriptionText/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;descriptionUrl/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;manifestUrl/&gt;</span></code></li>
+</ul>
+<p>Within each <code class="docutils literal"><span class="pre">&lt;xforms-group&gt;</span></code> tag, there must be exactly one of each of the following:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;groupID/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;name/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;listUrl/&gt;</span></code></li>
+</ul>
+<p>There may be zero or one</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;descriptionText/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;descriptionUrl/&gt;</span></code></li>
+</ul>
+<p>The <code class="docutils literal"><span class="pre">&lt;xform/&gt;</span></code> tag provides information about a single form. The <code class="docutils literal"><span class="pre">&lt;xforms-group/&gt;</span></code> tag provides information about a group of forms; a further enumeration of the forms within that group can be obtained through the <code class="docutils literal"><span class="pre">&lt;listUrl/&gt;</span></code> of that group (which returns an <code class="docutils literal"><span class="pre">&lt;xforms/&gt;</span></code> document). Groups can be used to define sets of forms that a user may wish to download together (such as for clinical studies, for example).</p>
+<div class="section" id="elements-within-xform">
+<span id="id3"></span><h3>Elements within <code class="docutils literal"><span class="pre">&lt;xform/&gt;</span></code><a class="headerlink" href="#elements-within-xform" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;formID/&gt;</span></code> The <a class="reference internal" href="openrosa-metadata.html#form-identity"><span class="std std-ref">form identity as defined in the metadata</span></a>.</li>
+<li><code class="docutils literal"><span class="pre">&lt;name/&gt;</span></code> The user-friendly display name of the form. The server may localize this name (translate it) based upon the <code class="docutils literal"><span class="pre">Accept-Language:</span></code> header on the incoming request. Devices <strong>SHOULD</strong> send this header and servers <strong>MAY</strong> return different name and description text based upon its value. The default behavior is to return the text within the <code class="docutils literal"><span class="pre">&lt;title&gt;</span></code> element of the XForm.</li>
+<li><code class="docutils literal"><span class="pre">&lt;version/&gt;</span></code> The <a class="reference internal" href="openrosa-metadata.html#form-version"><span class="std std-ref">form version as defined in the metadata</span></a> The device <strong>MAY</strong> use this to determine if its XForm definition is out of sync with the server (over time, the server may roll the current version forward or backward).</li>
+<li><code class="docutils literal"><span class="pre">&lt;hash/&gt;</span></code> The hash value of the form definition file available for download. The only hash values currently supported are MD5 hashes of the file contents; they are prefixed by <code class="docutils literal"><span class="pre">md5:</span></code>. If the hash value identified in the form list differs from the hash value for a previously-downloaded form definition file, then the file should be re-fetched from the server.</li>
+<li><code class="docutils literal"><span class="pre">&lt;downloadUrl/&gt;</span></code> A fully formed URI for downloading the form to the device. It may be a valid http or https URI of any structure; the server may require authentication; the server may require a secure (https) channel, etc.</li>
+<li><code class="docutils literal"><span class="pre">&lt;manifestUrl/&gt;</span></code> A URI from which the device can obtain a manifest defining additional supporting objects and files. <em>Optional</em></li>
+<li><code class="docutils literal"><span class="pre">&lt;descriptionText/&gt;</span></code> A detailed text explanation of the form. <em>Optional, only returned if</em> <code class="docutils literal"><span class="pre">verbose=true</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">&lt;descriptionUrl/&gt;</span></code> A fully qualified URI pointing to a media (audio, video) description of the form. <em>Optional, only returned if</em> <code class="docutils literal"><span class="pre">verbose=true</span></code>.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">A media description of the form (audio or video) can be especially useful in low-literacy populations.</p>
+</div>
+</div>
+<div class="section" id="elements-within-xforms-group">
+<span id="elements-within-xform-group"></span><h3>Elements within <code class="docutils literal"><span class="pre">&lt;xforms-group/&gt;</span></code><a class="headerlink" href="#elements-within-xforms-group" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;groupID/&gt;</span></code> The unique id for this group. It is locale-invariant (in contrast to the <code class="docutils literal"><span class="pre">&lt;name/&gt;</span></code> element, below).</li>
+<li><code class="docutils literal"><span class="pre">&lt;name/&gt;</span></code> The user-friendly display name of the xforms group. The server may localize this name (translate it) based upon the <code class="docutils literal"><span class="pre">Accept-Language:</span></code> header on the incoming request. Devices <strong>SHOULD</strong> send this header and servers <strong>MAY</strong> return different name and description text based upon its value.</li>
+<li><code class="docutils literal"><span class="pre">&lt;listUrl/&gt;</span></code> A fully qualified URI for obtaining the <code class="docutils literal"><span class="pre">&lt;xforms/&gt;</span></code> document of this grouping of forms. (That is, the endpoint for the Form List API). It may be a valid http or https URI of any structure; the server may require authentication; the server may require a secure (https) channel, etc.</li>
+<li><code class="docutils literal"><span class="pre">&lt;descriptionText/&gt;</span></code> A detailed text explanation of the form group. <em>Optional, only returned if</em> <code class="docutils literal"><span class="pre">verbose=true</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">&lt;descriptionUrl/&gt;</span></code> A fully qualified URI pointing to a media (audio, video) description of the form group. <em>Optional, only returned if</em> <code class="docutils literal"><span class="pre">verbose=true</span></code>.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li>The server <strong>MAY</strong> dynamically construct the download and manifest URLs based upon the user identity and device id.</li>
+<li>The manifest <strong>MAY</strong> include additional (implementation specific) elements and data. These MUST be dealt with gracefully (ignored) by the client if it does not know how to interpret these fields.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="the-manifest-document">
+<span id="manifest-document"></span><h2>The Manifest Document<a class="headerlink" href="#the-manifest-document" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The structure of the manifest document returned by the manifest URI is as follows:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39; ?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns=</span><span class="s">&quot;http://openrosa.org/xforms/xformsManifest&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;mediaFile&gt;</span>
+  <span class="nt">&lt;filename&gt;</span>badger.png<span class="nt">&lt;/filename&gt;</span>
+  <span class="nt">&lt;hash&gt;</span>md5:c28fc778a9291672baddd04ac880a05d<span class="nt">&lt;/hash&gt;</span>
+  <span class="nt">&lt;downloadUrl&gt;</span>http://funk.appspot.com/binaryData?blobKey=%3A477e3<span class="nt">&lt;/downloadUrl&gt;</span>
+ <span class="nt">&lt;/mediaFile&gt;</span>
+ <span class="nt">&lt;mediaFile&gt;</span>
+  <span class="nt">&lt;filename&gt;</span>path/to/agilefrog.png<span class="nt">&lt;/filename&gt;</span>
+  <span class="nt">&lt;hash&gt;</span>md5:9fd39ac868eccdc0c134b3b7a6a25eb7<span class="nt">&lt;/hash&gt;</span>
+  <span class="nt">&lt;downloadUrl&gt;</span>http://other.appspot.com/blobSource?foo=222<span class="nt">&lt;/downloadUrl&gt;</span>
+ <span class="nt">&lt;/mediaFile&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</pre></div>
+</div>
+<p>This document consists of:</p>
+<ul class="simple">
+<li>a top-level <code class="docutils literal"><span class="pre">&lt;manifest/&gt;</span></code> tag in the <code class="docutils literal"><span class="pre">http://openrosa.org/xforms/xformsManifest</span></code> namespace enclosing<ul>
+<li>zero or more <code class="docutils literal"><span class="pre">&lt;mediaFile/&gt;</span></code> tags.</li>
+<li>Within each of the <code class="docutils literal"><span class="pre">&lt;mediaFile/&gt;</span></code> tags, there must be exactly one of each of the following:<ul>
+<li><code class="docutils literal"><span class="pre">&lt;filename/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;hash/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;downloadUrl/&gt;</span></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="elements-within-mediafile">
+<span id="id4"></span><h3>Elements within <code class="docutils literal"><span class="pre">&lt;mediaFile/&gt;</span></code><a class="headerlink" href="#elements-within-mediafile" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&lt;filename/&gt;</span></code> The unique un-rooted file path for this media file. This un-rooted path must not start with a drive name or slash and must not contain relative path navigations (for example, <code class="docutils literal"><span class="pre">.</span></code> or <code class="docutils literal"><span class="pre">..</span></code>).</li>
+<li><code class="docutils literal"><span class="pre">&lt;hash/&gt;</span></code> The hash value of the media file available for download. The only hash values currently supported are MD5 hashes of the file contents; they are prefixed by <code class="docutils literal"><span class="pre">md5:</span></code>. If the hash value identified in the manifest differs from the hash value for a previously-downloaded media file, then the file should be re-fetched from the server.</li>
+<li><code class="docutils literal"><span class="pre">&lt;downloadUrl/&gt;</span></code> A fully qualified URI for downloading the media file to the device. It may be a valid http or https URI of any structure; the server may require authentication; the server may require a secure (https) channel, etc.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="javarosa.html" class="btn btn-neutral float-right" title="ODK JavaRosa" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openrosa-form-submission.html" class="btn btn-neutral" title="Form Submission API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

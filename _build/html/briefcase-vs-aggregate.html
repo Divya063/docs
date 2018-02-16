@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Briefcase vs Aggregate &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="next" title="Intro to Forms in ODK" href="form-design-intro.html"/>
+        <link rel="prev" title="Briefcase Usage" href="briefcase-forms.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Briefcase vs Aggregate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#briefcase">Briefcase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aggregate">Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#odk-briefcase-as-a-replacement-for-odk-aggregate">ODK Briefcase as a replacement for ODK Aggregate</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Briefcase vs Aggregate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/briefcase-vs-aggregate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="briefcase-vs-aggregate">
+<h1>Briefcase vs Aggregate<a class="headerlink" href="#briefcase-vs-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="briefcase">
+<span id="briefcase-points"></span><h2>Briefcase<a class="headerlink" href="#briefcase" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Briefcase provides a mechanism to pull blank forms and finalized forms from ODK Collect or ODK Aggregate or any custom ODK directory into a local Briefcase storage location.</li>
+<li>It can push blank forms and finalized forms from Briefcase storage location to an Aggregate 1.0 instance.</li>
+<li>Export the finalized form to a CSV file for processing by other applications.</li>
+<li>It can be used to transfer data across incompatible upgrades of ODK Aggregate and it is required to decrypt any encrypted submissions.</li>
+<li>Briefcase is good for offline use when there is no need for a server. It is often enough for smaller projects.</li>
+<li>It can be used to back up all forms and submissions on Aggregate. In particular, Briefcase’s <a class="reference internal" href="briefcase-forms.html#cli-use"><span class="std std-ref">command line interface</span></a> makes this easier.</li>
+</ul>
+</div>
+<div class="section" id="aggregate">
+<span id="aggregate-points"></span><h2>Aggregate<a class="headerlink" href="#aggregate" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Aggregate provides a ready-to-deploy server to provide blank forms to ODK Collect.</li>
+<li>It accepts finalized forms from ODK Collect and manages and visualizes the collected data.</li>
+<li>Export data as CSV file, KML file, JSON file (e.g., as CSV files for spreadsheets, or as KML files for Google Earth).</li>
+<li>It can be used to publish data to external systems.</li>
+<li>Aggregate can be used offline and locally (<a class="reference external" href="https://gumroad.com/l/odk-aggregate-vm">ODK aggregate VM</a>).</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">The ODK Aggregate VM is a fully-configured install of Aggregate that you can run on any computer. It requires very little setup, works well without Internet connectivity.</p>
+</div>
+</div>
+<div class="section" id="odk-briefcase-as-a-replacement-for-odk-aggregate">
+<span id="briefcase-as-replacement"></span><h2>ODK Briefcase as a replacement for ODK Aggregate<a class="headerlink" href="#odk-briefcase-as-a-replacement-for-odk-aggregate" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ODK Briefcase can pull data directly off ODK Collect devices but does not support pushing blank forms to ODK Collect. To use ODK Briefcase as a replacement for ODK Aggregate, you must manually install the forms on your ODK Collect device.</p>
+<p>To manually install forms onto your ODK Collect device:</p>
+<ul class="simple">
+<li>Connect the device to your computer with a USB cable and either, for Android 2.x devices, turn on USB storage (on the Android device), or, for Android 4.x devices, choose to connect it as a Media device (on the computer).</li>
+<li>On the computer, copy the form definition and media folder to the <code class="file docutils literal"><span class="pre">/odk/forms</span></code> directory. For Mac OS/X, if it is an Android 4.x device, you will need to use <a class="reference external" href="https://www.android.com/filetransfer/">Android File Transfer</a> to accomplish this.</li>
+<li>On Android 2.x, turn off USB storage.</li>
+<li>Run ODK Collect</li>
+<li>Choose <span class="guilabel">Fill Blank Form</span>.</li>
+</ul>
+<p>ODK Collect will scan the directory for new forms, parse them, and make them available in this list. It can take several moments for large forms to appear. When ODK Collect has completed scanning for new forms, it will display <strong>Finished scanning</strong>. All forms are loaded on the second line at the top of this screen.</p>
+<p>The steps for pulling data directly into ODK Briefcase from your Android device differs between the <a class="reference internal" href="briefcase-forms.html#pull-from-android2-x"><span class="std std-ref">Android 2.x</span></a> and <a class="reference internal" href="briefcase-forms.html#pull-from-android4-x"><span class="std std-ref">Android 4.x</span></a> devices.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="form-design-intro.html" class="btn btn-neutral float-right" title="Intro to Forms in ODK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="briefcase-forms.html" class="btn btn-neutral" title="Briefcase Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

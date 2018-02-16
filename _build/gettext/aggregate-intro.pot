@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/aggregate-intro.rst:16
+msgid "ODK Aggregate"
+msgstr ""
+
+#: ../../src/aggregate-intro.rst:20
+msgid "ODK Aggregate is a server application and data repository used with :doc:`collect-intro` or other :doc:`OpenRosa-compliant data client applications <openrosa>` to:"
+msgstr ""
+
+#: ../../src/aggregate-intro.rst:22
+msgid ":doc:`Host <aggregate-forms>` blank :doc:`XForms <form-design-intro>` used by ODK Collect or other OpenRosa clients"
+msgstr ""
+
+#: ../../src/aggregate-intro.rst:23
+msgid ":doc:`Store and manage XForm submission data <aggregate-data>`"
+msgstr ""
+
+#: ../../src/aggregate-intro.rst:24
+msgid "Visualize collected data using :doc:`maps <aggregate-visualize>` and :ref:`simple graphs <visualize-submissions>`"
+msgstr ""
+
+#: ../../src/aggregate-intro.rst:25
+msgid ":doc:`Export and publish data in a variety of formats <aggregate-data-access>`"
+msgstr ""
+

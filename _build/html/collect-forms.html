@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing Forms in Collect &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Using ODK Collect" href="collect-using.html"/>
+        <link rel="next" title="Filling out Forms with Collect" href="collect-filling-forms.html"/>
+        <link rel="prev" title="Using ODK Collect" href="collect-using.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collect-using.html">Using ODK Collect</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Managing Forms in Collect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loading-blank-forms">Loading Blank Forms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loading-forms-from-odk-aggregate-server-or-google-drive">Loading Forms from ODK Aggregate Server or Google Drive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loading-forms-directly">Loading forms directly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loading-form-media">Loading form media</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-saved-forms">Editing <span class="formstate">Saved</span> forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uploading-finalized-forms">Uploading Finalized Forms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#uploading-to-aggregate-or-google-drive">Uploading to Aggregate or Google Drive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pulling-forms-with-briefcase">Pulling forms with Briefcase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pulling-forms-with-adb">Pulling forms with <code class="docutils literal"><span class="pre">adb</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-forms">Deleting Forms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deleting-forms-with-adb">Deleting Forms with <code class="docutils literal"><span class="pre">adb</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collect-filling-forms.html">Filling out Forms with Collect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect-settings.html">Collect Menus, Settings, and Security</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collect-using.html">Using ODK Collect</a> &raquo;</li>
+        
+      <li>Managing Forms in Collect</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/collect-forms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-forms-in-collect">
+<h1>Managing Forms in Collect<a class="headerlink" href="#managing-forms-in-collect" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last">For an overview on forms and form design, see <a class="reference internal" href="form-design-intro.html"><span class="doc">Intro to Forms in ODK</span></a>.</p>
+</div>
+<div class="section" id="loading-blank-forms">
+<span id="loading-forms-into-collect"></span><h2>Loading Blank Forms<a class="headerlink" href="#loading-blank-forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>A <em class="dfn">blank form</em> is a <cite>.xml</cite> file containing a form definition consistent with the <a class="reference external" href="https://opendatakit.github.io/xforms-spec/">XForm specification</a>. Blank forms can be created using <a class="reference external" href="https://build.opendatakit.org/">ODK Build</a> or <a class="reference internal" href="xlsform.html"><span class="doc">XLSForm</span></a>.</p>
+<p>In order to fill out forms with survey participants, you must first load blank forms into the Collect App.</p>
+<div class="section" id="loading-forms-from-odk-aggregate-server-or-google-drive">
+<span id="in-app-get-blank-forms"></span><h3>Loading Forms from ODK Aggregate Server or Google Drive<a class="headerlink" href="#loading-forms-from-odk-aggregate-server-or-google-drive" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you have <a class="reference internal" href="collect-connect.html"><span class="doc">connected ODK Collect to a server</span></a> or <a class="reference internal" href="collect-connect-google.html"><span class="doc">Google Drive</span></a>:</p>
+<ol class="arabic">
+<li><p class="first">Select <span class="guilabel">Get blank forms</span> on the app home screen to browse available forms and download them to your device.</p>
+<img alt="The Main Menu of the Collect app. The option *Get Blank Form* is circled in red." src="_images/main-menu-highlight-get-blank-form.png" />
+</li>
+<li><p class="first">Find and download forms.</p>
+<ul>
+<li><p class="first">If you are using ODK Aggregate, you will see a list of available forms. Select the ones you would like download, and tap <span class="guilabel">Get Selected</span>.</p>
+<img alt="The Get Blank Form screen in the Collect app. Several form names are listed, with checkboxes. One form's checkbox is checked. At the bottom are buttons labeled: *Select All*, *Refresh*, and *Get Selected*." src="_images/get-blank-form.png" />
+</li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Before downloading blank forms from Aggregate to Collect, a form has to be uploaded. See <a class="reference internal" href="aggregate-forms.html"><span class="doc">Form Management in ODK Aggregate</span></a>.</p>
+</div>
+</div></blockquote>
+<ul>
+<li><p class="first">If you are using Google Drive, the <strong>Get Blank Form</strong> screen will display the folders in your Google Drive account and any XML documents. Select and download the forms you want.</p>
+<img alt="" src="_images/get-forms-google.png" />
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>All XML documents in Google Drive will appear in Collect. XML documents will be listed <strong>even if they are not valid XForms</strong>.</p>
+<img alt="" src="_images/get-blank-form-not-a-form.png" />
+<p>And you can actually download any XML document, <strong>even if it isn’t a real XForm</strong>.</p>
+<img alt="" src="_images/downloading-not-a-form.png" />
+<p>But you can’t Fill Out a non-form.</p>
+<img alt="" class="last" src="_images/not-form-exception.png" />
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="loading-forms-directly">
+<span id="id1"></span><h3>Loading forms directly<a class="headerlink" href="#loading-forms-directly" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="loading-forms-with-adb">
+<span id="id2"></span><h4>Loading forms with <code class="docutils literal"><span class="pre">adb</span></code><a class="headerlink" href="#loading-forms-with-adb" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>You can load forms directly from a computer to your device via USB, using <a class="reference internal" href="collect-adb.html"><span class="doc">Android Debug Bridge</span></a>.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ adb push path/to/form.xml /sdcard/odk/forms/form.xml
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-forms-from-device-storage">
+<h4>Loading forms from device storage<a class="headerlink" href="#loading-forms-from-device-storage" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>You can also download forms to your device via a web browser, and move them to the <code class="file docutils literal"><span class="pre">odk/forms/</span></code> directory, using the device’s file manager (<span class="menuselection">Settings -&gt; Storage &amp; USB -&gt; Explore</span>).</p>
+<ol class="arabic">
+<li><p class="first">Go to the Settings menu (<span class="guilabel">⚙</span>) on your device and find <span class="menuselection">Storage &amp; USB</span></p>
+<div class="figure" id="id5">
+<img alt="The Settings menu on an Android Device. The option *Storage and USB* is circled in red." src="_images/device-settings-storage.png" />
+<p class="caption"><span class="caption-text">The settings menu may look different on your device.</span></p>
+</div>
+</li>
+<li><p class="first">From the internal storage screen, select <span class="menuselection">Explore</span> to open the file manager.</p>
+<div class="figure" id="id6">
+<img alt="The Internal Storage settings menu on an Android device. The option *Explore* is circled in red." src="_images/device-settings-storage-explore.png" />
+<p class="caption"><span class="caption-text">The <span class="guilabel">Explore</span> option opens a file manager that you can use to move forms into Collect.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="loading-form-media">
+<h3>Loading form media<a class="headerlink" href="#loading-form-media" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If a form <a class="reference internal" href="form-widgets.html#image-options"><span class="std std-ref">includes images or other media</span></a>, those files have to be loaded to the device along with the form.</p>
+<p>Media files should be placed in a folder labeled <code class="file docutils literal"><em><span class="pre">form-name</span></em><span class="pre">-media</span></code>.</p>
+<ul class="simple">
+<li>When using ODK Aggregate, the form upload prompt includes instructions to upload the <code class="file docutils literal"><span class="pre">-media</span></code> folder. The files are downloaded automatically when <a class="reference internal" href="#in-app-get-blank-forms"><span class="std std-ref">fetching forms from Aggregate</span></a>.</li>
+<li>When using Google Drive, the <code class="file docutils literal"><span class="pre">-media</span></code> folder should be uploaded to the same location as the form.</li>
+<li>If <a class="reference internal" href="#loading-forms-directly"><span class="std std-ref">loading forms directly to your device</span></a>, the <code class="file docutils literal"><span class="pre">-media</span></code> folder needs to be placed in the <code class="file docutils literal"><span class="pre">sdcard/odk/forms</span></code> directory, alongside the form itself.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="editing-saved-forms">
+<span id="id3"></span><h2>Editing <span class="formstate">Saved</span> forms<a class="headerlink" href="#editing-saved-forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><span class="formstate">Completed</span> (filled-in) <a class="reference internal" href="glossary.html#term-instance"><span class="xref std std-term">form instances</span></a> can be edited after they have been saved.</p>
+<ol class="arabic">
+<li><p class="first">Select <span class="guilabel">Edit Saved Form</span></p>
+<img alt="The Main Menu of the Collect app. The option *Edit Saved Menu* is circled in red." src="_images/main-menu-edit-saved.png" />
+</li>
+<li><p class="first">Select a form by name</p>
+<img alt="The Edit Saved Form screen. Several completed forms are listed by name." src="_images/edit-saved-form.png" />
+</li>
+</ol>
+<p>This will reopen the form instance, which you are then free to edit. Form instances are listed by name, which is one reason it can be helpful to <a class="reference internal" href="collect-filling-forms.html#name-form-instance"><span class="std std-ref">name the form instance after filling it out</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<ul class="last simple">
+<li><span class="formstate">Sent</span> forms will not appear in the <span class="guilabel">Edit Saved Forms</span> list.</li>
+<li><span class="formstate">Sent</span> forms, will be available for viewing in <span class="guilabel">View Sent Forms</span> list, along with the details which cannot be edited.</li>
+<li>You may freely edit <span class="formstate">Saved</span> and <span class="formstate">Finalized</span> forms.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="uploading-finalized-forms">
+<span id="uploading-forms"></span><h2>Uploading Finalized Forms<a class="headerlink" href="#uploading-finalized-forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Eventually, you will want to upload completed form instances for analysis and data aggregation.</p>
+<p>Doing this from within the Collect app marks the forms as <span class="formstate">sent</span>. <span class="formstate">Sent</span> forms are no longer editable, but they remain viewable until they are deleted.</p>
+<div class="section" id="uploading-to-aggregate-or-google-drive">
+<h3>Uploading to Aggregate or Google Drive<a class="headerlink" href="#uploading-to-aggregate-or-google-drive" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you are connected to <a class="reference internal" href="collect-connect-aggregate.html"><span class="doc">an ODK Aggregate server</span></a> or <a class="reference internal" href="collect-connect-google.html"><span class="doc">Google Drive Account</span></a>, use <span class="guilabel">Send Finalized Forms</span> to upload <span class="formstate">Finalized</span> form instances.</p>
+<img alt="The Main Menu of the Collect app. The *Send Finalized Form* option is circled in red." src="_images/main-menu-send-finalized.png" />
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Blank values in the form are sent to google sheets as cells with a space and not as empty cells. When you are testing for empty cells, you might not get the correct results. To make sure you get the correct results, you could:</p>
+<ul class="last simple">
+<li>Use the <a class="reference external" href="https://support.google.com/docs/answer/3094140?hl=en">TRIM</a> function in the google sheets to remove the leading and trailing spaces from the cells.</li>
+<li>Define empty cell in your tests to be a cell that is either empty or contains a single space.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="pulling-forms-with-briefcase">
+<h3>Pulling forms with Briefcase<a class="headerlink" href="#pulling-forms-with-briefcase" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>For local form management, use <a class="reference internal" href="briefcase-forms.html"><span class="doc">ODK Briefcase</span></a> to pull <span class="formstate">Finalized</span> form instances to your local computer.</p>
+</div>
+<div class="section" id="pulling-forms-with-adb">
+<h3>Pulling forms with <code class="docutils literal"><span class="pre">adb</span></code><a class="headerlink" href="#pulling-forms-with-adb" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>You can copy form instances from the device using <strong class="command">adb pull</strong>, however this will not update the state of the form to <span class="formstate">Sent</span>.</p>
+</div>
+</div>
+<div class="section" id="deleting-forms">
+<span id="id4"></span><h2>Deleting Forms<a class="headerlink" href="#deleting-forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can delete <span class="formstate">Saved</span>, <span class="formstate">Finalized</span>, <span class="formstate">Sent</span>, and <span class="formstate">Blank</span> forms.</p>
+<ol class="arabic">
+<li><p class="first">Select <span class="guilabel">Delete Saved Form</span> on the app home screen.</p>
+<img alt="The Main Menu of the Collect app. The option *Delete Saved Forms* is circled in red." src="_images/main-menu-delete-form.png" />
+</li>
+<li><p class="first">Select the <span class="guilabel">Saved Forms</span> or <span class="guilabel">Blank Forms</span> tab.</p>
+<div class="figure" id="id7">
+<img alt="The Delete Saved Forms screen in the Collect app. There are two available tabs: *Saved Forms* and *Blank Forms*. The *Saved Forms* tab is active. Below that is a list of saved form instances, with checkboxes. There are buttons labeled: *Select All* and *Delete Selected*." src="_images/delete-saved-forms.png" />
+<p class="caption"><span class="caption-text">The <span class="guilabel">Saved Forms</span> tab lists form instances that are <span class="formstate">saved</span>, <span class="formstate">finalized</span>, or <span class="formstate">sent</span>.</span></p>
+</div>
+<div class="figure" id="id8">
+<img alt="The Delete Saved Forms screen in the Collect app. There are two available tabs: *Saved Forms* and *Blank Forms*. The *Blank Forms* tab is active. Below that is a list of blank forms, with checkboxes. There are buttons labeled: *Select All* and *Delete Selected*." src="_images/delete-saved-forms-blank-forms.png" />
+<p class="caption"><span class="caption-text">The <span class="guilabel">Blank Forms</span> tab lists <span class="formstate">blank</span> forms.</span></p>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>Deleted Forms are listed in the <span class="guilabel">View Sent Forms</span> page, but cannot be viewed. They are indicated with the crossed-out eye icon.</p>
+<img alt="The View Sent Forms page in Collect app. Two sent forms are listed, but the second one, *Hypertension Screening* has been deleted. Next to the form name is an icon of an eye, crossed out. Below the form name is the note *Deleted*, along with a date and time." class="last" src="_images/deleted-form-in-view-sent-form.png" />
+</div>
+<div class="section" id="deleting-forms-with-adb">
+<span id="delete-forms-adb"></span><h3>Deleting Forms with <code class="docutils literal"><span class="pre">adb</span></code><a class="headerlink" href="#deleting-forms-with-adb" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>You can also <a class="reference internal" href="collect-adb.html#deleting-forms-with-adb"><span class="std std-ref">delete form instances directly with</span></a> <a class="reference internal" href="collect-adb.html"><span class="doc">Android Debug Bridge</span></a>. They are stored in <code class="file docutils literal"><span class="pre">sdcard/odk/instances</span></code>, with a directory for each instance.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collect-filling-forms.html" class="btn btn-neutral float-right" title="Filling out Forms with Collect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect-using.html" class="btn btn-neutral" title="Using ODK Collect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

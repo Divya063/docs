@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docs Developer Guide &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="up" title="Contributing to ODK Docs" href="contributing.html"/>
+        <link rel="next" title="Tips for Making Good Contributions" href="contributing-tips.html"/>
+        <link rel="prev" title="Style Guide" href="docs-style-guide.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="docs-tech-guide.html">Docs Technical Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-syntax-guide.html">Docs Markup and Syntax Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs-style-guide.html">Style Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Docs Developer Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tech-overview">Tech Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-html-templating">Custom HTML templating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-javascript">Custom JavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-css">Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing-tips.html">Tips for Making Good Contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cygwin.html">Working with Docs in Windows using Cygwin</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-collect-from-app.html">Launching ODK Collect from External Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="contributing.html">Contributing to ODK Docs</a> &raquo;</li>
+        
+      <li>Docs Developer Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/docs-developer-guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docs-developer-guide">
+<h1>Docs Developer Guide<a class="headerlink" href="#docs-developer-guide" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This document is for contributors working on the design, templating, deployment, or development of the ODK Docs website.</p>
+<div class="section" id="tech-overview">
+<span id="id1"></span><h2>Tech Overview<a class="headerlink" href="#tech-overview" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ODK Docs uses:</p>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.sphinx-doc.org/">Sphinx</a>, a static-site generator written in <a class="reference external" href="https://www.python.org/">Python</a></p>
+<p>Sphinx uses:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> for parsing <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a></li>
+<li><a class="reference external" href="http://jinja.pocoo.org/">Jinja</a> for templating</li>
+</ul>
+</li>
+<li><p class="first"><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme">sphinx_rtd_theme</a>, a Sphinx theme/template</p>
+<p>sphinx_rtd_theme uses:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://jquery.com/">JQuery</a>, a JavaScript library</li>
+</ul>
+</li>
+<li><p class="first"><a class="reference external" href="http://proselint.com/">Proselint</a> for style testing</p>
+</li>
+<li><p class="first"><a class="reference external" href="https://git-scm.com/">git</a> and <a class="reference external" href="https://github.com/opendatakit/docs">GitHub</a> for version control</p>
+</li>
+<li><p class="first"><a class="reference external" href="https://circleci.com/">CircleCI</a> for testing and deployment</p>
+</li>
+<li><p class="first"><a class="reference external" href="https://aws.amazon.com/s3/">Amazon S3</a> for hosting</p>
+</li>
+</ul>
+</div>
+<div class="section" id="custom-html-templating">
+<span id="custom-html"></span><h2>Custom HTML templating<a class="headerlink" href="#custom-html-templating" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ODK Docs uses the <a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme">sphinx_rtd_theme</a>,
+with some minor customizations.</p>
+<p>ODK-specific versions of HTML/Jinja templates
+are in <code class="file docutils literal"><span class="pre">_templates</span></code>.
+Any file in that directory
+will override the file of the same name
+in the sphinx_rtd_theme source.</p>
+<p>So, to customize a portion of the HTML template,
+copy the source file from sphinx_rtd_theme
+and then edit it.</p>
+<p>Please commit the copied file unchanged before editing,
+so that it is easy to track what you have changed.</p>
+</div>
+<div class="section" id="custom-javascript">
+<span id="custom-js"></span><h2>Custom JavaScript<a class="headerlink" href="#custom-javascript" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Custom JavaScript should be added in <code class="file docutils literal"><span class="pre">src/_static/js/custom.js</span></code>.
+Comment your code with an explanation of what the JS accomplishes,
+and a reference to the issue number you are working on.</p>
+<p>The ODK Docs template includes <a class="reference external" href="https://jquery.com/">JQuery</a>,
+so you can use it in your custom JS.</p>
+</div>
+<div class="section" id="custom-css">
+<span id="id2"></span><h2>Custom CSS<a class="headerlink" href="#custom-css" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Custom CSS should be added in <code class="file docutils literal"><span class="pre">src/_static/css/custom.css</span></code>.
+Comment your code with an explanation of what the CSS accomplishes
+and a reference to the issue number you are working on.</p>
+<p>For example:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="c">/* Example CSS PR #xyx */</span>
+
+<span class="nt">div</span><span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">&#39;example&#39;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It is helpful to keep the CSS file organized.
+There are several sections in the <code class="file docutils literal"><span class="pre">custom.css</span></code> file:</p>
+<ul class="simple">
+<li>Styling for rst roles and directives</li>
+<li>Responsive CSS</li>
+<li>Styling for JS implementation</li>
+<li>Utility classes</li>
+</ul>
+<p>Each of these sections are enclosed in start and end comments.
+Add your code to the relevant section.
+If you don’t find any section relevant,
+add a new section and add your code there.</p>
+<p>For example:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="c">/* New section starts */</span>
+
+<span class="c">/* Example CSS PR #xyx */</span>
+
+<span class="nt">div</span><span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">&#39;example&#39;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* New section ends */</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="contributing-tips.html" class="btn btn-neutral float-right" title="Tips for Making Good Contributions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="docs-style-guide.html" class="btn btn-neutral" title="Style Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

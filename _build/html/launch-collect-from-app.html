@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Launching ODK Collect from External Apps &mdash; Open Data Kit Docs</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/odk-favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="Open Data Kit Docs" href="index.html"/>
+        <link rel="next" title="Briefcase Aggregate API" href="briefcase-api.html"/>
+        <link rel="prev" title="ODK JavaRosa" href="javarosa.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/odk-logo-wide.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Collect</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="collect-intro.html">ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-setup.html">Setting Up ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-using.html">Using ODK Collect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aggregate</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-intro.html">ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-setup.html">Setting Up ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-use.html">Using ODK Aggregate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aggregate-best-practices.html">Tips and Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Briefcase</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-guide.html">ODK Briefcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-install.html">Briefcase Installation and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-forms.html">Briefcase Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-vs-aggregate.html">Briefcase vs Aggregate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Form Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="form-design-intro.html">Intro to Forms in ODK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odk-build.html">ODK Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xlsform.html">XLSForm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-interaction.html">Interaction of constraints, relevants and read only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form-update.html">Updating forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyxform.html">pyxform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validate.html">ODK Form Validate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch-apps-from-collect.html">Launching External Apps from Collect Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to ODK Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developing with ODK</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="openrosa.html">OpenRosa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javarosa.html">ODK JavaRosa</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Launching ODK Collect from External Apps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-intents">Understanding Intents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launching-collect-activities-from-external-application">Launching Collect activities from external application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#launching-the-form-list-or-instance-list-activity">Launching the form list or instance list activity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-the-uri-of-a-form-or-instance-chosen-by-the-user">Getting the URI of a form or instance chosen by the user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-a-uri-to-edit-a-form-or-instance">Using a URI to edit a form or instance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="briefcase-api.html">Briefcase Aggregate API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-forms.html">Encrypted Forms</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="security-privacy.html">Security and Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verify-downloads.html">Verifying Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Open Data Kit</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Launching ODK Collect from External Apps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/launch-collect-from-app.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="launching-odk-collect-from-external-apps">
+<h1>Launching ODK Collect from External Apps<a class="headerlink" href="#launching-odk-collect-from-external-apps" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference internal" href="launch-apps-from-collect.html"><span class="doc">Launching External Apps from Collect Forms</span></a></p>
+</div>
+<p><a class="reference internal" href="collect-intro.html"><span class="doc">ODK Collect</span></a> supports several intents which allow it to be launched by external applications. You can open a specific form or lists of empty forms, saved forms, finalized forms or sent forms.</p>
+<p>This section describes how to launch ODK Collect and open its activities from an external app. The code samples go in your custom Android application.</p>
+<div class="section" id="understanding-intents">
+<span id="about-intents"></span><h2>Understanding Intents<a class="headerlink" href="#understanding-intents" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>An Intent is a messaging object you can use to request an action from another app component.</p>
+<p>For more details on intents, you can refer to <a class="reference external" href="https://developer.android.com/guide/components/intents-filters.html">these Android docs</a>.</p>
+</div>
+<div class="section" id="launching-collect-activities-from-external-application">
+<span id="launch-activity"></span><h2>Launching Collect activities from external application<a class="headerlink" href="#launching-collect-activities-from-external-application" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To start one of ODK Collect’s activities:</p>
+<ol class="arabic simple">
+<li>Create a new intent using an appropriate action.</li>
+<li>Set the type of the created intent.</li>
+<li>Start an activity using the intent.</li>
+</ol>
+<div class="section" id="launching-the-form-list-or-instance-list-activity">
+<span id="form-instance-list"></span><h3>Launching the form list or instance list activity<a class="headerlink" href="#launching-the-form-list-or-instance-list-activity" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_VIEW</span><span class="o">);</span>
+<span class="n">intent</span><span class="o">.</span><span class="na">setType</span><span class="o">(</span><span class="s">&quot;vnd.android.cursor.dir/vnd.odk.form&quot;</span><span class="o">);</span>
+<span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>This displays a list of forms and allows the user to select one and fill it.</p>
+<p>Similarly for an instance of the form:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_VIEW</span><span class="o">);</span>
+<span class="n">intent</span><span class="o">.</span><span class="na">setType</span><span class="o">(</span><span class="s">&quot;vnd.android.cursor.dir/vnd.odk.instance&quot;</span><span class="o">);</span>
+<span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>This displays a list of saved forms and allows the user to select one and edit it.</p>
+</div>
+<div class="section" id="getting-the-uri-of-a-form-or-instance-chosen-by-the-user">
+<span id="get-uri"></span><h3>Getting the URI of a form or instance chosen by the user<a class="headerlink" href="#getting-the-uri-of-a-form-or-instance-chosen-by-the-user" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_PICK</span><span class="o">);</span>
+<span class="n">intent</span><span class="o">.</span><span class="na">setType</span><span class="o">(</span><span class="s">&quot;vnd.android.cursor.dir/vnd.odk.form&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">PICK_FORM_REQUEST</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>  <span class="c1">// The request code</span>
+<span class="n">startActivityForResult</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="n">PICK_FORM_REQUEST</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>To get the result, override <code class="docutils literal"><span class="pre">onActivityResultMethod</span></code> in the followig way:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Check which request we&#39;re responding to</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">PICK_FORM_REQUEST</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Make sure the request was successful</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// The Intent&#39;s data URI identifies which form was selected.</span>
+      <span class="n">Uri</span> <span class="n">formUri</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getData</span><span class="o">();</span>
+      <span class="c1">// Do something with the form here</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>For an instance, change the intent type:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">intent</span><span class="o">.</span><span class="na">setType</span><span class="o">(</span><span class="s">&quot;vnd.android.cursor.dir/vnd.odk.instance&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-a-uri-to-edit-a-form-or-instance">
+<span id="use-form-uri"></span><h3>Using a URI to edit a form or instance<a class="headerlink" href="#using-a-uri-to-edit-a-form-or-instance" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If the URI of a form or instance is known, it can be viewed or edited. For example, a URI received in <code class="docutils literal"><span class="pre">onActivityResult()</span></code> as described above can be used.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_EDIT</span><span class="o">);</span>
+<span class="n">intent</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="s">&quot;content://org.odk.collect.android.provider.odk.forms/forms/2&quot;</span><span class="o">);</span>
+<span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>The same thing can be done with a specific instance.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="briefcase-api.html" class="btn btn-neutral float-right" title="Briefcase Aggregate API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="javarosa.html" class="btn btn-neutral" title="ODK JavaRosa" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/js/custom.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

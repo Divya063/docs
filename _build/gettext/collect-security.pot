@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/collect-security.rst:15
+msgid "Android security recommendations"
+msgstr ""
+
+#: ../../src/collect-security.rst:20
+msgid "Turn on data encryption"
+msgstr ""
+
+#: ../../src/collect-security.rst:22
+msgid "Turning on Android-level data encryption means when the device is locked, no one can see the data. Unlocking your encrypted device decrypts your data. Encryption can add protection in case your device is stolen. It's an easier alternative to using encrypted forms that offer most of the benefits."
+msgstr ""
+
+#: ../../src/collect-security.rst:26
+msgid "Encryption takes an hour or more to complete. Before you start, ensure that battery is charged and keep the device plugged in until encryption is complete. Make sure your data is backed up, just in case something goes wrong."
+msgstr ""
+
+#: ../../src/collect-security.rst:30
+msgid "Interrupting encryption process may lead to loss of some or all of your data."
+msgstr ""
+
+#: ../../src/collect-security.rst:31
+msgid "The process is irreversible. The device cannot be decrypted once the encryption is setup and you will have to wipe out all the data for decryption or removing encryption."
+msgstr ""
+
+#: ../../src/collect-security.rst:35
+msgid "For devices running any version older than 4, you’ll need to either upgrade your operating system or consult the manufacturer’s instructions."
+msgstr ""
+
+#: ../../src/collect-security.rst:37
+msgid "For devices running Android version 4 or later:"
+msgstr ""
+
+#: ../../src/collect-security.rst:39
+msgid "Open your device's Settings app."
+msgstr ""
+
+#: ../../src/collect-security.rst:45
+msgid ":gesture:`Tap` :guilabel:`Lock screen` in the :guilabel:`Device` section. Then :gesture:`tap` on :guilabel:`Screen lock` and create a pin or password."
+msgstr ""
+
+#: ../../src/collect-security.rst:61
+msgid "Encryption cannot be performed until you have setup either a PIN or a password lock. Pattern lock is not allowed with encryption."
+msgstr ""
+
+#: ../../src/collect-security.rst:65
+msgid "Setting a strong passcode is imperative to protect your Android phone. The longer the passcode (or alphanumeric password), the tougher it will be for an attacker to gain access to your device. Even a lock screen won't necessarily prevent a thief or hacker from getting access to your data. You can use apps that destroy all the data after few failed attempts to unlock the device. For more details, see `this <https://www.techrepublic.com/blog/five-apps/five-apps-to-wipe-data-from-your-android-phone/>`__."
+msgstr ""
+
+#: ../../src/collect-security.rst:68
+msgid ":gesture:`Tap` :guilabel:`Security` in the :guilabel:`System` section."
+msgstr ""
+
+#: ../../src/collect-security.rst:74
+msgid "Go to :guilabel:`Encryption` section. Now select :guilabel:`Encrypt device` to start encryption. Follow the onscreen instructions. During encryption, your device might restart several times."
+msgstr ""
+
+#: ../../src/collect-security.rst:82
+msgid "On some phones, you’ll need to choose :guilabel:`Storage`, then :menuselection:`Storage encryption` or :menuselection:`Storage --> Lock screen and security --> Other security settings` to find the :guilabel:`Encrypt device` option"
+msgstr ""
+
+#: ../../src/collect-security.rst:86
+msgid "If you are using SD card for storage, you can encrypt that too by choosing :guilabel:`Encrypt SD card` in the :guilabel:`Encryption` section. This not only encrypts the contents of the SD card, but it also means that the card cannot be used on another device unless it is wiped."
+msgstr ""
+
+#: ../../src/collect-security.rst:95
+msgid "You should also ensure that device debugging (via adb) is disabled when collecting data, as that can enable users to pull data from the device after it has been successfully booted (when the sdcard encryption key is entered). i.e., if the debugging interface is enabled, someone could steal the device, connect it to a laptop, and pull data off it as long as it has not been shut down as they don't need to successfully unlock the device's lock screen to gain access."
+msgstr ""
+
+#: ../../src/collect-security.rst:97
+msgid "For more details on encryption, see `this <https://docs.microsoft.com/en-us/intune-user-help/encrypt-your-device-android>`__."
+msgstr ""
+
+#: ../../src/collect-security.rst:102
+msgid "Adjust Google Play to require a password for every purchase"
+msgstr ""
+
+#: ../../src/collect-security.rst:104
+msgid "You can set up Google Play to require a password for every purchase, which makes sure that anything you buy is done so with your consent. This can prevent enumerators from installing apps which can bypass certain specified requirements."
+msgstr ""
+
+#: ../../src/collect-security.rst:106
+msgid "Open the Play store app, :gesture:`tap` on the left-hand slide-out menu, and then choose :guilabel:`Settings`."
+msgstr ""
+
+#: ../../src/collect-security.rst:120
+msgid "Look for :guilabel:`Require password for purchases` and :gesture:`tap` on it. You'll be asked to input your password."
+msgstr ""
+
+#: ../../src/collect-security.rst:130
+msgid "Choose the password input frequency as :guilabel:`For all purchases through Google Play on this device`."
+msgstr ""
+
+#: ../../src/collect-security.rst:138
+msgid "The password will not be set for free downloads. If you want to lock free downloads as well, use an app locking app like `AppLock <https://play.google.com/store/apps/details?id=com.domobile.applock>`_."
+msgstr ""
+
+#: ../../src/collect-security.rst:144
+msgid "Disable cloud-based backup"
+msgstr ""
+
+#: ../../src/collect-security.rst:146
+msgid "Though storing your data in the cloud is good for backing it up, law enforcement can demand that Google turn over your data. The best way to keep your Android phone from sending your personal data to its servers is to turn off backup. The downside is if you lose your phone, you may lose your data. Remember, you always have the option to manually back-up to your personal computer."
+msgstr ""
+
+#: ../../src/collect-security.rst:148
+msgid "To disable backup:"
+msgstr ""
+
+#: ../../src/collect-security.rst:150
+msgid "Go to Settings app."
+msgstr ""
+
+#: ../../src/collect-security.rst:156
+msgid "Then :gesture:`tap` :guilabel:`Backup & Reset` in :guilabel:`Personalisation` section."
+msgstr ""
+
+#: ../../src/collect-security.rst:162
+msgid "Now switch off the option to :guilabel:`Back up my data`."
+msgstr ""
+
+#: ../../src/collect-security.rst:175
+msgid "Limit who can use Google Now"
+msgstr ""
+
+#: ../../src/collect-security.rst:177
+msgid "Google Now is your own intelligence assistant by bringing information to you when you need it but that gives Google a lot of access to your data to know what to dig up. The best way to use it is by turning it off from the lock screen, so only you with your passcode can use the feature and get access to your personal data. The steps to do this are as follows:"
+msgstr ""
+
+#: ../../src/collect-security.rst:179
+msgid "Open the Google app, :gesture:`tap` on the left-hand slide-out menu, and then choose :guilabel:`Settings`."
+msgstr ""
+
+#: ../../src/collect-security.rst:193
+msgid ":gesture:`Tap` on :guilabel:`Voice` in the :guilabel:`Search` section and then choose :guilabel:`'OK Google' detection`."
+msgstr ""
+
+#: ../../src/collect-security.rst:203
+msgid "Turn off the feature :guilabel:`Say \"OK Google\" any time`."
+msgstr ""
+
+#: ../../src/collect-security.rst:212
+msgid "Lower your phone's sleep timeout"
+msgstr ""
+
+#: ../../src/collect-security.rst:214
+msgid "Lowering your phone's sleep timeout can prevent opportunistic people from getting access to your unlocked device. The lower the figure, the quicker it locks you out."
+msgstr ""
+
+#: ../../src/collect-security.rst:216
+msgid "Start by going to Settings app."
+msgstr ""
+
+#: ../../src/collect-security.rst:222
+msgid ":gesture:`Tap` on :guilabel:`Display and wallpaper` under the :guilabel:`Device` section."
+msgstr ""
+
+#: ../../src/collect-security.rst:228
+msgid ":gesture:`Tap` on :guilabel:`Screen timeout` and lower the screen timeout by choosing an appropriate timeout from the list."
+msgstr ""
+
+#: ../../src/collect-security.rst:238
+msgid "Once you've lowered your phone's sleep timeout setting, you need to make sure that your Android device locks and presents the lock screen when it wakes up. :gesture:`Tap` on :guilabel:`Lock screen` in the :guilabel:`Device` section and then :gesture:`tap` on :guilabel:`Lock automatically` option and choose an appropriate timeout again."
+msgstr ""
+
+#: ../../src/collect-security.rst:255
+msgid "Limit your lock screen notifications"
+msgstr ""
+
+#: ../../src/collect-security.rst:257
+msgid "Your lock screen can show a lot about your life. Your Android phone or tablet can limit what's shown on the lock screen in order to prevent others' from seeing your personal content as it comes in."
+msgstr ""
+
+#: ../../src/collect-security.rst:259
+msgid "Go to Settings app then :gesture:`Tap` on :guilabel:`Sounds & notifications` under the :guilabel:`Device` section."
+msgstr ""
+
+#: ../../src/collect-security.rst:269
+msgid "Scroll down and :gesture:`tap` on :guilabel:`Notifications on lock screen` under the :guilabel:`Notification` section. You can change how notifications are shown when device is locked setting. The most privacy conscious setting is to Hide sensitive notification content so that you know which app is alerting you, without showing its contents."
+msgstr ""
+
+#: ../../src/collect-security.rst:282
+msgid "Prevent unauthorized apps from installing"
+msgstr ""
+
+#: ../../src/collect-security.rst:284
+msgid "Android devices can run third-party content outside of the Google Play app store. This can open up a device to malware attacks."
+msgstr ""
+
+#: ../../src/collect-security.rst:286
+msgid "The easiest way to ensure that only verified and malware-checked apps can be installed on your phone or tablet is:"
+msgstr ""
+
+#: ../../src/collect-security.rst:288
+msgid "Go to the Settings app and then :gesture:`tap` on :guilabel:`Security` in the :guilabel:`System` section."
+msgstr ""
+
+#: ../../src/collect-security.rst:298
+msgid "Make sure that the Unknown sources option is turned off. If this option is turned on, installation of apps from trusted as well as unknown sources will be allowed."
+msgstr ""
+
+#: ../../src/collect-security.rst:307
+msgid "Make sure you keep Android up-to-date"
+msgstr ""
+
+#: ../../src/collect-security.rst:309
+msgid "Many Android phone makers will now offer monthly security patches to ensure that any known vulnerabilities will be patched. Install these patches every month. It's one of the best ways to ensure that you won't be attacked by hackers and malware."
+msgstr ""
+
+#: ../../src/collect-security.rst:311
+msgid "To periodically check for software updates, go to Settings app."
+msgstr ""
+
+#: ../../src/collect-security.rst:317
+msgid "Then :gesture:`tap` on :guilabel:`About device` under the :guilabel:`System` section."
+msgstr ""
+
