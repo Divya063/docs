@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a
+# Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../src/briefcase-install.rst:16
+msgid "Briefcase Installation and Setup"
+msgstr ""
+
+#: ../../src/briefcase-install.rst:21
+msgid "Installing Briefcase"
+msgstr ""
+
+#: ../../src/briefcase-install.rst:23
+msgid ""
+"Make sure to download and install `Java 8 "
+"<https://java.com/en/download/>`_ or higher on your system."
+msgstr ""
+
+#: ../../src/briefcase-install.rst:24
+msgid ""
+"Download `ODK Briefcase <https://opendatakit.org/downloads/download-"
+"category/briefcase/>`_  vN.N.N.jar."
+msgstr ""
+
+#: ../../src/briefcase-install.rst:25
+msgid "Double click and start the file."
+msgstr ""
+
+#: ../../src/briefcase-install.rst:26
+msgid ""
+"If that doesn't work for you try running *java -jar path_to_jar* from the"
+" command line."
+msgstr ""
+
+#: ../../src/briefcase-install.rst:28
+msgid ""
+"Upon first starting, Briefcase will ask for the directory under which to "
+"create the ODK Briefcase Storage area. An `ODK Briefcase Storage` folder "
+"will be created here to hold all the blank forms and finalized forms."
+msgstr ""
+
+#: ../../src/briefcase-install.rst:32
+msgid ""
+"You can change the storage location for Briefcase from the "
+":guilabel:`Settings` tab."
+msgstr ""
+

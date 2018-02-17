@@ -1,0 +1,435 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a
+# Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../src/openrosa-form-list.rst:15
+msgid "Form List API"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:17
+msgid ""
+"This standard specifies how clients discover a list of available blank "
+"forms on a server."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:22
+msgid "Discovery Request"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:24
+msgid ""
+"The discovery request should be sent in compliance with the HTTP 1.1 "
+"protocol."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:26
+msgid ""
+"If a server will filter the set of forms based upon the user's identity, "
+"then the server should require that the user be authenticated through "
+"either the :doc:`openrosa-authentication` or through an alternative "
+"authentication mechanism. The server can then make use of the user's "
+"authenticated identity through those mechanisms to filter the set of "
+"forms to be returned."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:28
+msgid ""
+"The device will make a discovery request to a configured URI with a "
+"single query parameter, the ``deviceID``. The ``deviceID`` should be the "
+"same id as provided by the default population mechanism defined in the "
+":doc:`openrosa-metadata`. The server may filter the set of forms returned"
+" using this information."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:32
+msgid ""
+"The ``deviceID`` is advisory information only, and is inherently not "
+"authoritative. Anyone can claim to have a given IMEI, for example."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:34
+msgid ""
+"Together, the authentication and ``deviceID`` enable a server to tailor "
+"the set of forms to both the user and the device (and therefore the "
+"device's capabilities)."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:39
+msgid "Query Parameters"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:41
+msgid "Optional query parameters MAY also be supplied:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:43
+msgid ""
+"``formID`` If specified, the server MUST return information for only this"
+" formID."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:44
+msgid ""
+"``verbose`` If specified with the value true, the server MAY include a "
+"``<descriptionText/>`` or ``<descriptionUrl>`` element providing a longer"
+" description of an XForm."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:45
+msgid ""
+"``listAllVersions`` If specified, provides a listing of all hosted "
+"versions of each form (including the ``<version>`` element) in the "
+"response document (see below)."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:47
+msgid ""
+"If not supplied or not present, the server MUST NOT include this optional"
+" information in its response."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:52
+msgid "Request Header"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:54
+msgid ""
+"Requests from the device SHOULD set the ``Accept-Language`` header to "
+"indicate the preferred language of the form name"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:56
+msgid "Read More"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:58
+msgid "The ``Accept-Language`` HTTP header is documented here:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:60
+msgid "http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:62
+msgid "and an article on its evolving use for determining locale is here:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:64
+msgid "http://www.w3.org/International/questions/qa-accept-lang-locales"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:66
+msgid ""
+"Aside from the query parameters, the structure of the server URI and "
+"whether the request is made over ``http`` or ``https``, is entirely "
+"implementor- and server- dependent."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:68
+msgid ""
+"Compliant servers MUST NOT require additional query parameters on this "
+"request."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:70
+msgid ""
+"Compliant devices MUST be able to handle arbitrary ``http`` and ``https``"
+" URIs and must be able to :doc:`authenticate <openrosa-authentication>` "
+"with the server during this transaction, if required by the server."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:75
+msgid "Successful Response Document"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:77
+msgid ""
+"If accepted by the server, the server will respond with a ``Content-Type:"
+" text/xml; charset=utf-8`` response. An example of such a document is "
+"shown below:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:111 ../../src/openrosa-form-list.rst:205
+msgid "This document consists of:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:113
+msgid ""
+"a top-level ``<xforms/>`` element in the "
+"``http://openrosa.org/xforms/xformsList`` namespace enclosing,"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:115
+msgid "zero or more ``<xform/>`` tags followed by"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:116
+msgid "zero or more ``<xforms-group>`` tags."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:118
+msgid ""
+"Within each of the ``<xform/>`` tags, there must be exactly one of each "
+"of the following:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:120
+msgid "``<formID/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:121 ../../src/openrosa-form-list.rst:135
+msgid "``<name/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:122
+msgid "``<version/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:123 ../../src/openrosa-form-list.rst:213
+msgid "``<hash/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:124 ../../src/openrosa-form-list.rst:214
+msgid "``<downloadUrl/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:126 ../../src/openrosa-form-list.rst:138
+msgid "There may be zero or one"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:128 ../../src/openrosa-form-list.rst:140
+msgid "``<descriptionText/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:129 ../../src/openrosa-form-list.rst:141
+msgid "``<descriptionUrl/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:130
+msgid "``<manifestUrl/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:132
+msgid ""
+"Within each ``<xforms-group>`` tag, there must be exactly one of each of "
+"the following:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:134
+msgid "``<groupID/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:136
+msgid "``<listUrl/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:143
+msgid ""
+"The ``<xform/>`` tag provides information about a single form. The "
+"``<xforms-group/>`` tag provides information about a group of forms; a "
+"further enumeration of the forms within that group can be obtained "
+"through the ``<listUrl/>`` of that group (which returns an ``<xforms/>`` "
+"document). Groups can be used to define sets of forms that a user may "
+"wish to download together (such as for clinical studies, for example)."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:149
+msgid "Elements within ``<xform/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:151
+msgid ""
+"``<formID/>`` The :ref:`form identity as defined in the metadata <form-"
+"identity>`."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:152
+msgid ""
+"``<name/>`` The user-friendly display name of the form. The server may "
+"localize this name (translate it) based upon the ``Accept-Language:`` "
+"header on the incoming request. Devices **SHOULD** send this header and "
+"servers **MAY** return different name and description text based upon its"
+" value. The default behavior is to return the text within the ``<title>``"
+" element of the XForm."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:153
+msgid ""
+"``<version/>`` The :ref:`form version as defined in the metadata <form-"
+"version>` The device **MAY** use this to determine if its XForm "
+"definition is out of sync with the server (over time, the server may roll"
+" the current version forward or backward)."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:154
+msgid ""
+"``<hash/>`` The hash value of the form definition file available for "
+"download. The only hash values currently supported are MD5 hashes of the "
+"file contents; they are prefixed by ``md5:``. If the hash value "
+"identified in the form list differs from the hash value for a previously-"
+"downloaded form definition file, then the file should be re-fetched from "
+"the server."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:155
+msgid ""
+"``<downloadUrl/>`` A fully formed URI for downloading the form to the "
+"device. It may be a valid http or https URI of any structure; the server "
+"may require authentication; the server may require a secure (https) "
+"channel, etc."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:156
+msgid ""
+"``<manifestUrl/>`` A URI from which the device can obtain a manifest "
+"defining additional supporting objects and files. *Optional*"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:157
+msgid ""
+"``<descriptionText/>`` A detailed text explanation of the form. "
+"*Optional, only returned if* ``verbose=true``."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:158
+msgid ""
+"``<descriptionUrl/>`` A fully qualified URI pointing to a media (audio, "
+"video) description of the form. *Optional, only returned if* "
+"``verbose=true``."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:161
+msgid ""
+"A media description of the form (audio or video) can be especially useful"
+" in low-literacy populations."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:167
+msgid "Elements within ``<xforms-group/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:169
+msgid ""
+"``<groupID/>`` The unique id for this group. It is locale-invariant (in "
+"contrast to the ``<name/>`` element, below)."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:170
+msgid ""
+"``<name/>`` The user-friendly display name of the xforms group. The "
+"server may localize this name (translate it) based upon the ``Accept-"
+"Language:`` header on the incoming request. Devices **SHOULD** send this "
+"header and servers **MAY** return different name and description text "
+"based upon its value."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:171
+msgid ""
+"``<listUrl/>`` A fully qualified URI for obtaining the ``<xforms/>`` "
+"document of this grouping of forms. (That is, the endpoint for the Form "
+"List API). It may be a valid http or https URI of any structure; the "
+"server may require authentication; the server may require a secure "
+"(https) channel, etc."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:172
+msgid ""
+"``<descriptionText/>`` A detailed text explanation of the form group. "
+"*Optional, only returned if* ``verbose=true``."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:173
+msgid ""
+"``<descriptionUrl/>`` A fully qualified URI pointing to a media (audio, "
+"video) description of the form group. *Optional, only returned if* "
+"``verbose=true``."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:178
+msgid ""
+"The server **MAY** dynamically construct the download and manifest URLs "
+"based upon the user identity and device id."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:179
+msgid ""
+"The manifest **MAY** include additional (implementation specific) "
+"elements and data. These MUST be dealt with gracefully (ignored) by the "
+"client if it does not know how to interpret these fields."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:185
+msgid "The Manifest Document"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:187
+msgid ""
+"The structure of the manifest document returned by the manifest URI is as"
+" follows:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:207
+msgid ""
+"a top-level ``<manifest/>`` tag in the "
+"``http://openrosa.org/xforms/xformsManifest`` namespace enclosing"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:209
+msgid "zero or more ``<mediaFile/>`` tags."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:210
+msgid ""
+"Within each of the ``<mediaFile/>`` tags, there must be exactly one of "
+"each of the following:"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:212
+msgid "``<filename/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:219
+msgid "Elements within ``<mediaFile/>``"
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:221
+msgid ""
+"``<filename/>`` The unique un-rooted file path for this media file. This "
+"un-rooted path must not start with a drive name or slash and must not "
+"contain relative path navigations (for example, ``.`` or ``..``)."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:222
+msgid ""
+"``<hash/>`` The hash value of the media file available for download. The "
+"only hash values currently supported are MD5 hashes of the file contents;"
+" they are prefixed by ``md5:``. If the hash value identified in the "
+"manifest differs from the hash value for a previously-downloaded media "
+"file, then the file should be re-fetched from the server."
+msgstr ""
+
+#: ../../src/openrosa-form-list.rst:223
+msgid ""
+"``<downloadUrl/>`` A fully qualified URI for downloading the media file "
+"to the device. It may be a valid http or https URI of any structure; the "
+"server may require authentication; the server may require a secure "
+"(https) channel, etc."
+msgstr ""
+

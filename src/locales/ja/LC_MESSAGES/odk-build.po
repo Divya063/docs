@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/odk-build.rst:15
+msgid "ODK Build"
+msgstr ""
+
+#: ../../src/odk-build.rst:17
+msgid ""
+":dfn:`ODK Build` is a form designer with a drag-and-drop user interface. "
+"Build is an HTML5 web application and works best for designing simple forms."
+msgstr ""
+
+#: ../../src/odk-build.rst:21
+msgid ""
+"For a more powerful form designer from Open Data Kit, try :doc:`XLSForm "
+"<xlsform>`."
+msgstr ""
+
+#: ../../src/odk-build.rst:23
+msgid ""
+"You may also be interested in form design tools from other organizations:"
+msgstr ""
+
+#: ../../src/odk-build.rst:25
+msgid "`Vellum <https://github.com/dimagi/Vellum>`_"
+msgstr ""
+
+#: ../../src/odk-build.rst:26
+msgid "`Kobo <http://www.kobotoolbox.org/>`_"
+msgstr ""
+
+#: ../../src/odk-build.rst:27
+msgid "`Enketo <https://enketo.org/>`_"
+msgstr ""
+
+#: ../../src/odk-build.rst:28
+msgid "`PurcForms <https://code.google.com/archive/p/purcforms/>`_."
+msgstr ""
+
+#: ../../src/odk-build.rst:33
+msgid "Using ODK Build"
+msgstr ""
+
+#: ../../src/odk-build.rst:35
+msgid "Go to http://build.opendatakit.org and sign in."
+msgstr ""
+
+#: ../../src/odk-build.rst:42
+msgid ""
+"There is a `downloadable version of ODK Build "
+"<https://opendatakit.org/downloads/download-category/build/>`_ available."
+msgstr ""
+
+#: ../../src/odk-build.rst:46
+msgid ""
+"Clicking on :menuselection:`About ODK Build...` option in the "
+":guilabel:`Help` menu provides basic information about ODK Build."
+msgstr ""
+
+#: ../../src/odk-build.rst:55
+msgid "Creating and Saving forms"
+msgstr ""
+
+#: ../../src/odk-build.rst:57
+msgid ""
+"Options to create, open and save forms are available in the :guilabel:`File`"
+" menu."
+msgstr ""
+
+#: ../../src/odk-build.rst:62
+msgid "Click on :menuselection:`New Form` to start creating a new form."
+msgstr ""
+
+#: ../../src/odk-build.rst:66
+msgid ""
+"When you start building a form on ODK Build, it is named as *Untitled Form*."
+" To rename it click on :guilabel:`rename` next to the form name and give a "
+"name to your form."
+msgstr ""
+
+#: ../../src/odk-build.rst:71
+msgid ""
+"Click on :menuselection:`Open Form...` to open a saved form and edit it. "
+"Select the form and click on :guilabel:`Open` option in the open form "
+"window. You can also delete a saved form by clicking on :guilabel:`X` beside"
+" the form name."
+msgstr ""
+
+#: ../../src/odk-build.rst:76
+msgid ""
+"To save a form click on :menuselection:`Save`. If you want to save an edited"
+" version of a previously saved form as a new form, click on "
+":menuselection:`Save Form as...` and provide a name to the form."
+msgstr ""
+
+#: ../../src/odk-build.rst:77
+msgid ""
+"To save your form on your local machine, click on :menuselection:`Save Form "
+"to File...`. You can open a form saved into your local machine by clicking "
+"on :menuselection:`Load Form from File...`."
+msgstr ""
+
+#: ../../src/odk-build.rst:81
+msgid ""
+"Forms which are saved to your local machine have extension :file:`.odkbuild`"
+" and only these forms can be loaded into ODK Build."
+msgstr ""
+
+#: ../../src/odk-build.rst:86
+msgid "Form building"
+msgstr ""
+
+#: ../../src/odk-build.rst:88
+msgid ""
+"Add a new prompt, by dragging the elements from the bottom of the screen "
+"onto the blank canvas."
+msgstr ""
+
+#: ../../src/odk-build.rst:89
+msgid ""
+"You can remove a prompt by clicking on :guilabel:`X` sign on the prompt."
+msgstr ""
+
+#: ../../src/odk-build.rst:94
+msgid ""
+"For each prompt, modify its properties on the right portion of the screen."
+msgstr ""
+
+#: ../../src/odk-build.rst:99
+msgid "Prompts can also be rearranged through drag and drop."
+msgstr ""
+
+#: ../../src/odk-build.rst:101
+msgid ""
+"You can collapse the question prompts by checking the "
+":menuselection:`Collapse Questions` option in the :guilabel:`View` menu."
+msgstr ""
+
+#: ../../src/odk-build.rst:109
+msgid "Information about prompts is displayed in the properties section."
+msgstr ""
+
+#: ../../src/odk-build.rst:114
+msgid ""
+"Unchecking the :menuselection:`Show Information` option in the "
+":guilabel:`Help` menu will hide the information which is displayed in "
+"properties section."
+msgstr ""
+
+#: ../../src/odk-build.rst:122
+msgid "Upload forms to Aggregate"
+msgstr ""
+
+#: ../../src/odk-build.rst:124
+msgid ""
+"You can upload a form to Aggregate server by clicking on "
+":menuselection:`Upload Form to Aggregate...` in the :guilabel:`File` menu. "
+"In the window which opens up, enter the url for your Aggregate server. In "
+"the username and password box, you need to enter your Aggregate account "
+"credentials with Form Manager or greater capabilities. The account type in "
+"Aggregate has to be ODK, not Google. You may leave these blank if your "
+"Aggregate instance allows anonymous form uploading."
+msgstr ""
+
+#: ../../src/odk-build.rst:132
+msgid "Export forms"
+msgstr ""
+
+#: ../../src/odk-build.rst:134
+msgid ""
+"To view XML for your form, click on :menuselection:`Export to XML...` in the"
+" :guilabel:`File` menu. You can download the :file:`.xml` file for your form"
+" by clicking on :guilabel:`Download` option in the output XML window."
+msgstr ""
+
+#: ../../src/odk-build.rst:139
+msgid ""
+"You can download :file:`.xlsx` file for your form by clicking on "
+":menuselection:`Export to XLSForm` in the :guilabel:`File` menu."
+msgstr ""
+
+#: ../../src/odk-build.rst:144
+msgid "Changing form properties"
+msgstr ""
+
+#: ../../src/odk-build.rst:146
+msgid ""
+"You can change the form properties by clicking :menuselection:`Form "
+"Properties...` in the :guilabel:`Edit` menu."
+msgstr ""
+
+#: ../../src/odk-build.rst:151
+msgid ""
+"A form properties window will appear, where you can enter the instance name,"
+" public key and submission url for your form."
+msgstr ""
+
+#: ../../src/odk-build.rst:156
+msgid ""
+"Instance name specifies names you want to give to submitted data. You can "
+"see more info on public key :ref:`here <construct-key>`. Submission url "
+"directs your submissions somewhere other than the Aggregate that supplied "
+"the form. This is the ODK Aggregate website url with ``Aggregate.html`` "
+"replaced by submission."
+msgstr ""
+
+#: ../../src/odk-build.rst:160
+msgid ""
+"You can give an instance name which uses calculated expressions to name "
+"submissions based on submission data. Note that whatever you put in the "
+"instance name box should evaluate to a string."
+msgstr ""
+
+#: ../../src/odk-build.rst:162
+msgid ""
+"For example, you might use a concatenation of a unique student ID (sid) with"
+" the student name (s_name) as the name of the filled-in form. So you can "
+"provide a instance name as : **concat(${sid},' - ', ${s_name})**."
+msgstr ""
+
+#: ../../src/odk-build.rst:164
+msgid ""
+"This is implemented in XML as an instanceName field within the meta block. "
+"If this value is present and not an empty string (\"\"), it will be used as "
+"the name of the filled-in form. Otherwise, the current default naming, based"
+" upon the date the form was first saved, will be used."
+msgstr ""
+
+#: ../../src/odk-build.rst:182
+msgid "Instance name as **sid-s_name: 12345-Ankita**"
+msgstr ""
+
+#: ../../src/odk-build.rst:187
+msgid "Add, remove and display new languages"
+msgstr ""
+
+#: ../../src/odk-build.rst:189
+msgid ""
+"You can add a new language for your form by clicking on "
+":menuselection:`Manage Translations...` in the :guilabel:`Edit` menu."
+msgstr ""
+
+#: ../../src/odk-build.rst:194
+msgid ""
+"When you add a new language, the language box will be displayed in the "
+"properties section of the form."
+msgstr ""
+
+#: ../../src/odk-build.rst:199
+msgid ""
+"You can also remove any translation by clicking on :guilabel:`remove` option"
+" in the Translation box."
+msgstr ""
+
+#: ../../src/odk-build.rst:204
+msgid ""
+"You can change the display language for your form by checking the language "
+"you want to use as display language in the :guilabel:`View` menu."
+msgstr ""

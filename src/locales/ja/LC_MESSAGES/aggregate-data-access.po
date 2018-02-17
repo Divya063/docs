@@ -1,0 +1,538 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/aggregate-data-access.rst:15
+msgid "Getting Data Out of Aggregate"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:17
+msgid "ODK Aggregate supports three primary mechanisms for data transfer:"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:19
+msgid ":ref:`Exporting <export-data>`:  one time snapshot"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:20
+msgid ":ref:`Publishing <publish-data>`: continuous streaming of submissions"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:21
+msgid ":ref:`APIs <odk-api>`: programmatic access to the data"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:23
+msgid ""
+"Since ODK supports complex data structures such as question grouping, "
+"repeating questions, and multimedia, compromises have been made for each "
+"mechanism in regards to these data structures. This document explains each "
+"mechanism and what each supports."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:28
+msgid "Exporting"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:30
+msgid ""
+"The easiest way to get data from Aggregate is by using its ‘Export’ feature."
+" Export allows the user to manually export all of the data (or filtered "
+"data) at any time into one of the following formats:"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:35
+msgid "CSV (comma separated values)"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:37
+msgid ""
+"CSV files are a text only, tabular representation of the data. Multimedia "
+"files are represented by including standard web links to the files. Repeats "
+"are also represented with links to the underlying data. Grouping information"
+" is not preserved. Metadata is only preserved if a filter is created with "
+"the metadata."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:39
+msgid ""
+"To download CSV files of forms with repeats, consider using ODK Briefcase "
+"instead of ODK Aggregate's export functionality. Instead of repeats that are"
+" represented with links to the underlying data, ODK Briefcase will export a "
+"set of CSV files, one for each repeating group. ODK Briefcase will also "
+"export any multimedia as files (e.g., pictures will get exported as JPEGs). "
+"The only metadata that is preserved is the submission date in the CSV is "
+"preserved, but the XML files that ODK Briefcase downloads has all form "
+"metadata."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:43
+msgid ""
+"To import CSVs into Excel, you cannot download and open in one step; nor can"
+" you double-click on the CSV. You must open Excel and choose Import. If you "
+"are asked, the file origin or encoding is UTF-8."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:48
+#: ../../src/aggregate-data-access.rst:1
+msgid "JSON"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:50
+msgid ""
+"JSON is a text only representation of the data in a key:value format. "
+"Multimedia files are represented by including standard web links to the "
+"files. Repeating data is preserved, but grouping information not related to "
+"repeats is not. Metadata is only preserved if a filter is created with the "
+"metadata."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:55
+msgid "KML (Keyhole Markup Language)"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:57
+msgid ""
+"KML is a text only representation of the data similar to XML, but used for "
+"mapping applications like Google Earth. Multimedia files are represented by "
+"including standard web links to the files hosted on the server. Pictures "
+"will appear embedded in popup windows (when pushpins are clicked) in "
+"programs that render .kml files. Repeats and grouping information is not "
+"preserved. Metadata is only preserved if a filter is created with the "
+"metadata."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:59
+msgid "**Export Data Summary**"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "Format"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+msgid "Groups"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+msgid "Repeats"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+msgid "Multimedia"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+msgid "Metadata"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "CSV(Aggregate)"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+msgid "not preserved"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+msgid "links to"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1
+msgid "preservable"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "CSV(Briefcase)"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "split into separate CSVs"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "exported as files"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "only submission date"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+#: ../../src/aggregate-data-access.rst:1
+msgid "preserved"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "KML"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:71
+msgid "Publishing"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:73
+msgid ""
+"Aggregate provides mechanism for either bulk publishing data to another "
+"service, or for streaming incoming data to a service as it is received, or "
+"both."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:77
+msgid ""
+"Under certain failure conditions, the downstream service can receive "
+"multiple copies of a given submission. This is known, expected, behavior."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:81
+msgid ""
+"Duplicates typically occur if the downstream service is slow to respond or "
+"acknowledge a request."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:82
+msgid ""
+"It is your responsibility to detect and eliminate these duplicates should "
+"they occur (they will always have exactly the same information in all "
+"fields)."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:86
+msgid ""
+"If ODK Aggregate aborts its publishing attempt before it gets an "
+"acknowledgement, it will re-send the submission a short time later. If the "
+"downstream server successfully processed the first request, the re-send of "
+"that same submission can cause a duplicate record of it to appear in the "
+"downstream system. The instance ID of the submission will appear as the "
+"metainstanceid column in Google Sheets and as the *meta-instance-id* column "
+"in Google Fusion tables."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:87
+msgid ""
+"When the downstream server fails to respond or responds with an error code, "
+"ODK Aggregate first delays a re-send for 60 seconds, and, if that also "
+"fails, it then backs off its publishing attempts, and will re-send at either"
+" 7.5-minute or 15-minute intervals until the downstream service successfully"
+" responds, after which ODK Aggregate will resume its normal publishing "
+"behavior."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:89
+msgid ""
+"Aggregate currently supports publishing data to the following services or in"
+" the following formats:"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:94
+#: ../../src/aggregate-data-access.rst:1
+msgid "Google Fusion Tables"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:96
+msgid ""
+"Fusion Tables is an experimental data visualization web application to "
+"gather, visualize, and share larger data tables. Multimedia files are "
+"represented by including standard web links to the files. Repeating groups "
+"of questions are split into separate tables. All metadata is preserved. "
+"Fusion Tables is hosted in Google’s cloud infrastructure. We know of no row "
+"limit, but one may exist. Fusion Tables also has an API that can be used to "
+"export/publish data."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:102
+msgid ""
+"Non-repeating grouping information is not preserved. This implies that if "
+"your form has a non-repeating group `purchaser` and a second non-repeating "
+"group `supplier` and within each of these groups, you have a `name` field, "
+"then when you publish to Fusion Tables, there will be two columns called "
+"`name`. Unfortunately, that badly confuses Fusion Tables, and generally "
+"results in data not transferring successfully into Fusion Tables."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:104
+msgid ""
+"The solution is to this problem is to design your forms with field names "
+"such as `purchaser_name` and `supplier_name`. In other words, use unique "
+"names throughout your form."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:106
+#: ../../src/aggregate-data-access.rst:122
+msgid "OAuth2 Service Account Required"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:108
+msgid ""
+"Publishing data to Google Fusion Tables requires an :doc:`oauth2-service`."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:114
+#: ../../src/aggregate-data-access.rst:1
+msgid "Google Spreadsheets"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:116
+msgid ""
+"Spreadsheets is Google’s cloud-hosted spreadsheet solution. Multimedia files"
+" are represented by including standard web links to the files. Repeats are "
+"also represented with links to the underlying data. All metadata is "
+"preserved. Spreadsheets has a 400,000 cell limit, above which errors will be"
+" reported. Spreadsheets also has an API that can be used to export/publish "
+"data."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:120
+msgid ""
+"As with Google Fusion tables, :ref:`non-repeating grouping information is "
+"not preserved <non-repeat-group-warning>`."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:124
+msgid ""
+"Publishing data to Google Spreadsheets requires an :doc:`oauth2-service`."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:129
+#: ../../src/aggregate-data-access.rst:1
+msgid "JSON Server"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:131
+msgid ""
+"JSON preserves grouping and repeat structures. The user can choose to let "
+"multimedia files be represented as web links or embedded as base64 encoded "
+"strings. All metadata is preserved."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:136
+#: ../../src/aggregate-data-access.rst:1
+msgid "Google Maps Engine"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:138
+msgid ""
+"Maps Engine is a cloud-hosted service to easily create and share maps. "
+"Multimedia files are represented by including standard web links to the "
+"files. Grouping information is preserved in the variable names. Repeating "
+"groups are forbidden and submissions must have at least one geopoint. Maps "
+"Engine also has an API that can be used to export/publish data."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:143
+#: ../../src/aggregate-data-access.rst:1
+msgid "RedCap Server"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:145
+msgid ""
+"RedCap servers ignore grouping and repeating information. Multimedia files "
+"are sent as binary form elements in POST."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:150
+#: ../../src/aggregate-data-access.rst:1
+msgid "Ohmage JSON Server"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:152
+msgid ""
+"Ohmage JSON preserves grouping and repeat structures. Multimedia files are "
+"sent as binary form elements in POST."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:154
+msgid ""
+"For more details on JSON Server, RedCap Server and Ohmage JSON Server see "
+"`Aggregate Publishers Implementation Details "
+"<https://github.com/opendatakit/opendatakit/wiki/Aggregate-Publishers-"
+"Implementation-Details>`_"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:156
+msgid "**Publish data Summary**"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "Service"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "split into separate tables"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "links to or embedded as base64"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1
+msgid "forbidden"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:1 ../../src/aggregate-data-access.rst:1
+msgid "binary elements in POST"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:170
+msgid "APIs"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:172
+msgid ""
+"ODK Aggreate has public APIs defined for sending data to and from its "
+"various components. This section gives references to those API "
+"implementations that can be used for connecting new applications to the ODK "
+"ecosystem."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:177
+msgid "Briefcase CLI"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:179
+msgid ""
+"ODK Briefcase 1.4.4 introduces a new Command Line Interface (CLI) to "
+"automate downloading forms from ODK Aggregate (or ODK Collect) and exporting"
+" the forms to an Excel-compatible format like CSV. For more details, see "
+":ref:`Working with command line on Briefcase <cli-use>`."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:184
+msgid "Briefcase-Aggregate API"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:186
+msgid ""
+"ODK Briefcase uses an API that external applications can use to pull all "
+"data from and push data to ODK Aggregate."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:188
+msgid "Interfaces used during pull actions are:"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:190
+msgid "OpenRosa Form Discovery API"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:191
+msgid "download forms and media files using URLs form discovery"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:192
+#: ../../src/aggregate-data-access.rst:198
+msgid "``view/submissionList`` to obtain a chunk of submission keys"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:193
+msgid "``view/downloadSubmission`` to download an individual submission"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:195
+msgid "Interfaces used during push actions are:"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:197
+msgid "``formUpload`` to upload a form and its media files to ODK Aggregate"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:199
+msgid "OpenRosa Form Submission/Overwite API (with extensions)"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:201
+msgid ""
+"For more details, see `Briefcase Aggregate API "
+"<https://github.com/opendatakit/opendatakit/wiki/Briefcase-Aggregate-API>`_."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:206
+msgid "OpenRosa API"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:208
+msgid ""
+"Collect and Aggregate communicate using a standard set of API calls defined "
+"in the :doc:`openrosa` specification, which can also be used by alternative "
+"clients."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:214
+msgid "Direct database connection"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:216
+msgid ""
+"If you are running on a Tomcat server, you have access to the underlying "
+"MySQL or PostgreSQL tables. The structure of those tables are documented at "
+"`Aggregate Database Structure "
+"<https://github.com/opendatakit/opendatakit/wiki/Aggregate-Database-"
+"Structure>`_."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:220
+msgid ""
+"This is a fragile way to pull data from Aggregate because table structure "
+"could change between versions. Moreover, changing any of this data could "
+"corrupt your Aggregate install."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:225
+msgid "Accessing Media"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:227
+msgid ""
+"Many of the export and publishing options provide a URL to the media (image,"
+" audio or video) without providing the content itself. To enable the viewing"
+" (following) of this link without requiring a log-in:"
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:229
+msgid ""
+"Go to the :guilabel:`Permissions` sub-tab under the :guilabel:`Site Admin` "
+"tab."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:230
+msgid ""
+"Check the checkbox for: `Allow anonymous retrieval of images, audio and "
+"video data (needed for GoogleEarth balloon displays)`."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:231
+msgid "Click the :guilabel:`Save Changes` button."
+msgstr ""
+
+#: ../../src/aggregate-data-access.rst:233
+msgid ""
+"This allows anyone to view the media files on your server. Even though you "
+"are granting anyone access to this information, it is still quite secure "
+"because the users would need to have a valid URL."
+msgstr ""

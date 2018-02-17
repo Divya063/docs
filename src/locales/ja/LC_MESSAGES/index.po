@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: 2018-02-11 08:30+0530\n"
+"Last-Translator: Divya Rani <ranidivya063@gmail.com>, 2018\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/"
+"ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: ../../src/index.rst:20
+msgid "Welcome to Open Data Kit's documentation!"
+msgstr "Open Data Kitのドキュメントへようこそ！"
+
+#: ../../src/index.rst:22
+msgid ""
+":dfn:`Open Data Kit` (ODK) is a suite of open source applications that help "
+"organizations engaged in enumerator-mediated data collection. ODK tools "
+"assist with the collection and management of survey data using digital "
+"forms. These include the primary ODK applications:"
+msgstr ""
+"：dfn： `Open Data Kit`（ODK）は、列挙子が仲介するデータ収集に携わる組織を支"
+"援するオープンソースアプリケーション群です。 ODKツールは、デジタルフォームを"
+"使用した調査データの収集と管理を支援します。 主なODKアプリケーションには次の"
+"ものがあります。"
+
+#: ../../src/index.rst:24
+msgid ""
+":doc:`collect-intro`, an Android mobile app that replaces paper-based forms."
+msgstr ""
+"：doc： `collect-intro`は、紙ベースのフォームを置き換えるAndroidのモバイルア"
+"プリです。"
+
+#: ../../src/index.rst:25
+msgid ":doc:`aggregate-intro`, a server-side data storage and analysis tool."
+msgstr "doc： `aggregate-intro`は、サーバー側のデータ保存と分析ツールです。"
+
+#: ../../src/index.rst:27
+msgid ""
+"Also part of the ODK suite are several tools that support form creation and "
+"data management:"
+msgstr ""
+"また、ODKスイートの一部には、フォームの作成とデータ管理をサポートするいくつ"
+"かのツールがあります。"
+
+#: ../../src/index.rst:29
+msgid ""
+"**ODK Build** lets you design forms with a drag-and-drop form interface."
+msgstr ""
+"** ODK Build **を使用すると、ドラッグアンドドロップフォームインターフェイス"
+"でフォームをデザインできます。"
+
+#: ../../src/index.rst:30
+msgid "**ODK Validate** validates forms against the ODK XForms specification."
+msgstr "** ODK Validate **は、ODK XForms仕様書に対してフォームを検証します。"
+
+#: ../../src/index.rst:31
+msgid ""
+"**ODK Form Uploader** uploads blank forms and their media files to ODK "
+"Aggregate."
+msgstr ""
+"** ODKフォームアップローダ**は空のフォームとそのメディアファイルをODK集計に"
+"アップロードします。"
+
+#: ../../src/index.rst:32
+msgid ""
+"**ODK Briefcase** packages and transfers data between instances of Collect "
+"and Aggregate."
+msgstr ""
+"** ODKブリーフケース**パッケージは、CollectとAggregateのインスタンス間でデー"
+"タを転送します。"
+
+#: ../../src/index.rst:34
+msgid ""
+"ODK also maintains libraries and specifications that support these "
+"applications."
+msgstr ""
+"ODKは、これらのアプリケーションをサポートするライブラリと仕様も保持していま"
+"す。"
+
+#: ../../src/index.rst:36
+msgid ""
+"**ODK XForm** is a subset of the W3 XForm specification, for use in the ODK "
+"ecosystem."
+msgstr ""
+"** ODK XForm **は、ODKエコシステムで使用するためのW3 XForm仕様のサブセットで"
+"す。"
+
+#: ../../src/index.rst:37
+msgid ""
+"**ODK JavaRosa** is a Java library that renders forms complying with the "
+"ODK XForm specification."
+msgstr ""
+"** ODK JavaRosa **は、ODK XForm仕様に準拠したフォームをレンダリングするJava"
+"ライブラリです。 12"
+
+#: ../../src/index.rst:38
+msgid "**XLSForm** defines an Excel format for designing forms."
+msgstr "** XLSForm **はフォームをデザインするためのExcel形式を定義します。"
+
+#: ../../src/index.rst:41
+msgid ""
+"For a complete list of our projects, check out `Open Data Kit on Github "
+"<https://github.com/opendatakit>`_."
+msgstr ""
+"私たちのプロジェクトの完全なリストは、 `Open Data Kit on Github <https://"
+"github.com/opendatakit>` _をご覧ください。"

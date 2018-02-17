@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Open Data Kit. This document is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the Open Data Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Data Kit 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 19:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Japanese (https://www.transifex.com/sample-odk/teams/83397/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../src/javarosa.rst:15
+msgid "ODK JavaRosa"
+msgstr ""
+
+#: ../../src/javarosa.rst:19
+msgid ""
+"JavaRosa is a Java library for rendering forms that are compliant with `ODK "
+"XForms spec <http://opendatakit.github.io/xforms-spec>`_. It is the heart of"
+" many of the ODK tools. ODK JavaRosa is a fork of `JavaRosa "
+"<https://bitbucket.org/javarosa/javarosa/wiki/Home>`_ 1.0 that has been "
+"modified to NOT run on J2ME devices. The key differences are:"
+msgstr ""
+
+#: ../../src/javarosa.rst:24
+msgid "Regularly updated to ensure spec compliance"
+msgstr ""
+
+#: ../../src/javarosa.rst:25
+msgid "KoBo additional instance defn. and filter paths"
+msgstr ""
+
+#: ../../src/javarosa.rst:26
+msgid ""
+"Remember all bind attributes and any additional attributes on ``<input>``, "
+"``<select>``, ``<group>``, etc. statements"
+msgstr ""
+
+#: ../../src/javarosa.rst:27
+msgid "Numerous enhancements and contributions from SurveyCTO and others"
+msgstr ""
+
+#: ../../src/javarosa.rst:28
+msgid "J2ME sub-projects removed"
+msgstr ""
+
+#: ../../src/javarosa.rst:31
+msgid "Architecture"
+msgstr ""
+
+#: ../../src/javarosa.rst:34
+msgid "Integration Points"
+msgstr ""
+
+#: ../../src/javarosa.rst:36
+msgid "This section describes how the different parts of ODK use JavaRosa."
+msgstr ""
+
+#: ../../src/javarosa.rst:39
+msgid "Aggregate"
+msgstr ""
+
+#: ../../src/javarosa.rst:42
+msgid "Briefcase"
+msgstr ""
+
+#: ../../src/javarosa.rst:45
+msgid "Collect"
+msgstr ""
+
+#: ../../src/javarosa.rst:48
+msgid "Validate"
+msgstr ""
+
+#: ../../src/javarosa.rst:50
+msgid "Two source files in Validate use JavaRosa."
+msgstr ""
+
+#: ../../src/javarosa.rst:55
+msgid "FormValidator.java"
+msgstr ""
+
+#: ../../src/javarosa.rst:84
+msgid "StubPropertyManager.java"
+msgstr ""
