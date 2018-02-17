@@ -141,9 +141,10 @@ class Video(Directive):
 
 def setup(app):
 
-    app.add_node(video_node, html = (visit_video_html, depart_video_html), 
+    app.add_node(video_node, html = (visit_video_html, depart_video_html),
     	                     latex = (visit_video_nonhtml, depart_video_nonhtml),
                              epub = (visit_video_nonhtml, depart_video_nonhtml),
+                             rinoh = (visit_video_nonhtml, depart_video_nonhtml), 
                              text = (visit_video_nonhtml, depart_video_nonhtml),
     	                     )
     app.add_directive("video", Video)
