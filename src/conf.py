@@ -38,8 +38,10 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
-    'video',
-    'rinoh.frontend.sphinx']
+    'rinoh.frontend.sphinx',
+    'sphinxcontrib.spelling',
+    'video']
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -88,6 +90,12 @@ todo_include_todos = True
 # suppress warnings for unknown options
 suppress_warnings = ['ref.option']
 
+# Smart (q)uotes, (D)ashes, and (e)llipses
+smartquotes = True
+smartquotes_action = 'De'
+
+# Print suggestions for misspelled words.
+spelling_show_suggestions = True
 
 # -- Options for HTML output ----------------------------------------------
 
